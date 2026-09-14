@@ -1,0 +1,381 @@
+[
+  {
+    "slug": "black-walnut",
+    "name": "Black Walnut",
+    "category": "Black Walnut trees",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "A rare material obtained by chopping Black Walnut trees.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Black Walnut trees"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Black Walnut trees。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "blueberry",
+    "name": "Blueberry",
+    "category": "Foraging",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 16,
+    "description": "A small, round blue fruit harvested from wild bushes.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Foraging"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Foraging。",
+      "出售价约 16 金币。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "branch",
+    "name": "Branch",
+    "category": "Harvesting bushes",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "A branch harvested from bushes in the game world.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Harvesting bushes"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Harvesting bushes。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "butter",
+    "name": "Butter",
+    "category": "Cooking Store",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 150,
+    "description": "A brick of fat made from milk, rich in nutrients but fat is fat after all. Don’t eat too much!",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Cooking Store"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Cooking Store。",
+      "出售价约 150 金币。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "cheese",
+    "name": "Cheese",
+    "category": "Cooking Store",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 100,
+    "description": "A solid dairy product fermented from milk, rich in nutritional value.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Cooking Store"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Cooking Store。",
+      "出售价约 100 金币。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "coal",
+    "name": "Coal",
+    "category": "材料",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Coal 是 Heartopia 中的一种材料。",
+    "facts": [],
+    "tips": [
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "coffee-bean",
+    "name": "Coffee Bean",
+    "category": "Cooking Store",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 50,
+    "description": "A plant’s fruit used in coffee, with flavors that change by variety and roast.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Cooking Store"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Cooking Store。",
+      "出售价约 50 金币。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "frosting",
+    "name": "Frosting",
+    "category": "Winter Frost Season",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Icing sugar, sparkling like frost, was gently sprinkled for a touch of sweetness.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Winter Frost Season"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Winter Frost Season。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "iron-ore",
+    "name": "Iron Ore",
+    "category": "Mining ore nodes",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "The most common ore in Heartopia, appearing as dark gray rocks with a metallic luster. It has moderate hardness and low mining difficulty, making it ideal for new players.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Mining ore nodes"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Mining ore nodes。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "matcha-powder",
+    "name": "Matcha Powder",
+    "category": "Cooking Store",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 250,
+    "description": "Ground by Fresh tea leaves, rich in various trace elements and possessing antioxidant benefits.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Cooking Store"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Cooking Store。",
+      "出售价约 250 金币。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "meat",
+    "name": "Meat",
+    "category": "Cooking Store",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 200,
+    "description": "Source of minerals, proteins, and vitamins.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Cooking Store"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Cooking Store。",
+      "出售价约 200 金币。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "milk",
+    "name": "Milk",
+    "category": "Cooking Store",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 50,
+    "description": "One of the earliest dairy products ever discovered. Contains many essential nutrients required by the human body.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Cooking Store"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Cooking Store。",
+      "出售价约 50 金币。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "rare-timber",
+    "name": "Rare Timber",
+    "category": "Chopping Thick Trees; Acorn General Store",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "A rare and valuable type of timber harvested from special thick trees around Heartopia.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Chopping Thick Trees; Acorn General Store"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Chopping Thick Trees; Acorn General Store。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "red-pine",
+    "name": "Red Pine",
+    "category": "Red Pine tree (located next to White Beech tree, beside Black Walnut tree)",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Rare wood obtained by collecting from the unique Red Pine tree.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Red Pine tree (located next to White Beech tree, beside Black Walnut tree)"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Red Pine tree (located next to White Beech tree, beside Black Walnut tree)。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "roaming-oak-timber",
+    "name": "Roaming Oak Timber",
+    "category": "Helping Oak-Oak after completing the quest Astralis in Forest",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "A raw crafting material obtained from roaming oak trees in Heartopia Town.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Helping Oak-Oak after completing the quest Astralis in Forest"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Helping Oak-Oak after completing the quest Astralis in Forest。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "stone",
+    "name": "Stone",
+    "category": "Stone nodes and rocks on roadsides, near houses, forests, cliffs, fruit areas",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "A basic gathering resource found scattered around Heartopia. No tools required to collect.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Stone nodes and rocks on roadsides, near houses, forests, cliffs, fruit areas"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Stone nodes and rocks on roadsides, near houses, forests, cliffs, fruit areas。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "timber",
+    "name": "Timber",
+    "category": "Chopping trees in the Forest Area",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "The most basic Timber resource in Heartopia.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Chopping trees in the Forest Area"
+      }
+    ],
+    "tips": [
+      "主要获取途径：Chopping trees in the Forest Area。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  },
+  {
+    "slug": "white-beech",
+    "name": "White Beech",
+    "category": "Chopping the single White Beech tree near Black Walnut trees in the northeast plains.",
+    "location": [],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Rare wood material obtained from the unique White Beech tree.",
+    "facts": [
+      {
+        "label": "获取方式",
+        "value": "Chopping the single White Beech tree near Black Walnut trees in the northeast plains."
+      }
+    ],
+    "tips": [
+      "主要获取途径：Chopping the single White Beech tree near Black Walnut trees in the northeast plains.。",
+      "材料通常用于烹饪、制作台合成或任务交付，建议保留一定数量。"
+    ]
+  }
+]

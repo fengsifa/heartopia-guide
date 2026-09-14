@@ -1,0 +1,18 @@
+---
+const { items = [] } = Astro.props;
+---
+
+<nav class="breadcrumbs" aria-label="面包屑导航">
+  <ol>
+    {items.map(function (item, index) {
+      const isLast = index === items.length - 1;
+      return (
+        <li>
+          {isLast || !item.path
+            ? <span aria-current={isLast ? 'page' : undefined}>{item.name}</span>
+            : <a href={item.path}>{item.name}</a>}
+        </li>
+      );
+    })}
+  </ol>
+</nav>

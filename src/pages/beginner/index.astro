@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FilterBar from '../../components/FilterBar.astro';
+import { beginnerList, moduleMeta } from '../../lib/content.js';
+
+const mod = moduleMeta.beginner;
+const categories = Array.from(new Set(beginnerList.map(function (item) { return item.category; }).filter(Boolean))).sort();
+const groups = [{ key: 'category', label: '分类', values: categories }].filter(function (group) { return group.values.length > 0; });
+
+const sorted = beginnerList.slice().sort(function (a, b) {
+  if (a.category === b.category) return 0;
+  return a.category === '开局' ? -1 : 1;
+});
+
+const breadcrumbs = [{ name: '首页', path: '/' }, { name: mod.name, path: mod.path }];
+---
+
+<BaseLayout
+  title="Heartopia 新手指南（开局流程与常见问题）"
+  description={'Heartopia 新手指南，共 ' + beginnerList.length + ' 篇，涵盖开局流程、资源规划、设施解锁与常见问题。'}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <div class="page-head">
+    <h1>🧭 Heartopia 新手指南</h1>
+    <p class="lede">共 {beginnerList.length} 篇指南。建议从「开局」分类开始按顺序阅读。</p>
+  </div>
+
+  <FilterBar
+    total={sorted.length}
+    label="篇指南"
+    placeholder="搜索问题，例如 体力、背包…"
+    searchLabel="搜索新手指南"
+    groups={groups}
+  />
+
+  <div class="grid">
+    {sorted.map(function (item) {
+      const searchText = [item.title, item.summary, item.category]
+        .concat(item.sections.map(function (section) { return section.heading; }))
+        .join(' ');
+      return (
+        <a
+          class="card"
+          href={'/beginner/' + item.slug + '/'}
+          data-filter-item
+          data-search={searchText}
+          data-category={item.category}
+        >
+          <span class="card-title">🧭 {item.title}</span>
+          <span class="card-text">{item.summary}</span>
+          <span class="card-foot">
+            <span class="badge">{item.category}</span>
+            <span class="badge">阅读 {item.readTime}</span>
+          </span>
+        </a>
+      );
+    })}
+  </div>
+
+  <section class="section">
+    <div class="section-head"><h2>目录</h2></div>
+    <div class="panel">
+      <ul class="stat-list">
+        {sorted.map(function (item) {
+          return (
+            <li>
+              <span class="k"><a href={'/beginner/' + item.slug + '/'}>{item.title}</a></span>
+              <span class="v tiny muted">{item.category} · {item.readTime}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

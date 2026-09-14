@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteInfo, codesList, recipesList, fishList, moneyList, beginnerList, mapInfo, farmingList, formatNumber, moduleCounts, moduleUnits } from '../lib/content.js';
+
+const counts = moduleCounts;
+const unitNames = moduleUnits;
+
+const activeCodes = codesList.filter(function (c) { return c.status !== 'expired'; }).slice(0, 5);
+const topFish = fishList.slice().sort(function (a, b) { return b.price - a.price; }).slice(0, 6);
+const topCrops = farmingList.slice().sort(function (a, b) { return (b.profit || 0) - (a.profit || 0); }).slice(0, 6);
+const quickGuides = beginnerList.slice(0, 3);
+const moneyPicks = moneyList.slice(0, 3);
+
+const totalEntries = Object.keys(counts).reduce(function (sum, key) { return sum + (counts[key] || 0); }, 0);
+---
+
+<BaseLayout
+  title="Heartopia 攻略与图鉴"
+  description={siteInfo.description + ' 目前已收录 ' + totalEntries + ' 条结构化数据，持续更新。'}
+  jsonLd={[{
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Heartopia 兑换码在哪里输入？', acceptedAnswer: { '@type': 'Answer', text: '在游戏设置界面的兑换码输入框中输入，注意区分大小写。' } },
+      { '@type': 'Question', name: 'Heartopia 前期怎么赚钱最快？', acceptedAnswer: { '@type': 'Answer', text: '前期以钓鱼 + 加工料理的循环最稳定，配合家门口的作物可以快速积累金币。' } },
+      { '@type': 'Question', name: 'Heartopia 稀有鱼怎么钓？', acceptedAnswer: { '@type': 'Answer', text: '稀有鱼通常受时间、天气和地点限制，例如 Golden 级别的鱼多出现在雨天或彩虹天气的深海区。' } }
+    ]
+  }]}
+>
+  <section class="hero">
+    <h1>Heartopia 攻略中心</h1>
+    <p>
+      兑换码、烹饪食谱、鱼图鉴、昆虫图鉴、材料图鉴、NPC 图鉴、种植攻略、赚钱攻略、新手指南与互动地图，
+      全部整理成结构化数据，随版本持续更新。当前已收录 <strong>{totalEntries}</strong> 条条目。
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/codes/">🎁 最新兑换码</a>
+      <a class="btn" href="/fish/">🐟 鱼图鉴</a>
+      <a class="btn" href="/map/">🗺️ 互动地图</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>全部模块</h2>
+      <span class="more">{siteInfo.modules.length} 个模块</span>
+    </div>
+    <div class="grid">
+      {siteInfo.modules.map(function (mod) {
+        return (
+          <a class="card module-card" href={mod.path}>
+            <span class="card-title"><span class="card-icon" aria-hidden="true">{mod.icon}</span>{mod.name}</span>
+            <span class="card-text">{mod.desc}</span>
+            <span class="count">{counts[mod.id] || 0} {unitNames[mod.id] || '条'}</span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>可用兑换码</h2>
+      <a class="more" href="/codes/">查看全部 →</a>
+    </div>
+    <div class="panel">
+      <ul class="stat-list">
+        {activeCodes.map(function (item) {
+          return (
+            <li>
+              <span class="k"><code>{item.code}</code></span>
+              <span class="v">{item.reward}</span>
+            </li>
+          );
+        })}
+      </ul>
+      <p class="tiny muted" style="margin: 10px 0 0;">兑换码会过期，建议先复制到游戏内验证。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>高价值鱼类</h2>
+      <a class="more" href="/fish/">进入鱼图鉴 →</a>
+    </div>
+    <div class="grid">
+      {topFish.map(function (item) {
+        return (
+          <a class="card" href={'/fish/' + item.slug + '/'}>
+            <span class="card-title">🐟 {item.name}</span>
+            <span class="card-text">出没于 {item.location.join('、') || '未知水域'} · {item.time.join('、') || '全天'}</span>
+            <span class="card-foot">
+              <span class="badge badge-gold">{formatNumber(item.price)} 金币</span>
+              {item.weather.slice(0, 2).map(function (weather) {
+                return <span class="badge">{weather}</span>;
+              })}
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>高收益作物</h2>
+      <a class="more" href="/farming/">种植攻略 →</a>
+    </div>
+    <div class="grid">
+      {topCrops.map(function (item) {
+        return (
+          <a class="card" href={'/farming/' + item.slug + '/'}>
+            <span class="card-title">🌱 {item.name}</span>
+            <span class="card-text">成熟 {item.growthTime} · 种子 {formatNumber(item.seedCost)} 金币</span>
+            <span class="card-foot">
+              <span class="badge badge-active">每格净赚 {formatNumber(item.profit)}</span>
+              <span class="badge">{item.season}</span>
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>新手与赚钱</h2>
+      <a class="more" href="/beginner/">新手指南 →</a>
+    </div>
+    <div class="grid">
+      {quickGuides.map(function (item) {
+        return (
+          <a class="card" href={'/beginner/' + item.slug + '/'}>
+            <span class="card-title">🧭 {item.title}</span>
+            <span class="card-text">{item.summary}</span>
+            <span class="card-foot"><span class="badge">{item.category}</span><span class="badge">{item.readTime}</span></span>
+          </a>
+        );
+      })}
+      {moneyPicks.map(function (item) {
+        return (
+          <a class="card" href={'/money/' + item.slug + '/'}>
+            <span class="card-title">💰 {item.title}</span>
+            <span class="card-text">{item.summary}</span>
+            <span class="card-foot"><span class="badge badge-gold">{item.incomePerHour}</span><span class="badge">{item.difficulty}</span></span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="notice">
+      <span aria-hidden="true">📌</span>
+      <span>
+        <strong>数据持续更新中。</strong>
+        本站内容以结构化 JSON 维护，新增数据不需要修改页面。发现错误欢迎指出。
+      </span>
+    </div>
+  </section>
+</BaseLayout>

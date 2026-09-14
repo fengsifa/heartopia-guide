@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { codesList, recipesList, fishList, moneyList, beginnerList, farmingList, mapInfo } from '../../lib/content.js';
+
+const breadcrumbs = [{ name: '首页', path: '/' }, { name: '站内搜索', path: '/search/' }];
+
+const sections = [
+  { name: '兑换码', path: '/codes/', count: codesList.length },
+  { name: '烹饪食谱', path: '/cooking/', count: recipesList.length },
+  { name: '鱼图鉴', path: '/fish/', count: fishList.length },
+  { name: '赚钱攻略', path: '/money/', count: moneyList.length },
+  { name: '新手指南', path: '/beginner/', count: beginnerList.length },
+  { name: '互动地图', path: '/map/', count: mapInfo.markers.length },
+  { name: '种植攻略', path: '/farming/', count: farmingList.length }
+];
+---
+
+<BaseLayout
+  title="站内搜索"
+  description="搜索 Heartopia 兑换码、烹饪食谱、鱼图鉴、赚钱攻略、新手指南、互动地图与种植攻略。"
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <div class="page-head">
+    <h1>🔍 站内搜索</h1>
+    <p class="lede">输入关键词即可搜索全站内容，例如鱼名、料理、兑换码或赚钱方法。</p>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-row">
+      <input
+        class="filter-input"
+        type="search"
+        id="search-page-input"
+        placeholder="输入关键词，例如 Salmon、烤鱼、体力…"
+        aria-label="站内搜索关键词"
+        autocomplete="off"
+      />
+    </div>
+    <div class="filter-status">
+      <span class="filter-count">找到 <span id="search-page-count"><strong>0</strong></span> 条结果</span>
+    </div>
+  </div>
+
+  <div id="search-page-results" class="grid"></div>
+  <div id="search-page-empty" class="empty-state" hidden>
+    <p>没有找到匹配内容，试试更短的关键词。</p>
+  </div>
+
+  <section class="section">
+    <div class="section-head"><h2>按模块浏览</h2></div>
+    <div class="grid">
+      {sections.map(function (section) {
+        return (
+          <a class="card" href={section.path}>
+            <span class="card-title">{section.name}</span>
+            <span class="card-text">共 {section.count} 条内容</span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <script>
+    const INDEX_URL = '/search-index.json';
+
+    function escapeHtml(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function boot() {
+      const input = document.getElementById('search-page-input');
+      const results = document.getElementById('search-page-results');
+      const empty = document.getElementById('search-page-empty');
+      const countEl = document.getElementById('search-page-count');
+      if (!input || !results || input.dataset.ready === 'true') return;
+      input.dataset.ready = 'true';
+
+      let indexPromise = null;
+      function loadIndex() {
+        if (!indexPromise) {
+          indexPromise = fetch(INDEX_URL)
+            .then(function (res) { return res.ok ? res.json() : { items: [] }; })
+            .then(function (data) { return Array.isArray(data.items) ? data.items : []; })
+            .catch(function () { return []; });
+        }
+        return indexPromise;
+      }
+
+      async function run(query) {
+        const term = query.trim().toLowerCase();
+        if (!term) {
+          results.innerHTML = '';
+          empty.hidden = true;
+          countEl.innerHTML = '<strong>0</strong>';
+          return;
+        }
+        const items = await loadIndex();
+        const matched = items.filter(function (item) {
+          const haystack = [item.title, item.subtitle, item.keywords, item.description, item.category]
+            .join(' ').toLowerCase();
+          return haystack.indexOf(term) !== -1;
+        }).slice(0, 60);
+
+        countEl.innerHTML = '<strong>' + matched.length + '</strong>';
+        empty.hidden = matched.length !== 0;
+        results.innerHTML = matched.map(function (item) {
+          return '<a class="card" href="' + escapeHtml(item.url) + '">'
+            + '<span class="card-title">' + escapeHtml(item.title) + '</span>'
+            + '<span class="card-text">' + escapeHtml(item.subtitle || item.description || '') + '</span>'
+            + '<span class="card-foot"><span class="badge">' + escapeHtml(item.category || '') + '</span></span>'
+            + '</a>';
+        }).join('');
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      const initial = params.get('q') || '';
+      if (initial) input.value = initial;
+      run(initial);
+
+      let timer = null;
+      input.addEventListener('input', function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function () { run(input.value); }, 140);
+      });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+    else boot();
+    document.addEventListener('astro:page-load', boot);
+  </script>
+</BaseLayout>

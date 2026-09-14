@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { fishList, moduleMeta, formatNumber } from '../../lib/content.js';
+
+export function getStaticPaths() {
+  return fishList.map(function (item) {
+    return { params: { slug: item.slug }, props: { item: item } };
+  });
+}
+
+const { item } = Astro.props;
+const mod = moduleMeta.fish;
+
+const sameSpot = fishList
+  .filter(function (other) {
+    if (other.slug === item.slug) return false;
+    return other.location.some(function (loc) { return item.location.indexOf(loc) !== -1; });
+  })
+  .sort(function (a, b) { return (b.price || 0) - (a.price || 0); })
+  .slice(0, 6);
+
+const similarValue = fishList
+  .filter(function (other) {
+    if (other.slug === item.slug) return false;
+    return Math.abs((other.price || 0) - (item.price || 0)) <= 40;
+  })
+  .slice(0, 6);
+
+const related = (sameSpot.length ? sameSpot : similarValue).filter(function (entry, index, arr) {
+  return arr.findIndex(function (x) { return x.slug === entry.slug; }) === index;
+});
+
+const breadcrumbs = [
+  { name: '首页', path: '/' },
+  { name: mod.name, path: mod.path },
+  { name: item.name, path: '/fish/' + item.slug + '/' }
+];
+
+const description = 'Heartopia 中 ' + item.name + ' 的图鉴信息：出没地点 ' + (item.location.join('、') || '未知')
+  + '，时间 ' + (item.time.join('、') || '全天') + '，天气 ' + (item.weather.join('、') || '不限')
+  + '，售价约 ' + item.price + ' 金币。';
+
+const ld = [{
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: item.name + ' — Heartopia 鱼图鉴',
+  description: description,
+  about: { '@type': 'Thing', name: item.name },
+  articleSection: '鱼图鉴',
+  inLanguage: 'zh-CN'
+}];
+---
+
+<BaseLayout title={item.name + ' 鱼图鉴'} description={description} breadcrumbs={breadcrumbs} jsonLd={ld}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <div class="detail-layout">
+    <div>
+      <div class="page-head">
+        <h1>🐟 {item.name}</h1>
+        <p class="lede">{description}</p>
+      </div>
+
+      <div class="panel">
+        <h2>出没条件</h2>
+        <ul class="stat-list">
+          <li><span class="k">地点</span><span class="v">{item.location.join('、') || '未知'}</span></li>
+          <li><span class="k">时间</span><span class="v">{item.time.join('、') || '全天'}</span></li>
+          <li><span class="k">天气</span><span class="v">{item.weather.join('、') || '不限'}</span></li>
+          <li><span class="k">季节</span><span class="v">{item.season.length ? item.season.join('、') : '不限'}</span></li>
+          <li><span class="k">体型</span><span class="v">{item.size.join('、') || '未记录'}</span></li>
+          <li><span class="k">难度</span><span class="v">{item.difficulty}</span></li>
+          <li><span class="k">售价</span><span class="v price">{item.price ? formatNumber(item.price) + ' 金币' : '未记录'}</span></li>
+        </ul>
+      </div>
+
+      {item.tips.length > 0 && (
+        <div class="panel">
+          <h2>钓鱼提示</h2>
+          <ul class="tip-list">
+            {item.tips.map(function (tip) { return <li>{tip}</li>; })}
+          </ul>
+        </div>
+      )}
+
+      {related.length > 0 && (
+        <div class="panel">
+          <h2>{sameSpot.length ? '同一水域的其他鱼' : '售价接近的鱼'}</h2>
+          <div class="grid">
+            {related.map(function (other) {
+              return (
+                <a class="card" href={'/fish/' + other.slug + '/'}>
+                  <span class="card-title">🐟 {other.name}</span>
+                  <span class="card-text">{other.location.join('、') || '未知'}</span>
+                  <span class="card-foot"><span class="badge badge-gold">{formatNumber(other.price)} 金币</span></span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h2 class="map-panel-title">快速信息</h2>
+        <ul class="stat-list">
+          <li><span class="k">售价</span><span class="v price">{item.price ? formatNumber(item.price) : '—'}</span></li>
+          <li><span class="k">难度</span><span class="v">{item.difficulty}</span></li>
+          <li><span class="k">地点数</span><span class="v">{item.location.length}</span></li>
+        </ul>
+        <p style="margin: 12px 0 0;">
+          <a class="btn btn-primary" href="/fish/" style="width: 100%;">← 返回鱼图鉴</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>

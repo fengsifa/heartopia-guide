@@ -1,0 +1,626 @@
+{
+  "note": "点位坐标是按区域色块均匀排布的示意坐标，用于快速定位大致方位，不代表真实距离。",
+  "regions": [
+    {
+      "id": "mountain",
+      "name": "温泉山",
+      "color": "#9fd3e8",
+      "box": {
+        "x": 12,
+        "y": 10,
+        "w": 24,
+        "h": 16
+      },
+      "markerCount": 2,
+      "speciesCount": 18
+    },
+    {
+      "id": "forest",
+      "name": "森林",
+      "color": "#5fbf7f",
+      "box": {
+        "x": 8,
+        "y": 32,
+        "w": 26,
+        "h": 20
+      },
+      "markerCount": 4,
+      "speciesCount": 12
+    },
+    {
+      "id": "town",
+      "name": "Heartopia Town",
+      "color": "#f4b860",
+      "box": {
+        "x": 39,
+        "y": 30,
+        "w": 24,
+        "h": 20
+      },
+      "markerCount": 19,
+      "speciesCount": 17
+    },
+    {
+      "id": "village",
+      "name": "渔村",
+      "color": "#ffb38a",
+      "box": {
+        "x": 68,
+        "y": 10,
+        "w": 24,
+        "h": 16
+      },
+      "markerCount": 2,
+      "speciesCount": 6
+    },
+    {
+      "id": "sea",
+      "name": "海湾",
+      "color": "#4aa3df",
+      "box": {
+        "x": 68,
+        "y": 32,
+        "w": 26,
+        "h": 22
+      },
+      "markerCount": 6,
+      "speciesCount": 29
+    },
+    {
+      "id": "lakes",
+      "name": "湖泊",
+      "color": "#7fc9f0",
+      "box": {
+        "x": 36,
+        "y": 56,
+        "w": 26,
+        "h": 18
+      },
+      "markerCount": 5,
+      "speciesCount": 26
+    },
+    {
+      "id": "river",
+      "name": "河流",
+      "color": "#3f8fd6",
+      "box": {
+        "x": 8,
+        "y": 58,
+        "w": 24,
+        "h": 18
+      },
+      "markerCount": 7,
+      "speciesCount": 18
+    },
+    {
+      "id": "suburbs",
+      "name": "郊区与家园",
+      "color": "#d9a441",
+      "box": {
+        "x": 68,
+        "y": 60,
+        "w": 26,
+        "h": 18
+      },
+      "markerCount": 2,
+      "speciesCount": 11
+    },
+    {
+      "id": "event",
+      "name": "活动限定",
+      "color": "#a08cff",
+      "box": {
+        "x": 36,
+        "y": 80,
+        "w": 26,
+        "h": 12
+      },
+      "markerCount": 1,
+      "speciesCount": 6
+    }
+  ],
+  "categories": [
+    {
+      "id": "fishing",
+      "name": "钓鱼点",
+      "icon": "🐟"
+    },
+    {
+      "id": "bug",
+      "name": "昆虫点",
+      "icon": "🦋"
+    },
+    {
+      "id": "npc",
+      "name": "NPC",
+      "icon": "🧑"
+    },
+    {
+      "id": "shop",
+      "name": "商店与地标",
+      "icon": "🏪"
+    }
+  ],
+  "markers": [
+    {
+      "id": "fish-sea-fishing",
+      "name": "Sea Fishing",
+      "category": "fishing",
+      "region": "sea",
+      "speciesCount": 8,
+      "description": "钓鱼点，可钓到 8 种鱼：Golden King Crab、Moonfish、Giant Oarfish、Nursehound、Common Octopus、European Flying Squid 等。",
+      "x": 68,
+      "y": 32
+    },
+    {
+      "id": "fish-east-sea",
+      "name": "East Sea",
+      "category": "fishing",
+      "region": "sea",
+      "speciesCount": 6,
+      "description": "钓鱼点，可钓到 6 种鱼：Ocean Sunfish、Tub Gurnard、Haddock、Goby、Hermit Crab、Common Shrimp。",
+      "x": 81,
+      "y": 32
+    },
+    {
+      "id": "fish-whale-sea",
+      "name": "Whale Sea",
+      "category": "fishing",
+      "region": "sea",
+      "speciesCount": 5,
+      "description": "钓鱼点，可钓到 5 种鱼：King Crab、Atlantic Salmon、Atlantic Mackerel、Seahorse、Scad。",
+      "x": 94,
+      "y": 32
+    },
+    {
+      "id": "fish-starry-lake",
+      "name": "Starry Lake",
+      "category": "fishing",
+      "region": "lakes",
+      "speciesCount": 1,
+      "description": "钓鱼点，可钓到 1 种鱼：Beltfish。",
+      "x": 36,
+      "y": 56
+    },
+    {
+      "id": "fish-zephyr-sea",
+      "name": "Zephyr Sea",
+      "category": "fishing",
+      "region": "town",
+      "speciesCount": 6,
+      "description": "钓鱼点，可钓到 6 种鱼：Beltfish、Blackspot Seabream、European Lobster、False Scad、Atlantic Pygmy Octopus、Seabream。",
+      "x": 39,
+      "y": 30
+    },
+    {
+      "id": "fish-old-sea",
+      "name": "Old Sea",
+      "category": "fishing",
+      "region": "sea",
+      "speciesCount": 5,
+      "description": "钓鱼点，可钓到 5 种鱼：European Eel、European Plaice、Puffer Fish、Clownfish、Sea Stickleback。",
+      "x": 68,
+      "y": 54
+    },
+    {
+      "id": "fish-giantwood-river",
+      "name": "Giantwood River",
+      "category": "fishing",
+      "region": "river",
+      "speciesCount": 4,
+      "description": "钓鱼点，可钓到 4 种鱼：Huchen、Red-Bellied Piranha、Zander、Spined Loach。",
+      "x": 8,
+      "y": 58
+    },
+    {
+      "id": "fish-forest-lake",
+      "name": "Forest Lake",
+      "category": "fishing",
+      "region": "lakes",
+      "speciesCount": 7,
+      "description": "钓鱼点，可钓到 7 种鱼：Large Pearl Mussel、Blue Ero Crayfish、Largemouth Bass、European Crayfish、Mud Sunfish、Tench 等。",
+      "x": 49,
+      "y": 56
+    },
+    {
+      "id": "fish-sea",
+      "name": "Sea",
+      "category": "fishing",
+      "region": "sea",
+      "speciesCount": 1,
+      "description": "钓鱼点，可钓到 1 种鱼：Anglerfish。",
+      "x": 81,
+      "y": 54
+    },
+    {
+      "id": "fish-meadow-lake",
+      "name": "Meadow Lake",
+      "category": "fishing",
+      "region": "lakes",
+      "speciesCount": 5,
+      "description": "钓鱼点，可钓到 5 种鱼：Butterfly Koi、Goldfish、Trout、European Smelt、Wels Catfish。",
+      "x": 62,
+      "y": 56
+    },
+    {
+      "id": "fish-lake",
+      "name": "Lake",
+      "category": "fishing",
+      "region": "lakes",
+      "speciesCount": 3,
+      "description": "钓鱼点，可钓到 3 种鱼：Edible Frog、Common Chub、Common Bleak。",
+      "x": 36,
+      "y": 74
+    },
+    {
+      "id": "fish-ocean",
+      "name": "Ocean",
+      "category": "fishing",
+      "region": "sea",
+      "speciesCount": 4,
+      "description": "钓鱼点，可钓到 4 种鱼：Rabbit Fish、Skipjack Tuna、Sea Bass、Sardine。",
+      "x": 94,
+      "y": 54
+    },
+    {
+      "id": "fish-river",
+      "name": "River",
+      "category": "fishing",
+      "region": "river",
+      "speciesCount": 3,
+      "description": "钓鱼点，可钓到 3 种鱼：Tilapia、European Perch、Oriental Shrimp。",
+      "x": 20,
+      "y": 58
+    },
+    {
+      "id": "fish-suburban-lake",
+      "name": "Suburban Lake",
+      "category": "fishing",
+      "region": "lakes",
+      "speciesCount": 10,
+      "description": "钓鱼点，可钓到 10 种鱼：European Mudminnow、Grayling、Common Rudd、Mediterranean Killifish、Mussel、River Crab 等。",
+      "x": 49,
+      "y": 74
+    },
+    {
+      "id": "fish-onsen-mountain",
+      "name": "Onsen Mountain",
+      "category": "fishing",
+      "region": "mountain",
+      "speciesCount": 6,
+      "description": "钓鱼点，可钓到 6 种鱼：Pumpkinseed、Mottled Sculpin、Common Whitefish、Ruffe、Tadpole、Bluegill。",
+      "x": 12,
+      "y": 18
+    },
+    {
+      "id": "fish-tranquil-river",
+      "name": "Tranquil River",
+      "category": "fishing",
+      "region": "river",
+      "speciesCount": 3,
+      "description": "钓鱼点，可钓到 3 种鱼：Burbot、Chum Salmon、Minnow。",
+      "x": 32,
+      "y": 58
+    },
+    {
+      "id": "fish-rosy-river",
+      "name": "Rosy River",
+      "category": "fishing",
+      "region": "river",
+      "speciesCount": 3,
+      "description": "钓鱼点，可钓到 3 种鱼：Common Carp、Freshwater Blenny、Streber。",
+      "x": 8,
+      "y": 67
+    },
+    {
+      "id": "fish-shallow-river",
+      "name": "Shallow River",
+      "category": "fishing",
+      "region": "river",
+      "speciesCount": 2,
+      "description": "钓鱼点，可钓到 2 种鱼：Three-Spined Stickleback、Common Barbel。",
+      "x": 20,
+      "y": 67
+    },
+    {
+      "id": "bug-onsen-mountain",
+      "name": "Onsen Mountain",
+      "category": "bug",
+      "region": "mountain",
+      "speciesCount": 12,
+      "description": "可捕捉 12 种昆虫：Conehead Mantis、Giant Asian Mantis、Minotaur Beetle、Mediterranean Mantis、Crimson Marsh Glider、Four-Spotted Ladybug 等。",
+      "x": 36,
+      "y": 18
+    },
+    {
+      "id": "bug-forest",
+      "name": "Forest",
+      "category": "bug",
+      "region": "forest",
+      "speciesCount": 12,
+      "description": "可捕捉 12 种昆虫：Bagworm Moth、Golden Stag Beetle、Golden Jewel Scarab、Stag Beetle、Cicada、Alpine Longhorn Beetle 等。",
+      "x": 8,
+      "y": 32
+    },
+    {
+      "id": "bug-event-only",
+      "name": "Event only",
+      "category": "bug",
+      "region": "event",
+      "speciesCount": 6,
+      "description": "可捕捉 6 种昆虫：Rainbow Stag Beetle、Pink Katydid、Sulkowskys Morpho、White Witch、Apollo、Postman Butterfly。",
+      "x": 49,
+      "y": 86
+    },
+    {
+      "id": "bug-flower-field",
+      "name": "Flower Field",
+      "category": "bug",
+      "region": "town",
+      "speciesCount": 9,
+      "description": "可捕捉 9 种昆虫：Elegant Flower Beetle、Mother-Of-Pearl、Picasso Bug、Katydid、Splay-Footed Carpenter、Bumblebee 等。",
+      "x": 45,
+      "y": 30
+    },
+    {
+      "id": "bug-fishing-village",
+      "name": "Fishing Village",
+      "category": "bug",
+      "region": "village",
+      "speciesCount": 6,
+      "description": "可捕捉 6 种昆虫：Horned Beetle、Ant、Blue Shieldbug、Beautiful Leopard、Siberian Grasshopper、Cabbage White。",
+      "x": 68,
+      "y": 18
+    },
+    {
+      "id": "bug-suburbs",
+      "name": "Suburbs",
+      "category": "bug",
+      "region": "suburbs",
+      "speciesCount": 8,
+      "description": "可捕捉 8 种昆虫：Comet Moth、Green Birdwing、Large Banded Grasshopper、Seven-Spotted Ladybug、Mini Moon Moth、Four-Spotted Skimmer 等。",
+      "x": 68,
+      "y": 69
+    },
+    {
+      "id": "bug-home",
+      "name": "Home",
+      "category": "bug",
+      "region": "suburbs",
+      "speciesCount": 3,
+      "description": "可捕捉 3 种昆虫：Amethyst Flower Beetle、Rajah Brookes Birdwing、European Firebug。",
+      "x": 94,
+      "y": 69
+    },
+    {
+      "id": "bug-waterside",
+      "name": "Waterside",
+      "category": "bug",
+      "region": "river",
+      "speciesCount": 2,
+      "description": "可捕捉 2 种昆虫：Beautiful Demoiselle、Large Red Damselfly。",
+      "x": 32,
+      "y": 67
+    },
+    {
+      "id": "bug-central-area",
+      "name": "Central Area",
+      "category": "bug",
+      "region": "town",
+      "speciesCount": 2,
+      "description": "可捕捉 2 种昆虫：Common Blue Butterfly、Orange-Tip。",
+      "x": 51,
+      "y": 30
+    },
+    {
+      "id": "bug-river-bank",
+      "name": "River Bank",
+      "category": "bug",
+      "region": "river",
+      "speciesCount": 1,
+      "description": "可捕捉 1 种昆虫：Common Whitetail。",
+      "x": 8,
+      "y": 76
+    },
+    {
+      "id": "npc-albert-jr",
+      "name": "Albert Jr.",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Golden Acorn Merchant Guild。",
+      "x": 57,
+      "y": 30
+    },
+    {
+      "id": "npc-andrew",
+      "name": "Andrew",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻West Corner of Heartopia TOwn，喜好：Flowers。",
+      "x": 63,
+      "y": 30
+    },
+    {
+      "id": "npc-annie",
+      "name": "Annie",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Central Area。",
+      "x": 39,
+      "y": 37
+    },
+    {
+      "id": "npc-atara",
+      "name": "Atara",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Town Hall / Central Plaza，喜好：Coffee、Newspapers。",
+      "x": 45,
+      "y": 37
+    },
+    {
+      "id": "npc-bill",
+      "name": "Bill",
+      "category": "npc",
+      "region": "village",
+      "speciesCount": 0,
+      "description": "Villager，常驻Fishing Village。",
+      "x": 92,
+      "y": 18
+    },
+    {
+      "id": "npc-blanc",
+      "name": "Blanc",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Mentor，常驻Garden Street，喜好：Watering Can。",
+      "x": 51,
+      "y": 37
+    },
+    {
+      "id": "npc-bo",
+      "name": "Bo",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Town Hall / Central Plaza，喜好：Coffee、Newspapers。",
+      "x": 57,
+      "y": 37
+    },
+    {
+      "id": "npc-bob",
+      "name": "Bob",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Construction Workshop，喜好：Tools。",
+      "x": 63,
+      "y": 37
+    },
+    {
+      "id": "npc-collector",
+      "name": "Collector",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Heartopia Town。",
+      "x": 39,
+      "y": 43
+    },
+    {
+      "id": "npc-dorothee",
+      "name": "Dorothee",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Clothing Store。",
+      "x": 45,
+      "y": 43
+    },
+    {
+      "id": "npc-massimo",
+      "name": "Massimo",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Restaurant。",
+      "x": 51,
+      "y": 43
+    },
+    {
+      "id": "npc-mrs-joan",
+      "name": "Mrs Joan",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Heartopia Town，喜好：Fish、Flowers、Seafood Bouquet。",
+      "x": 57,
+      "y": 43
+    },
+    {
+      "id": "npc-naniwa",
+      "name": "Naniwa",
+      "category": "npc",
+      "region": "forest",
+      "speciesCount": 0,
+      "description": "Villager，常驻Forest / Nature Areas，喜好：Butterfly、Golden Stag。",
+      "x": 34,
+      "y": 32
+    },
+    {
+      "id": "npc-oak-oak",
+      "name": "Oak-Oak",
+      "category": "npc",
+      "region": "forest",
+      "speciesCount": 0,
+      "description": "Villager，常驻Spirit Oak Pine Forest。",
+      "x": 8,
+      "y": 52
+    },
+    {
+      "id": "npc-patti",
+      "name": "Patti",
+      "category": "npc",
+      "region": "forest",
+      "speciesCount": 0,
+      "description": "Villager，常驻Forest，喜好：Camping Gear、Forest Fruits、Mushroom。",
+      "x": 34,
+      "y": 52
+    },
+    {
+      "id": "npc-vanya",
+      "name": "Vanya",
+      "category": "npc",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "Villager，常驻Town River Pier，喜好：Fish、Fishing Supplies、Seafood。",
+      "x": 63,
+      "y": 43
+    },
+    {
+      "id": "shop-furniture-store",
+      "name": "Furniture Store",
+      "category": "shop",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "The primary shop for purchasing home decor and furniture in Heartopia, managed by the ever-cheerful Bob.",
+      "x": 39,
+      "y": 50
+    },
+    {
+      "id": "shop-gardening-store",
+      "name": "Gardening Store",
+      "category": "shop",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "A specialized shop for purchasing seeds, flowers, and gardening supplies.",
+      "x": 45,
+      "y": 50
+    },
+    {
+      "id": "shop-heartopia-town",
+      "name": "Heartopia Town",
+      "category": "shop",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "The bustling heart of the region and the player's new home.",
+      "x": 51,
+      "y": 50
+    },
+    {
+      "id": "shop-pet-shop",
+      "name": "Pet Shop",
+      "category": "shop",
+      "region": "town",
+      "speciesCount": 0,
+      "description": "A cozy shop filled with the sounds of happy animals, offering pets and supplies to aspiring owners.",
+      "x": 57,
+      "y": 50
+    }
+  ]
+}

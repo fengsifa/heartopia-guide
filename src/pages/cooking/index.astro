@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FilterBar from '../../components/FilterBar.astro';
+import { recipesList, recipeCategories, moduleMeta, formatNumber } from '../../lib/content.js';
+
+const mod = moduleMeta.cooking;
+const sorted = recipesList.slice().sort(function (a, b) { return (b.sellPrice || 0) - (a.sellPrice || 0); });
+const unlocks = Array.from(new Set(recipesList.map(function (r) { return r.unlock; }).filter(Boolean))).sort();
+
+const groups = [
+  { key: 'category', label: '分类', values: recipeCategories },
+  { key: 'unlock', label: '解锁', values: unlocks }
+].filter(function (group) { return group.values.length > 0; });
+
+const maxPrice = Math.max.apply(null, recipesList.map(function (r) { return r.sellPrice || 0; }).concat([1]));
+
+function ingredientText(item) {
+  const list = item.ingredients || [];
+  if (!list.length) return '材料未公开';
+  return list.map(function (ing) {
+    return ing.qty ? ing.item + ' ×' + ing.qty : ing.item;
+  }).join('、');
+}
+const breadcrumbs = [{ name: '首页', path: '/' }, { name: mod.name, path: mod.path }];
+---
+
+<BaseLayout
+  title="Heartopia 烹饪食谱大全（材料 / 售价 / 解锁）"
+  description={'Heartopia 烹饪食谱整理，共 ' + recipesList.length + ' 道料理，含材料清单、步骤、恢复效果与出售价格。'}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <div class="page-head">
+    <h1>🍳 Heartopia 烹饪食谱</h1>
+    <p class="lede">共收录 {recipesList.length} 道料理。按分类或解锁阶段筛选，查看需要的材料和加工步骤。</p>
+  </div>
+
+  <FilterBar
+    total={sorted.length}
+    label="道食谱"
+    placeholder="搜索料理名或材料，例如 鱼、盐…"
+    searchLabel="搜索食谱"
+    groups={groups}
+  />
+
+  <div class="grid">
+    {sorted.map(function (item) {
+      const searchText = [item.name, item.category, item.unlock, item.effect]
+        .concat((item.ingredients || []).map(function (ing) { return ing.item; }))
+        .join(' ');
+      return (
+        <a
+          class="card"
+          href={'/cooking/' + item.slug + '/'}
+          data-filter-item
+          data-search={searchText}
+          data-category={item.category}
+          data-unlock={item.unlock}
+        >
+          <span class="card-title">🍳 {item.name}</span>
+          <span class="card-text">材料：{ingredientText(item)}</span>
+          <span class="card-foot">
+            <span class="badge badge-gold">{formatNumber(item.sellPrice)} 金币</span>
+            <span class="badge">{item.category}</span>
+            {item.effect && <span class="badge">{item.effect}</span>}
+          </span>
+        </a>
+      );
+    })}
+  </div>
+
+  <section class="section">
+    <div class="section-head"><h2>食谱收益排行</h2></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">料理</th>
+            <th scope="col">分类</th>
+            <th scope="col">材料数</th>
+            <th scope="col" class="num">售价</th>
+            <th scope="col" class="num">相对最高</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map(function (item) {
+            const ratio = Math.round(((item.sellPrice || 0) / maxPrice) * 100);
+            return (
+              <tr>
+                <td><a href={'/cooking/' + item.slug + '/'}>{item.name}</a></td>
+                <td>{item.category}</td>
+                <td>{(item.ingredients || []).length || '—'}</td>
+                <td class="num price">{formatNumber(item.sellPrice)}</td>
+                <td class="num">{ratio}%</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>

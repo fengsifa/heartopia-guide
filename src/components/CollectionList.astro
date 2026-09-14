@@ -1,0 +1,92 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+import FilterBar from './FilterBar.astro';
+import { formatNumber, moduleMeta, toAttr, toText, uniqueValues } from '../lib/content.js';
+
+const { collection } = Astro.props;
+const items = collection.items || [];
+
+const groups = (collection.filters || []).map(function (filter) {
+  return { key: filter.key, label: filter.label, values: uniqueValues(items, filter.key) };
+}).filter(function (group) { return group.values.length > 0; });
+
+const breadcrumbs = [{ name: '首页', path: '/' }, { name: collection.name, path: collection.path }];
+
+const cards = items.map(function (item) {
+  const location = toText(item.location);
+  const time = toText(item.time);
+  const weather = toText(item.weather);
+  const lines = [];
+  if (location) lines.push('地点：' + location);
+  if (time) lines.push('时间：' + time);
+  if (!location && !time && item.description) lines.push(item.description);
+
+  const badges = [];
+  if (item.price > 0) badges.push({ text: formatNumber(item.price) + ' 金币', cls: 'badge badge-gold' });
+  if (item.level) badges.push({ text: '出现等级 ' + item.level, cls: 'badge' });
+  if (item.category) badges.push({ text: toText(item.category), cls: 'badge' });
+  weather.split('、').filter(Boolean).slice(0, 3).forEach(function (entry) {
+    badges.push({ text: entry, cls: 'badge' });
+  });
+
+  const searchText = [item.name, item.slug, toText(item.category), location, time, weather, item.level, item.description]
+    .filter(Boolean).join(' ');
+
+  return { item: item, lines: lines, badges: badges, searchText: searchText };
+});
+---
+
+<Breadcrumbs items={breadcrumbs} />
+
+<div class="page-head">
+  <h1>{collection.icon} Heartopia {collection.name}</h1>
+  <p class="lede">共收录 {items.length} {collection.unit}。{collection.desc}，点击任意条目查看详情。</p>
+</div>
+
+<FilterBar
+  total={items.length}
+  label={collection.unit}
+  placeholder={collection.placeholder}
+  searchLabel={collection.searchLabel}
+  groups={groups}
+/>
+
+<div class="grid">
+  {cards.map(function (card) {
+    return (
+      <a
+        class="card"
+        href={collection.path + card.item.slug + '/'}
+        data-filter-item
+        data-search={card.searchText}
+        data-location={toAttr(card.item.location)}
+        data-time={toAttr(card.item.time)}
+        data-weather={toAttr(card.item.weather)}
+        data-category={toAttr(card.item.category)}
+      >
+        <span class="card-title">{collection.icon} {card.item.name}</span>
+        <span class="card-text">
+          {card.lines.map(function (line) {
+            return <span class="card-line">{line}</span>;
+          })}
+        </span>
+        <span class="card-foot">
+          {card.badges.map(function (badge) {
+            return <span class={badge.cls}>{badge.text}</span>;
+          })}
+        </span>
+      </a>
+    );
+  })}
+</div>
+
+{collection.notes && collection.notes.length > 0 && (
+  <section class="section">
+    <div class="panel">
+      <h2 class="mt-0">{collection.name}速记</h2>
+      <ul class="tip-list">
+        {collection.notes.map(function (note) { return <li>{note}</li>; })}
+      </ul>
+    </div>
+  </section>
+)}

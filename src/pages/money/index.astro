@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FilterBar from '../../components/FilterBar.astro';
+import { moneyList, moduleMeta } from '../../lib/content.js';
+
+const mod = moduleMeta.money;
+const difficulties = Array.from(new Set(moneyList.map(function (item) { return item.difficulty; }).filter(Boolean))).sort();
+const times = Array.from(new Set(moneyList.map(function (item) { return item.timeRequired; }).filter(Boolean))).sort();
+
+const groups = [
+  { key: 'difficulty', label: '难度', values: difficulties },
+  { key: 'timeRequired', label: '耗时', values: times }
+].filter(function (group) { return group.values.length > 0; });
+
+const breadcrumbs = [{ name: '首页', path: '/' }, { name: mod.name, path: mod.path }];
+---
+
+<BaseLayout
+  title="Heartopia 赚钱攻略（前期到后期收入路线）"
+  description={'Heartopia 赚钱攻略合集，共 ' + moneyList.length + ' 条收入路线，含收益预估、所需条件与具体步骤。'}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <div class="page-head">
+    <h1>💰 Heartopia 赚钱攻略</h1>
+    <p class="lede">共收录 {moneyList.length} 条赚钱路线，从开局到中后期都有覆盖，按难度和耗时筛选。</p>
+  </div>
+
+  <FilterBar
+    total={moneyList.length}
+    label="条路线"
+    placeholder="搜索赚钱方法，例如 钓鱼、料理…"
+    searchLabel="搜索赚钱攻略"
+    groups={groups}
+  />
+
+  <div class="grid">
+    {moneyList.map(function (item) {
+      const searchText = [item.title, item.summary, item.difficulty]
+        .concat(item.requirements || [])
+        .concat(item.tips || [])
+        .join(' ');
+      return (
+        <a
+          class="card"
+          href={'/money/' + item.slug + '/'}
+          data-filter-item
+          data-search={searchText}
+          data-difficulty={item.difficulty}
+          data-timerequired={item.timeRequired}
+        >
+          <span class="card-title">💰 {item.title}</span>
+          <span class="card-text">{item.summary}</span>
+          <span class="card-foot">
+            <span class="badge badge-gold">{item.incomePerHour}</span>
+            <span class="badge">{item.difficulty}</span>
+            <span class="badge">{item.timeRequired}</span>
+          </span>
+        </a>
+      );
+    })}
+  </div>
+
+  <section class="section">
+    <div class="panel">
+      <h2 class="mt-0">赚钱通用原则</h2>
+      <ul class="tip-list">
+        <li>优先把体力花在「可加工再出售」的资源上，料理通常比原料更值钱。</li>
+        <li>前期不要急着买装饰和升级房子，先把工具和背包容量拉起来。</li>
+        <li>天气与季节会改变资源价格和刷新率，安排路线时记得看日历。</li>
+        <li>多条路线可以并行：种地是挂机收益，钓鱼和采集是主动收益。</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,927 @@
+[
+  {
+    "slug": "corn",
+    "name": "Corn",
+    "category": "作物",
+    "season": "每日",
+    "growthTime": "12 小时",
+    "seedCost": 170,
+    "sellPrice": 515,
+    "profit": 345,
+    "regrow": null,
+    "unlockLevel": 6,
+    "tips": [
+      "种子 170 金币，直接出售 515 金币，每格净赚 345 金币。",
+      "利润率约 67%，值得量产。",
+      "生长 12 小时，理论上一天可以收 2 轮（含立刻补种）。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "作物"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "12 Hours"
+      },
+      {
+        "label": "解锁条件",
+        "value": "6"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "grape",
+    "name": "Grape",
+    "category": "作物",
+    "season": "每日",
+    "growthTime": "10 小时",
+    "seedCost": 160,
+    "sellPrice": 480,
+    "profit": 320,
+    "regrow": null,
+    "unlockLevel": 8,
+    "tips": [
+      "种子 160 金币，直接出售 480 金币，每格净赚 320 金币。",
+      "利润率约 67%，值得量产。",
+      "生长 10 小时，理论上一天可以收 2 轮（含立刻补种）。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Crop"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "10 Hours"
+      },
+      {
+        "label": "解锁条件",
+        "value": "8"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "lettuce",
+    "name": "Lettuce",
+    "category": "作物",
+    "season": "每日",
+    "growthTime": "8 小时",
+    "seedCost": 145,
+    "sellPrice": 435,
+    "profit": 290,
+    "regrow": null,
+    "unlockLevel": 3,
+    "tips": [
+      "种子 145 金币，直接出售 435 金币，每格净赚 290 金币。",
+      "利润率约 67%，值得量产。",
+      "生长 8 小时，理论上一天可以收 3 轮（含立刻补种）。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "作物"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "8 Hours"
+      },
+      {
+        "label": "解锁条件",
+        "value": "3"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "strawberry",
+    "name": "Strawberry",
+    "category": "作物",
+    "season": "每日",
+    "growthTime": "6 小时",
+    "seedCost": 125,
+    "sellPrice": 375,
+    "profit": 250,
+    "regrow": null,
+    "unlockLevel": 6,
+    "tips": [
+      "种子 125 金币，直接出售 375 金币，每格净赚 250 金币。",
+      "利润率约 67%，值得量产。",
+      "生长 6 小时，理论上一天可以收 4 轮（含立刻补种）。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Crop"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "6 Hours"
+      },
+      {
+        "label": "解锁条件",
+        "value": "6"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "wheat",
+    "name": "Wheat",
+    "category": "蔬菜",
+    "season": "未标注",
+    "growthTime": "4 小时",
+    "seedCost": 95,
+    "sellPrice": 285,
+    "profit": 190,
+    "regrow": false,
+    "unlockLevel": 2,
+    "tips": [
+      "种子 95 金币，直接出售 285 金币，每格净赚 190 金币。",
+      "利润率约 67%，值得量产。",
+      "生长 4 小时，理论上一天可以收 6 轮（含立刻补种）。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Vegetable"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "未记录"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "4 hours"
+      },
+      {
+        "label": "解锁条件",
+        "value": "2"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "carrot",
+    "name": "Carrot",
+    "category": "作物",
+    "season": "每日",
+    "growthTime": "2 小时",
+    "seedCost": 50,
+    "sellPrice": 155,
+    "profit": 105,
+    "regrow": null,
+    "unlockLevel": 5,
+    "tips": [
+      "种子 50 金币，直接出售 155 金币，每格净赚 105 金币。",
+      "利润率约 68%，值得量产。",
+      "生长 2 小时，理论上一天可以收 12 轮（含立刻补种）。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Crop"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "2 Hours"
+      },
+      {
+        "label": "解锁条件",
+        "value": "5"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "daisy",
+    "name": "Daisy",
+    "category": "花卉",
+    "season": "每日",
+    "growthTime": "18 小时",
+    "seedCost": 30,
+    "sellPrice": 100,
+    "profit": 70,
+    "regrow": null,
+    "unlockLevel": 3,
+    "tips": [
+      "种子 30 金币，直接出售 100 金币，每格净赚 70 金币。",
+      "利润率约 70%，值得量产。",
+      "生长 18 小时，理论上一天可以收 1 轮（含立刻补种）。",
+      "花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Flower"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "18 Hours"
+      },
+      {
+        "label": "解锁条件",
+        "value": "3"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "pansy",
+    "name": "Pansy",
+    "category": "花卉",
+    "season": "每日",
+    "growthTime": "1-2 天（需浇水）",
+    "seedCost": 30,
+    "sellPrice": 100,
+    "profit": 70,
+    "regrow": null,
+    "unlockLevel": 4,
+    "tips": [
+      "种子 30 金币，直接出售 100 金币，每格净赚 70 金币。",
+      "利润率约 70%，值得量产。",
+      "生长时间：1-2 天（需浇水），具体时长以游戏内为准。",
+      "花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Flower"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "1-2 days (with watering)"
+      },
+      {
+        "label": "解锁条件",
+        "value": "4"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "potato",
+    "name": "Potato",
+    "category": "蔬菜",
+    "season": "每日",
+    "growthTime": "1 小时",
+    "seedCost": 30,
+    "sellPrice": 90,
+    "profit": 60,
+    "regrow": false,
+    "unlockLevel": 1,
+    "tips": [
+      "种子 30 金币，直接出售 90 金币，每格净赚 60 金币。",
+      "利润率约 67%，值得量产。",
+      "生长 1 小时，理论上一天可以收 24 轮（含立刻补种）。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Vegetable"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "1 Hour"
+      },
+      {
+        "label": "解锁条件",
+        "value": "1"
+      },
+      {
+        "label": "种子来源",
+        "value": "Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "pineapple",
+    "name": "Pineapple",
+    "category": "作物",
+    "season": "每日",
+    "growthTime": "30 分钟",
+    "seedCost": 15,
+    "sellPrice": 52,
+    "profit": 37,
+    "regrow": null,
+    "unlockLevel": 4,
+    "tips": [
+      "种子 15 金币，直接出售 52 金币，每格净赚 37 金币。",
+      "利润率约 71%，值得量产。",
+      "生长 30 分钟，理论上一天可以收 48 轮（含立刻补种）。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Crop"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "30 mins"
+      },
+      {
+        "label": "解锁条件",
+        "value": "4"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "tomato",
+    "name": "Tomato",
+    "category": "作物",
+    "season": "未标注",
+    "growthTime": "15 分钟",
+    "seedCost": 10,
+    "sellPrice": 30,
+    "profit": 20,
+    "regrow": null,
+    "unlockLevel": 1,
+    "tips": [
+      "种子 10 金币，直接出售 30 金币，每格净赚 20 金币。",
+      "利润率约 67%，值得量产。",
+      "生长 15 分钟，理论上一天可以收 96 轮（含立刻补种）。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Crop"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "未记录"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "15 mins"
+      },
+      {
+        "label": "解锁条件",
+        "value": "1"
+      },
+      {
+        "label": "种子来源",
+        "value": "Gardening Shop"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "carnation",
+    "name": "Carnation",
+    "category": "花卉",
+    "season": "未标注",
+    "growthTime": "未标注",
+    "seedCost": 0,
+    "sellPrice": 0,
+    "profit": 0,
+    "regrow": null,
+    "unlockLevel": 7,
+    "tips": [
+      "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。",
+      "生长时间：未标注，具体时长以游戏内为准。",
+      "花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Flower"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Unknown"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "Unknown"
+      },
+      {
+        "label": "解锁条件",
+        "value": "Gardening level 7"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store (seeds)"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "corn-poppy",
+    "name": "Corn Poppy",
+    "category": "花卉",
+    "season": "未标注",
+    "growthTime": "约几天（需每天浇水，雨天免浇）",
+    "seedCost": 0,
+    "sellPrice": 0,
+    "profit": 0,
+    "regrow": false,
+    "unlockLevel": 2,
+    "tips": [
+      "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。",
+      "生长时间：约几天（需每天浇水，雨天免浇），具体时长以游戏内为准。",
+      "花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Flower"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "None"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "A few days (daily watering required; rain skips watering)"
+      },
+      {
+        "label": "解锁条件",
+        "value": "Gardening level 2-3"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store (seeds); hybridization"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "lily",
+    "name": "Lily",
+    "category": "花卉",
+    "season": "未标注",
+    "growthTime": "1 天以上（可多次生长）",
+    "seedCost": 0,
+    "sellPrice": 0,
+    "profit": 0,
+    "regrow": null,
+    "unlockLevel": 9,
+    "tips": [
+      "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。",
+      "生长时间：1 天以上（可多次生长），具体时长以游戏内为准。",
+      "花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Flower"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Unknown"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "1+ days (multiple growth cycles)"
+      },
+      {
+        "label": "解锁条件",
+        "value": "Gardening level 9"
+      },
+      {
+        "label": "种子来源",
+        "value": "Gardening Store unlocks, hybridization results, wild foraging (unconfirmed)"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "orchid",
+    "name": "Orchid",
+    "category": "花卉",
+    "season": "未标注",
+    "growthTime": "未标注",
+    "seedCost": 0,
+    "sellPrice": 0,
+    "profit": 0,
+    "regrow": null,
+    "unlockLevel": 12,
+    "tips": [
+      "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。",
+      "生长时间：未标注，具体时长以游戏内为准。",
+      "花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Flower"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Unknown"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "Unknown"
+      },
+      {
+        "label": "解锁条件",
+        "value": "Gardening level 12"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "pumpkin",
+    "name": "Pumpkin",
+    "category": "作物",
+    "season": "秋季",
+    "growthTime": "未标注",
+    "seedCost": 0,
+    "sellPrice": 0,
+    "profit": 0,
+    "regrow": null,
+    "unlockLevel": 6,
+    "tips": [
+      "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。",
+      "生长时间：未标注，具体时长以游戏内为准。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "作物"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Autumn"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "未记录"
+      },
+      {
+        "label": "解锁条件",
+        "value": "Gardening Level 6"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "rose",
+    "name": "Rose",
+    "category": "花卉",
+    "season": "未标注",
+    "growthTime": "每天播种浇水，次日起可收获",
+    "seedCost": 0,
+    "sellPrice": 0,
+    "profit": 0,
+    "regrow": false,
+    "unlockLevel": 0,
+    "tips": [
+      "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。",
+      "生长时间：每天播种浇水，次日起可收获，具体时长以游戏内为准。",
+      "wiki 未记录解锁等级，先确认园艺等级是否满足。",
+      "花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Flower"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Unknown"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "Plant seeds and water daily; harvest in next day(s)"
+      },
+      {
+        "label": "解锁条件",
+        "value": ":Template:Gardening"
+      },
+      {
+        "label": "种子来源",
+        "value": "Purchase from :Template:Gardening Store, Rose s Hybridization ( Tulip s, Lily s)"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "sunflower",
+    "name": "Sunflower",
+    "category": "花卉",
+    "season": "未标注",
+    "growthTime": "未标注",
+    "seedCost": 0,
+    "sellPrice": 0,
+    "profit": 0,
+    "regrow": null,
+    "unlockLevel": 4,
+    "tips": [
+      "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。",
+      "生长时间：未标注，具体时长以游戏内为准。",
+      "花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Flower"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Unknown"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "Unknown"
+      },
+      {
+        "label": "解锁条件",
+        "value": "Level 4 Gardening"
+      },
+      {
+        "label": "种子来源",
+        "value": "Seeds purchased from Blanc at the Gardening Store."
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "tulip",
+    "name": "Tulip",
+    "category": "花卉",
+    "season": "春季",
+    "growthTime": "未标注",
+    "seedCost": 0,
+    "sellPrice": 0,
+    "profit": 0,
+    "regrow": false,
+    "unlockLevel": 8,
+    "tips": [
+      "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。",
+      "生长时间：未标注，具体时长以游戏内为准。",
+      "花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Flower"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Spring"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "Unknown"
+      },
+      {
+        "label": "解锁条件",
+        "value": "Gardening level 8"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store (seeds)"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "watermelon",
+    "name": "Watermelon",
+    "category": "作物",
+    "season": "全年",
+    "growthTime": "未标注",
+    "seedCost": 0,
+    "sellPrice": 0,
+    "profit": 0,
+    "regrow": null,
+    "unlockLevel": 6,
+    "tips": [
+      "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。",
+      "生长时间：未标注，具体时长以游戏内为准。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "作物"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Year-round"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "未记录"
+      },
+      {
+        "label": "解锁条件",
+        "value": "Gardening Level 6"
+      },
+      {
+        "label": "种子来源",
+        "value": "Blanc 's Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "eggplant",
+    "name": "Eggplant",
+    "category": "蔬菜",
+    "season": "每日",
+    "growthTime": "未标注",
+    "seedCost": 135,
+    "sellPrice": 60,
+    "profit": -75,
+    "regrow": false,
+    "unlockLevel": 8,
+    "tips": [
+      "种子 135 金币，直接出售 60 金币，每格净赚 -75 金币。",
+      "利润率约 -125%，收益偏低，建议只种任务需要的量。",
+      "生长时间：未标注，具体时长以游戏内为准。"
+    ],
+    "facts": [
+      {
+        "label": "类型",
+        "value": "Vegetable"
+      },
+      {
+        "label": "wiki 原始季节",
+        "value": "Daily"
+      },
+      {
+        "label": "wiki 原始生长时间",
+        "value": "Unknown"
+      },
+      {
+        "label": "解锁条件",
+        "value": "8"
+      },
+      {
+        "label": "种子来源",
+        "value": "Gardening Store"
+      },
+      {
+        "label": "数据来源",
+        "value": "heartopiawiki.com"
+      }
+    ],
+    "source": "wiki"
+  }
+]

@@ -1,0 +1,95 @@
+---
+import { siteInfo } from '../lib/content.js';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const {
+  title,
+  description = siteInfo.description,
+  breadcrumbs = [],
+  jsonLd = [],
+  noindex = false,
+  type = 'website'
+} = Astro.props;
+
+const site = Astro.site ? Astro.site.href : siteInfo.url + '/';
+const canonical = new URL(Astro.url.pathname.replace(/\/+$/, '/') || '/', site).href;
+const fullTitle = title ? title + ' | ' + siteInfo.name : siteInfo.name + ' — ' + siteInfo.tagline;
+const ogImage = new URL('/og-default.svg', site).href;
+
+const baseLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteInfo.name,
+    alternateName: siteInfo.tagline,
+    url: site,
+    inLanguage: 'zh-CN',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: site + 'search/?q={search_term_string}',
+      'query-input': 'required name=search_term_string'
+    }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: siteInfo.name,
+    url: site
+  }
+];
+
+const breadcrumbLd = breadcrumbs.length
+  ? [{
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map(function (item, index) {
+        const entry = { '@type': 'ListItem', position: index + 1, name: item.name };
+        if (item.path) entry.item = new URL(item.path, site).href;
+        return entry;
+      })
+    }]
+  : [];
+
+const blocks = baseLd.concat(breadcrumbLd).concat(Array.isArray(jsonLd) ? jsonLd : [jsonLd]);
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#0d1220" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={siteInfo.name} />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" hreflang="zh-CN" href={canonical} />
+    {blocks.map(function (block) {
+      return <script type="application/ld+json" set:html={JSON.stringify(block)} />;
+    })}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <Header />
+    <main class="main" id="main">
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

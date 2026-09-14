@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1220"/>
+      <stop offset="1" stop-color="#152036"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f7b955"/>
+      <stop offset="1" stop-color="#ff8a5b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="90" r="220" fill="#f7b955" opacity="0.10"/>
+  <circle cx="140" cy="560" r="200" fill="#4ed0b0" opacity="0.10"/>
+  <text x="90" y="270" font-family="Segoe UI, Arial, sans-serif" font-size="82" font-weight="700" fill="#e9eefb">HeartopiaHub</text>
+  <text x="90" y="340" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#98a6bf">兑换码 · 食谱 · 鱼图鉴 · 赚钱 · 地图 · 种植</text>
+  <rect x="90" y="392" width="220" height="8" rx="4" fill="url(#accent)"/>
+  <text x="90" y="470" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#6f7d96">Heartopia 攻略与图鉴</text>
+</svg>

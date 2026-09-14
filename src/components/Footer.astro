@@ -1,0 +1,36 @@
+---
+import { siteInfo } from '../lib/content.js';
+
+const year = new Date().getFullYear();
+const half = Math.ceil(siteInfo.modules.length / 2);
+const groups = [siteInfo.modules.slice(0, half), siteInfo.modules.slice(half)];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>关于本站</h3>
+        <p class="muted">{siteInfo.description}</p>
+        <p class="muted tiny">
+          本站为社区向的非官方攻略站，与 Heartopia 官方无关联。数据由社区整理，仅供参考。
+        </p>
+      </div>
+      {groups.map(function (group, index) {
+        return (
+          <div>
+            <h3>{index === 0 ? '攻略模块' : '更多内容'}</h3>
+            <ul class="footer-links">
+              {group.map(function (item) {
+                return (
+                  <li><a href={item.path}>{item.icon} {item.name}</a></li>
+                );
+              })}
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+    <p class="footer-note">© {year} {siteInfo.name}. 数据持续更新中，欢迎补充。</p>
+  </div>
+</footer>

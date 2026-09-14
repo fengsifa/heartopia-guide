@@ -1,0 +1,351 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { mapInfo, moduleMeta } from '../../lib/content.js';
+
+const mod = moduleMeta.map;
+const regionMap = {};
+mapInfo.regions.forEach(function (region) { regionMap[region.id] = region; });
+const categoryMap = {};
+mapInfo.categories.forEach(function (category) { categoryMap[category.id] = category; });
+
+const markers = mapInfo.markers.map(function (marker) {
+  const region = regionMap[marker.region];
+  const density = region && region.markerCount > 12 ? 'high' : 'normal';
+  return Object.assign({}, marker, {
+    density: density,
+    regionName: regionMap[marker.region] ? regionMap[marker.region].name : marker.region,
+    regionColor: regionMap[marker.region] ? regionMap[marker.region].color : '#4aa3df',
+    categoryName: categoryMap[marker.category] ? categoryMap[marker.category].name : marker.category,
+    categoryIcon: categoryMap[marker.category] ? categoryMap[marker.category].icon : '📍'
+  });
+});
+
+const breadcrumbs = [{ name: '首页', path: '/' }, { name: mod.name, path: mod.path }];
+const categoryCount = {};
+markers.forEach(function (marker) { categoryCount[marker.category] = (categoryCount[marker.category] || 0) + 1; });
+const breakdown = mapInfo.categories
+  .filter(function (category) { return categoryCount[category.id]; })
+  .map(function (category) { return category.name + ' ' + categoryCount[category.id] + ' 个'; })
+  .join('、');
+const regionCount = mapInfo.regions.filter(function (region) { return region.markerCount; }).length;
+const description = 'Heartopia 互动地图，收录 ' + markers.length + ' 个点位（' + breakdown
+  + '），按 ' + regionCount + ' 个区域分布，支持按分类和区域筛选查看。坐标为示意方位。';
+
+const ld = [{
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Heartopia 地图标记点',
+  numberOfItems: markers.length,
+  itemListElement: markers.map(function (marker, index) {
+    return { '@type': 'ListItem', position: index + 1, name: marker.name, description: marker.description };
+  })
+}];
+---
+
+<BaseLayout title="互动地图（鱼点 / 资源 / NPC）" description={description} breadcrumbs={breadcrumbs} jsonLd={ld}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <div class="page-head">
+    <h1>🗺️ Heartopia 互动地图</h1>
+    <p class="lede">{description}</p>
+  </div>
+
+  <div class="map-layout" data-map-root>
+    <div>
+      <div class="filter-bar" style="margin-bottom: 12px;">
+        <div class="filter-row">
+          <span class="filter-label">分类</span>
+          <div class="filter-scroll" role="group" aria-label="地图分类筛选">
+            <button class="chip" type="button" data-map-category="all" aria-pressed="true">全部</button>
+            {mapInfo.categories.map(function (category) {
+              return (
+                <button class="chip" type="button" data-map-category={category.id} aria-pressed="false">
+                  {category.icon} {category.name}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">区域</span>
+          <div class="filter-scroll" role="group" aria-label="地图区域筛选">
+            <button class="chip" type="button" data-map-region="all" aria-pressed="true">全部</button>
+            {mapInfo.regions.map(function (region) {
+              return (
+                <button class="chip" type="button" data-map-region={region.id} aria-pressed="false">{region.name}</button>
+              );
+            })}
+          </div>
+        </div>
+        <div class="filter-status">
+          <span class="filter-count">显示 <span data-map-count><strong>{markers.length}</strong></span> 个标记点</span>
+          <button class="filter-clear" type="button" data-map-reset hidden>重置筛选</button>
+        </div>
+      </div>
+
+      <div class="map-canvas" role="region" aria-label="Heartopia 地图示意">
+        <div class="map-layer" aria-hidden="true">
+          {mapInfo.regions.map(function (region) {
+            const box = region.box;
+            return (
+              <div
+                class="map-region"
+                data-map-region-block={region.id}
+                style={'left:' + box.x + '%;top:' + box.y + '%;width:' + box.w + '%;height:' + box.h + '%;--region-color:' + region.color + ';'}
+              >
+                <span class="map-region-name">{region.name}</span>
+                <span class="map-region-count" data-map-region-count>{region.markerCount} 个点位</span>
+              </div>
+            );
+          })}
+        </div>
+        {markers.map(function (marker) {
+          return (
+            <button
+              class="map-marker"
+              type="button"
+              style={'left:' + marker.x + '%;top:' + marker.y + '%;border-color:' + marker.regionColor + ';'}
+              data-map-marker
+              data-id={marker.id}
+              data-category={marker.category}
+              data-region={marker.region}
+              data-density={marker.density}
+              aria-pressed="false"
+              aria-label={marker.name + '（' + marker.regionName + '）'}
+            >
+              <span aria-hidden="true">{marker.categoryIcon}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div class="map-legend">
+        {mapInfo.categories.map(function (category) {
+          return <span class="pill">{category.icon} {category.name}</span>;
+        })}
+      </div>
+
+      <p class="tiny muted" style="margin-top: 10px;">
+        提示：点击地图图标或右侧列表查看点位说明。坐标为示意图，用于快速定位大致方位。
+      </p>
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h2 class="map-panel-title" data-map-title>选择标记点</h2>
+        <p class="map-detail" data-map-detail>尚未选择点位。点击地图图标或右侧列表查看详情。</p>
+      </div>
+
+      <div class="panel">
+        <h2 class="map-panel-title">点位列表</h2>
+        <ul class="map-list" data-map-list>
+          {markers.map(function (marker) {
+            return (
+              <li>
+                <button
+                  type="button"
+                  data-map-list-item
+                  data-id={marker.id}
+                  data-category={marker.category}
+                  data-region={marker.region}
+                >
+                  {marker.categoryIcon} {marker.name}
+                  <span class="m-sub">{marker.regionName} · {marker.categoryName}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>全部点位说明</h2>
+      <span class="more">{markers.length} 条</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">名称</th>
+            <th scope="col">分类</th>
+            <th scope="col">区域</th>
+            <th scope="col">说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          {markers.map(function (marker) {
+            return (
+              <tr>
+                <td class="nowrap">{marker.categoryIcon} {marker.name}</td>
+                <td class="nowrap">{marker.categoryName}</td>
+                <td class="nowrap">{marker.regionName}</td>
+                <td>{marker.description}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script is:inline type="application/json" id="map-data" set:html={JSON.stringify(markers)}></script>
+
+  <script>
+    function boot() {
+      const root = document.querySelector('[data-map-root]');
+      if (!root || root.dataset.ready === 'true') return;
+      root.dataset.ready = 'true';
+
+      const dataEl = document.getElementById('map-data');
+      let data = [];
+      try { data = JSON.parse(dataEl ? dataEl.textContent : '[]'); } catch (error) { data = []; }
+      const byId = {};
+      data.forEach(function (marker) { byId[marker.id] = marker; });
+
+      const markerEls = Array.prototype.slice.call(root.querySelectorAll('[data-map-marker]'));
+      const listEls = Array.prototype.slice.call(root.querySelectorAll('[data-map-list-item]'));
+      const categoryEls = Array.prototype.slice.call(root.querySelectorAll('[data-map-category]'));
+      const regionEls = Array.prototype.slice.call(root.querySelectorAll('[data-map-region]'));
+      const regionBlocks = Array.prototype.slice.call(root.querySelectorAll('[data-map-region-block]'));
+      const countEl = root.querySelector('[data-map-count]');
+      const resetEl = root.querySelector('[data-map-reset]');
+      const titleEl = root.querySelector('[data-map-title]');
+      const detailEl = root.querySelector('[data-map-detail]');
+
+      let activeCategory = 'all';
+      let activeRegion = 'all';
+      let activeId = null;
+
+      function isVisible(el) {
+        const okCategory = activeCategory === 'all' || el.dataset.category === activeCategory;
+        const okRegion = activeRegion === 'all' || el.dataset.region === activeRegion;
+        return okCategory && okRegion;
+      }
+
+      function applyFilters() {
+        let visible = 0;
+        const perRegion = {};
+        markerEls.forEach(function (el) {
+          const show = isVisible(el);
+          el.classList.toggle('is-hidden', !show);
+          if (show) {
+            visible += 1;
+            perRegion[el.dataset.region] = (perRegion[el.dataset.region] || 0) + 1;
+          }
+        });
+        regionBlocks.forEach(function (el) {
+          const count = perRegion[el.dataset.mapRegionBlock] || 0;
+          el.classList.toggle('is-hidden', count === 0);
+          const blockCount = el.querySelector('[data-map-region-count]');
+          if (blockCount) blockCount.textContent = count + ' 个点位';
+        });
+        listEls.forEach(function (el) {
+          const show = isVisible(el);
+          el.closest('li').hidden = !show;
+        });
+        if (countEl) countEl.innerHTML = '<strong>' + visible + '</strong>';
+        if (resetEl) resetEl.hidden = activeCategory === 'all' && activeRegion === 'all';
+        if (activeId) {
+          const current = markerEls.filter(function (el) { return el.dataset.id === activeId; })[0];
+          if (current && current.classList.contains('is-hidden')) clearSelection();
+        }
+      }
+
+      function clearSelection() {
+        activeId = null;
+        markerEls.forEach(function (el) { el.setAttribute('aria-pressed', 'false'); });
+        listEls.forEach(function (el) { el.removeAttribute('aria-current'); });
+        if (titleEl) titleEl.textContent = '选择标记点';
+        if (detailEl) detailEl.textContent = '尚未选择点位。点击地图图标或右侧列表查看详情。';
+      }
+
+      function select(id, scrollIntoView) {
+        const marker = byId[id];
+        if (!marker) return;
+        activeId = id;
+        markerEls.forEach(function (el) { el.setAttribute('aria-pressed', el.dataset.id === id ? 'true' : 'false'); });
+        listEls.forEach(function (el) {
+          if (el.dataset.id === id) {
+            el.setAttribute('aria-current', 'true');
+            if (scrollIntoView) el.scrollIntoView({ block: 'nearest' });
+          } else {
+            el.removeAttribute('aria-current');
+          }
+        });
+        if (titleEl) titleEl.textContent = marker.categoryIcon + ' ' + marker.name;
+        if (detailEl) {
+          detailEl.innerHTML = '';
+          const text = document.createElement('span');
+          text.textContent = marker.description || '暂无说明。';
+          const meta = document.createElement('span');
+          meta.className = 'tiny';
+          meta.style.display = 'block';
+          meta.style.marginTop = '8px';
+          meta.style.color = '#6f7d96';
+          meta.textContent = '区域：' + marker.regionName + ' · 分类：' + marker.categoryName;
+          detailEl.appendChild(text);
+          detailEl.appendChild(meta);
+        }
+      }
+
+      markerEls.forEach(function (el) {
+        el.addEventListener('click', function () {
+          if (activeId === el.dataset.id) clearSelection();
+          else select(el.dataset.id, true);
+        });
+      });
+
+      listEls.forEach(function (el) {
+        el.addEventListener('click', function () { select(el.dataset.id, false); });
+      });
+
+      categoryEls.forEach(function (el) {
+        el.addEventListener('click', function () {
+          activeCategory = el.dataset.mapCategory;
+          categoryEls.forEach(function (other) {
+            other.setAttribute('aria-pressed', other.dataset.mapCategory === activeCategory ? 'true' : 'false');
+          });
+          applyFilters();
+        });
+      });
+
+      regionEls.forEach(function (el) {
+        el.addEventListener('click', function () {
+          activeRegion = el.dataset.mapRegion;
+          regionEls.forEach(function (other) {
+            other.setAttribute('aria-pressed', other.dataset.mapRegion === activeRegion ? 'true' : 'false');
+          });
+          applyFilters();
+        });
+      });
+
+      if (resetEl) {
+        resetEl.addEventListener('click', function () {
+          activeCategory = 'all';
+          activeRegion = 'all';
+          categoryEls.forEach(function (other) {
+            other.setAttribute('aria-pressed', other.dataset.mapCategory === 'all' ? 'true' : 'false');
+          });
+          regionEls.forEach(function (other) {
+            other.setAttribute('aria-pressed', other.dataset.mapRegion === 'all' ? 'true' : 'false');
+          });
+          applyFilters();
+        });
+      }
+
+      root.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') clearSelection();
+      });
+
+      applyFilters();
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+    else boot();
+    document.addEventListener('astro:page-load', boot);
+  </script>
+</BaseLayout>

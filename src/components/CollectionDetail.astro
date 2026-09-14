@@ -1,0 +1,118 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+import { formatNumber, toText } from '../lib/content.js';
+
+const { collection, item } = Astro.props;
+
+const rows = [];
+if (toText(item.category)) rows.push({ label: '分类', value: toText(item.category), price: false });
+if (toText(item.location)) rows.push({ label: '出没地点', value: toText(item.location), price: false });
+if (toText(item.time)) rows.push({ label: '出现时间', value: toText(item.time), price: false });
+if (toText(item.weather)) rows.push({ label: '天气条件', value: toText(item.weather), price: false });
+if (item.level) rows.push({ label: '等级要求', value: item.level, price: false });
+if (item.price > 0) rows.push({ label: '售价', value: formatNumber(item.price) + ' 金币', price: true });
+
+const facts = item.facts || [];
+const tips = item.tips || [];
+
+const related = (collection.items || []).filter(function (other) {
+  if (other.slug === item.slug) return false;
+  if (other.category && item.category && other.category === item.category) return true;
+  const a = other.location || [];
+  const b = item.location || [];
+  return a.some(function (entry) { return b.indexOf(entry) !== -1; });
+}).slice(0, 6);
+
+const breadcrumbs = [
+  { name: '首页', path: '/' },
+  { name: collection.name, path: collection.path },
+  { name: item.name, path: collection.path + item.slug + '/' }
+];
+---
+
+<Breadcrumbs items={breadcrumbs} />
+
+<div class="detail-layout">
+  <div>
+    <div class="page-head">
+      <h1>{collection.icon} {item.name}</h1>
+      <p class="lede">{item.description}</p>
+    </div>
+
+    {rows.length > 0 && (
+      <div class="panel">
+        <h2>基础信息</h2>
+        <ul class="stat-list">
+          {rows.map(function (row) {
+            return (
+              <li>
+                <span class="k">{row.label}</span>
+                <span class={'v' + (row.price ? ' price' : '')}>{row.value}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    )}
+
+    {facts.length > 0 && (
+      <div class="panel">
+        <h2>补充信息</h2>
+        <ul class="stat-list">
+          {facts.map(function (fact) {
+            return (
+              <li>
+                <span class="k">{fact.label}</span>
+                <span class="v">{fact.value}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    )}
+
+    {tips.length > 0 && (
+      <div class="panel">
+        <h2>攻略提示</h2>
+        <ul class="tip-list">
+          {tips.map(function (tip) { return <li>{tip}</li>; })}
+        </ul>
+      </div>
+    )}
+
+    {related.length > 0 && (
+      <div class="panel">
+        <h2>相关条目</h2>
+        <div class="grid">
+          {related.map(function (other) {
+            return (
+              <a class="card" href={collection.path + other.slug + '/'}>
+                <span class="card-title">{collection.icon} {other.name}</span>
+                <span class="card-text">{other.price > 0 ? formatNumber(other.price) + ' 金币' : toText(other.category) || '查看详情'}</span>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    )}
+  </div>
+
+  <aside class="side">
+    <div class="panel">
+      <h2 class="map-panel-title">快速信息</h2>
+      <ul class="stat-list">
+        {rows.slice(0, 4).map(function (row) {
+          return (
+            <li>
+              <span class="k">{row.label}</span>
+              <span class={'v' + (row.price ? ' price' : '')}>{row.value}</span>
+            </li>
+          );
+        })}
+      </ul>
+      <p style="margin: 12px 0 0;">
+        <a class="btn btn-primary" href={collection.path} style="width: 100%;">← 返回{collection.name}</a>
+      </p>
+    </div>
+  </aside>
+</div>

@@ -1,0 +1,2998 @@
+[
+  {
+    "slug": "picnic-set",
+    "name": "Picnic Set",
+    "category": "其他料理",
+    "sellPrice": 2260,
+    "unlock": "烹饪等级 7",
+    "effect": "恢复 100 体力",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 7 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 3200 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "3200 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "grape-jam",
+    "name": "Grape Jam",
+    "category": "灶台料理",
+    "sellPrice": 2020,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Grape",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mixed Jam。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mixed Jam"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "strawberry-jam",
+    "name": "Strawberry Jam",
+    "category": "灶台料理",
+    "sellPrice": 1580,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Strawberry",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mixed Jam。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mixed Jam"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "corn-soup",
+    "name": "Corn Soup",
+    "category": "其他料理",
+    "sellPrice": 1340,
+    "unlock": "烹饪等级 5",
+    "effect": "恢复 80 体力",
+    "ingredients": [
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Butter",
+        "qty": 1
+      },
+      {
+        "item": "Corn",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 5 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 1600 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "1600 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "black-truffle-cream-pasta",
+    "name": "Black Truffle Cream Pasta",
+    "category": "其他料理",
+    "sellPrice": 900,
+    "unlock": "烹饪等级 3",
+    "effect": "恢复 90 体力",
+    "ingredients": [
+      {
+        "item": "Black Truffle",
+        "qty": 1
+      },
+      {
+        "item": "Wheat",
+        "qty": 2
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 3 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 800 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "800 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "carrot-cake",
+    "name": "Carrot Cake",
+    "category": "其他料理",
+    "sellPrice": 840,
+    "unlock": "烹饪等级 5",
+    "effect": "恢复 55 体力",
+    "ingredients": [
+      {
+        "item": "Carrot",
+        "qty": 2
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 5 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 1600 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "1600 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "black-truffle-pie",
+    "name": "Black Truffle Pie",
+    "category": "灶台料理",
+    "sellPrice": 830,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 80 体力",
+    "ingredients": [
+      {
+        "item": "Black Truffle",
+        "qty": 2
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Egg",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mushroom Pie。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mushroom Pie"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "seafood-pizza",
+    "name": "Seafood Pizza",
+    "category": "其他料理",
+    "sellPrice": 780,
+    "unlock": "烹饪等级 4",
+    "effect": "恢复 70 体力",
+    "ingredients": [
+      {
+        "item": "Cheese",
+        "qty": 1
+      },
+      {
+        "item": "Tomato Sauce",
+        "qty": 1
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Fish",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 4 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 800 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "800 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "apple-pie",
+    "name": "Apple Pie",
+    "category": "灶台料理",
+    "sellPrice": 730,
+    "unlock": "烹饪等级 5",
+    "effect": "恢复 70 体力",
+    "ingredients": [
+      {
+        "item": "Apple",
+        "qty": 1
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Butter",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 5 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Massimo。",
+      "直接购买需要 1600 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "购买价",
+        "value": "1600 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "afternoon-tea",
+    "name": "Afternoon Tea",
+    "category": "其他料理",
+    "sellPrice": 710,
+    "unlock": "烹饪等级 7",
+    "effect": "恢复 25 体力，加成 Fully Pumped",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 7 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 3200 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "料理加成",
+        "value": "Fully Pumped"
+      },
+      {
+        "label": "购买价",
+        "value": "3200 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "meat-sauce-pasta",
+    "name": "Meat Sauce Pasta",
+    "category": "其他料理",
+    "sellPrice": 670,
+    "unlock": "烹饪等级 4",
+    "effect": "恢复 80 体力",
+    "ingredients": [
+      {
+        "item": "Meat",
+        "qty": 1
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Tomato Sauce",
+        "qty": 1
+      },
+      {
+        "item": "Cheese",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 4 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 800 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "800 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "red-roll-cake",
+    "name": "Red Roll Cake",
+    "category": "灶台料理",
+    "sellPrice": 670,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Red Sugar",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Original Roll Cake。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Original Roll Cake"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "yellow-roll-cake",
+    "name": "Yellow Roll Cake",
+    "category": "灶台料理",
+    "sellPrice": 670,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Yellow Sugar",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Original Roll Cake。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Original Roll Cake"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "rustic-ratatouille",
+    "name": "Rustic Ratatouille",
+    "category": "灶台料理",
+    "sellPrice": 640,
+    "unlock": "烹饪等级 3",
+    "effect": "恢复 60 体力",
+    "ingredients": [
+      {
+        "item": "Tomato",
+        "qty": 1
+      },
+      {
+        "item": "Potato",
+        "qty": 1
+      },
+      {
+        "item": "Lettuce",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 3 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Massimo。",
+      "直接购买需要 800 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "购买价",
+        "value": "800 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "blue-roll-cake",
+    "name": "Blue Roll Cake",
+    "category": "灶台料理",
+    "sellPrice": 570,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Blue Sugar",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Original Roll Cake。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Original Roll Cake"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "green-roll-cake",
+    "name": "Green Roll Cake",
+    "category": "灶台料理",
+    "sellPrice": 570,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Green Sugar",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Original Roll Cake。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Original Roll Cake"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "indigo-roll-cake",
+    "name": "Indigo Roll Cake",
+    "category": "灶台料理",
+    "sellPrice": 570,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Indigo Sugar",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Original Roll Cake。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Original Roll Cake"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "orange-roll-cake",
+    "name": "Orange Roll Cake",
+    "category": "灶台料理",
+    "sellPrice": 570,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Orange Sugar",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Original Roll Cake。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Original Roll Cake"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "violet-roll-cake",
+    "name": "Violet Roll Cake",
+    "category": "灶台料理",
+    "sellPrice": 570,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Violet Sugar",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Original Roll Cake。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Original Roll Cake"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "original-roll-cake",
+    "name": "Original Roll Cake",
+    "category": "灶台料理",
+    "sellPrice": 550,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 35 体力",
+    "ingredients": [
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Sugar",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Doris。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Doris"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "tiramisu",
+    "name": "Tiramisu",
+    "category": "其他料理",
+    "sellPrice": 530,
+    "unlock": "烹饪等级 6",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Coffee Bean",
+        "qty": 1
+      },
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Cheese",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 6 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 1600 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "1600 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "smoked-fish-bagel",
+    "name": "Smoked Fish Bagel",
+    "category": "其他料理",
+    "sellPrice": 520,
+    "unlock": "烹饪等级 2",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Fish",
+        "qty": 1
+      },
+      {
+        "item": "Cheese",
+        "qty": 1
+      },
+      {
+        "item": "Vegetable",
+        "qty": 1
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 2 后解锁。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "button-mushroom-pie",
+    "name": "Button Mushroom Pie",
+    "category": "灶台料理",
+    "sellPrice": 500,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 35 体力",
+    "ingredients": [
+      {
+        "item": "Button Mushroom",
+        "qty": 2
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Egg",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mushroom Pie。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mushroom Pie"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "shiitake-pie",
+    "name": "Shiitake Pie",
+    "category": "灶台料理",
+    "sellPrice": 500,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 35 体力",
+    "ingredients": [
+      {
+        "item": "Shiitake",
+        "qty": 2
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Egg",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mushroom Pie。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mushroom Pie"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "seafood-risotto",
+    "name": "Seafood Risotto",
+    "category": "其他料理",
+    "sellPrice": 490,
+    "unlock": "烹饪等级 3",
+    "effect": "恢复 40 体力",
+    "ingredients": [
+      {
+        "item": "Shellfish",
+        "qty": 2
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Tomato",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 3 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 800 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "800 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "cheese-cake",
+    "name": "Cheese Cake",
+    "category": "灶台料理",
+    "sellPrice": 480,
+    "unlock": "烹饪等级 2",
+    "effect": "恢复 50 体力",
+    "ingredients": [
+      {
+        "item": "Cheese",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 2 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Massimo。",
+      "直接购买需要 200 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "购买价",
+        "value": "200 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "deluxe-seafood-platter",
+    "name": "Deluxe Seafood Platter",
+    "category": "其他料理",
+    "sellPrice": 410,
+    "unlock": "烹饪等级 6",
+    "effect": "恢复 65 体力",
+    "ingredients": [
+      {
+        "item": "Shellfish",
+        "qty": 2
+      },
+      {
+        "item": "Fish",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 6 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 1600 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "1600 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "summer-pizza",
+    "name": "夏日披萨",
+    "category": "主食",
+    "sellPrice": 360,
+    "unlock": "厨房 4 级",
+    "effect": "恢复 85 体力",
+    "ingredients": [
+      {
+        "item": "面粉",
+        "qty": 3
+      },
+      {
+        "item": "番茄",
+        "qty": 2
+      },
+      {
+        "item": "奶酪",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "面团擀平。",
+      "铺上番茄和奶酪。",
+      "烤箱烤 60 秒。"
+    ],
+    "tips": [
+      "后期主力和金币来源。"
+    ]
+  },
+  {
+    "slug": "sushi",
+    "name": "寿司",
+    "category": "海鲜",
+    "sellPrice": 340,
+    "unlock": "厨房 4 级",
+    "effect": "恢复 80 体力",
+    "ingredients": [
+      {
+        "item": "优质鱼",
+        "qty": 1
+      },
+      {
+        "item": "米饭",
+        "qty": 2
+      },
+      {
+        "item": "海苔",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "米饭调味放凉。",
+      "鱼切片。",
+      "海苔铺饭放鱼。",
+      "卷起切段。"
+    ],
+    "tips": [
+      "用高价鱼制作收益最大。"
+    ]
+  },
+  {
+    "slug": "shrimp-fried-rice",
+    "name": "虾仁炒饭",
+    "category": "海鲜",
+    "sellPrice": 320,
+    "unlock": "厨房 4 级",
+    "effect": "恢复 75 体力",
+    "ingredients": [
+      {
+        "item": "虾",
+        "qty": 2
+      },
+      {
+        "item": "米饭",
+        "qty": 2
+      },
+      {
+        "item": "鸡蛋",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "虾仁炒香。",
+      "加入米饭翻炒。",
+      "倒入蛋液炒匀。"
+    ],
+    "tips": [
+      "海边抓虾后制作。"
+    ]
+  },
+  {
+    "slug": "fish-n-chips",
+    "name": "Fish N Chips",
+    "category": "灶台料理",
+    "sellPrice": 310,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 40 体力",
+    "ingredients": [
+      {
+        "item": "Fish",
+        "qty": 2
+      },
+      {
+        "item": "Potato",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Massimo。",
+      "直接购买需要 200 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "购买价",
+        "value": "200 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "fish-taco",
+    "name": "鱼肉卷饼",
+    "category": "主食",
+    "sellPrice": 300,
+    "unlock": "厨房 3 级",
+    "effect": "恢复 70 体力",
+    "ingredients": [
+      {
+        "item": "任意鱼",
+        "qty": 1
+      },
+      {
+        "item": "面粉",
+        "qty": 2
+      },
+      {
+        "item": "蔬菜",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "鱼肉煎熟。",
+      "面粉做成薄饼。",
+      "加入鱼肉和蔬菜。",
+      "卷起装盘。"
+    ],
+    "tips": [
+      "中期利润很高的食谱。"
+    ]
+  },
+  {
+    "slug": "apple-cake",
+    "name": "苹果蛋糕",
+    "category": "甜点",
+    "sellPrice": 300,
+    "unlock": "厨房 4 级",
+    "effect": "恢复 60 体力",
+    "ingredients": [
+      {
+        "item": "苹果",
+        "qty": 2
+      },
+      {
+        "item": "面粉",
+        "qty": 2
+      },
+      {
+        "item": "鸡蛋",
+        "qty": 2
+      }
+    ],
+    "steps": [
+      "苹果切丁。",
+      "面糊混合。",
+      "倒入模具烤 50 秒。"
+    ],
+    "tips": [
+      "高价甜点，适合节日送礼。"
+    ]
+  },
+  {
+    "slug": "coffee-latte",
+    "name": "Coffee Latte",
+    "category": "灶台料理",
+    "sellPrice": 300,
+    "unlock": "烹饪等级 2",
+    "effect": "恢复 40 体力",
+    "ingredients": [
+      {
+        "item": "Coffee Bean",
+        "qty": 2
+      },
+      {
+        "item": "Milk",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 2 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Coffee。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Coffee"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "coffee-2",
+    "name": "Coffee",
+    "category": "灶台料理",
+    "sellPrice": 290,
+    "unlock": "烹饪等级 2",
+    "effect": "恢复 40 体力",
+    "ingredients": [
+      {
+        "item": "Coffee Bean",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 2 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Massimo。",
+      "直接购买需要 400 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "购买价",
+        "value": "400 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "fish-and-chips",
+    "name": "炸鱼薯条",
+    "category": "海鲜",
+    "sellPrice": 280,
+    "unlock": "厨房 3 级",
+    "effect": "恢复 70 体力",
+    "ingredients": [
+      {
+        "item": "任意鱼",
+        "qty": 1
+      },
+      {
+        "item": "土豆",
+        "qty": 2
+      },
+      {
+        "item": "油",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "鱼裹面糊。",
+      "土豆切条。",
+      "分别油炸至金黄。"
+    ],
+    "tips": [
+      "土豆成本低，适合量产。"
+    ]
+  },
+  {
+    "slug": "pineapple-jam",
+    "name": "Pineapple Jam",
+    "category": "灶台料理",
+    "sellPrice": 280,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 40 体力",
+    "ingredients": [
+      {
+        "item": "Pineapple",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mixed Jam。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mixed Jam"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "apple-jam",
+    "name": "Apple Jam",
+    "category": "灶台料理",
+    "sellPrice": 270,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 35 体力",
+    "ingredients": [
+      {
+        "item": "Apple",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mixed Jam。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mixed Jam"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "mandarin-jam",
+    "name": "Mandarin Jam",
+    "category": "灶台料理",
+    "sellPrice": 270,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 35 体力",
+    "ingredients": [
+      {
+        "item": "Mandarin",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mixed Jam。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mixed Jam"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "berry-pie",
+    "name": "浆果派",
+    "category": "甜点",
+    "sellPrice": 260,
+    "unlock": "厨房 3 级",
+    "effect": "恢复 50 体力",
+    "ingredients": [
+      {
+        "item": "浆果",
+        "qty": 3
+      },
+      {
+        "item": "面粉",
+        "qty": 2
+      },
+      {
+        "item": "糖",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "把浆果压成果酱。",
+      "面粉加水揉成面团。",
+      "面团铺进烤盘，加入果酱。",
+      "烤 40 秒即可。"
+    ],
+    "tips": [
+      "浆果季节大量制作。",
+      "售价高，适合刷金币。"
+    ]
+  },
+  {
+    "slug": "raspberry-jam",
+    "name": "Raspberry Jam",
+    "category": "灶台料理",
+    "sellPrice": 250,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 30 体力",
+    "ingredients": [
+      {
+        "item": "Raspberry",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mixed Jam。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mixed Jam"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "pumpkin-soup",
+    "name": "南瓜汤",
+    "category": "汤",
+    "sellPrice": 230,
+    "unlock": "厨房 3 级",
+    "effect": "恢复 65 体力",
+    "ingredients": [
+      {
+        "item": "南瓜",
+        "qty": 2
+      },
+      {
+        "item": "牛奶",
+        "qty": 1
+      },
+      {
+        "item": "盐",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "南瓜切块蒸熟。",
+      "加牛奶打成泥。",
+      "小火加热调味。"
+    ],
+    "tips": [
+      "秋季南瓜丰收时大量制作。"
+    ]
+  },
+  {
+    "slug": "fish-soup",
+    "name": "鲜鱼汤",
+    "category": "汤",
+    "sellPrice": 220,
+    "unlock": "厨房 2 级",
+    "effect": "恢复 60 体力 + 钓鱼加成 5 分钟",
+    "ingredients": [
+      {
+        "item": "任意鱼",
+        "qty": 2
+      },
+      {
+        "item": "胡萝卜",
+        "qty": 1
+      },
+      {
+        "item": "水",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "鱼切块，胡萝卜切片。",
+      "锅中加水煮开。",
+      "放入鱼块和胡萝卜。",
+      "小火煮 1 分钟后装碗。"
+    ],
+    "tips": [
+      "钓鱼前吃一份，收益更高。",
+      "适合处理背包里低价鱼。"
+    ]
+  },
+  {
+    "slug": "honey-toast",
+    "name": "蜂蜜吐司",
+    "category": "甜点",
+    "sellPrice": 210,
+    "unlock": "厨房 3 级",
+    "effect": "恢复 45 体力 + 移速 3 分钟",
+    "ingredients": [
+      {
+        "item": "面包",
+        "qty": 1
+      },
+      {
+        "item": "蜂蜜",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "面包切片。",
+      "抹上蜂蜜。",
+      "烤 15 秒。"
+    ],
+    "tips": [
+      "赶路前吃，节省时间。"
+    ]
+  },
+  {
+    "slug": "corn-chowder",
+    "name": "玉米浓汤",
+    "category": "汤",
+    "sellPrice": 200,
+    "unlock": "厨房 3 级",
+    "effect": "恢复 55 体力",
+    "ingredients": [
+      {
+        "item": "玉米",
+        "qty": 2
+      },
+      {
+        "item": "牛奶",
+        "qty": 1
+      },
+      {
+        "item": "土豆",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "玉米剥粒，土豆切丁。",
+      "加水煮软。",
+      "倒入牛奶煮开。"
+    ],
+    "tips": [
+      "玉米和土豆都是高产作物。"
+    ]
+  },
+  {
+    "slug": "grilled-mushroom",
+    "name": "Grilled Mushroom",
+    "category": "灶台料理",
+    "sellPrice": 200,
+    "unlock": "烹饪等级 1",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Mushroom",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "fruit-salad",
+    "name": "水果沙拉",
+    "category": "甜点",
+    "sellPrice": 190,
+    "unlock": "厨房 2 级",
+    "effect": "恢复 40 体力",
+    "ingredients": [
+      {
+        "item": "苹果",
+        "qty": 1
+      },
+      {
+        "item": "浆果",
+        "qty": 2
+      },
+      {
+        "item": "蜂蜜",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "水果切块。",
+      "加入蜂蜜拌匀。",
+      "装盘即可。"
+    ],
+    "tips": [
+      "夏季水果多时利润高。"
+    ]
+  },
+  {
+    "slug": "mushroom-soup",
+    "name": "蘑菇浓汤",
+    "category": "汤",
+    "sellPrice": 180,
+    "unlock": "厨房 2 级",
+    "effect": "恢复 55 体力",
+    "ingredients": [
+      {
+        "item": "蘑菇",
+        "qty": 3
+      },
+      {
+        "item": "牛奶",
+        "qty": 1
+      },
+      {
+        "item": "盐",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "蘑菇切片。",
+      "锅中加牛奶和蘑菇。",
+      "小火煮 40 秒。",
+      "加盐调味。"
+    ],
+    "tips": [
+      "雨天森林蘑菇刷新多。",
+      "成本低，适合新手。"
+    ]
+  },
+  {
+    "slug": "grilled-button-mushroom",
+    "name": "Grilled Button Mushroom",
+    "category": "灶台料理",
+    "sellPrice": 180,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 15 体力",
+    "ingredients": [
+      {
+        "item": "Button Mushroom",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Grilled Mushroom。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Grilled Mushroom"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "grilled-oyster-mushroom",
+    "name": "Grilled Oyster Mushroom",
+    "category": "灶台料理",
+    "sellPrice": 180,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 15 体力",
+    "ingredients": [
+      {
+        "item": "Oyster Mushroom",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Grilled Mushroom。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Grilled Mushroom"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "grilled-penny-bun",
+    "name": "Grilled Penny Bun",
+    "category": "灶台料理",
+    "sellPrice": 180,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 15 体力",
+    "ingredients": [
+      {
+        "item": "Penny Bun",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Grilled Mushroom。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Grilled Mushroom"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "grilled-shiitake",
+    "name": "Grilled Shiitake",
+    "category": "灶台料理",
+    "sellPrice": 180,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 15 体力",
+    "ingredients": [
+      {
+        "item": "Shiitake",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Grilled Mushroom。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Grilled Mushroom"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "tomato-sauce",
+    "name": "Tomato Sauce",
+    "category": "灶台料理",
+    "sellPrice": 180,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 35 体力",
+    "ingredients": [
+      {
+        "item": "Tomato",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mixed Jam。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mixed Jam"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "omelette",
+    "name": "蔬菜蛋卷",
+    "category": "主食",
+    "sellPrice": 170,
+    "unlock": "厨房 2 级",
+    "effect": "恢复 50 体力",
+    "ingredients": [
+      {
+        "item": "鸡蛋",
+        "qty": 2
+      },
+      {
+        "item": "胡萝卜",
+        "qty": 1
+      },
+      {
+        "item": "盐",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "鸡蛋打散。",
+      "胡萝卜切丁炒香。",
+      "倒入蛋液摊平。",
+      "卷起后切段。"
+    ],
+    "tips": [
+      "鸡蛋来源稳定后可量产。"
+    ]
+  },
+  {
+    "slug": "milk-tea",
+    "name": "奶茶",
+    "category": "饮品",
+    "sellPrice": 170,
+    "unlock": "厨房 3 级",
+    "effect": "恢复 40 体力",
+    "ingredients": [
+      {
+        "item": "茶叶",
+        "qty": 1
+      },
+      {
+        "item": "牛奶",
+        "qty": 1
+      },
+      {
+        "item": "糖",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "茶叶煮出茶汤。",
+      "加入牛奶和糖。",
+      "小火加热后装杯。"
+    ],
+    "tips": [
+      "售价高，材料易得。"
+    ]
+  },
+  {
+    "slug": "blueberry-jam",
+    "name": "Blueberry Jam",
+    "category": "灶台料理",
+    "sellPrice": 170,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 22 体力",
+    "ingredients": [
+      {
+        "item": "Blueberry",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mixed Jam。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mixed Jam"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "mixed-jam",
+    "name": "Mixed Jam",
+    "category": "其他料理",
+    "sellPrice": 160,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 22 体力",
+    "ingredients": [
+      {
+        "item": "Fruit",
+        "qty": 4
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 1 后解锁。",
+      "配方来源：Cooking Hobby。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Cooking Hobby"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "berry-smoothie",
+    "name": "浆果冰沙",
+    "category": "饮品",
+    "sellPrice": 150,
+    "unlock": "厨房 2 级",
+    "effect": "恢复 35 体力 + 采集加成 3 分钟",
+    "ingredients": [
+      {
+        "item": "浆果",
+        "qty": 2
+      },
+      {
+        "item": "冰",
+        "qty": 1
+      },
+      {
+        "item": "牛奶",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "浆果洗净。",
+      "与冰、牛奶一起搅拌。",
+      "倒入杯中。"
+    ],
+    "tips": [
+      "采集前喝一杯。"
+    ]
+  },
+  {
+    "slug": "pancake",
+    "name": "煎饼",
+    "category": "主食",
+    "sellPrice": 140,
+    "unlock": "厨房 2 级",
+    "effect": "恢复 45 体力",
+    "ingredients": [
+      {
+        "item": "面粉",
+        "qty": 2
+      },
+      {
+        "item": "鸡蛋",
+        "qty": 1
+      },
+      {
+        "item": "牛奶",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "面粉、鸡蛋、牛奶混合。",
+      "平底锅刷油。",
+      "倒入面糊煎 20 秒。",
+      "翻面再煎 15 秒。"
+    ],
+    "tips": [
+      "早餐类食谱，售价稳定。"
+    ]
+  },
+  {
+    "slug": "coffee",
+    "name": "咖啡",
+    "category": "饮品",
+    "sellPrice": 130,
+    "unlock": "厨房 3 级",
+    "effect": "恢复 20 体力 + 移速 5 分钟",
+    "ingredients": [
+      {
+        "item": "咖啡豆",
+        "qty": 2
+      },
+      {
+        "item": "水",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "咖啡豆研磨。",
+      "热水冲泡。",
+      "过滤后饮用。"
+    ],
+    "tips": [
+      "跑图和刷资源必备。"
+    ]
+  },
+  {
+    "slug": "grilled-fish",
+    "name": "烤鱼",
+    "category": "海鲜",
+    "sellPrice": 120,
+    "unlock": "初始",
+    "effect": "恢复 40 体力",
+    "ingredients": [
+      {
+        "item": "任意鱼",
+        "qty": 1
+      },
+      {
+        "item": "盐",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "把鱼清理干净。",
+      "撒盐腌制 10 秒。",
+      "放到烤架上烤 30 秒。",
+      "出锅后可直接出售或食用。"
+    ],
+    "tips": [
+      "前期最稳定的体力来源之一。",
+      "用低价值鱼做烤鱼最划算。"
+    ]
+  },
+  {
+    "slug": "bread",
+    "name": "面包",
+    "category": "主食",
+    "sellPrice": 90,
+    "unlock": "初始",
+    "effect": "恢复 30 体力",
+    "ingredients": [
+      {
+        "item": "面粉",
+        "qty": 2
+      },
+      {
+        "item": "水",
+        "qty": 1
+      }
+    ],
+    "steps": [
+      "面粉加水揉成团。",
+      "发酵 20 秒。",
+      "放入烤炉烤 30 秒。"
+    ],
+    "tips": [
+      "小麦稳定后大量生产。",
+      "基础体力补给。"
+    ]
+  },
+  {
+    "slug": "house-salad",
+    "name": "House Salad",
+    "category": "灶台料理",
+    "sellPrice": 90,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 15 体力",
+    "ingredients": [
+      {
+        "item": "Vegetable",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "bizarre-drink",
+    "name": "Bizarre Drink",
+    "category": "其他料理",
+    "sellPrice": 30,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 10 体力",
+    "ingredients": [
+      {
+        "item": "Any",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 1 后解锁。",
+      "配方来源：Failed Drink Recipe。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Failed Drink Recipe"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "bizarre-food",
+    "name": "Bizarre Food",
+    "category": "其他料理",
+    "sellPrice": 30,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 10 体力",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 1 后解锁。",
+      "配方来源：Failed Food Recipe。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Failed Food Recipe"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "aurora-banquet",
+    "name": "Aurora Banquet",
+    "category": "企鹅灶台料理",
+    "sellPrice": 0,
+    "unlock": "初始",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Steak with Mashed Radish",
+        "qty": 1
+      },
+      {
+        "item": "Creamy White Radish Soup",
+        "qty": 1
+      },
+      {
+        "item": "Iced Drink",
+        "qty": 1
+      },
+      {
+        "item": "Pancake",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Penguin Stove制作。",
+      "出现时段：Winter Frost Season。",
+      "配方来源：Massimo [Event Quest]。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Penguin Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Winter Frost Season"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo [Event Quest]"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "baked-eggplant-with-meat",
+    "name": "Baked Eggplant with Meat",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 9",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 9 后解锁。"
+    ],
+    "facts": [],
+    "source": "wiki"
+  },
+  {
+    "slug": "candlelight-dinner",
+    "name": "Candlelight Dinner",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 9",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 9 后解锁。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "cheese-shrimp-stuffed-crab",
+    "name": "Cheese Shrimp Stuffed Crab",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 13",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 13 后解锁。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "chocolate-sauce",
+    "name": "Chocolate Sauce",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "初始",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [],
+    "facts": [],
+    "source": "wiki"
+  },
+  {
+    "slug": "crayfish-sashimi",
+    "name": "Crayfish Sashimi",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 8",
+    "effect": "恢复 30 体力",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 8 后解锁。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "creamy-white-radish-soup",
+    "name": "Creamy White Radish Soup",
+    "category": "企鹅灶台料理",
+    "sellPrice": 0,
+    "unlock": "初始",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Butter",
+        "qty": 1
+      },
+      {
+        "item": "White Radish",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Penguin Stove制作。",
+      "出现时段：Winter Frost Season。",
+      "配方来源：Massimo [Event Quest]。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Penguin Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Winter Frost Season"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo [Event Quest]"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "exquisite-afternoon-tea",
+    "name": "Exquisite Afternoon Tea",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 12",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 12 后解锁。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "iced-coffee",
+    "name": "Iced Coffee",
+    "category": "企鹅灶台料理",
+    "sellPrice": 0,
+    "unlock": "初始",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Frosting",
+        "qty": 1
+      },
+      {
+        "item": "Coffee Bean",
+        "qty": 3
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Penguin Stove制作。",
+      "出现时段：Winter Frost Season。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Penguin Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Winter Frost Season"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "iced-latte",
+    "name": "Iced Latte",
+    "category": "企鹅灶台料理",
+    "sellPrice": 0,
+    "unlock": "初始",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Frosting",
+        "qty": 1
+      },
+      {
+        "item": "Coffee Bean",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 2
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Penguin Stove制作。",
+      "出现时段：Winter Frost Season。",
+      "配方来源：Iced Coffee。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Penguin Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Winter Frost Season"
+      },
+      {
+        "label": "配方来源",
+        "value": "Iced Coffee"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "meat-burger",
+    "name": "Meat Burger",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 8",
+    "effect": "恢复 75 体力",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 8 后解锁。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "mellow-black-tea",
+    "name": "Mellow Black Tea",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 11",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 11 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 6400 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "6400 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "milkshake",
+    "name": "Milkshake",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 11",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 11 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 6400 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "6400 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "mushroom-pie",
+    "name": "Mushroom Pie",
+    "category": "灶台料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 35 体力",
+    "ingredients": [
+      {
+        "item": "Mushroom",
+        "qty": 2
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Egg",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Massimo [Gossip Quest]。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo [Gossip Quest]"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "original-frosted-pancake",
+    "name": "Original Frosted Pancake",
+    "category": "企鹅灶台料理",
+    "sellPrice": 0,
+    "unlock": "初始",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Egg",
+        "qty": 1
+      },
+      {
+        "item": "Milk",
+        "qty": 1
+      },
+      {
+        "item": "Frosting",
+        "qty": 1
+      },
+      {
+        "item": "Blueberry",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Penguin Stove制作。",
+      "出现时段：Winter Frost Season。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Penguin Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Winter Frost Season"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "oyster-mushroom-pie",
+    "name": "Oyster Mushroom Pie",
+    "category": "灶台料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 35 体力",
+    "ingredients": [
+      {
+        "item": "Oyster Mushroom",
+        "qty": 2
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Egg",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mushroom Pie。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mushroom Pie"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "penny-bun-pie",
+    "name": "Penny Bun Pie",
+    "category": "灶台料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 1",
+    "effect": "恢复 35 体力",
+    "ingredients": [
+      {
+        "item": "Penny Bun",
+        "qty": 2
+      },
+      {
+        "item": "Wheat",
+        "qty": 1
+      },
+      {
+        "item": "Egg",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Stove制作。",
+      "烹饪等级达到 1 后解锁。",
+      "出现时段：Daily。",
+      "配方来源：Mushroom Pie。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Daily"
+      },
+      {
+        "label": "配方来源",
+        "value": "Mushroom Pie"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "refreshing-green-tea",
+    "name": "Refreshing Green Tea",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 12",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 12 后解锁。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "shrimp-avocado-cup",
+    "name": "Shrimp Avocado Cup",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 13",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 13 后解锁。",
+      "配方来源：Massimo。"
+    ],
+    "facts": [
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "steak-with-mashed-radish",
+    "name": "Steak with Mashed Radish",
+    "category": "企鹅灶台料理",
+    "sellPrice": 0,
+    "unlock": "初始",
+    "effect": "",
+    "ingredients": [
+      {
+        "item": "Meat",
+        "qty": 2
+      },
+      {
+        "item": "Butter",
+        "qty": 1
+      },
+      {
+        "item": "White Radish",
+        "qty": 1
+      }
+    ],
+    "steps": [],
+    "tips": [
+      "需要Penguin Stove制作。",
+      "出现时段：Winter Frost Season。",
+      "配方来源：Massimo [Event Quest]。"
+    ],
+    "facts": [
+      {
+        "label": "所需厨具",
+        "value": "Penguin Stove"
+      },
+      {
+        "label": "出现时段",
+        "value": "Winter Frost Season"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo [Event Quest]"
+      }
+    ],
+    "source": "wiki"
+  },
+  {
+    "slug": "steamed-king-crab",
+    "name": "Steamed King Crab",
+    "category": "其他料理",
+    "sellPrice": 0,
+    "unlock": "烹饪等级 10",
+    "effect": "",
+    "ingredients": [],
+    "steps": [],
+    "tips": [
+      "烹饪等级达到 10 后解锁。",
+      "配方来源：Massimo。",
+      "直接购买需要 6400 金币，自己做更省钱。"
+    ],
+    "facts": [
+      {
+        "label": "购买价",
+        "value": "6400 金币"
+      },
+      {
+        "label": "配方来源",
+        "value": "Massimo"
+      }
+    ],
+    "source": "wiki"
+  }
+]

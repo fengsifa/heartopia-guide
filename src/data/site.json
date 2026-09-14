@@ -1,0 +1,96 @@
+{
+  "name": "HeartopiaHub",
+  "tagline": "Heartopia 攻略与图鉴",
+  "description": "Heartopia 兑换码、烹饪食谱、鱼图鉴、昆虫图鉴、材料图鉴、NPC 图鉴、地点图鉴、种植攻略、赚钱攻略、新手指南与互动地图。",
+  "url": "https://heartopiahub.pages.dev",
+  "modules": [
+    {
+      "id": "codes",
+      "name": "兑换码",
+      "navName": "兑换码",
+      "path": "/codes/",
+      "icon": "🎁",
+      "desc": "最新可用兑换码与奖励"
+    },
+    {
+      "id": "cooking",
+      "name": "烹饪食谱",
+      "navName": "食谱",
+      "path": "/cooking/",
+      "icon": "🍳",
+      "desc": "全食谱、材料与收益"
+    },
+    {
+      "id": "fish",
+      "name": "鱼图鉴",
+      "navName": "鱼类",
+      "path": "/fish/",
+      "icon": "🐟",
+      "desc": "出没时间、地点、天气与价格"
+    },
+    {
+      "id": "bugs",
+      "name": "昆虫图鉴",
+      "navName": "昆虫",
+      "path": "/bugs/",
+      "icon": "🦋",
+      "desc": "出没地点、时间、天气与售价"
+    },
+    {
+      "id": "materials",
+      "name": "材料图鉴",
+      "navName": "材料",
+      "path": "/materials/",
+      "icon": "🧺",
+      "desc": "获取方式、用途与售价"
+    },
+    {
+      "id": "npcs",
+      "name": "NPC 图鉴",
+      "navName": "NPC",
+      "path": "/npcs/",
+      "icon": "🧑",
+      "desc": "身份、生日、喜好与常驻位置"
+    },
+    {
+      "id": "locations",
+      "name": "地点图鉴",
+      "navName": "地点",
+      "path": "/locations/",
+      "icon": "🏪",
+      "desc": "商店位置、营业时间与负责人"
+    },
+    {
+      "id": "farming",
+      "name": "种植攻略",
+      "navName": "种植",
+      "path": "/farming/",
+      "icon": "🌱",
+      "desc": "作物收益与季节安排"
+    },
+    {
+      "id": "money",
+      "name": "赚钱攻略",
+      "navName": "赚钱",
+      "path": "/money/",
+      "icon": "💰",
+      "desc": "稳定刷金币路线与方法"
+    },
+    {
+      "id": "beginner",
+      "name": "新手指南",
+      "navName": "新手",
+      "path": "/beginner/",
+      "icon": "🧭",
+      "desc": "开局流程与常见问题"
+    },
+    {
+      "id": "map",
+      "name": "互动地图",
+      "navName": "地图",
+      "path": "/map/",
+      "icon": "🗺️",
+      "desc": "资源点、鱼点与 NPC 位置"
+    }
+  ]
+}

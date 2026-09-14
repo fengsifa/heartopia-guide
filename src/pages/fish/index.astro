@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FilterBar from '../../components/FilterBar.astro';
+import { fishList, fishFilters, moduleMeta, formatNumber } from '../../lib/content.js';
+
+const mod = moduleMeta.fish;
+const sorted = fishList.slice().sort(function (a, b) { return (b.price || 0) - (a.price || 0); });
+const difficulties = Array.from(new Set(fishList.map(function (f) { return f.difficulty; }))).sort();
+
+const groups = [
+  { key: 'location', label: '地点', values: fishFilters.locations },
+  { key: 'time', label: '时间', values: fishFilters.times },
+  { key: 'weather', label: '天气', values: fishFilters.weather },
+  { key: 'size', label: '体型', values: fishFilters.sizes },
+  { key: 'difficulty', label: '难度', values: difficulties }
+].filter(function (group) { return group.values.length > 0; });
+
+const breadcrumbs = [{ name: '首页', path: '/' }, { name: mod.name, path: mod.path }];
+---
+
+<BaseLayout
+  title="Heartopia 鱼图鉴（时间 / 地点 / 天气 / 价格）"
+  description={'Heartopia 鱼类图鉴，共收录 ' + fishList.length + ' 种鱼，可按出没地点、时间、天气、体型与难度筛选，并查看售价。'}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <div class="page-head">
+    <h1>🐟 Heartopia 鱼图鉴</h1>
+    <p class="lede">共收录 {fishList.length} 种鱼。支持按地点、时间、天气、体型和难度组合筛选，点击查看详情。</p>
+  </div>
+
+  <FilterBar
+    total={sorted.length}
+    label="种鱼"
+    placeholder="搜索鱼名，例如 Salmon、Crab…"
+    searchLabel="搜索鱼名"
+    groups={groups}
+  />
+
+  <div class="grid">
+    {sorted.map(function (item) {
+      const searchText = [item.name, item.slug, item.location.join(' '), item.time.join(' '), item.weather.join(' '), item.difficulty].join(' ');
+      return (
+        <a
+          class="card"
+          href={'/fish/' + item.slug + '/'}
+          data-filter-item
+          data-search={searchText}
+          data-location={item.location.join('|')}
+          data-time={item.time.join('|')}
+          data-weather={item.weather.join('|')}
+          data-size={item.size.join('|')}
+          data-difficulty={item.difficulty}
+        >
+          <span class="card-title">🐟 {item.name}</span>
+          <span class="card-text">
+            地点：{item.location.join('、') || '未知'}<br />
+            时间：{item.time.join('、') || '全天'}
+          </span>
+          <span class="card-foot">
+            <span class="badge badge-gold">{item.price ? formatNumber(item.price) + ' 金币' : '价格未知'}</span>
+            {item.weather.slice(0, 3).map(function (weather) { return <span class="badge">{weather}</span>; })}
+          </span>
+        </a>
+      );
+    })}
+  </div>
+
+  <section class="section">
+    <div class="panel">
+      <h2 class="mt-0">钓鱼机制说明</h2>
+      <p class="muted">
+        鱼类是否出现通常由「地点 + 时间 + 天气」三者共同决定，部分稀有鱼还需要特定季节。
+        本站数据由社区整理，若与游戏内不一致，以游戏内为准。
+      </p>
+      <ul class="tip-list">
+        <li>雨天与彩虹天气会刷新更多稀有鱼种，值得优先安排钓鱼时间。</li>
+        <li>金色（Golden）体型的鱼售价明显更高，遇到请优先保留。</li>
+        <li>低价值鱼建议加工成料理再出售，收益通常高于直接卖出。</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,367 @@
+[
+  {
+    "slug": "albert-jr",
+    "name": "Albert Jr.",
+    "category": "Villager",
+    "location": [
+      "Golden Acorn Merchant Guild"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Albert Jr. 是 Heartopia 中的Villager，常见于Golden Acorn Merchant Guild。",
+    "facts": [],
+    "tips": [
+      "日常出没于Golden Acorn Merchant Guild，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "andrew",
+    "name": "Andrew",
+    "category": "Villager",
+    "location": [
+      "West Corner of Heartopia TOwn"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Andrew 是 Heartopia 中的Villager，常见于West Corner of Heartopia TOwn。",
+    "facts": [
+      {
+        "label": "喜好",
+        "value": "Flowers"
+      }
+    ],
+    "tips": [
+      "送出「Flowers」类礼物更容易提升好感度。",
+      "日常出没于West Corner of Heartopia TOwn，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "annie",
+    "name": "Annie",
+    "category": "Villager",
+    "location": [
+      "Central Area"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Annie 是 Heartopia 中的Villager，常见于Central Area。",
+    "facts": [],
+    "tips": [
+      "日常出没于Central Area，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "atara",
+    "name": "Atara",
+    "category": "Villager",
+    "location": [
+      "Town Hall / Central Plaza"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Atara 是 Heartopia 中的Villager，常见于Town Hall / Central Plaza。",
+    "facts": [
+      {
+        "label": "住址",
+        "value": "Town Center"
+      },
+      {
+        "label": "喜好",
+        "value": "Coffee、Newspapers"
+      }
+    ],
+    "tips": [
+      "送出「Coffee、Newspapers」类礼物更容易提升好感度。",
+      "日常出没于Town Hall / Central Plaza，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "bill",
+    "name": "Bill",
+    "category": "Villager",
+    "location": [
+      "Fishing Village"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Bill 是 Heartopia 中的Villager，常见于Fishing Village。",
+    "facts": [],
+    "tips": [
+      "日常出没于Fishing Village，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "blanc",
+    "name": "Blanc",
+    "category": "Mentor",
+    "location": [
+      "Garden Street"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Blanc 是 Heartopia 中的Mentor，常见于Garden Street。",
+    "facts": [
+      {
+        "label": "住址",
+        "value": "Gardening Store"
+      },
+      {
+        "label": "喜好",
+        "value": "Watering Can"
+      }
+    ],
+    "tips": [
+      "送出「Watering Can」类礼物更容易提升好感度。",
+      "日常出没于Garden Street，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "bo",
+    "name": "Bo",
+    "category": "Villager",
+    "location": [
+      "Town Hall / Central Plaza"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Bo 是 Heartopia 中的Villager，常见于Town Hall / Central Plaza。",
+    "facts": [
+      {
+        "label": "住址",
+        "value": "Town Center"
+      },
+      {
+        "label": "喜好",
+        "value": "Coffee、Newspapers"
+      }
+    ],
+    "tips": [
+      "送出「Coffee、Newspapers」类礼物更容易提升好感度。",
+      "日常出没于Town Hall / Central Plaza，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "bob",
+    "name": "Bob",
+    "category": "Villager",
+    "location": [
+      "Construction Workshop"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Bob 是 Heartopia 中的Villager，常见于Construction Workshop。",
+    "facts": [
+      {
+        "label": "住址",
+        "value": "Town Center"
+      },
+      {
+        "label": "喜好",
+        "value": "Tools"
+      }
+    ],
+    "tips": [
+      "送出「Tools」类礼物更容易提升好感度。",
+      "日常出没于Construction Workshop，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "collector",
+    "name": "Collector",
+    "category": "Villager",
+    "location": [
+      "Heartopia Town"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Collector 是 Heartopia 中的Villager，常见于Heartopia Town。",
+    "facts": [
+      {
+        "label": "住址",
+        "value": "Left side, near houses and benches"
+      }
+    ],
+    "tips": [
+      "日常出没于Heartopia Town，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "dorothee",
+    "name": "Dorothee",
+    "category": "Villager",
+    "location": [
+      "Clothing Store"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Dorothee 是 Heartopia 中的Villager，常见于Clothing Store。",
+    "facts": [
+      {
+        "label": "住址",
+        "value": "Near Suburbs, left of the bookstore near Massimo"
+      }
+    ],
+    "tips": [
+      "日常出没于Clothing Store，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "massimo",
+    "name": "Massimo",
+    "category": "Villager",
+    "location": [
+      "Restaurant"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Massimo 是 Heartopia 中的Villager，常见于Restaurant。",
+    "facts": [],
+    "tips": [
+      "日常出没于Restaurant，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "mrs-joan",
+    "name": "Mrs Joan",
+    "category": "Villager",
+    "location": [
+      "Heartopia Town"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Mrs Joan 是 Heartopia 中的Villager，常见于Heartopia Town。",
+    "facts": [
+      {
+        "label": "住址",
+        "value": "Pet Shop"
+      },
+      {
+        "label": "喜好",
+        "value": "Fish、Flowers、Seafood Bouquet"
+      }
+    ],
+    "tips": [
+      "送出「Fish、Flowers、Seafood Bouquet」类礼物更容易提升好感度。",
+      "日常出没于Heartopia Town，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "naniwa",
+    "name": "Naniwa",
+    "category": "Villager",
+    "location": [
+      "Forest / Nature Areas"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Naniwa 是 Heartopia 中的Villager，常见于Forest / Nature Areas。",
+    "facts": [
+      {
+        "label": "喜好",
+        "value": "Butterfly、Golden Stag"
+      }
+    ],
+    "tips": [
+      "送出「Butterfly、Golden Stag」类礼物更容易提升好感度。",
+      "日常出没于Forest / Nature Areas，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "oak-oak",
+    "name": "Oak-Oak",
+    "category": "Villager",
+    "location": [
+      "Spirit Oak Pine Forest"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Oak-Oak 是 Heartopia 中的Villager，常见于Spirit Oak Pine Forest。",
+    "facts": [
+      {
+        "label": "住址",
+        "value": "Suburbs (daily spawn)"
+      }
+    ],
+    "tips": [
+      "日常出没于Spirit Oak Pine Forest，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "patti",
+    "name": "Patti",
+    "category": "Villager",
+    "location": [
+      "Forest"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Patti 是 Heartopia 中的Villager，常见于Forest。",
+    "facts": [
+      {
+        "label": "住址",
+        "value": "Ranger Station"
+      },
+      {
+        "label": "喜好",
+        "value": "Camping Gear、Forest Fruits、Mushroom"
+      }
+    ],
+    "tips": [
+      "送出「Camping Gear、Forest Fruits、Mushroom」类礼物更容易提升好感度。",
+      "日常出没于Forest，可以在附近商店与任务点找到。"
+    ]
+  },
+  {
+    "slug": "vanya",
+    "name": "Vanya",
+    "category": "Villager",
+    "location": [
+      "Town River Pier"
+    ],
+    "time": [],
+    "weather": [],
+    "level": "",
+    "price": 0,
+    "description": "Vanya 是 Heartopia 中的Villager，常见于Town River Pier。",
+    "facts": [
+      {
+        "label": "喜好",
+        "value": "Fish、Fishing Supplies、Seafood"
+      }
+    ],
+    "tips": [
+      "送出「Fish、Fishing Supplies、Seafood」类礼物更容易提升好感度。",
+      "日常出没于Town River Pier，可以在附近商店与任务点找到。"
+    ]
+  }
+]

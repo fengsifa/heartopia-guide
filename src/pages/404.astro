@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteInfo } from '../lib/content.js';
+---
+
+<BaseLayout title="页面不存在（404）" description="找不到该页面，试试从下面的模块入口继续浏览。" noindex={true}>
+  <div class="page-head" style="text-align: center; padding: 40px 0 10px;">
+    <h1>404</h1>
+    <p class="lede" style="margin-inline: auto;">页面不存在或已被移动。</p>
+  </div>
+
+  <div class="grid">
+    {siteInfo.modules.map(function (mod) {
+      return (
+        <a class="card module-card" href={mod.path}>
+          <span class="card-title"><span class="card-icon" aria-hidden="true">{mod.icon}</span>{mod.name}</span>
+          <span class="card-text">{mod.desc}</span>
+        </a>
+      );
+    })}
+  </div>
+
+  <p style="text-align: center; margin-top: 22px;">
+    <a class="btn btn-primary" href="/">返回首页</a>
+  </p>
+</BaseLayout>

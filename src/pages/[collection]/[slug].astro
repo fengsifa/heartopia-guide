@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CollectionDetail from '../../components/CollectionDetail.astro';
+import { getCollection, listCollections } from '../../lib/content.js';
+
+export function getStaticPaths() {
+  const paths = [];
+  listCollections().forEach(function (collection) {
+    (collection.items || []).forEach(function (item) {
+      paths.push({
+        params: { collection: collection.id, slug: item.slug },
+        props: { collectionId: collection.id, slug: item.slug }
+      });
+    });
+  });
+  return paths;
+}
+
+const collection = getCollection(Astro.props.collectionId);
+const item = (collection.items || []).filter(function (entry) { return entry.slug === Astro.props.slug; })[0];
+
+const description = item.description;
+const breadcrumbs = [
+  { name: '首页', path: '/' },
+  { name: collection.name, path: collection.path },
+  { name: item.name, path: collection.path + item.slug + '/' }
+];
+
+const ld = [{
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: item.name + ' — Heartopia ' + collection.name,
+  description: description,
+  articleSection: collection.name,
+  inLanguage: 'zh-CN'
+}];
+---
+
+<BaseLayout title={item.name + ' — ' + collection.name} description={description} breadcrumbs={breadcrumbs} jsonLd={ld}>
+  <CollectionDetail collection={collection} item={item} />
+</BaseLayout>

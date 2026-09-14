@@ -1,0 +1,77 @@
+---
+import { siteInfo } from '../lib/content.js';
+import SearchBox from './SearchBox.astro';
+
+const pathname = Astro.url.pathname;
+const navItems = [{ id: 'home', name: '首页', path: '/', icon: '🏠' }].concat(
+  siteInfo.modules.map(function (item) {
+    return { id: item.id, name: item.navName || item.name, path: item.path, icon: item.icon };
+  })
+);
+
+function isCurrent(target) {
+  if (target === '/') return pathname === '/';
+  return pathname === target || pathname.startsWith(target);
+}
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label={siteInfo.name + ' 首页'}>
+      <span class="brand-mark" aria-hidden="true">H</span>
+      <span class="brand-text">{siteInfo.name}<small>HEARTOPIA GUIDE</small></span>
+    </a>
+
+    <div class="header-spacer"></div>
+
+    <SearchBox />
+
+    <div class="header-actions">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span aria-hidden="true">☰</span>
+        <span class="visually-hidden">打开导航菜单</span>
+      </button>
+    </div>
+
+    <nav class="site-nav" id="site-nav" aria-label="主导航">
+      <ul class="nav-list">
+        {navItems.map(function (item) {
+          return (
+            <li>
+              <a href={item.path} aria-current={isCurrent(item.path) ? 'page' : undefined}>
+                <span class="nav-icon" aria-hidden="true">{item.icon}</span>
+                <span>{item.name}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function boot() {
+    document.querySelectorAll('[data-nav-toggle]').forEach(function (button) {
+      if (button.dataset.ready === 'true') return;
+      button.dataset.ready = 'true';
+      const nav = document.getElementById(button.getAttribute('aria-controls'));
+      if (!nav) return;
+      button.addEventListener('click', function () {
+        const open = nav.classList.toggle('open');
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+        button.querySelector('span').textContent = open ? '✕' : '☰';
+      });
+      nav.addEventListener('click', function (event) {
+        if (event.target.closest('a')) {
+          nav.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+          button.querySelector('span').textContent = '☰';
+        }
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+  document.addEventListener('astro:page-load', boot);
+</script>

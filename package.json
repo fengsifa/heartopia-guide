@@ -1,0 +1,20 @@
+{
+  "name": "heartopiahub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "data:check": "node scripts/check-data.mjs",
+    "data:index": "node scripts/build-search-index.mjs",
+    "data:import": "node scripts/import-wiki.mjs",
+    "dev": "node scripts/check-data.mjs && node scripts/build-search-index.mjs && node scripts/build-map.mjs && astro dev",
+    "build": "node scripts/check-data.mjs && node scripts/build-search-index.mjs && node scripts/build-map.mjs && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "data:map": "node scripts/build-map.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.14.0"
+  }
+}
