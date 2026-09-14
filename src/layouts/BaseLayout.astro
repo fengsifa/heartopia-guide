@@ -136,6 +136,9 @@ const blocks = [websiteLd, organizationLd, webPageLd]
     <link rel="canonical" href={canonical} />
     <meta name="robots" content={robotsContent} />
     <meta name="theme-color" content="#0d1220" />
+    {siteInfo.googleSiteVerification && (
+      <meta name="google-site-verification" content={siteInfo.googleSiteVerification} />
+    )}
     {hreflangs.map(function (entry) {
       return <link rel="alternate" hreflang={entry.htmlLang} href={entry.href} />;
     })}

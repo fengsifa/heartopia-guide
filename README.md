@@ -65,7 +65,8 @@ HeartopiaHub/
 │  ├─ check-data.mjs             # 数据校验，构建前自动执行
 │  ├─ build-search-index.mjs     # 生成中英两份搜索索引
 │  ├─ build-map.mjs              # 由鱼 / 昆虫 / NPC / 地点数据生成 map.json（含中英说明）
-│  ├─ check-seo.mjs              # 构建产物 SEO 自检（title / canonical / hreflang / JSON-LD / sitemap）
+│  ├─ build-sitemap-alias.mjs    # 把 sitemap 分片合并成对外统一入口 dist/sitemap.xml
+│  ├─ check-seo.mjs              # 构建产物 SEO 自检（title / canonical / hreflang / JSON-LD / sitemap / robots）
 │  ├─ import-wiki.mjs            # 从 heartopiawiki.com 导入数据
 │  └─ setup-d-drive.ps1          # 迁移到 D 盘并构建
 └─ src/
@@ -89,7 +90,7 @@ HeartopiaHub/
       │  ├─ index.astro          # /en/、/zh/ 首页
       │  ├─ [collection]/index.astro, [collection]/[slug].astro   # 通用图鉴路由
       │  ├─ codes/, cooking/, fish/, farming/, money/, beginner/, map/, search/
-      └─ robots.txt.ts           # 跟随 SITE_URL 自动生成
+      └─ robots.txt.ts           # 跟随 SITE_URL 自动生成，声明 /sitemap.xml
 ```
 
 ## 中英双语
@@ -327,17 +328,22 @@ beginnerGuideDescription(locale, item)        // 新手指南
 
 ### sitemap 与 robots
 
-- `sitemap-index.xml` + `sitemap-0.xml` 由 `@astrojs/sitemap` 生成，覆盖全部可收录页面，**中英各一份 URL 都在里面**
+对外只需要认一个地址：**`/sitemap.xml`**（Search Console 提交地址、robots.txt 声明地址）。
+
+- `@astrojs/sitemap` 生成 `sitemap-index.xml` + `sitemap-0.xml`（插件不支持改文件名），覆盖全部可收录页面，**中英两份 URL 都在里面**
+- `scripts/build-sitemap-alias.mjs` 在 `astro build` 之后把分片合并成 `dist/sitemap.xml`，沿用插件的命名空间和 `<url>` 结构，所以不存在两套 URL 收集逻辑走偏的问题；分片数变化（页面涨过 `entryLimit`）也能自动跟上
 - 每个 URL 都带 `xhtml:link` 语言互链，和页面上的 hreflang 一致
 - 首页 `priority 1.0`，分类页 `0.8`，详情页 `0.6`（按去掉语言段后的路径深度计算，中英一致）
 - `/en/search/`、`/zh/search/` 不进 sitemap（纯前端工具页，内容由查询参数决定）
 - 根路径 `/` 不进 sitemap（它是 `/en/` 的副本，canonical 已经指过去了）
-- `robots.txt` 由 `src/pages/robots.txt.ts` 生成：放行全站、`Disallow: /*?q=` 挡住搜索参数页、声明 sitemap 地址
+- sitemap 里不含 404 页面（`@astrojs/sitemap` 会跳过状态码页，自检也会复查一遍）
+- `robots.txt` 由 `src/pages/robots.txt.ts` 生成：`Allow: /` 放行全站、`Disallow: /*?q=` 挡住搜索参数页、声明 `Sitemap: <site>/sitemap.xml`
 
 ### 域名只有一个来源
 
-`astro.config.mjs` 的 `site` 优先取环境变量 `SITE_URL`，否则取 `src/data/site.json` 的 `url`。
-canonical、sitemap、robots 全部跟着它走，**换域名时改环境变量即可，不用改代码**。
+`astro.config.mjs` 的 `site` 优先取环境变量 `SITE_URL`，否则取 `src/data/site.json` 的 `url`（当前是 `https://heartopia-guide-cwx.pages.dev`）。
+canonical、sitemap、robots、JSON-LD 全部跟着它走，**换域名时改环境变量即可，不用改代码**。
+换成自定义域名后记得在 Cloudflare Pages 里配 `SITE_URL` 并重新部署，否则 canonical 会指向旧的 `pages.dev` 地址。
 
 ### 自检
 
@@ -353,7 +359,28 @@ npm run build && npm run seo:check
 - JSON-LD 能否解析、noindex 页面有没有混进 sitemap、sitemap 是否覆盖所有可收录页面并带语言互链
 - 两种语言生成的页面数量是否一致，robots 是否声明 sitemap
 
-有问题会以非 0 退出。想放进 CI 的话，把 `npm run seo:check` 接到 `build` 后面即可。
+- 是否有 404 / 测试页 / 重复页混进 sitemap，sitemap 是否覆盖全部可收录页面
+- `dist/sitemap.xml` 是否生成、URL 数量是否和分片一致、是否带 `xhtml` 命名空间与语言互链
+- `robots.txt` 声明的 sitemap 是否本站地址、对应文件是否真的存在、有没有整站屏蔽规则
+
+有问题会以非 0 退出。`npm run build` 已经包含这一步（末尾会跑 `sitemap.xml` 合并），
+想单独跑就 `npm run seo:check`；想放进 CI 的话把 `npm run seo:check` 接到 `npm run build` 后面即可。
+
+### 接入 Google Search Console
+
+不需要改代码，两步：
+
+1. **验证域名所有权**（任选一种）
+   - HTML 标记（推荐，已内置支持）：把 Search Console 给的真实验证码填进 `src/data/site.json` 的
+     `googleSiteVerification` 字段，重新构建部署，`BaseLayout.astro` 会自动输出
+     `<meta name="google-site-verification" content="...">`
+   - 或者用 Cloudflare Pages 的 DNS 验证方式，不碰代码
+   留空时不会输出该 meta 标签，**项目里不存在任何占位或伪造的验证码**。
+2. **提交 sitemap**：在 Search Console 的「站点地图」里填 `sitemap.xml`，
+   完整地址是 `https://heartopia-guide-cwx.pages.dev/sitemap.xml`。
+   Robots 文件里也已经声明了同一个地址，Google 会自己发现它。
+
+本项目**没有**接入 Google Analytics 或任何第三方统计脚本，这一步只配置 Search Console 需要的内容。
 
 ### 已知的 SEO 缺口
 
@@ -361,6 +388,8 @@ npm run build && npm run seo:check
 - 英文站目前复用了中文站的数据字段，`money` / `beginner` 的正文还是中文（见上一节「后续把 385 条内容逐步翻译成英文」）
 - 食谱与鱼类没有图片素材，所以 `Recipe` 里没写 `image`，拿不到 Google 食谱富媒体结果
 - 数据里没有可靠的发布时间，因此 JSON-LD 里刻意不写 `datePublished` / `dateModified`，避免用假日期
+- 站点目前跑在 `*.pages.dev` 子域上，Search Console 验证和收录都正常，但绑自定义域名对长期权重更友好
+- 没有接入 Google Analytics；Search Console 的流量数据够用，需要更细的行为分析时再单独加
 
 ---
 
@@ -377,9 +406,10 @@ npm run build && npm run seo:check
 
    | 变量 | 说明 |
    | --- | --- |
-   | `SITE_URL` | 正式域名，例如 `https://heartopiahub.com`，用于 canonical、sitemap、robots。不设则退回 `src/data/site.json` 的 `url` |
+   | `SITE_URL` | 正式域名（当前 `https://heartopia-guide-cwx.pages.dev`），用于 canonical、sitemap、robots。不设则退回 `src/data/site.json` 的 `url` |
 
-5. 首次部署完成后把 `SITE_URL` 改成正式域名再重新部署一次。
+5. 换自定义域名后，把 `SITE_URL` 或者 `src/data/site.json` 的 `url` 改成新域名再重新部署一次，
+   否则 canonical / sitemap / robots 还会指向旧的 `pages.dev` 地址。
 
 双语不需要在托管平台做任何额外配置：**不要**配 `/zh/` 或 `/en/` 的跳转规则，
 语言分流由根路径的几行内联脚本完成，`/en/`、`/zh/` 都是真实存在的静态目录。
@@ -391,7 +421,8 @@ npm run build && npm run seo:check
 ## MVP 范围与后续
 
 已跑通：11 个模块的列表页与详情页、关键词搜索 + 标签筛选、导航即时搜索、互动地图、SEO 元信息、
-中英双语路由与手动切换、hreflang、双语 sitemap、404、移动端导航、数据校验。
+中英双语路由与手动切换、hreflang、双语 sitemap（`/sitemap.xml` 统一入口）、404、移动端导航、数据校验、
+Search Console 所需的验证位与 sitemap 提交地址。
 
 刻意留白：后台管理、数据库、登录、评论、用户收藏。数据量继续增长后如果手写 JSON 变慢，再考虑 CSV → JSON 脚本或 Headless CMS，页面层不需要改。
 

@@ -10,7 +10,7 @@ export const GET: APIRoute = ({ site }) => {
     '# 站内搜索结果由查询参数生成，避免搜索引擎抓取无限多的参数页',
     'Disallow: /*?q=',
     '',
-    'Sitemap: ' + origin + '/sitemap-index.xml',
+    'Sitemap: ' + origin + '/sitemap.xml',
     ''
   ].join('\n');
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

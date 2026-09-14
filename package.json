@@ -8,10 +8,11 @@
     "data:index": "node scripts/build-search-index.mjs",
     "data:import": "node scripts/import-wiki.mjs",
     "dev": "node scripts/check-data.mjs && node scripts/build-search-index.mjs && node scripts/build-map.mjs && astro dev",
-    "build": "node scripts/check-data.mjs && node scripts/build-search-index.mjs && node scripts/build-map.mjs && astro build",
+    "build": "node scripts/check-data.mjs && node scripts/build-search-index.mjs && node scripts/build-map.mjs && astro build && node scripts/build-sitemap-alias.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "data:map": "node scripts/build-map.mjs",
+    "sitemap:alias": "node scripts/build-sitemap-alias.mjs",
     "seo:check": "node scripts/check-seo.mjs"
   },
   "dependencies": {

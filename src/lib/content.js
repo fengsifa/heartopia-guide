@@ -179,7 +179,9 @@ export function siteFor(locale) {
     name: site.name,
     tagline: pick(locale, site.tagline, site.taglineEn),
     description: pick(locale, site.description, site.descriptionEn),
-    url: site.url
+    url: site.url,
+    // Google Search Console 的 HTML 标记验证码；留空则不输出该 meta 标签
+    googleSiteVerification: site.googleSiteVerification || ''
   };
 }
 

@@ -215,18 +215,23 @@ LOCALES.forEach(function (value) {
 });
 
 // --- sitemap / robots ---
-const sitemapPath = join(dist, 'sitemap-0.xml');
 const sitemapIndexPath = join(dist, 'sitemap-index.xml');
-if (!existsSync(sitemapPath)) fail('缺少 dist/sitemap-0.xml');
 if (!existsSync(sitemapIndexPath)) fail('缺少 dist/sitemap-index.xml');
+
+// 分片数量由 entryLimit 决定，这里把全部 sitemap-N.xml 合起来当一份看
+const chunkFiles = readdirSync(dist)
+  .filter(function (name) { return /^sitemap-\d+\.xml$/.test(name); })
+  .sort(function (a, b) { return Number(a.match(/\d+/)[0]) - Number(b.match(/\d+/)[0]); });
+if (!chunkFiles.length) fail('缺少 dist/sitemap-N.xml');
 
 let sitemapUrls = [];
 let sitemapXml = '';
-if (existsSync(sitemapPath)) {
-  sitemapXml = readFileSync(sitemapPath, 'utf8');
-  sitemapUrls = Array.from(sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)).map(function (m) { return m[1]; });
-  if (!sitemapUrls.length) fail('sitemap 里没有任何 URL');
-}
+chunkFiles.forEach(function (name) {
+  const xml = readFileSync(join(dist, name), 'utf8');
+  sitemapXml += xml;
+  Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g)).forEach(function (m) { sitemapUrls.push(m[1]); });
+});
+if (!sitemapUrls.length) fail('sitemap 里没有任何 URL');
 
 const sitemapSet = new Set(sitemapUrls);
 indexable.forEach(function (page) {
@@ -248,6 +253,33 @@ LOCALES.forEach(function (value) {
   }
 });
 
+// --- 对外统一入口 sitemap.xml（Search Console 提交地址 / robots 声明地址） ---
+const aliasPath = join(dist, 'sitemap.xml');
+if (!existsSync(aliasPath)) {
+  fail('缺少 dist/sitemap.xml（npm run build 里的 scripts/build-sitemap-alias.mjs 负责生成）');
+} else {
+  const aliasXml = readFileSync(aliasPath, 'utf8');
+  const aliasUrls = Array.from(aliasXml.matchAll(/<loc>([^<]+)<\/loc>/g)).map(function (m) { return m[1]; });
+  if (aliasUrls.length !== sitemapUrls.length) {
+    fail('sitemap.xml 与分片的 URL 数量不一致：' + aliasUrls.length + ' vs ' + sitemapUrls.length);
+  }
+  const aliasSet = new Set(aliasUrls);
+  sitemapUrls.forEach(function (url) {
+    if (!aliasSet.has(url)) fail('sitemap.xml 缺少分片里的 URL：' + url);
+  });
+  aliasUrls.forEach(function (url) {
+    if (url.indexOf(origin) !== 0) fail('sitemap.xml 里的域名与 canonical 不一致：' + url);
+  });
+  if (aliasXml.indexOf('xmlns:xhtml="http://www.w3.org/1999/xhtml"') === -1) {
+    fail('sitemap.xml 缺少 xhtml 命名空间，语言互链会失效');
+  }
+  LOCALES.forEach(function (value) {
+    if (aliasXml.indexOf('hreflang="' + HTML_LANG[value] + '"') === -1) {
+      fail('sitemap.xml 缺少 hreflang=' + HTML_LANG[value] + ' 的语言互链');
+    }
+  });
+}
+
 const robotsPath = join(dist, 'robots.txt');
 if (!existsSync(robotsPath)) {
   fail('缺少 dist/robots.txt');
@@ -255,6 +287,20 @@ if (!existsSync(robotsPath)) {
   const robots = readFileSync(robotsPath, 'utf8');
   if (robots.indexOf('Sitemap:') === -1) fail('robots.txt 没有声明 Sitemap');
   if (robots.indexOf('Allow: /') === -1) fail('robots.txt 没有放行全站抓取');
+  if (/^Disallow: \/$/m.test(robots)) fail('robots.txt 出现了整站屏蔽的 Disallow 规则');
+  // 声明的 sitemap 必须是本站地址，而且构建产物里真的存在
+  const declaredSitemaps = Array.from(robots.matchAll(/^Sitemap:\s*(\S+)\s*$/gim)).map(function (m) { return m[1]; });
+  if (!declaredSitemaps.length) fail('robots.txt 没有声明可解析的 Sitemap 地址');
+  declaredSitemaps.forEach(function (url) {
+    if (url.indexOf(origin) !== 0) {
+      fail('robots.txt 声明的 sitemap 不在本站：' + url);
+      return;
+    }
+    const rel = url.slice(origin.length).replace(/^\//, '');
+    if (rel && !existsSync(join(dist, rel))) {
+      fail('robots.txt 声明的 sitemap 文件不存在：' + url);
+    }
+  });
 }
 
 // --- 输出 ---

@@ -2,7 +2,8 @@
   "name": "HeartopiaHub",
   "tagline": "Heartopia 攻略与图鉴",
   "description": "Heartopia 兑换码、烹饪食谱、鱼图鉴、昆虫图鉴、材料图鉴、NPC 图鉴、地点图鉴、种植攻略、赚钱攻略、新手指南与互动地图。",
-  "url": "https://heartopiahub.pages.dev",
+  "url": "https://heartopia-guide-cwx.pages.dev",
+  "googleSiteVerification": "",
   "modules": [
     {
       "id": "codes",
