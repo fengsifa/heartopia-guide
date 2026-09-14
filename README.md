@@ -371,9 +371,10 @@ npm run build && npm run seo:check
 不需要改代码，两步：
 
 1. **验证域名所有权**（任选一种）
-   - HTML 标记（推荐，已内置支持）：把 Search Console 给的真实验证码填进 `src/data/site.json` 的
-     `googleSiteVerification` 字段，重新构建部署，`BaseLayout.astro` 会自动输出
-     `<meta name="google-site-verification" content="...">`
+   - HTML 标记（已配置）：验证码填在 `src/data/site.json` 的 `googleSiteVerification` 字段，
+     `BaseLayout.astro` 会给全站每个页面输出
+     `<meta name="google-site-verification" content="...">`。
+     换域名或换验证方式时改这个字段、重新构建部署即可
    - 或者用 Cloudflare Pages 的 DNS 验证方式，不碰代码
    留空时不会输出该 meta 标签，**项目里不存在任何占位或伪造的验证码**。
 2. **提交 sitemap**：在 Search Console 的「站点地图」里填 `sitemap.xml`，
