@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import FilterBar from '../../../components/FilterBar.astro';
+import {
+  farmingList,
+  cropSeasons,
+  formatNumber,
+  href,
+  moduleMap,
+  profitPerDay,
+  regrowLabelFor,
+  uniqueValues
+} from '../../../lib/content.js';
+import { itemListLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { localizeValue } from '../../../i18n/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.map(function (locale) {
+    return { params: { locale: locale } };
+  });
+}
+
+const locale = Astro.params.locale;
+const copy = dict(locale).farming;
+const common = dict(locale).common;
+const mod = moduleMap(locale).farming;
+
+const enriched = farmingList.map(function (item) {
+  return Object.assign({}, item, {
+    perDay: profitPerDay(item),
+    regrowText: regrowLabelFor(locale, item.regrow),
+    seasonText: localizeValue(locale, item.season),
+    categoryText: localizeValue(locale, item.category),
+    growthText: localizeValue(locale, item.growthTime)
+  });
+});
+
+const sorted = enriched.slice().sort(function (a, b) { return b.perDay - a.perDay; });
+const cropCategories = uniqueValues(farmingList, 'category');
+const filterGroups = [
+  { key: 'season', label: copy.rowSeason, values: cropSeasons },
+  { key: 'category', label: copy.thCategory, values: cropCategories }
+].map(function (group) {
+  return {
+    key: group.key,
+    label: group.label,
+    values: Array.from(new Set(group.values.map(function (value) { return localizeValue(locale, value); })))
+  };
+}).filter(function (group) { return group.values.length > 0; });
+
+const best = sorted[0];
+const listPath = href(locale, mod.path);
+const breadcrumbs = [{ name: common.home, path: '/' }, { name: mod.name, path: mod.path }];
+const site = Astro.site ? Astro.site.href : '';
+const description = t(locale, 'farming.description', { count: farmingList.length });
+const ld = [itemListLd({
+  locale: locale,
+  site: site,
+  path: listPath,
+  name: copy.listName,
+  description: description,
+  entries: sorted.map(function (item) {
+    return { name: item.name, path: listPath + item.slug + '/', description: t(locale, 'farming.cardMeta', { time: item.growthText, cost: formatNumber(item.seedCost) + ' ' + common.gold }) };
+  })
+})];
+---
+
+<BaseLayout
+  locale={locale}
+  title={copy.title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  webPageType="CollectionPage"
+  jsonLd={ld}
+>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
+
+  <div class="page-head">
+    <h1>{copy.h1}</h1>
+    <p class="lede">{t(locale, 'farming.lede', { count: farmingList.length })}</p>
+  </div>
+
+  {best && (
+    <div class="notice" style="margin-bottom: 16px;">
+      <span aria-hidden="true">🏆</span>
+      <span set:html={t(locale, 'farming.bestLabel', {
+        name: best.name,
+        time: best.growthText,
+        profit: formatNumber(best.profit) + ' ' + common.gold,
+        perDay: formatNumber(best.perDay) + ' ' + common.gold
+      })} />
+    </div>
+  )}
+
+  <FilterBar
+    locale={locale}
+    total={sorted.length}
+    label={copy.unit}
+    placeholder={copy.placeholder}
+    searchLabel={copy.searchLabel}
+    groups={filterGroups}
+  />
+
+  <div class="grid">
+    {sorted.map(function (item) {
+      return (
+        <a
+          class="card"
+          href={href(locale, '/farming/' + item.slug + '/')}
+          data-filter-item
+          data-search={[item.name, item.seasonText, item.categoryText, item.regrowText].join(' ')}
+          data-season={item.seasonText}
+          data-category={item.categoryText}
+        >
+          <span class="card-title">🌱 {item.name}</span>
+          <span class="card-text">
+            {t(locale, 'farming.cardMeta', { time: item.growthText, cost: formatNumber(item.seedCost) + ' ' + common.gold })}<br />
+            {t(locale, 'farming.cardProfit', {
+              sell: formatNumber(item.sellPrice) + ' ' + common.gold,
+              profit: formatNumber(item.profit) + ' ' + common.gold
+            })}
+          </span>
+          <span class="card-foot">
+            <span class="badge badge-active">{t(locale, 'farming.perDayBadge', { value: formatNumber(item.perDay) })}</span>
+            <span class="badge">{item.seasonText}</span>
+            {item.categoryText && <span class="badge">{item.categoryText}</span>}
+          </span>
+        </a>
+      );
+    })}
+  </div>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>{copy.tableTitle}</h2>
+      <span class="more">{copy.tableNote}</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">{copy.thCrop}</th>
+            <th scope="col">{copy.thSeason}</th>
+            <th scope="col">{copy.thGrowth}</th>
+            <th scope="col" class="num">{copy.thSeedCost}</th>
+            <th scope="col" class="num">{copy.thPrice}</th>
+            <th scope="col" class="num">{copy.thProfit}</th>
+            <th scope="col" class="num">{copy.thPerDay}</th>
+            <th scope="col">{copy.thRegrow}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map(function (item) {
+            return (
+              <tr>
+                <td><a href={href(locale, '/farming/' + item.slug + '/')}>{item.name}</a></td>
+                <td>{item.seasonText}</td>
+                <td>{item.growthText}</td>
+                <td class="num">{formatNumber(item.seedCost)}</td>
+                <td class="num">{formatNumber(item.sellPrice)}</td>
+                <td class="num price">{formatNumber(item.profit)}</td>
+                <td class="num">{formatNumber(item.perDay)}</td>
+                <td>{item.regrowText}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="panel">
+      <h2 class="mt-0">{copy.pointsTitle}</h2>
+      <ul class="tip-list">
+        {copy.points.map(function (point) { return <li>{point}</li>; })}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

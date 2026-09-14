@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import FilterBar from '../../../components/FilterBar.astro';
+import { moneyList, href, moduleMap } from '../../../lib/content.js';
+import { itemListLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { isEnglish, localizeValue, pickText } from '../../../i18n/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.map(function (locale) {
+    return { params: { locale: locale } };
+  });
+}
+
+const locale = Astro.params.locale;
+const copy = dict(locale).money;
+const common = dict(locale).common;
+const mod = moduleMap(locale).money;
+
+// 赚钱攻略是本站原创中文内容；英文字段（titleEn / summaryEn）补上后会自动走英文
+const items = moneyList.map(function (item) {
+  return Object.assign({}, item, {
+    displayTitle: pickText(locale, item.title, item.titleEn),
+    displaySummary: isEnglish(item.summaryEn) ? item.summaryEn : '',
+    difficultyText: localizeValue(locale, item.difficulty),
+    incomeText: localizeValue(locale, item.incomePerHour),
+    timeText: localizeValue(locale, item.timeRequired)
+  });
+});
+
+const difficulties = Array.from(new Set(items.map(function (item) { return item.difficultyText; }).filter(Boolean))).sort();
+const times = Array.from(new Set(items.map(function (item) { return item.timeText; }).filter(Boolean))).sort();
+
+const groups = [
+  { key: 'difficulty', label: copy.rowDifficulty, values: difficulties },
+  { key: 'timeRequired', label: copy.rowTime, values: times }
+].filter(function (group) { return group.values.length > 0; });
+
+function cardText(item) {
+  if (item.displaySummary) return item.displaySummary;
+  return t(locale, 'money.cardFallback', {
+    difficulty: item.difficultyText,
+    income: item.incomeText,
+    time: item.timeText
+  });
+}
+
+const listPath = href(locale, mod.path);
+const breadcrumbs = [{ name: common.home, path: '/' }, { name: mod.name, path: mod.path }];
+const site = Astro.site ? Astro.site.href : '';
+const description = t(locale, 'money.description', { count: moneyList.length });
+const ld = [itemListLd({
+  locale: locale,
+  site: site,
+  path: listPath,
+  name: copy.listName,
+  description: description,
+  entries: items.map(function (item) {
+    return { name: item.displayTitle, path: listPath + item.slug + '/', description: cardText(item) };
+  })
+})];
+---
+
+<BaseLayout
+  locale={locale}
+  title={copy.title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  webPageType="CollectionPage"
+  jsonLd={ld}
+>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
+
+  <div class="page-head">
+    <h1>{copy.h1}</h1>
+    <p class="lede">{t(locale, 'money.lede', { count: moneyList.length })}</p>
+  </div>
+
+  <FilterBar
+    locale={locale}
+    total={items.length}
+    label={copy.unit}
+    placeholder={copy.placeholder}
+    searchLabel={copy.searchLabel}
+    groups={groups}
+  />
+
+  <div class="grid">
+    {items.map(function (item) {
+      const searchText = [item.title, item.titleEn, item.summary, item.summaryEn, item.difficultyText, item.timeText, item.incomeText]
+        .filter(Boolean).join(' ');
+      return (
+        <a
+          class="card"
+          href={href(locale, '/money/' + item.slug + '/')}
+          data-filter-item
+          data-search={searchText}
+          data-difficulty={item.difficultyText}
+          data-timerequired={item.timeText}
+        >
+          <span class="card-title">💰 {item.displayTitle}</span>
+          <span class="card-text">{cardText(item)}</span>
+          <span class="card-foot">
+            <span class="badge badge-gold">{item.incomeText}</span>
+            <span class="badge">{item.difficultyText}</span>
+            <span class="badge">{item.timeText}</span>
+          </span>
+        </a>
+      );
+    })}
+  </div>
+
+  <section class="section">
+    <div class="panel">
+      <h2 class="mt-0">{copy.principlesTitle}</h2>
+      <ul class="tip-list">
+        {copy.principles.map(function (point) { return <li>{point}</li>; })}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

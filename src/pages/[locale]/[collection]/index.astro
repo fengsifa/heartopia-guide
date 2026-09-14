@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CollectionList from '../../../components/CollectionList.astro';
+import { getCollectionFor, href, listCollectionIds } from '../../../lib/content.js';
+import { itemListLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+
+export function getStaticPaths() {
+  const paths = [];
+  listCollectionIds().forEach(function (id) {
+    LOCALES.forEach(function (locale) {
+      paths.push({ params: { locale: locale, collection: id } });
+    });
+  });
+  return paths;
+}
+
+const locale = Astro.params.locale;
+const copy = dict(locale).collection;
+const common = dict(locale).common;
+const collection = getCollectionFor(locale, Astro.params.collection);
+const items = collection.items || [];
+const site = Astro.site ? Astro.site.href : '';
+
+const title = t(locale, 'collection.listTitle', {
+  name: collection.name,
+  desc: collection.desc
+});
+const description = t(locale, 'collection.listDescription', {
+  name: collection.name,
+  count: items.length,
+  unit: collection.unit,
+  desc: collection.desc
+});
+
+const breadcrumbs = [
+  { name: common.home, path: '/' },
+  { name: collection.name, path: collection.path }
+];
+
+const ld = [itemListLd({
+  locale: locale,
+  site: site,
+  path: href(locale, collection.path),
+  name: 'Heartopia ' + collection.name,
+  description: description,
+  entries: items.map(function (item) {
+    return { name: item.name, path: collection.path + item.slug + '/' };
+  })
+})];
+---
+
+<BaseLayout
+  locale={locale}
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  webPageType="CollectionPage"
+  jsonLd={ld}
+>
+  <CollectionList collection={collection} locale={locale} />
+</BaseLayout>

@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  beginnerList,
+  codesList,
+  farmingList,
+  fishList,
+  formatNumber,
+  href,
+  listModules,
+  moduleCounts,
+  moduleUnitsFor,
+  moneyList,
+  siteFor
+} from '../lib/content.js';
+import { itemListLd } from '../lib/seo.mjs';
+import { localizeList, localizeValue, pickText } from '../i18n/data.mjs';
+import { dict } from '../i18n/ui.mjs';
+
+const { locale, canonicalPath = '', rootSwitch = false } = Astro.props;
+
+const copy = dict(locale).home;
+const common = dict(locale).common;
+const siteInfo = siteFor(locale);
+
+const modules = listModules(locale);
+const units = moduleUnitsFor(locale);
+const counts = moduleCounts;
+const totalEntries = Object.keys(counts).reduce(function (sum, key) {
+  return sum + (counts[key] || 0);
+}, 0);
+
+const activeCodes = codesList.filter(function (item) { return item.status !== 'expired'; }).slice(0, 5);
+const topFish = fishList.slice().sort(function (a, b) { return b.price - a.price; }).slice(0, 6);
+const topCrops = farmingList.slice().sort(function (a, b) { return (b.profit || 0) - (a.profit || 0); }).slice(0, 6);
+const quickGuides = beginnerList.slice(0, 3);
+const moneyPicks = moneyList.slice(0, 3);
+
+const site = Astro.site ? Astro.site.href : '';
+const title = copy.title;
+const description = siteInfo.description + ' ' + copy.descriptionTail.replace('{total}', totalEntries);
+
+const moduleListLd = itemListLd({
+  locale: locale,
+  site: site,
+  path: href(locale, '/'),
+  name: siteInfo.name + ' — ' + copy.allModules,
+  description: siteInfo.description,
+  entries: modules.map(function (mod) {
+    return { name: mod.name, path: mod.path, description: mod.desc };
+  })
+});
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+  mainEntity: copy.faq.map(function (entry) {
+    return {
+      '@type': 'Question',
+      name: entry.q,
+      acceptedAnswer: { '@type': 'Answer', text: entry.a }
+    };
+  })
+};
+---
+
+<BaseLayout
+  locale={locale}
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+  jsonLd={[moduleListLd, faqLd]}
+>
+  <section class="hero">
+    <h1>{copy.h1}</h1>
+    <p set:html={copy.lede.replace('{total}', '<strong>' + totalEntries + '</strong>')} />
+    <div class="hero-actions">
+      <a class="btn btn-primary" href={href(locale, '/codes/')}>{copy.ctaCodes}</a>
+      <a class="btn" href={href(locale, '/fish/')}>{copy.ctaFish}</a>
+      <a class="btn" href={href(locale, '/map/')}>{copy.ctaMap}</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>{copy.allModules}</h2>
+      <span class="more">{copy.moduleCount.replace('{count}', modules.length)}</span>
+    </div>
+    <div class="grid">
+      {modules.map(function (mod) {
+        return (
+          <a class="card module-card" href={href(locale, mod.path)}>
+            <span class="card-title"><span class="card-icon" aria-hidden="true">{mod.icon}</span>{mod.name}</span>
+            <span class="card-text">{mod.desc}</span>
+            <span class="count">{counts[mod.id] || 0} {units[mod.id] || ''}</span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>{copy.activeCodes}</h2>
+      <a class="more" href={href(locale, '/codes/')}>{common.viewAll}</a>
+    </div>
+    <div class="panel">
+      <ul class="stat-list">
+        {activeCodes.map(function (item) {
+          return (
+            <li>
+              <span class="k"><code>{item.code}</code></span>
+              <span class="v">{pickText(locale, item.reward, item.rewardEn)}</span>
+            </li>
+          );
+        })}
+      </ul>
+      <p class="tiny muted" style="margin: 10px 0 0;">{copy.codesTip}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>{copy.topFish}</h2>
+      <a class="more" href={href(locale, '/fish/')}>{copy.fishLink}</a>
+    </div>
+    <div class="grid">
+      {topFish.map(function (item) {
+        return (
+          <a class="card" href={href(locale, '/fish/' + item.slug + '/')}>
+            <span class="card-title">🐟 {item.name}</span>
+            <span class="card-text">
+              {copy.fishCardMeta
+                .replace('{location}', localizeList(locale, item.location) || common.unknown)
+                .replace('{time}', localizeList(locale, item.time) || common.allDay)}
+            </span>
+            <span class="card-foot">
+              <span class="badge badge-gold">{formatNumber(item.price)} {common.gold}</span>
+              {item.weather.slice(0, 2).map(function (weather) {
+                return <span class="badge">{localizeValue(locale, weather)}</span>;
+              })}
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>{copy.topCrops}</h2>
+      <a class="more" href={href(locale, '/farming/')}>{copy.cropsLink}</a>
+    </div>
+    <div class="grid">
+      {topCrops.map(function (item) {
+        return (
+          <a class="card" href={href(locale, '/farming/' + item.slug + '/')}>
+            <span class="card-title">🌱 {item.name}</span>
+            <span class="card-text">
+              {copy.cropCardMeta
+                .replace('{time}', localizeValue(locale, item.growthTime))
+                .replace('{cost}', formatNumber(item.seedCost) + ' ' + common.gold)}
+            </span>
+            <span class="card-foot">
+              <span class="badge badge-active">{copy.cropCardProfit.replace('{profit}', formatNumber(item.profit))}</span>
+              <span class="badge">{localizeValue(locale, item.season)}</span>
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>{copy.beginnerMoney}</h2>
+      <a class="more" href={href(locale, '/beginner/')}>{copy.beginnerLink}</a>
+    </div>
+    {locale === 'zh' ? (
+      <div class="grid">
+        {quickGuides.map(function (item) {
+          return (
+            <a class="card" href={href(locale, '/beginner/' + item.slug + '/')}>
+              <span class="card-title">🧭 {item.title}</span>
+              <span class="card-text">{item.summary}</span>
+              <span class="card-foot"><span class="badge">{item.category}</span><span class="badge">{item.readTime}</span></span>
+            </a>
+          );
+        })}
+        {moneyPicks.map(function (item) {
+          return (
+            <a class="card" href={href(locale, '/money/' + item.slug + '/')}>
+              <span class="card-title">💰 {item.title}</span>
+              <span class="card-text">{item.summary}</span>
+              <span class="card-foot"><span class="badge badge-gold">{item.incomePerHour}</span><span class="badge">{item.difficulty}</span></span>
+            </a>
+          );
+        })}
+      </div>
+    ) : (
+      <div class="grid">
+        {['beginner', 'money'].map(function (id) {
+          const mod = modules.filter(function (entry) { return entry.id === id; })[0];
+          return (
+            <a class="card module-card" href={href(locale, mod.path)}>
+              <span class="card-title"><span class="card-icon" aria-hidden="true">{mod.icon}</span>{mod.name}</span>
+              <span class="card-text">{mod.desc}</span>
+              <span class="count">{counts[mod.id] || 0} {units[mod.id] || ''}</span>
+            </a>
+          );
+        })}
+      </div>
+    )}
+  </section>
+
+  <section class="section">
+    <div class="notice">
+      <span aria-hidden="true">📌</span>
+      <span>
+        <strong>{copy.aboutTitle}.</strong>
+        {copy.aboutA}
+        {copy.aboutB}
+      </span>
+    </div>
+  </section>
+</BaseLayout>
+
+{rootSwitch && (
+  <script>
+    // 只在根路径 / 生效：URL 没有语言段时，先看用户手动选择，再看浏览器语言。
+    // 不做 301/302，也不影响 /en/、/zh/ 这些明确带语言的地址。
+    (function () {
+      const STORAGE_KEY = 'heartopiahub:locale';
+      let stored = null;
+      try { stored = localStorage.getItem(STORAGE_KEY); } catch (error) {}
+      let target = null;
+      if (stored === 'zh' || stored === 'en') {
+        target = stored;
+      } else {
+        const languages = navigator.languages && navigator.languages.length
+          ? navigator.languages
+          : [navigator.language || ''];
+        const prefersChinese = languages.some(function (tag) { return /^zh/i.test(tag); });
+        target = prefersChinese ? 'zh' : 'en';
+      }
+      // 根路径本身就是英文版，只有需要中文时才切换
+      if (target === 'zh') window.location.replace('/zh/');
+    })();
+  </script>
+)}

@@ -4,8 +4,10 @@ Heartopia 游戏攻略站 MVP。纯静态站点，直接部署到 Cloudflare Pag
 
 - 技术栈：Astro 5（静态输出）+ 原生 CSS，零前端框架
 - 数据与 UI 完全分离：所有内容放在 `src/data/*.json`
-- 移动端优先，SEO 友好（canonical / OG / Twitter Card / JSON-LD / sitemap / robots）
+- 中英双语：默认英文，中文浏览器自动落到中文；URL 独立可抓取（`/en/...`、`/zh/...`），带 hreflang
+- 移动端优先；SEO 由 `src/lib/seo.mjs` 统一生成（唯一 title / description / canonical / JSON-LD / sitemap / robots）
 - 新增数据不需要修改页面组件；新增「图鉴类」模块也不需要新增页面文件
+- 全站文案集中在 `src/i18n/`，页面里不写 `if (locale === 'zh')`
 
 ## 当前收录
 
@@ -23,7 +25,8 @@ Heartopia 游戏攻略站 MVP。纯静态站点，直接部署到 Cloudflare Pag
 | 新手指南 | `/beginner/` | 16 |
 | 互动地图 | `/map/` | 48 个点位（9 个区域） |
 
-合计 385 条内容、341 个静态页面。
+合计 385 条内容。每条内容都会为中英两种语言各生成一个页面，因此构建产物是
+**341 个逻辑页面 × 2 = 682 个 HTML**（另有 404 页）。
 
 ---
 
@@ -34,6 +37,7 @@ npm install
 npm run dev          # 本地开发 http://localhost:4321
 npm run build        # 数据校验 + 搜索索引 + 地图数据 + 构建到 dist/
 npm run preview      # 预览构建产物
+npm run seo:check    # 扫描 dist/ 做全站 SEO 自检（构建后运行）
 ```
 
 ## 把项目放到 D 盘
@@ -56,28 +60,108 @@ HeartopiaHub/
 ├─ public/
 │  ├─ favicon.svg, og-default.svg
 │  ├─ list-filter.js             # 通用列表筛选（搜索 + 标签筛选）
-│  └─ search-index.json          # 构建时自动生成
+│  └─ search-index.en.json, search-index.zh.json   # 每种语言一份，构建时自动生成
 ├─ scripts/
 │  ├─ check-data.mjs             # 数据校验，构建前自动执行
-│  ├─ build-search-index.mjs     # 生成全站搜索索引
-│  ├─ build-map.mjs              # 由鱼 / 昆虫 / NPC / 地点数据生成 map.json
+│  ├─ build-search-index.mjs     # 生成中英两份搜索索引
+│  ├─ build-map.mjs              # 由鱼 / 昆虫 / NPC / 地点数据生成 map.json（含中英说明）
+│  ├─ check-seo.mjs              # 构建产物 SEO 自检（title / canonical / hreflang / JSON-LD / sitemap）
 │  ├─ import-wiki.mjs            # 从 heartopiawiki.com 导入数据
 │  └─ setup-d-drive.ps1          # 迁移到 D 盘并构建
 └─ src/
-   ├─ data/                      # ★ 所有内容数据
+   ├─ i18n/                      # ★ 双语收口的地方
+   │  ├─ config.mjs              # 语言列表 / 默认语言 / 路径与 hreflang 工具
+   │  ├─ ui.mjs                  # ★ 全站 UI 文案（en + zh 两份，键完全对应）
+   │  └─ data.mjs                # 数据字段本地化：术语表 + 单位替换 + 英文原文判定
+   ├─ data/                      # ★ 所有内容数据（一份数据，按语言取字段）
    ├─ lib/
-   │  ├─ content.js              # 数据出口 + 工具函数
-   │  └─ collections-config.mjs  # 通用图鉴模块配置
+   │  ├─ content.js              # 数据出口 + 工具函数（含按语言取值的访问层）
+   │  ├─ seo.mjs                 # ★ SEO 文案与 JSON-LD 生成（新增模块无需改这里）
+   │  └─ collections-config.mjs  # 通用图鉴模块配置（每项含 nameEn / descEn / labelEn）
    ├─ components/                # Header / Footer / SearchBox / FilterBar / Breadcrumbs
    │  └─ CollectionList.astro, CollectionDetail.astro   # 通用图鉴列表 / 详情
-   ├─ layouts/BaseLayout.astro
+   ├─ layouts/BaseLayout.astro   # canonical / hreflang / og:locale / JSON-LD
    ├─ styles/global.css
    └─ pages/
-      ├─ index.astro             # 首页（模块入口自动生成）
-      ├─ [collection]/index.astro, [collection]/[slug].astro   # 通用图鉴路由
-      ├─ codes/, cooking/, fish/, farming/, money/, beginner/, map/, search/, 404
+      ├─ index.astro             # 根路径：英文首页副本 + 按浏览器语言分流
+      ├─ 404.astro               # 默认语言（英文）
+      ├─ [locale]/               # ★ 所有页面都在语言段下面
+      │  ├─ index.astro          # /en/、/zh/ 首页
+      │  ├─ [collection]/index.astro, [collection]/[slug].astro   # 通用图鉴路由
+      │  ├─ codes/, cooking/, fish/, farming/, money/, beginner/, map/, search/
       └─ robots.txt.ts           # 跟随 SITE_URL 自动生成
 ```
+
+## 中英双语
+
+### URL 与默认语言
+
+| 地址 | 语言 |
+| --- | --- |
+| `/en/...` | 英文（默认语言，canonical 指向自己） |
+| `/zh/...` | 中文 |
+| `/` | 英文首页的副本，canonical 指向 `/en/`，不进 sitemap |
+
+- 默认语言是英文：直接访问 `/en/fish/` 永远是英文，不会被改写
+- 根路径 `/` 只做一次「按偏好分流」：先读 `localStorage` 里手动选择过的语言，
+  没有再按 `navigator.languages` 判断 —— 只有含 `zh`（`zh` / `zh-CN` / `zh-TW` 都算）时才
+  `location.replace('/zh/')`，其他语言一律留在英文首页
+- **没有任何 301 / 302**，`/en/` 与 `/zh/` 之间不互相跳转，避免搜索引擎抓不到其中一个版本
+- 页面对之间用 `<link rel="alternate" hreflang="en|zh-CN">` 互链，并输出 `x-default` 指向英文版
+
+### 手动切换
+
+- Header 里的 `English | 中文` 是真实的 `<a href>`，指向「当前页面的另一种语言版本」
+  （`/en/fish/bass/` ↔ `/zh/fish/bass/`），点击时顺手把选择写进 `localStorage: heartopiahub:locale`
+- 移动端用的是同一个切换器，不需要展开菜单
+- 因为是链接而不是 JS 改写当前页，禁用 JS 也能正常切换
+
+### 数据与文案怎么分语言
+
+一份数据、两种语言字段，页面里既不复制数据也不写 `if (locale === ...)`：
+
+| 位置 | 作用 |
+| --- | --- |
+| `src/data/*.json` | 唯一数据源。双语字段按 `xxx` / `xxxEn` 成对出现 |
+| `src/i18n/ui.mjs` | 所有按钮、标题、提示语。`dict(locale)` 取整棵子树，`t(locale, 'key', vars)` 取单条 |
+| `src/i18n/data.mjs` | 数据字段的机械本地化：闭集术语表（料理分类 / 季节 / 地图区域 / facts 标签 / 难度…）+ 单位替换（`N 金币` → `N Gold`）|
+| `src/i18n/config.mjs` | 语言列表、默认语言、`localePath` / `switchLocalePath` / `alternates` 等路径工具 |
+| `src/lib/collections-config.mjs` | 通用图鉴模块配置，每项都有 `nameEn` / `descEn` / `unitEn` / `labelEn` 等 |
+| `src/data/site.json` | 站点与模块的显示名，含 `taglineEn` / `descriptionEn` / `nameEn` / `navNameEn` / `descEn` |
+| `src/lib/content.js` | 页面统一从这里取本地化后的数据：`siteFor(locale)` / `listModules(locale)` / `moduleMap(locale)` / `href(locale, path)` |
+
+**游戏内专有名词（鱼名、NPC 名、作物名）不翻译**，中英页面显示同一个名字 —— 避免造出游戏里不存在的译名。
+
+### 英文内容现在到什么程度
+
+| 范围 | 状态 |
+| --- | --- |
+| 页面结构、导航、面包屑、筛选与搜索、页脚、404、地图 UI | 全部英文 |
+| 分类名称、季节、难度、单位、facts 标签、各版块标题 | 全部英文（走术语表） |
+| meta title / description / H1 / JSON-LD | 按语言分别生成 |
+| 鱼 / 昆虫 / 材料 / NPC / 地点 / 食谱 / 作物 | 结构化字段英文；wiki 原文本来就是英文的 `description` 直接沿用 |
+| `money` / `beginner` 的攻略正文 | 仍是中文原创内容。英文页只展示语言无关的结构化数据 + 英文摘要，并给一条「English version in progress → Read the Chinese guide」提示与中文页链接 |
+
+### 后续把 385 条内容逐步翻译成英文
+
+不用改页面，只要往数据里补英文字段，构建后即可生效。推荐顺序：
+
+1. **先补 `money.json`（16 条）和 `beginner.json`（16 条）**
+   这两块正文是中文原创，英文页目前只能显示提示条，补上收益最大。要加的字段：
+   `titleEn`、`summaryEn`、`requirementsEn[]`、`stepsEn[]`、`sectionsEn[{ heading, body }]`、`tipsEn[]`。
+   页面已经在用 `pickText(locale, item.title, item.titleEn)` 这种取值方式，字段一出现就自动切到英文，
+   「英文版整理中」的提示条会自动消失。
+2. **再补各模块的 `tipsEn` / `descriptionEn`**
+   `recipes.json`、`farming.json` 的 `tips` 是中文原创长文；`fish.json` 等的 `description` 也是中文。
+   补上英文后英文页会优先用数据自带的英文原文（`englishProse()` 判定），没有才用结构化字段拼摘要。
+3. **最后补 facts 的英文标签**（`wiki 原始季节`、`种子来源` 这类）。
+   在 `src/i18n/data.mjs` 的 `TERMS` 里加一行映射即可，一次改动全站生效。
+
+字段缺了就回退：英文页显示中文原名 + 英文结构信息，不会出现报错或空白页。
+加完 JSON 跑 `npm run build`，`data:check` 会校验字段类型，`npm run seo:check` 会确认双语页面、
+canonical 与 hreflang 都没问题。
+
+---
 
 ## 两种页面模式
 
@@ -86,17 +170,17 @@ HeartopiaHub/
 
 **2. 通用图鉴模块**（`bugs` / `materials` / `npcs` / `locations`）
 字段结构统一（`slug / name / category / location / time / weather / level / price / description / facts / tips`），
-共用 `src/pages/[collection]/index.astro` 与 `[slug].astro` **两个页面文件**。
+共用 `src/pages/[locale]/[collection]/index.astro` 与 `[slug].astro` **两个页面文件**（两种语言共用同一份）。
 新增这类模块不需要写任何页面代码。
 
 ### 新增一个通用图鉴模块（例如「鸟类图鉴」）
 
 1. 在 `src/data/birds.json` 放数据（字段约定见 `src/lib/collections-config.mjs` 顶部注释）
-2. 在 `src/lib/collections-config.mjs` 的 `collectionConfigs` 里加一条配置
+2. 在 `src/lib/collections-config.mjs` 的 `collectionConfigs` 里加一条配置（`name` 配 `nameEn`、`desc` 配 `descEn` 等）
 3. 在 `src/lib/content.js` 里 import 该 JSON，并加进 `collectionData`
 4. 在 `src/data/site.json` 的 `modules` 里登记（决定导航、首页入口和页脚）
 
-导航、首页卡片、页脚、搜索索引、数据校验、sitemap、JSON-LD 都会自动带上它。
+导航、首页卡片、页脚、中英两份搜索索引、数据校验、双语 sitemap、JSON-LD 都会自动带上它。
 
 ---
 
@@ -197,6 +281,89 @@ npm run data:map       # 只重建地图数据
 
 ---
 
+## SEO
+
+所有 SEO 输出都由 `src/lib/seo.mjs` 统一生成，页面只负责把数据传进来。
+
+### 每个页面都有什么
+
+| 项目 | 说明 |
+| --- | --- |
+| `<title>` | 页面标题 + 站名后缀（`HeartopiaHub`），全站唯一，控制在 65 字以内，按语言分别生成 |
+| meta description | 由结构化字段拼出的摘要，全站唯一，50 ~ 160 字，按语言分别生成 |
+| `<h1>` | 每个页面恰好一个 |
+| canonical | 由 `Astro.site` + 路径生成，强制带尾斜杠，**指向自身语言版本**；根路径 `/` 指向 `/en/`；404 指向首页 |
+| meta robots | 可收录页 `index, follow, max-snippet:-1, max-image-preview:large`；404 与搜索页 `noindex, follow` |
+| OG / Twitter Card | 含 `og:image` 尺寸与 alt、`og:locale` 与 `og:locale:alternate` |
+| JSON-LD | WebSite + Organization + WebPage（CollectionPage / ItemPage）+ BreadcrumbList + 各页专属节点，节点用 `@id` 互相引用，并带 `inLanguage` |
+| hreflang | 每个页面输出 `en`、`zh-CN` 两个姊妹链接 + `x-default` 指向英文版；`<html lang>` 跟着 URL 语言段走 |
+
+页面级结构化数据：
+
+- 首页：`ItemList`（11 个模块入口）+ `FAQPage`
+- 分类页：`ItemList`，每条都带详情页链接，方便爬虫顺着抓
+- 图鉴详情页：`Article` + `additionalProperty`（分类 / 地点 / 时间 / 天气 / 等级 / 售价 / facts）
+- 食谱详情页：`Recipe`（含 `recipeIngredient`、`recipeInstructions`）
+- 赚钱 / 新手详情页：`HowTo`（含 `step`、`supply`、`totalTime`）
+
+### description 是怎么来的
+
+`seo.mjs` 按模块 id 选择模板，所以 description 天然包含条目名，截断后依然唯一：
+
+```js
+catalogDescription(locale, collection, item)  // 通用图鉴：昆虫 / 材料 / NPC / 地点，以及后续新增模块
+fishDescription(locale, item)                 // 鱼图鉴
+recipeDescription(locale, item)               // 烹饪食谱
+cropDescription(locale, item)                 // 种植攻略
+moneyGuideDescription(locale, item)           // 赚钱攻略
+beginnerGuideDescription(locale, item)        // 新手指南
+```
+
+模板按模块 id 分成 `{ zh, en }` 两套（`CATALOG_TEMPLATES`），术语和单位走 `src/i18n/data.mjs`。
+中文用「，」收尾、英文用「, 」收尾，由 `sentence(locale, parts)` 统一处理。
+
+新增一个通用图鉴模块时**不需要写文案代码**，会走 `genericCatalogDescription`。
+想给新模块定制文案，在 `CATALOG_TEMPLATES` 里加一条即可。
+
+### sitemap 与 robots
+
+- `sitemap-index.xml` + `sitemap-0.xml` 由 `@astrojs/sitemap` 生成，覆盖全部可收录页面，**中英各一份 URL 都在里面**
+- 每个 URL 都带 `xhtml:link` 语言互链，和页面上的 hreflang 一致
+- 首页 `priority 1.0`，分类页 `0.8`，详情页 `0.6`（按去掉语言段后的路径深度计算，中英一致）
+- `/en/search/`、`/zh/search/` 不进 sitemap（纯前端工具页，内容由查询参数决定）
+- 根路径 `/` 不进 sitemap（它是 `/en/` 的副本，canonical 已经指过去了）
+- `robots.txt` 由 `src/pages/robots.txt.ts` 生成：放行全站、`Disallow: /*?q=` 挡住搜索参数页、声明 sitemap 地址
+
+### 域名只有一个来源
+
+`astro.config.mjs` 的 `site` 优先取环境变量 `SITE_URL`，否则取 `src/data/site.json` 的 `url`。
+canonical、sitemap、robots 全部跟着它走，**换域名时改环境变量即可，不用改代码**。
+
+### 自检
+
+```bash
+npm run build && npm run seo:check
+```
+
+`check-seo.mjs` 直接扫描 `dist/`，检查：
+
+- title / description / canonical / H1 是否齐全且唯一（同语言之间比对，长度按实体解码后计算）
+- `<html lang>` 是否和 URL 语言段一致
+- hreflang 是否 `en` + `zh-CN` + `x-default` 三件套齐全、指向正确、且对应的姊妹页面真的构建出来了
+- JSON-LD 能否解析、noindex 页面有没有混进 sitemap、sitemap 是否覆盖所有可收录页面并带语言互链
+- 两种语言生成的页面数量是否一致，robots 是否声明 sitemap
+
+有问题会以非 0 退出。想放进 CI 的话，把 `npm run seo:check` 接到 `build` 后面即可。
+
+### 已知的 SEO 缺口
+
+- `og-default.svg` 是矢量图，部分社交平台不解析 SVG 缩略图；需要更好的分享卡片时换一张 1200×630 的 PNG
+- 英文站目前复用了中文站的数据字段，`money` / `beginner` 的正文还是中文（见上一节「后续把 385 条内容逐步翻译成英文」）
+- 食谱与鱼类没有图片素材，所以 `Recipe` 里没写 `image`，拿不到 Google 食谱富媒体结果
+- 数据里没有可靠的发布时间，因此 JSON-LD 里刻意不写 `datePublished` / `dateModified`，避免用假日期
+
+---
+
 ## 部署到 Cloudflare Pages
 
 1. 把项目推到 GitHub
@@ -210,9 +377,12 @@ npm run data:map       # 只重建地图数据
 
    | 变量 | 说明 |
    | --- | --- |
-   | `SITE_URL` | 正式域名，例如 `https://heartopiahub.com`，用于 canonical、sitemap、robots |
+   | `SITE_URL` | 正式域名，例如 `https://heartopiahub.com`，用于 canonical、sitemap、robots。不设则退回 `src/data/site.json` 的 `url` |
 
 5. 首次部署完成后把 `SITE_URL` 改成正式域名再重新部署一次。
+
+双语不需要在托管平台做任何额外配置：**不要**配 `/zh/` 或 `/en/` 的跳转规则，
+语言分流由根路径的几行内联脚本完成，`/en/`、`/zh/` 都是真实存在的静态目录。
 
 任何静态托管都可以：Vercel、Netlify、GitHub Pages、对象存储 + CDN，产物就是 `dist/`。
 
@@ -220,7 +390,8 @@ npm run data:map       # 只重建地图数据
 
 ## MVP 范围与后续
 
-已跑通：11 个模块的列表页与详情页、关键词搜索 + 标签筛选、导航即时搜索、互动地图、SEO 元信息、sitemap、404、移动端导航、数据校验。
+已跑通：11 个模块的列表页与详情页、关键词搜索 + 标签筛选、导航即时搜索、互动地图、SEO 元信息、
+中英双语路由与手动切换、hreflang、双语 sitemap、404、移动端导航、数据校验。
 
 刻意留白：后台管理、数据库、登录、评论、用户收藏。数据量继续增长后如果手写 JSON 变慢，再考虑 CSV → JSON 脚本或 Headless CMS，页面层不需要改。
 

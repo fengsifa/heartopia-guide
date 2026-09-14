@@ -1,18 +1,31 @@
 ---
+// 静态站服务端不知道访客语言，404 统一用默认语言（英文）
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { siteInfo } from '../lib/content.js';
+import { href, listModules } from '../lib/content.js';
+import { dict } from '../i18n/ui.mjs';
+
+const locale = 'en';
+const copy = dict(locale).notFound;
+
+const modules = listModules(locale);
 ---
 
-<BaseLayout title="页面不存在（404）" description="找不到该页面，试试从下面的模块入口继续浏览。" noindex={true}>
+<BaseLayout
+  locale={locale}
+  title={copy.title}
+  description={copy.description}
+  noindex={true}
+  canonicalPath="/"
+>
   <div class="page-head" style="text-align: center; padding: 40px 0 10px;">
-    <h1>404</h1>
-    <p class="lede" style="margin-inline: auto;">页面不存在或已被移动。</p>
+    <h1>{copy.h1}</h1>
+    <p class="lede" style="margin-inline: auto;">{copy.lede}</p>
   </div>
 
   <div class="grid">
-    {siteInfo.modules.map(function (mod) {
+    {modules.map(function (mod) {
       return (
-        <a class="card module-card" href={mod.path}>
+        <a class="card module-card" href={href(locale, mod.path)}>
           <span class="card-title"><span class="card-icon" aria-hidden="true">{mod.icon}</span>{mod.name}</span>
           <span class="card-text">{mod.desc}</span>
         </a>
@@ -21,6 +34,6 @@ import { siteInfo } from '../lib/content.js';
   </div>
 
   <p style="text-align: center; margin-top: 22px;">
-    <a class="btn btn-primary" href="/">返回首页</a>
+    <a class="btn btn-primary" href={href(locale, '/')}>{copy.backHome}</a>
   </p>
 </BaseLayout>

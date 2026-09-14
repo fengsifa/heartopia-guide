@@ -11,7 +11,8 @@
     "build": "node scripts/check-data.mjs && node scripts/build-search-index.mjs && node scripts/build-map.mjs && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "data:map": "node scripts/build-map.mjs"
+    "data:map": "node scripts/build-map.mjs",
+    "seo:check": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",

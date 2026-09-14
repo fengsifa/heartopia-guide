@@ -1,29 +1,33 @@
 ---
-import { siteInfo } from '../lib/content.js';
+import { href, listModules, siteFor } from '../lib/content.js';
+import { dict } from '../i18n/ui.mjs';
+
+const { locale } = Astro.props;
+const copy = dict(locale);
+const siteInfo = siteFor(locale);
 
 const year = new Date().getFullYear();
-const half = Math.ceil(siteInfo.modules.length / 2);
-const groups = [siteInfo.modules.slice(0, half), siteInfo.modules.slice(half)];
+const modules = listModules(locale);
+const half = Math.ceil(modules.length / 2);
+const groups = [modules.slice(0, half), modules.slice(half)];
 ---
 
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h3>关于本站</h3>
+        <h3>{copy.footer.aboutTitle}</h3>
         <p class="muted">{siteInfo.description}</p>
-        <p class="muted tiny">
-          本站为社区向的非官方攻略站，与 Heartopia 官方无关联。数据由社区整理，仅供参考。
-        </p>
+        <p class="muted tiny">{copy.footer.disclaimer}</p>
       </div>
       {groups.map(function (group, index) {
         return (
           <div>
-            <h3>{index === 0 ? '攻略模块' : '更多内容'}</h3>
+            <h3>{index === 0 ? copy.footer.guidesTitle : copy.footer.moreTitle}</h3>
             <ul class="footer-links">
               {group.map(function (item) {
                 return (
-                  <li><a href={item.path}>{item.icon} {item.name}</a></li>
+                  <li><a href={href(locale, item.path)}>{item.icon} {item.name}</a></li>
                 );
               })}
             </ul>
@@ -31,6 +35,6 @@ const groups = [siteInfo.modules.slice(0, half), siteInfo.modules.slice(half)];
         );
       })}
     </div>
-    <p class="footer-note">© {year} {siteInfo.name}. 数据持续更新中，欢迎补充。</p>
+    <p class="footer-note">{copy.footer.note.replace('{year}', year).replace('{site}', siteInfo.name)}</p>
   </div>
 </footer>

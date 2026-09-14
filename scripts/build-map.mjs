@@ -15,6 +15,7 @@
  * 用法：node scripts/build-map.mjs
  */
 import { readFileSync, writeFileSync } from 'node:fs';
+import { localizeValue } from '../src/i18n/data.mjs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -138,7 +139,9 @@ groupByLocation(fish).forEach(function (names, location) {
     region: regionOf(location),
     speciesCount: names.length,
     description: '钓鱼点，可钓到 ' + names.length + ' 种鱼：' + names.slice(0, 6).join('、')
-      + (names.length > 6 ? ' 等' : '') + '。'
+      + (names.length > 6 ? ' 等' : '') + '。',
+    descriptionEn: location + ' fishing spot — ' + names.length + ' species including '
+      + names.slice(0, 6).join(', ') + (names.length > 6 ? ', and more' : '') + '.'
   });
 });
 
@@ -151,7 +154,9 @@ groupByLocation(bugs).forEach(function (names, location) {
     region: regionOf(location),
     speciesCount: names.length,
     description: '可捕捉 ' + names.length + ' 种昆虫：' + names.slice(0, 6).join('、')
-      + (names.length > 6 ? ' 等' : '') + '。'
+      + (names.length > 6 ? ' 等' : '') + '。',
+    descriptionEn: 'Bug spot with ' + names.length + ' species: '
+      + names.slice(0, 6).join(', ') + (names.length > 6 ? ', and more' : '') + '.'
   });
 });
 
@@ -165,7 +170,9 @@ npcs.forEach(function (npc) {
     category: 'npc',
     region: regionOf(place0),
     speciesCount: 0,
-    description: npc.category + '，常驻' + place0 + (favorite ? '，喜好：' + favorite.value : '') + '。'
+    description: npc.category + '，常驻' + place0 + (favorite ? '，喜好：' + favorite.value : '') + '。',
+    descriptionEn: npc.category + ', usually found around ' + place0
+      + (favorite ? ', likes ' + favorite.value : '') + '.'
   });
 });
 
@@ -177,7 +184,9 @@ locations.forEach(function (location) {
     category: 'shop',
     region: regionOf((location.location || [])[0] || ''),
     speciesCount: 0,
-    description: location.description
+    description: location.description,
+    // wiki 原文本身就是英文，直接用
+    descriptionEn: localizeValue('en', location.description)
   });
 });
 

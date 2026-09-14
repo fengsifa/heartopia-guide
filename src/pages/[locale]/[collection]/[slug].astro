@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CollectionDetail from '../../../components/CollectionDetail.astro';
+import { getCollectionFor, href, listCollectionIds } from '../../../lib/content.js';
+import { catalogDescription, contentPageLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+
+export function getStaticPaths() {
+  const paths = [];
+  listCollectionIds().forEach(function (id) {
+    // 详情页需要知道每个模块有哪些条目，这里直接用配置里的数据文件
+    const collection = getCollectionFor('en', id);
+    (collection.items || []).forEach(function (item) {
+      LOCALES.forEach(function (locale) {
+        paths.push({
+          params: { locale: locale, collection: id, slug: item.slug }
+        });
+      });
+    });
+  });
+  return paths;
+}
+
+const locale = Astro.params.locale;
+const common = dict(locale).common;
+const collection = getCollectionFor(locale, Astro.params.collection);
+const item = (collection.items || []).filter(function (entry) {
+  return entry.slug === Astro.params.slug;
+})[0];
+
+const site = Astro.site ? Astro.site.href : '';
+const canonical = new URL(href(locale, collection.path + item.slug + '/'), site).href;
+
+const description = catalogDescription(locale, collection, item);
+const title = t(locale, 'collection.detailTitle', {
+  name: item.name,
+  collection: collection.name
+});
+
+const breadcrumbs = [
+  { name: common.home, path: '/' },
+  { name: collection.name, path: collection.path },
+  { name: item.name, path: collection.path + item.slug + '/' }
+];
+
+const ld = [contentPageLd({
+  locale: locale,
+  site: site,
+  canonical: canonical,
+  headline: item.name + ' — Heartopia ' + collection.name,
+  description: description,
+  section: collection.name,
+  aboutName: item.name,
+  item: item
+})];
+---
+
+<BaseLayout
+  locale={locale}
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  webPageType="ItemPage"
+  jsonLd={ld}
+>
+  <CollectionDetail collection={collection} item={item} description={description} locale={locale} />
+</BaseLayout>

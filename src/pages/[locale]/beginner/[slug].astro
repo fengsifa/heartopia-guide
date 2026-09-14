@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { beginnerList, href, moduleMap } from '../../../lib/content.js';
+import { beginnerGuideDescription, organizationRef, websiteRef, webPageRef } from '../../../lib/seo.mjs';
+import { HTML_LANG, LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { localizeValue, pickText } from '../../../i18n/data.mjs';
+
+export function getStaticPaths() {
+  const paths = [];
+  LOCALES.forEach(function (locale) {
+    beginnerList.forEach(function (item) {
+      paths.push({ params: { locale: locale, slug: item.slug }, props: { item: item } });
+    });
+  });
+  return paths;
+}
+
+const { item } = Astro.props;
+const locale = Astro.params.locale;
+const copy = dict(locale).beginner;
+const common = dict(locale).common;
+const mod = moduleMap(locale).beginner;
+
+// 正文为本站原创中文；补上 titleEn / summaryEn / sectionsEn / tipsEn 后英文页自动切换
+const displayTitle = pickText(locale, item.title, item.titleEn);
+const displaySummary = pickText(locale, item.summary, item.summaryEn);
+const sections = locale === 'zh' ? (item.sections || []) : (item.sectionsEn || []);
+const tips = locale === 'zh' ? (item.tips || []) : (item.tipsEn || []);
+const untranslated = locale !== 'zh' && !sections.length;
+
+const categoryText = localizeValue(locale, item.category);
+const readTimeText = t(locale, 'beginner.readTime', { value: localizeValue(locale, item.readTime) });
+
+const related = beginnerList
+  .filter(function (other) { return other.slug !== item.slug && other.category === item.category; })
+  .slice(0, 4);
+
+const itemPath = '/beginner/' + item.slug + '/';
+const breadcrumbs = [
+  { name: common.home, path: '/' },
+  { name: mod.name, path: mod.path },
+  { name: displayTitle, path: itemPath }
+];
+
+const sectionCount = (locale === 'zh' ? (item.sections || []) : sections).length;
+
+const site = Astro.site ? Astro.site.href : '';
+const canonical = new URL(href(locale, itemPath), site).href;
+const title = t(locale, 'beginner.detailTitle', { name: displayTitle });
+const description = beginnerGuideDescription(locale, item);
+
+const ld = [{
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: displayTitle,
+  description: description,
+  inLanguage: HTML_LANG[locale],
+  mainEntityOfPage: webPageRef(canonical),
+  isPartOf: websiteRef(site),
+  publisher: organizationRef(site),
+  step: (locale === 'zh' ? (item.sections || []) : sections).map(function (section, index) {
+    return { '@type': 'HowToStep', position: index + 1, name: section.heading, text: section.body };
+  })
+}];
+---
+
+<BaseLayout locale={locale} title={title} description={description} breadcrumbs={breadcrumbs} webPageType="ItemPage" jsonLd={ld}>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
+
+  <div class="detail-layout">
+    <div>
+      <div class="page-head">
+        <h1>🧭 {displayTitle}</h1>
+        <p class="lede">{displaySummary}</p>
+        <div class="card-foot">
+          <span class="badge">{categoryText}</span>
+          <span class="badge">{readTimeText}</span>
+          {sectionCount > 0 && <span class="badge">{t(locale, 'beginner.sectionsBadge', { count: sectionCount })}</span>}
+        </div>
+      </div>
+
+      {sections.length > 0 && (
+        <div class="panel prose">
+          {sections.map(function (section) {
+            return (
+              <section>
+                <h2>{section.heading}</h2>
+                <p class="muted">{section.body}</p>
+              </section>
+            );
+          })}
+        </div>
+      )}
+
+      {untranslated && (
+        <div class="notice">
+          <span aria-hidden="true">🌐</span>
+          <span>
+            <strong>{common.pendingTitle}.</strong> {common.pendingBody}{' '}
+            <a href={href('zh', itemPath)}>{common.pendingLink}</a>
+          </span>
+        </div>
+      )}
+
+      {tips.length > 0 && (
+        <div class="panel">
+          <h2>{copy.highlightsTitle}</h2>
+          <ul class="tip-list">
+            {tips.map(function (tip) { return <li>{tip}</li>; })}
+          </ul>
+        </div>
+      )}
+
+      {related.length > 0 && (
+        <div class="panel">
+          <h2>{copy.sameCategory}</h2>
+          <div class="grid">
+            {related.map(function (other) {
+              return (
+                <a class="card" href={href(locale, '/beginner/' + other.slug + '/')}>
+                  <span class="card-title">🧭 {pickText(locale, other.title, other.titleEn)}</span>
+                  <span class="card-text">{pickText(locale, other.summary, other.summaryEn)}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h2 class="map-panel-title">{copy.tocPanelTitle}</h2>
+        <ul class="tip-list">
+          {sections.map(function (section) { return <li>{section.heading}</li>; })}
+        </ul>
+        <p style="margin: 12px 0 0;">
+          <a class="btn btn-primary" href={href(locale, '/beginner/')} style="width: 100%;">{copy.backToList}</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>

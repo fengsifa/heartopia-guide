@@ -1,8 +1,12 @@
 ---
-const { items = [] } = Astro.props;
+import { href } from '../lib/content.js';
+import { dict } from '../i18n/ui.mjs';
+
+const { items = [], locale } = Astro.props;
+const copy = dict(locale);
 ---
 
-<nav class="breadcrumbs" aria-label="面包屑导航">
+<nav class="breadcrumbs" aria-label={copy.common.breadcrumbAria}>
   <ol>
     {items.map(function (item, index) {
       const isLast = index === items.length - 1;
@@ -10,7 +14,7 @@ const { items = [] } = Astro.props;
         <li>
           {isLast || !item.path
             ? <span aria-current={isLast ? 'page' : undefined}>{item.name}</span>
-            : <a href={item.path}>{item.name}</a>}
+            : <a href={href(locale, item.path)}>{item.name}</a>}
         </li>
       );
     })}

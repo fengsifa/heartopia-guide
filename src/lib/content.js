@@ -11,6 +11,8 @@ import materials from '../data/materials.json';
 import npcs from '../data/npcs.json';
 import locations from '../data/locations.json';
 import { collectionConfigs, listCollectionIds } from './collections-config.mjs';
+import { localePath } from '../i18n/config.mjs';
+import { localizeValue, localizeList } from '../i18n/data.mjs';
 
 export const siteInfo = site;
 export const codesList = codes;
@@ -136,6 +138,11 @@ export function regrowLabel(value) {
   return '未标注';
 }
 
+/** 复收状态按语言输出；'可复收' / '一次性' / '未标注' 都在术语表里 */
+export function regrowLabelFor(locale, value) {
+  return localizeValue(locale, regrowLabel(value));
+}
+
 export function joinList(value) {
   if (Array.isArray(value)) return value.length ? value.join('、') : '不限';
   return value || '不限';
@@ -151,3 +158,102 @@ export function toText(value) {
   if (Array.isArray(value)) return value.length ? value.join('、') : '';
   return value == null ? '' : String(value);
 }
+
+/* ------------------------------------------------------------------ *
+ * 多语言访问层
+ *
+ * 数据文件只有一份，这里按 locale 挑中文字段或英文字段。
+ * 页面统一用 listModules / listCollectionsFor / siteFor / moduleUnitsFor，
+ * 不要再直接读 siteInfo.modules 里的中文字段。
+ * ------------------------------------------------------------------ */
+
+function pick(locale, zhValue, enValue) {
+  if (locale === 'zh') return zhValue;
+  if (enValue === undefined || enValue === null || enValue === '') return zhValue;
+  return enValue;
+}
+
+/** 站点信息（本地化） */
+export function siteFor(locale) {
+  return {
+    name: site.name,
+    tagline: pick(locale, site.tagline, site.taglineEn),
+    description: pick(locale, site.description, site.descriptionEn),
+    url: site.url
+  };
+}
+
+/** 模块列表（本地化）；path 不含语言前缀，链接请用 href() */
+export function listModules(locale) {
+  return site.modules.map(function (mod) {
+    return {
+      id: mod.id,
+      icon: mod.icon,
+      path: mod.path,
+      name: pick(locale, mod.name, mod.nameEn),
+      navName: pick(locale, mod.navName, mod.navNameEn),
+      desc: pick(locale, mod.desc, mod.descEn)
+    };
+  });
+}
+
+export function moduleMap(locale) {
+  const map = {};
+  listModules(locale).forEach(function (mod) { map[mod.id] = mod; });
+  return map;
+}
+
+/** 通用图鉴模块（本地化） */
+export function listCollectionsFor(locale) {
+  return collectionConfigs.map(function (config) {
+    return {
+      id: config.id,
+      icon: config.icon,
+      path: config.path,
+      name: pick(locale, config.name, config.nameEn),
+      desc: pick(locale, config.desc, config.descEn),
+      unit: pick(locale, config.unit, config.unitEn),
+      placeholder: pick(locale, config.placeholder, config.placeholderEn),
+      searchLabel: pick(locale, config.searchLabel, config.searchLabelEn),
+      notes: pick(locale, config.notes, config.notesEn) || [],
+      filters: (config.filters || []).map(function (filter) {
+        return { key: filter.key, label: pick(locale, filter.label, filter.labelEn) };
+      }),
+      items: collectionData[config.id] || []
+    };
+  });
+}
+
+export function getCollectionFor(locale, id) {
+  return listCollectionsFor(locale).filter(function (collection) { return collection.id === id; })[0];
+}
+
+const MODULE_UNITS_EN = {
+  codes: 'codes',
+  cooking: 'recipes',
+  fish: 'fish',
+  money: 'routes',
+  beginner: 'guides',
+  map: 'markers',
+  farming: 'crops',
+  bugs: 'bugs',
+  materials: 'materials',
+  npcs: 'NPCs',
+  locations: 'locations'
+};
+
+/** 各模块的计数单位（本地化） */
+export function moduleUnitsFor(locale) {
+  const units = {};
+  Object.keys(moduleUnits).forEach(function (id) {
+    units[id] = pick(locale, moduleUnits[id], MODULE_UNITS_EN[id]);
+  });
+  return units;
+}
+
+/** 站内链接统一加语言前缀：href('en', '/fish/') → /en/fish/ */
+export function href(locale, path) {
+  return localePath(locale, path);
+}
+
+export { localizeValue, localizeList };

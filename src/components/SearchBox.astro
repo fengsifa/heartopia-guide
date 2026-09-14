@@ -1,36 +1,57 @@
 ---
-import { siteInfo } from '../lib/content.js';
+import { dict } from '../i18n/ui.mjs';
+
+const { locale } = Astro.props;
+const copy = dict(locale).search;
 ---
 
-<div class="header-search" data-search-box>
+<div class="header-search" data-search-box data-index-url={'/search-index.' + locale + '.json'}>
   <span class="search-icon" aria-hidden="true">🔍</span>
   <input
     class="search-input"
     type="search"
-    id="site-search"
-    placeholder="搜索鱼类、食谱、兑换码…"
+    id={'site-search-' + locale}
+    placeholder={copy.navPlaceholder}
     autocomplete="off"
-    aria-label="站内搜索"
+    aria-label={copy.navAria}
     role="combobox"
     aria-expanded="false"
-    aria-controls="site-search-results"
+    aria-controls={'site-search-results-' + locale}
   />
-  <div class="search-results" id="site-search-results" role="listbox" aria-label="搜索结果" data-search-results></div>
+  <div
+    class="search-results"
+    id={'site-search-results-' + locale}
+    role="listbox"
+    aria-label={copy.navResultsAria}
+    data-search-results
+    data-empty-template={copy.navEmpty}
+    data-hint-template={copy.navHint}
+  ></div>
 </div>
 
 <script>
-  const INDEX_URL = '/search-index.json';
   const MAX_RESULTS = 8;
-  let indexPromise = null;
+  const boxes = new Map();
 
-  function loadIndex() {
-    if (!indexPromise) {
-      indexPromise = fetch(INDEX_URL, { credentials: 'same-origin' })
+  function indexUrl(box) {
+    return box.getAttribute('data-index-url') || '/search-index.en.json';
+  }
+
+  function loadIndex(box) {
+    const url = indexUrl(box);
+    if (!boxes.has(url)) {
+      boxes.set(url, fetch(url, { credentials: 'same-origin' })
         .then(function (res) { return res.ok ? res.json() : { items: [] }; })
         .then(function (data) { return Array.isArray(data.items) ? data.items : []; })
-        .catch(function () { return []; });
+        .catch(function () { return []; }));
     }
-    return indexPromise;
+    return boxes.get(url);
+  }
+
+  function template(value, vars) {
+    return String(value == null ? '' : value).replace(/\{(\w+)\}/g, function (match, name) {
+      return Object.prototype.hasOwnProperty.call(vars, name) ? String(vars[name]) : match;
+    });
   }
 
   function score(item, query, terms) {
@@ -67,7 +88,8 @@ import { siteInfo } from '../lib/content.js';
     const input = box.querySelector('.search-input');
     const panel = box.querySelector('[data-search-results]');
     if (!input || !panel) return;
-    let results = [];
+    const emptyTemplate = panel.getAttribute('data-empty-template') || '';
+    const hintTemplate = panel.getAttribute('data-hint-template') || '';
     let activeIndex = -1;
 
     function close() {
@@ -77,18 +99,17 @@ import { siteInfo } from '../lib/content.js';
     }
 
     function render(items, query) {
-      results = items;
       activeIndex = -1;
       if (!query) { close(); return; }
       if (!items.length) {
-        panel.innerHTML = '<div class="sr-empty">没有找到与「' + escapeHtml(query) + '」相关的内容</div>';
+        panel.innerHTML = '<div class="sr-empty">' + escapeHtml(template(emptyTemplate, { query: query })) + '</div>';
       } else {
         panel.innerHTML = items.map(function (item, i) {
           return '<a href="' + escapeHtml(item.url) + '" role="option" data-index="' + i + '">'
             + '<span class="sr-title">' + escapeHtml(item.title)
             + ' <span class="sr-tag">' + escapeHtml(item.category || '') + '</span></span>'
             + '<span class="sr-sub">' + escapeHtml(item.subtitle || item.description || '') + '</span></a>';
-        }).join('') + '<div class="sr-hint">共 ' + items.length + ' 条结果，按 Enter 打开第一条</div>';
+        }).join('') + '<div class="sr-hint">' + escapeHtml(template(hintTemplate, { count: items.length })) + '</div>';
       }
       panel.classList.add('open');
       input.setAttribute('aria-expanded', 'true');
@@ -97,7 +118,7 @@ import { siteInfo } from '../lib/content.js';
     async function search(rawQuery) {
       const query = rawQuery.trim().toLowerCase();
       if (query.length < 1) { close(); return; }
-      const items = await loadIndex();
+      const items = await loadIndex(box);
       const terms = query.split(/\s+/).filter(Boolean);
       const scored = [];
       for (const item of items) {

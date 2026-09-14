@@ -1,12 +1,112 @@
 [
-  { "code": "HEARTOPIA", "reward": "500 金币 + 基础种子礼包", "status": "active", "verified": false, "addedAt": "2026-09-01", "expiresAt": "", "note": "社区流传码，请在游戏内验证" },
-  { "code": "WELCOME", "reward": "300 金币 + 面包 x3", "status": "active", "verified": false, "addedAt": "2026-09-01", "expiresAt": "", "note": "新手欢迎码" },
-  { "code": "FISHON", "reward": "鱼饵 x10 + 200 金币", "status": "active", "verified": false, "addedAt": "2026-09-02", "expiresAt": "", "note": "钓鱼活动相关" },
-  { "code": "FARM2026", "reward": "随机种子 x5", "status": "active", "verified": false, "addedAt": "2026-09-02", "expiresAt": "", "note": "农场活动相关" },
-  { "code": "COOK2026", "reward": "厨房材料包 + 250 金币", "status": "active", "verified": false, "addedAt": "2026-09-03", "expiresAt": "", "note": "烹饪活动相关" },
-  { "code": "GOLD2026", "reward": "888 金币", "status": "limited", "verified": false, "addedAt": "2026-09-03", "expiresAt": "2026-10-01", "note": "限时金币码" },
-  { "code": "SEA2026", "reward": "高级鱼饵 x5", "status": "limited", "verified": false, "addedAt": "2026-09-04", "expiresAt": "2026-10-01", "note": "海滩活动相关" },
-  { "code": "MAPLOVE", "reward": "地图标记解锁券 x1", "status": "active", "verified": false, "addedAt": "2026-09-04", "expiresAt": "", "note": "社区探索活动" },
-  { "code": "NEWDAY", "reward": "体力药水 x2", "status": "expired", "verified": false, "addedAt": "2026-08-01", "expiresAt": "2026-08-31", "note": "已过期，仅供参考" },
-  { "code": "OLDMOON", "reward": "中秋限定装饰 x1", "status": "expired", "verified": false, "addedAt": "2026-08-10", "expiresAt": "2026-08-31", "note": "已过期，仅供参考" }
+  {
+    "code": "HEARTOPIA",
+    "reward": "500 金币 + 基础种子礼包",
+    "status": "active",
+    "verified": false,
+    "addedAt": "2026-09-01",
+    "expiresAt": "",
+    "note": "社区流传码，请在游戏内验证",
+    "rewardEn": "500 Gold + Basic Seed Pack",
+    "noteEn": "Community-circulated code — verify it in game"
+  },
+  {
+    "code": "WELCOME",
+    "reward": "300 金币 + 面包 x3",
+    "status": "active",
+    "verified": false,
+    "addedAt": "2026-09-01",
+    "expiresAt": "",
+    "note": "新手欢迎码",
+    "rewardEn": "300 Gold + Bread x3",
+    "noteEn": "Starter welcome code"
+  },
+  {
+    "code": "FISHON",
+    "reward": "鱼饵 x10 + 200 金币",
+    "status": "active",
+    "verified": false,
+    "addedAt": "2026-09-02",
+    "expiresAt": "",
+    "note": "钓鱼活动相关",
+    "rewardEn": "Bait x10 + 200 Gold",
+    "noteEn": "Fishing event code"
+  },
+  {
+    "code": "FARM2026",
+    "reward": "随机种子 x5",
+    "status": "active",
+    "verified": false,
+    "addedAt": "2026-09-02",
+    "expiresAt": "",
+    "note": "农场活动相关",
+    "rewardEn": "Random Seeds x5",
+    "noteEn": "Farm event code"
+  },
+  {
+    "code": "COOK2026",
+    "reward": "厨房材料包 + 250 金币",
+    "status": "active",
+    "verified": false,
+    "addedAt": "2026-09-03",
+    "expiresAt": "",
+    "note": "烹饪活动相关",
+    "rewardEn": "Kitchen Material Pack + 250 Gold",
+    "noteEn": "Cooking event code"
+  },
+  {
+    "code": "GOLD2026",
+    "reward": "888 金币",
+    "status": "limited",
+    "verified": false,
+    "addedAt": "2026-09-03",
+    "expiresAt": "2026-10-01",
+    "note": "限时金币码",
+    "rewardEn": "888 Gold",
+    "noteEn": "Limited-time Gold code"
+  },
+  {
+    "code": "SEA2026",
+    "reward": "高级鱼饵 x5",
+    "status": "limited",
+    "verified": false,
+    "addedAt": "2026-09-04",
+    "expiresAt": "2026-10-01",
+    "note": "海滩活动相关",
+    "rewardEn": "Advanced Bait x5",
+    "noteEn": "Beach event code"
+  },
+  {
+    "code": "MAPLOVE",
+    "reward": "地图标记解锁券 x1",
+    "status": "active",
+    "verified": false,
+    "addedAt": "2026-09-04",
+    "expiresAt": "",
+    "note": "社区探索活动",
+    "rewardEn": "Map Marker Unlock Ticket x1",
+    "noteEn": "Community exploration event"
+  },
+  {
+    "code": "NEWDAY",
+    "reward": "体力药水 x2",
+    "status": "expired",
+    "verified": false,
+    "addedAt": "2026-08-01",
+    "expiresAt": "2026-08-31",
+    "note": "已过期，仅供参考",
+    "rewardEn": "Stamina Potion x2",
+    "noteEn": "Expired — kept for reference"
+  },
+  {
+    "code": "OLDMOON",
+    "reward": "中秋限定装饰 x1",
+    "status": "expired",
+    "verified": false,
+    "addedAt": "2026-08-10",
+    "expiresAt": "2026-08-31",
+    "note": "已过期，仅供参考",
+    "rewardEn": "Mid-Autumn limited decoration x1",
+    "noteEn": "Expired — kept for reference"
+  }
 ]

@@ -1,12 +1,20 @@
 ---
+import { dict } from '../i18n/ui.mjs';
+
 const {
+  locale,
   groups = [],
   scope = '',
-  placeholder = '搜索…',
-  label = '条',
+  placeholder = '',
+  label = '',
   total = 0,
-  searchLabel = '关键词搜索'
+  searchLabel = ''
 } = Astro.props;
+
+const copy = dict(locale).filter;
+const inputPlaceholder = placeholder || copy.placeholder;
+const unitLabel = label || copy.unitDefault;
+const inputLabel = searchLabel || copy.searchLabel;
 ---
 
 <div class="filter-bar" data-filter-root data-filter-scope={scope || undefined}>
@@ -15,8 +23,8 @@ const {
       class="filter-input"
       type="search"
       data-filter-search
-      placeholder={placeholder}
-      aria-label={searchLabel}
+      placeholder={inputPlaceholder}
+      aria-label={inputLabel}
       autocomplete="off"
     />
   </div>
@@ -25,7 +33,7 @@ const {
     return (
       <div class="filter-row">
         <span class="filter-label">{group.label}</span>
-        <div class="filter-scroll" role="group" aria-label={group.label + '筛选'}>
+        <div class="filter-scroll" role="group" aria-label={copy.groupAria.replace('{label}', group.label)}>
           {group.values.map(function (value) {
             return (
               <button
@@ -44,13 +52,13 @@ const {
   })}
 
   <div class="filter-status" data-filter-status>
-    <span class="filter-count">共 <span data-filter-count><strong>{total}</strong></span> {label}</span>
-    <button class="filter-clear" type="button" data-filter-clear hidden>清除筛选</button>
+    <span class="filter-count">{copy.count.split('{total}')[0]}<span data-filter-count><strong>{total}</strong></span>{copy.count.split('{total}')[1].replace('{label}', unitLabel)}</span>
+    <button class="filter-clear" type="button" data-filter-clear hidden>{copy.clear}</button>
   </div>
 </div>
 
 <div class="empty-state" data-filter-empty hidden>
-  <p>没有匹配的条目，试试换个关键词或清除筛选。</p>
+  <p>{copy.empty}</p>
 </div>
 
 <script src="/list-filter.js" is:inline></script>

@@ -1,92 +1,137 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { mapInfo, moduleMeta } from '../../lib/content.js';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { mapInfo, href, moduleMap } from '../../../lib/content.js';
+import { itemListLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { localizeValue } from '../../../i18n/data.mjs';
 
-const mod = moduleMeta.map;
+export function getStaticPaths() {
+  return LOCALES.map(function (locale) {
+    return { params: { locale: locale } };
+  });
+}
+
+const locale = Astro.params.locale;
+const copy = dict(locale).map;
+const common = dict(locale).common;
+const mod = moduleMap(locale).map;
+
 const regionMap = {};
 mapInfo.regions.forEach(function (region) { regionMap[region.id] = region; });
 const categoryMap = {};
 mapInfo.categories.forEach(function (category) { categoryMap[category.id] = category; });
 
+const regions = mapInfo.regions.map(function (region) {
+  return Object.assign({}, region, { nameText: localizeValue(locale, region.name) });
+});
+const categories = mapInfo.categories.map(function (category) {
+  return Object.assign({}, category, { nameText: localizeValue(locale, category.name) });
+});
+const regionNames = {};
+regions.forEach(function (region) { regionNames[region.id] = region.nameText; });
+const categoryNames = {};
+categories.forEach(function (category) { categoryNames[category.id] = category.nameText; });
+
 const markers = mapInfo.markers.map(function (marker) {
   const region = regionMap[marker.region];
-  const density = region && region.markerCount > 12 ? 'high' : 'normal';
   return Object.assign({}, marker, {
-    density: density,
-    regionName: regionMap[marker.region] ? regionMap[marker.region].name : marker.region,
+    density: region && region.markerCount > 12 ? 'high' : 'normal',
+    regionName: regionNames[marker.region] || marker.region,
     regionColor: regionMap[marker.region] ? regionMap[marker.region].color : '#4aa3df',
-    categoryName: categoryMap[marker.category] ? categoryMap[marker.category].name : marker.category,
-    categoryIcon: categoryMap[marker.category] ? categoryMap[marker.category].icon : '📍'
+    categoryName: categoryNames[marker.category] || marker.category,
+    categoryIcon: categoryMap[marker.category] ? categoryMap[marker.category].icon : '📍',
+    // 地图说明有中英两个字段（由 build-map.mjs 生成），英文页优先用英文原文
+    descriptionText: locale === 'zh' ? marker.description : (marker.descriptionEn || localizeValue(locale, marker.description))
   });
 });
 
-const breadcrumbs = [{ name: '首页', path: '/' }, { name: mod.name, path: mod.path }];
+const breadcrumbs = [{ name: common.home, path: '/' }, { name: mod.name, path: mod.path }];
 const categoryCount = {};
 markers.forEach(function (marker) { categoryCount[marker.category] = (categoryCount[marker.category] || 0) + 1; });
-const breakdown = mapInfo.categories
+const breakdown = categories
   .filter(function (category) { return categoryCount[category.id]; })
-  .map(function (category) { return category.name + ' ' + categoryCount[category.id] + ' 个'; })
-  .join('、');
-const regionCount = mapInfo.regions.filter(function (region) { return region.markerCount; }).length;
-const description = 'Heartopia 互动地图，收录 ' + markers.length + ' 个点位（' + breakdown
-  + '），按 ' + regionCount + ' 个区域分布，支持按分类和区域筛选查看。坐标为示意方位。';
+  .map(function (category) { return t(locale, 'map.breakdown', { name: category.nameText, count: categoryCount[category.id] }); })
+  .join(locale === 'zh' ? '、' : ', ');
+const regionCount = regions.filter(function (region) { return region.markerCount; }).length;
+const description = t(locale, 'map.description', { count: markers.length, regions: regionCount });
 
-const ld = [{
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Heartopia 地图标记点',
-  numberOfItems: markers.length,
-  itemListElement: markers.map(function (marker, index) {
-    return { '@type': 'ListItem', position: index + 1, name: marker.name, description: marker.description };
-  })
-}];
+const listPath = href(locale, mod.path);
+const ld = [itemListLd({
+  locale: locale,
+  site: Astro.site ? Astro.site.href : '',
+  path: listPath,
+  name: copy.listName,
+  description: description,
+  entries: markers.map(function (marker) {
+    return { name: marker.name, path: listPath, description: marker.descriptionText };
+  }),
+  limit: 200
+})];
+
+// 地图脚本在浏览器里跑，这些文案通过 data 属性注入
+const scriptStrings = {
+  regionCount: copy.regionCount,
+  selectTitle: copy.selectTitle,
+  notSelected: copy.notSelected,
+  noNote: copy.noNote,
+  markerMeta: copy.markerMeta,
+  breakdownNote: breakdown
+};
 ---
 
-<BaseLayout title="互动地图（鱼点 / 资源 / NPC）" description={description} breadcrumbs={breadcrumbs} jsonLd={ld}>
-  <Breadcrumbs items={breadcrumbs} />
+<BaseLayout
+  locale={locale}
+  title={copy.title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  webPageType="CollectionPage"
+  jsonLd={ld}
+>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
 
   <div class="page-head">
-    <h1>🗺️ Heartopia 互动地图</h1>
-    <p class="lede">{description}</p>
+    <h1>{copy.h1}</h1>
+    <p class="lede">{copy.lede}</p>
   </div>
 
-  <div class="map-layout" data-map-root>
+  <div class="map-layout" data-map-root data-map-strings={JSON.stringify(scriptStrings)}>
     <div>
       <div class="filter-bar" style="margin-bottom: 12px;">
         <div class="filter-row">
-          <span class="filter-label">分类</span>
-          <div class="filter-scroll" role="group" aria-label="地图分类筛选">
-            <button class="chip" type="button" data-map-category="all" aria-pressed="true">全部</button>
-            {mapInfo.categories.map(function (category) {
+          <span class="filter-label">{copy.filterCategory}</span>
+          <div class="filter-scroll" role="group" aria-label={copy.filterCategoryAria}>
+            <button class="chip" type="button" data-map-category="all" aria-pressed="true">{copy.showAll}</button>
+            {categories.map(function (category) {
               return (
                 <button class="chip" type="button" data-map-category={category.id} aria-pressed="false">
-                  {category.icon} {category.name}
+                  {category.icon} {category.nameText}
                 </button>
               );
             })}
           </div>
         </div>
         <div class="filter-row">
-          <span class="filter-label">区域</span>
-          <div class="filter-scroll" role="group" aria-label="地图区域筛选">
-            <button class="chip" type="button" data-map-region="all" aria-pressed="true">全部</button>
-            {mapInfo.regions.map(function (region) {
+          <span class="filter-label">{copy.filterRegion}</span>
+          <div class="filter-scroll" role="group" aria-label={copy.filterRegionAria}>
+            <button class="chip" type="button" data-map-region="all" aria-pressed="true">{copy.showAll}</button>
+            {regions.map(function (region) {
               return (
-                <button class="chip" type="button" data-map-region={region.id} aria-pressed="false">{region.name}</button>
+                <button class="chip" type="button" data-map-region={region.id} aria-pressed="false">{region.nameText}</button>
               );
             })}
           </div>
         </div>
         <div class="filter-status">
-          <span class="filter-count">显示 <span data-map-count><strong>{markers.length}</strong></span> 个标记点</span>
-          <button class="filter-clear" type="button" data-map-reset hidden>重置筛选</button>
+          <span class="filter-count" set:html={t(locale, 'map.countLine', { count: '<span data-map-count><strong>' + markers.length + '</strong></span>' })} />
+          <button class="filter-clear" type="button" data-map-reset hidden>{copy.reset}</button>
         </div>
       </div>
 
-      <div class="map-canvas" role="region" aria-label="Heartopia 地图示意">
+      <div class="map-canvas" role="region" aria-label={copy.canvasAria}>
         <div class="map-layer" aria-hidden="true">
-          {mapInfo.regions.map(function (region) {
+          {regions.map(function (region) {
             const box = region.box;
             return (
               <div
@@ -94,8 +139,8 @@ const ld = [{
                 data-map-region-block={region.id}
                 style={'left:' + box.x + '%;top:' + box.y + '%;width:' + box.w + '%;height:' + box.h + '%;--region-color:' + region.color + ';'}
               >
-                <span class="map-region-name">{region.name}</span>
-                <span class="map-region-count" data-map-region-count>{region.markerCount} 个点位</span>
+                <span class="map-region-name">{region.nameText}</span>
+                <span class="map-region-count" data-map-region-count>{t(locale, 'map.regionCount', { count: region.markerCount })}</span>
               </div>
             );
           })}
@@ -112,7 +157,7 @@ const ld = [{
               data-region={marker.region}
               data-density={marker.density}
               aria-pressed="false"
-              aria-label={marker.name + '（' + marker.regionName + '）'}
+              aria-label={marker.name + ' (' + marker.regionName + ')'}
             >
               <span aria-hidden="true">{marker.categoryIcon}</span>
             </button>
@@ -121,24 +166,22 @@ const ld = [{
       </div>
 
       <div class="map-legend">
-        {mapInfo.categories.map(function (category) {
-          return <span class="pill">{category.icon} {category.name}</span>;
+        {categories.map(function (category) {
+          return <span class="pill">{category.icon} {category.nameText}</span>;
         })}
       </div>
 
-      <p class="tiny muted" style="margin-top: 10px;">
-        提示：点击地图图标或右侧列表查看点位说明。坐标为示意图，用于快速定位大致方位。
-      </p>
+      <p class="tiny muted" style="margin-top: 10px;">{breakdown}</p>
     </div>
 
     <aside class="side">
       <div class="panel">
-        <h2 class="map-panel-title" data-map-title>选择标记点</h2>
-        <p class="map-detail" data-map-detail>尚未选择点位。点击地图图标或右侧列表查看详情。</p>
+        <h2 class="map-panel-title" data-map-title>{copy.selectTitle}</h2>
+        <p class="map-detail" data-map-detail>{copy.notSelected}</p>
       </div>
 
       <div class="panel">
-        <h2 class="map-panel-title">点位列表</h2>
+        <h2 class="map-panel-title">{copy.listTitle}</h2>
         <ul class="map-list" data-map-list>
           {markers.map(function (marker) {
             return (
@@ -163,17 +206,17 @@ const ld = [{
 
   <section class="section">
     <div class="section-head">
-      <h2>全部点位说明</h2>
-      <span class="more">{markers.length} 条</span>
+      <h2>{copy.allTitle}</h2>
+      <span class="more">{t(locale, 'map.entryCount', { count: markers.length })}</span>
     </div>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th scope="col">名称</th>
-            <th scope="col">分类</th>
-            <th scope="col">区域</th>
-            <th scope="col">说明</th>
+            <th scope="col">{copy.thName}</th>
+            <th scope="col">{copy.thCategory}</th>
+            <th scope="col">{copy.thRegion}</th>
+            <th scope="col">{copy.thNote}</th>
           </tr>
         </thead>
         <tbody>
@@ -183,7 +226,7 @@ const ld = [{
                 <td class="nowrap">{marker.categoryIcon} {marker.name}</td>
                 <td class="nowrap">{marker.categoryName}</td>
                 <td class="nowrap">{marker.regionName}</td>
-                <td>{marker.description}</td>
+                <td>{marker.descriptionText}</td>
               </tr>
             );
           })}
@@ -199,6 +242,18 @@ const ld = [{
       const root = document.querySelector('[data-map-root]');
       if (!root || root.dataset.ready === 'true') return;
       root.dataset.ready = 'true';
+
+      let strings = {};
+      try { strings = JSON.parse(root.getAttribute('data-map-strings') || '{}'); } catch (error) { strings = {}; }
+      function text(key, vars) {
+        let value = strings[key] || '';
+        if (vars) {
+          Object.keys(vars).forEach(function (name) {
+            value = value.split('{' + name + '}').join(String(vars[name]));
+          });
+        }
+        return value;
+      }
 
       const dataEl = document.getElementById('map-data');
       let data = [];
@@ -241,7 +296,7 @@ const ld = [{
           const count = perRegion[el.dataset.mapRegionBlock] || 0;
           el.classList.toggle('is-hidden', count === 0);
           const blockCount = el.querySelector('[data-map-region-count]');
-          if (blockCount) blockCount.textContent = count + ' 个点位';
+          if (blockCount) blockCount.textContent = text('regionCount', { count: count });
         });
         listEls.forEach(function (el) {
           const show = isVisible(el);
@@ -259,8 +314,8 @@ const ld = [{
         activeId = null;
         markerEls.forEach(function (el) { el.setAttribute('aria-pressed', 'false'); });
         listEls.forEach(function (el) { el.removeAttribute('aria-current'); });
-        if (titleEl) titleEl.textContent = '选择标记点';
-        if (detailEl) detailEl.textContent = '尚未选择点位。点击地图图标或右侧列表查看详情。';
+        if (titleEl) titleEl.textContent = text('selectTitle');
+        if (detailEl) detailEl.textContent = text('notSelected');
       }
 
       function select(id, scrollIntoView) {
@@ -279,15 +334,15 @@ const ld = [{
         if (titleEl) titleEl.textContent = marker.categoryIcon + ' ' + marker.name;
         if (detailEl) {
           detailEl.innerHTML = '';
-          const text = document.createElement('span');
-          text.textContent = marker.description || '暂无说明。';
+          const body = document.createElement('span');
+          body.textContent = marker.descriptionText || text('noNote');
           const meta = document.createElement('span');
           meta.className = 'tiny';
           meta.style.display = 'block';
           meta.style.marginTop = '8px';
           meta.style.color = '#6f7d96';
-          meta.textContent = '区域：' + marker.regionName + ' · 分类：' + marker.categoryName;
-          detailEl.appendChild(text);
+          meta.textContent = text('markerMeta', { region: marker.regionName, category: marker.categoryName });
+          detailEl.appendChild(body);
           detailEl.appendChild(meta);
         }
       }

@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { recipesList, formatNumber, href, moduleMap } from '../../../lib/content.js';
+import { recipeDescription, contentPageLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { englishProse, localizeFacts, localizeValue } from '../../../i18n/data.mjs';
+
+export function getStaticPaths() {
+  const paths = [];
+  LOCALES.forEach(function (locale) {
+    recipesList.forEach(function (item) {
+      paths.push({ params: { locale: locale, slug: item.slug }, props: { item: item } });
+    });
+  });
+  return paths;
+}
+
+const { item } = Astro.props;
+const locale = Astro.params.locale;
+const copy = dict(locale).cooking;
+const common = dict(locale).common;
+const mod = moduleMap(locale).cooking;
+
+const ingredients = item.ingredients || [];
+// 英文页不机翻中文正文，只有数据自带英文时才展示
+const steps = locale === 'zh' ? (item.steps || []) : (englishProse(item.steps) ? item.steps : []);
+const tips = locale === 'zh' ? (item.tips || []) : (englishProse(item.tips) ? item.tips : []);
+const facts = localizeFacts(locale, item.facts);
+const hasChineseOnlyBody = locale !== 'zh' && !steps.length && !tips.length
+  && ((item.steps || []).length > 0 || (item.tips || []).length > 0);
+
+const sameCategory = recipesList
+  .filter(function (other) { return other.slug !== item.slug && other.category === item.category; })
+  .sort(function (a, b) { return (b.sellPrice || 0) - (a.sellPrice || 0); })
+  .slice(0, 6);
+
+function ingredientName(entry) {
+  const name = localizeValue(locale, entry.item);
+  return entry.qty ? name + ' ×' + entry.qty : name;
+}
+
+const itemPath = '/cooking/' + item.slug + '/';
+const breadcrumbs = [
+  { name: common.home, path: '/' },
+  { name: mod.name, path: mod.path },
+  { name: item.name, path: itemPath }
+];
+
+const rows = [
+  { label: copy.rowCategory, value: localizeValue(locale, item.category) },
+  { label: copy.rowPrice, value: formatNumber(item.sellPrice) + ' ' + common.gold, price: true },
+  { label: copy.rowUnlock, value: localizeValue(locale, item.unlock) || common.unknown },
+  { label: copy.rowEffect, value: localizeValue(locale, item.effect) || common.any }
+];
+
+const site = Astro.site ? Astro.site.href : '';
+const canonical = new URL(href(locale, itemPath), site).href;
+const title = t(locale, 'cooking.detailTitle', { name: item.name });
+const description = recipeDescription(locale, item);
+
+const ld = [contentPageLd({
+  locale: locale,
+  site: site,
+  canonical: canonical,
+  headline: item.name + ' — ' + copy.listName,
+  description: description,
+  section: copy.listName,
+  aboutName: item.name,
+  item: item,
+  extraProperties: [
+    { label: copy.rowUnlock, value: localizeValue(locale, item.unlock) },
+    { label: copy.rowEffect, value: localizeValue(locale, item.effect) },
+    { label: copy.ingredientList, value: ingredients.map(ingredientName).join(locale === 'zh' ? '、' : ', ') }
+  ]
+})];
+---
+
+<BaseLayout locale={locale} title={title} description={description} breadcrumbs={breadcrumbs} webPageType="ItemPage" jsonLd={ld}>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
+
+  <div class="detail-layout">
+    <div>
+      <div class="page-head">
+        <h1>🍳 {item.name}</h1>
+        <p class="lede">{description}</p>
+      </div>
+
+      <div class="panel">
+        <h2>{copy.ingredientList}</h2>
+        {ingredients.length > 0 ? (
+          <ul class="tip-list">
+            {ingredients.map(function (entry) {
+              return <li>{ingredientName(entry)}</li>;
+            })}
+          </ul>
+        ) : (
+          <p class="muted">{copy.noIngredientData}</p>
+        )}
+      </div>
+
+      {steps.length > 0 && (
+        <div class="panel">
+          <h2>{copy.steps}</h2>
+          <ol class="steps">
+            {steps.map(function (step) { return <li>{step}</li>; })}
+          </ol>
+        </div>
+      )}
+
+      {tips.length > 0 && (
+        <div class="panel">
+          <h2>{copy.tips}</h2>
+          <ul class="tip-list">
+            {tips.map(function (tip) { return <li>{tip}</li>; })}
+          </ul>
+        </div>
+      )}
+
+      {hasChineseOnlyBody && (
+        <div class="notice">
+          <span aria-hidden="true">🌐</span>
+          <span>
+            <strong>{common.pendingTitle}.</strong> {common.pendingBody}{' '}
+            <a href={href('zh', itemPath)}>{common.pendingLink}</a>
+          </span>
+        </div>
+      )}
+
+      {facts.length > 0 && (
+        <div class="panel">
+          <h2>{copy.recipeInfo}</h2>
+          <ul class="stat-list">
+            {facts.map(function (fact) {
+              return <li><span class="k">{fact.label}</span><span class="v">{fact.value}</span></li>;
+            })}
+          </ul>
+        </div>
+      )}
+
+      {sameCategory.length > 0 && (
+        <div class="panel">
+          <h2>{copy.sameCategory}</h2>
+          <div class="grid">
+            {sameCategory.map(function (other) {
+              return (
+                <a class="card" href={href(locale, '/cooking/' + other.slug + '/')}>
+                  <span class="card-title">🍳 {other.name}</span>
+                  <span class="card-text">
+                    {(other.ingredients || []).map(function (ing) { return localizeValue(locale, ing.item); }).join(locale === 'zh' ? '、' : ', ') || copy.noIngredients}
+                  </span>
+                  <span class="card-foot"><span class="badge badge-gold">{formatNumber(other.sellPrice)} {common.gold}</span></span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h2 class="map-panel-title">{copy.infoTitle}</h2>
+        <ul class="stat-list">
+          {rows.map(function (row) {
+            return (
+              <li>
+                <span class="k">{row.label}</span>
+                <span class={'v' + (row.price ? ' price' : '')}>{row.value}</span>
+              </li>
+            );
+          })}
+        </ul>
+        <p style="margin: 12px 0 0;">
+          <a class="btn btn-primary" href={href(locale, '/cooking/')} style="width: 100%;">{copy.backToList}</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>

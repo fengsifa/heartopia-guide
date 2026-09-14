@@ -1,44 +1,70 @@
 ---
-import { siteInfo } from '../lib/content.js';
+import { href, listModules, siteFor } from '../lib/content.js';
+import { HTML_LANG, LOCALE_LABEL, LOCALES, switchLocalePath } from '../i18n/config.mjs';
+import { dict } from '../i18n/ui.mjs';
 import SearchBox from './SearchBox.astro';
 
-const pathname = Astro.url.pathname;
-const navItems = [{ id: 'home', name: '首页', path: '/', icon: '🏠' }].concat(
-  siteInfo.modules.map(function (item) {
+const { locale, currentPath = '/' } = Astro.props;
+const copy = dict(locale);
+const siteInfo = siteFor(locale);
+
+const navItems = [{ id: 'home', name: copy.common.home, path: '/', icon: '🏠' }].concat(
+  listModules(locale).map(function (item) {
     return { id: item.id, name: item.navName || item.name, path: item.path, icon: item.icon };
   })
 );
 
 function isCurrent(target) {
-  if (target === '/') return pathname === '/';
-  return pathname === target || pathname.startsWith(target);
+  if (target === '/') return currentPath === '/';
+  return currentPath === target || currentPath.indexOf(target) === 0;
 }
+
+const otherLabel = LOCALES.filter(function (value) { return value !== locale; })
+  .map(function (value) { return LOCALE_LABEL[value]; })
+  .join(' / ');
 ---
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label={siteInfo.name + ' 首页'}>
+    <a class="brand" href={href(locale, '/')} aria-label={copy.header.brandAria.replace('{site}', siteInfo.name)}>
       <span class="brand-mark" aria-hidden="true">H</span>
       <span class="brand-text">{siteInfo.name}<small>HEARTOPIA GUIDE</small></span>
     </a>
 
     <div class="header-spacer"></div>
 
-    <SearchBox />
+    <div class="lang-switch" role="group" aria-label={copy.header.languageAria} title={copy.header.switchTo.replace('{name}', otherLabel)}>
+      {LOCALES.map(function (value) {
+        if (value === locale) {
+          return <span class="lang-option is-active" aria-current="true">{LOCALE_LABEL[value]}</span>;
+        }
+        return (
+          <a
+            class="lang-option"
+            href={switchLocalePath(currentPath, value)}
+            hreflang={HTML_LANG[value]}
+            rel="alternate"
+            data-lang-switch={value}
+          >{LOCALE_LABEL[value]}</a>
+        );
+      })}
+    </div>
+
+    <SearchBox locale={locale} />
 
     <div class="header-actions">
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
         <span aria-hidden="true">☰</span>
-        <span class="visually-hidden">打开导航菜单</span>
+        <span class="visually-hidden">{copy.header.openMenu}</span>
       </button>
     </div>
 
-    <nav class="site-nav" id="site-nav" aria-label="主导航">
+    <nav class="site-nav" id="site-nav" aria-label={copy.header.navAria}>
       <ul class="nav-list">
         {navItems.map(function (item) {
           return (
             <li>
-              <a href={item.path} aria-current={isCurrent(item.path) ? 'page' : undefined}>
+              <a href={href(locale, item.path)} aria-current={isCurrent(item.path) ? 'page' : undefined}>
                 <span class="nav-icon" aria-hidden="true">{item.icon}</span>
                 <span>{item.name}</span>
               </a>

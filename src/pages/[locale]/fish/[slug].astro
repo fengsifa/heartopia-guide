@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { fishList, formatNumber, href, moduleMap } from '../../../lib/content.js';
+import { fishDescription, contentPageLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { englishProse, localizeList, localizeValue } from '../../../i18n/data.mjs';
+
+export function getStaticPaths() {
+  const paths = [];
+  LOCALES.forEach(function (locale) {
+    fishList.forEach(function (item) {
+      paths.push({ params: { locale: locale, slug: item.slug }, props: { item: item } });
+    });
+  });
+  return paths;
+}
+
+const { item } = Astro.props;
+const locale = Astro.params.locale;
+const copy = dict(locale).fish;
+const common = dict(locale).common;
+const mod = moduleMap(locale).fish;
+
+// 英文页不机翻中文提示：只有数据本身带英文原文时才显示
+const tips = locale === 'zh'
+  ? (item.tips || [])
+  : (englishProse(item.tips) ? item.tips : []);
+
+const sameSpot = fishList
+  .filter(function (other) {
+    if (other.slug === item.slug) return false;
+    return other.location.some(function (loc) { return item.location.indexOf(loc) !== -1; });
+  })
+  .sort(function (a, b) { return (b.price || 0) - (a.price || 0); })
+  .slice(0, 6);
+
+const similarValue = fishList
+  .filter(function (other) {
+    if (other.slug === item.slug) return false;
+    return Math.abs((other.price || 0) - (item.price || 0)) <= 40;
+  })
+  .slice(0, 6);
+
+const related = (sameSpot.length ? sameSpot : similarValue).filter(function (entry, index, arr) {
+  return arr.findIndex(function (x) { return x.slug === entry.slug; }) === index;
+});
+
+const itemPath = '/fish/' + item.slug + '/';
+const breadcrumbs = [
+  { name: common.home, path: '/' },
+  { name: mod.name, path: mod.path },
+  { name: item.name, path: itemPath }
+];
+
+const rows = [
+  { label: copy.rowLocation, value: localizeList(locale, item.location) || copy.cardUnknown },
+  { label: copy.rowTime, value: localizeList(locale, item.time) || common.allDay },
+  { label: copy.rowWeather, value: localizeList(locale, item.weather) || common.any },
+  { label: copy.rowSeason, value: localizeList(locale, item.season) || common.any },
+  { label: copy.rowSize, value: localizeList(locale, item.size) || common.notRecorded },
+  { label: copy.rowDifficulty, value: localizeValue(locale, item.difficulty) || common.unknown },
+  { label: copy.rowPrice, value: item.price ? formatNumber(item.price) + ' ' + common.gold : common.notRecorded, price: true }
+];
+
+const site = Astro.site ? Astro.site.href : '';
+const canonical = new URL(href(locale, itemPath), site).href;
+const title = t(locale, 'fish.detailTitle', { name: item.name });
+const description = fishDescription(locale, item);
+
+const ld = [contentPageLd({
+  locale: locale,
+  site: site,
+  canonical: canonical,
+  headline: t(locale, 'fish.headline', { name: item.name }),
+  description: description,
+  section: copy.section,
+  aboutName: item.name,
+  item: item,
+  extraProperties: [
+    { label: copy.rowSize, value: localizeList(locale, item.size) },
+    { label: copy.rowSeason, value: localizeList(locale, item.season) },
+    { label: copy.rowDifficulty, value: localizeValue(locale, item.difficulty) }
+  ]
+})];
+---
+
+<BaseLayout locale={locale} title={title} description={description} breadcrumbs={breadcrumbs} webPageType="ItemPage" jsonLd={ld}>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
+
+  <div class="detail-layout">
+    <div>
+      <div class="page-head">
+        <h1>🐟 {item.name}</h1>
+        <p class="lede">{description}</p>
+      </div>
+
+      <div class="panel">
+        <h2>{copy.conditionsTitle}</h2>
+        <ul class="stat-list">
+          {rows.map(function (row) {
+            return (
+              <li>
+                <span class="k">{row.label}</span>
+                <span class={'v' + (row.price ? ' price' : '')}>{row.value}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {tips.length > 0 && (
+        <div class="panel">
+          <h2>{copy.tipsTitle}</h2>
+          <ul class="tip-list">
+            {tips.map(function (tip) { return <li>{tip}</li>; })}
+          </ul>
+        </div>
+      )}
+
+      {locale !== 'zh' && tips.length === 0 && (item.tips || []).length > 0 && (
+        <div class="notice">
+          <span aria-hidden="true">🌐</span>
+          <span>
+            <strong>{common.pendingTitle}.</strong> {common.pendingBody}{' '}
+            <a href={href('zh', itemPath)}>{common.pendingLink}</a>
+          </span>
+        </div>
+      )}
+
+      {related.length > 0 && (
+        <div class="panel">
+          <h2>{sameSpot.length ? copy.sameSpot : copy.similarPrice}</h2>
+          <div class="grid">
+            {related.map(function (other) {
+              return (
+                <a class="card" href={href(locale, '/fish/' + other.slug + '/')}>
+                  <span class="card-title">🐟 {other.name}</span>
+                  <span class="card-text">{localizeList(locale, other.location) || copy.cardUnknown}</span>
+                  <span class="card-foot"><span class="badge badge-gold">{formatNumber(other.price)} {common.gold}</span></span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h2 class="map-panel-title">{copy.quickInfo}</h2>
+        <ul class="stat-list">
+          <li><span class="k">{copy.rowPrice}</span><span class="v price">{item.price ? formatNumber(item.price) : '—'}</span></li>
+          <li><span class="k">{copy.rowDifficulty}</span><span class="v">{localizeValue(locale, item.difficulty)}</span></li>
+          <li><span class="k">{copy.rowLocationCount}</span><span class="v">{item.location.length}</span></li>
+        </ul>
+        <p style="margin: 12px 0 0;">
+          <a class="btn btn-primary" href={href(locale, '/fish/')} style="width: 100%;">{copy.backToList}</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>

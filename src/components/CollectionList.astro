@@ -1,49 +1,89 @@
 ---
 import Breadcrumbs from './Breadcrumbs.astro';
 import FilterBar from './FilterBar.astro';
-import { formatNumber, moduleMeta, toAttr, toText, uniqueValues } from '../lib/content.js';
+import { formatNumber, href, uniqueValues } from '../lib/content.js';
+import { localizeList, localizeValue } from '../i18n/data.mjs';
+import { dict } from '../i18n/ui.mjs';
 
-const { collection } = Astro.props;
+const { collection, locale } = Astro.props;
+const copy = dict(locale).collection;
 const items = collection.items || [];
 
+// 筛选条的取值和卡片上的 data-* 必须是同一种语言，否则英文页筛选会失效
+function attrList(value) {
+  const list = Array.isArray(value) ? value : (value ? [value] : []);
+  return list.map(function (entry) { return localizeValue(locale, entry); }).filter(Boolean).join('|');
+}
+
 const groups = (collection.filters || []).map(function (filter) {
-  return { key: filter.key, label: filter.label, values: uniqueValues(items, filter.key) };
+  return {
+    key: filter.key,
+    label: filter.label,
+    values: uniqueValues(items, filter.key).map(function (value) {
+      return localizeValue(locale, value);
+    })
+  };
 }).filter(function (group) { return group.values.length > 0; });
 
-const breadcrumbs = [{ name: '首页', path: '/' }, { name: collection.name, path: collection.path }];
+const breadcrumbs = [
+  { name: dict(locale).common.home, path: '/' },
+  { name: collection.name, path: collection.path }
+];
 
 const cards = items.map(function (item) {
-  const location = toText(item.location);
-  const time = toText(item.time);
-  const weather = toText(item.weather);
+  const category = localizeValue(locale, item.category);
+  const location = localizeList(locale, item.location);
+  const time = localizeList(locale, item.time);
+  const weather = localizeList(locale, item.weather);
+
   const lines = [];
-  if (location) lines.push('地点：' + location);
-  if (time) lines.push('时间：' + time);
+  if (location) lines.push(copy.cardLocation.replace('{value}', location));
+  if (time) lines.push(copy.cardTime.replace('{value}', time));
   if (!location && !time && item.description) lines.push(item.description);
 
   const badges = [];
-  if (item.price > 0) badges.push({ text: formatNumber(item.price) + ' 金币', cls: 'badge badge-gold' });
-  if (item.level) badges.push({ text: '出现等级 ' + item.level, cls: 'badge' });
-  if (item.category) badges.push({ text: toText(item.category), cls: 'badge' });
-  weather.split('、').filter(Boolean).slice(0, 3).forEach(function (entry) {
+  if (item.price > 0) {
+    badges.push({ text: formatNumber(item.price) + ' ' + dict(locale).common.gold, cls: 'badge badge-gold' });
+  }
+  if (item.level) badges.push({ text: copy.cardLevel.replace('{value}', item.level), cls: 'badge' });
+  if (category) badges.push({ text: category, cls: 'badge' });
+  weather.split(locale === 'zh' ? '、' : ', ').filter(Boolean).slice(0, 3).forEach(function (entry) {
     badges.push({ text: entry, cls: 'badge' });
   });
 
-  const searchText = [item.name, item.slug, toText(item.category), location, time, weather, item.level, item.description]
-    .filter(Boolean).join(' ');
+  const searchText = [
+    item.name,
+    item.slug,
+    category,
+    location,
+    time,
+    weather,
+    item.level,
+    item.description
+  ].filter(Boolean).join(' ');
 
-  return { item: item, lines: lines, badges: badges, searchText: searchText };
+  return {
+    item: item,
+    category: category,
+    location: location,
+    time: time,
+    weather: weather,
+    lines: lines,
+    badges: badges,
+    searchText: searchText
+  };
 });
 ---
 
-<Breadcrumbs items={breadcrumbs} />
+<Breadcrumbs items={breadcrumbs} locale={locale} />
 
 <div class="page-head">
   <h1>{collection.icon} Heartopia {collection.name}</h1>
-  <p class="lede">共收录 {items.length} {collection.unit}。{collection.desc}，点击任意条目查看详情。</p>
+  <p class="lede">{collection.desc} — {items.length} {collection.unit}{copy.ledeTail}</p>
 </div>
 
 <FilterBar
+  locale={locale}
   total={items.length}
   label={collection.unit}
   placeholder={collection.placeholder}
@@ -56,13 +96,13 @@ const cards = items.map(function (item) {
     return (
       <a
         class="card"
-        href={collection.path + card.item.slug + '/'}
+        href={href(locale, collection.path + card.item.slug + '/')}
         data-filter-item
         data-search={card.searchText}
-        data-location={toAttr(card.item.location)}
-        data-time={toAttr(card.item.time)}
-        data-weather={toAttr(card.item.weather)}
-        data-category={toAttr(card.item.category)}
+        data-location={attrList(card.item.location)}
+        data-time={attrList(card.item.time)}
+        data-weather={attrList(card.item.weather)}
+        data-category={card.category}
       >
         <span class="card-title">{collection.icon} {card.item.name}</span>
         <span class="card-text">
@@ -83,7 +123,7 @@ const cards = items.map(function (item) {
 {collection.notes && collection.notes.length > 0 && (
   <section class="section">
     <div class="panel">
-      <h2 class="mt-0">{collection.name}速记</h2>
+      <h2 class="mt-0">{copy.quickNotes.replace('{name}', collection.name)}</h2>
       <ul class="tip-list">
         {collection.notes.map(function (note) { return <li>{note}</li>; })}
       </ul>

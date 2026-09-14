@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { codesList as codesRaw, href, moduleMap } from '../../../lib/content.js';
+import { itemListLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { pickText } from '../../../i18n/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.map(function (locale) {
+    return { params: { locale: locale } };
+  });
+}
+
+const locale = Astro.params.locale;
+const copy = dict(locale).codes;
+const common = dict(locale).common;
+
+// 兑换码的奖励与备注是中英双字段，这里先本地化，模板里就能继续用 item.reward
+const codesList = codesRaw.map(function (item) {
+  return Object.assign({}, item, {
+    reward: pickText(locale, item.reward, item.rewardEn),
+    note: pickText(locale, item.note, item.noteEn)
+  });
+});
+const mod = moduleMap(locale).codes;
+const statusLabel = {
+  active: t(locale, 'codes.statusActive'),
+  limited: t(locale, 'codes.statusLimited'),
+  expired: t(locale, 'codes.statusExpired')
+};
+const order = { active: 0, limited: 1, expired: 2 };
+const sorted = codesList.slice().sort(function (a, b) {
+  const diff = (order[a.status] || 9) - (order[b.status] || 9);
+  if (diff !== 0) return diff;
+  return String(b.addedAt || '').localeCompare(String(a.addedAt || ''));
+});
+const groups = ['active', 'limited', 'expired'].map(function (status) {
+  return { status: status, label: statusLabel[status], items: sorted.filter(function (c) { return c.status === status; }) };
+}).filter(function (group) { return group.items.length > 0; });
+
+const breadcrumbs = [{ name: common.home, path: '/' }, { name: mod.name, path: mod.path }];
+const site = Astro.site ? Astro.site.href : '';
+const title = copy.title;
+const description = t(locale, 'codes.description', { count: codesList.length });
+const listPath = href(locale, mod.path);
+const ld = [itemListLd({
+  locale: locale,
+  site: site,
+  path: listPath,
+  name: copy.listName,
+  description: description,
+  entries: sorted.map(function (item) { return { name: item.code, path: listPath, description: item.reward }; })
+})];
+---
+
+<BaseLayout
+  locale={locale}
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  webPageType="CollectionPage"
+  jsonLd={ld}
+>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
+
+  <div class="page-head">
+    <h1>{copy.h1}</h1>
+    <p class="lede">{t(locale, 'codes.lede', { count: codesList.length })}</p>
+  </div>
+
+  <div class="notice" style="margin-bottom: 16px;">
+    <span aria-hidden="true">💡</span>
+    <span>{copy.howTo}</span>
+  </div>
+
+  {groups.map(function (group) {
+    return (
+      <section class="section">
+        <div class="section-head">
+          <h2>{t(locale, 'codes.groupTitle', { label: group.label })}</h2>
+          <span class="more">{t(locale, 'codes.groupCount', { count: group.items.length })}</span>
+        </div>
+        <div class="grid">
+          {group.items.map(function (item) {
+            return (
+              <article class="card" data-code-item data-search={[item.code, item.reward, item.note].join(' ')}>
+                <div class="code-box" style="margin-bottom: 10px;">
+                  <span class="code-value">{item.code}</span>
+                  <span class={'badge badge-' + item.status}>{statusLabel[item.status]}</span>
+                </div>
+                <p class="card-text">{item.reward}</p>
+                {item.note && <p class="tiny muted" style="margin: 8px 0 0;">{item.note}</p>}
+                <div class="card-foot">
+                  {item.addedAt && <span class="badge">{t(locale, 'codes.addedAt', { date: item.addedAt })}</span>}
+                  {item.expiresAt && <span class="badge badge-limited">{t(locale, 'codes.expiresAt', { date: item.expiresAt })}</span>}
+                  {item.verified && <span class="badge badge-active">{copy.verified}</span>}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="section">
+    <div class="panel">
+      <h2 class="mt-0">{copy.faqTitle}</h2>
+      <h3>{copy.faq[0].q}</h3>
+      <p class="muted">{copy.faq[0].a}</p>
+      <h3>{copy.faq[1].q}</h3>
+      <p class="muted">{copy.faq[1].a}</p>
+      <h3>{copy.faq[2].q}</h3>
+      <p class="muted">{copy.faq[2].a}</p>
+    </div>
+  </section>
+</BaseLayout>

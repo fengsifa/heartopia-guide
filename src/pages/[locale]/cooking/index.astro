@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import FilterBar from '../../../components/FilterBar.astro';
+import { recipesList, recipeCategories, formatNumber, href, moduleMap } from '../../../lib/content.js';
+import { itemListLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { localizeValue } from '../../../i18n/data.mjs';
+
+export function getStaticPaths() {
+  return LOCALES.map(function (locale) {
+    return { params: { locale: locale } };
+  });
+}
+
+const locale = Astro.params.locale;
+const copy = dict(locale).cooking;
+const common = dict(locale).common;
+const mod = moduleMap(locale).cooking;
+
+const sorted = recipesList.slice().sort(function (a, b) { return (b.sellPrice || 0) - (a.sellPrice || 0); });
+const unlocks = Array.from(new Set(recipesList.map(function (r) { return r.unlock; }).filter(Boolean))).sort();
+
+const groups = [
+  { key: 'category', label: copy.rowCategory, values: recipeCategories },
+  { key: 'unlock', label: copy.rowUnlock, values: unlocks }
+].map(function (group) {
+  return {
+    key: group.key,
+    label: group.label,
+    values: Array.from(new Set(group.values.map(function (value) { return localizeValue(locale, value); })))
+  };
+}).filter(function (group) { return group.values.length > 0; });
+
+const maxPrice = Math.max.apply(null, recipesList.map(function (r) { return r.sellPrice || 0; }).concat([1]));
+
+function ingredientName(entry) {
+  const name = localizeValue(locale, entry.item);
+  return entry.qty ? name + ' ×' + entry.qty : name;
+}
+
+function ingredientText(item) {
+  const list = item.ingredients || [];
+  if (!list.length) return copy.noIngredients;
+  return list.map(ingredientName).join(locale === 'zh' ? '、' : ', ');
+}
+
+const listPath = href(locale, mod.path);
+const breadcrumbs = [{ name: common.home, path: '/' }, { name: mod.name, path: mod.path }];
+const site = Astro.site ? Astro.site.href : '';
+const description = t(locale, 'cooking.description', { count: recipesList.length });
+const ld = [itemListLd({
+  locale: locale,
+  site: site,
+  path: listPath,
+  name: copy.listName,
+  description: description,
+  entries: sorted.map(function (item) {
+    return { name: item.name, path: listPath + item.slug + '/', description: t(locale, 'cooking.ingredients', { value: ingredientText(item) }) };
+  })
+})];
+---
+
+<BaseLayout
+  locale={locale}
+  title={copy.title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  webPageType="CollectionPage"
+  jsonLd={ld}
+>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
+
+  <div class="page-head">
+    <h1>{copy.h1}</h1>
+    <p class="lede">{t(locale, 'cooking.lede', { count: recipesList.length })}</p>
+  </div>
+
+  <FilterBar
+    locale={locale}
+    total={sorted.length}
+    label={copy.unit}
+    placeholder={copy.placeholder}
+    searchLabel={copy.searchLabel}
+    groups={groups}
+  />
+
+  <div class="grid">
+    {sorted.map(function (item) {
+      const category = localizeValue(locale, item.category);
+      const searchText = [item.name, category, localizeValue(locale, item.unlock), localizeValue(locale, item.effect)]
+        .concat((item.ingredients || []).map(function (ing) { return ing.item; }))
+        .join(' ');
+      return (
+        <a
+          class="card"
+          href={href(locale, '/cooking/' + item.slug + '/')}
+          data-filter-item
+          data-search={searchText}
+          data-category={category}
+          data-unlock={localizeValue(locale, item.unlock)}
+        >
+          <span class="card-title">🍳 {item.name}</span>
+          <span class="card-text">{copy.ingredients.replace('{value}', ingredientText(item))}</span>
+          <span class="card-foot">
+            <span class="badge badge-gold">{formatNumber(item.sellPrice)} {common.gold}</span>
+            <span class="badge">{category}</span>
+            {item.effect && <span class="badge">{localizeValue(locale, item.effect)}</span>}
+          </span>
+        </a>
+      );
+    })}
+  </div>
+
+  <section class="section">
+    <div class="section-head"><h2>{copy.rankingTitle}</h2></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">{copy.thDish}</th>
+            <th scope="col">{copy.thCategory}</th>
+            <th scope="col">{copy.thIngredientCount}</th>
+            <th scope="col" class="num">{copy.thPrice}</th>
+            <th scope="col" class="num">{copy.thRatio}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map(function (item) {
+            const ratio = Math.round(((item.sellPrice || 0) / maxPrice) * 100);
+            return (
+              <tr>
+                <td><a href={href(locale, '/cooking/' + item.slug + '/')}>{item.name}</a></td>
+                <td>{localizeValue(locale, item.category)}</td>
+                <td>{(item.ingredients || []).length || '—'}</td>
+                <td class="num price">{formatNumber(item.sellPrice)}</td>
+                <td class="num">{ratio}%</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>

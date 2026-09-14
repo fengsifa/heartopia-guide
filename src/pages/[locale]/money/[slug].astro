@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { moneyList, href, moduleMap } from '../../../lib/content.js';
+import { moneyGuideDescription, organizationRef, websiteRef, webPageRef } from '../../../lib/seo.mjs';
+import { HTML_LANG, LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { localizeValue, pickText } from '../../../i18n/data.mjs';
+
+export function getStaticPaths() {
+  const paths = [];
+  LOCALES.forEach(function (locale) {
+    moneyList.forEach(function (item) {
+      paths.push({ params: { locale: locale, slug: item.slug }, props: { item: item } });
+    });
+  });
+  return paths;
+}
+
+const { item } = Astro.props;
+const locale = Astro.params.locale;
+const copy = dict(locale).money;
+const common = dict(locale).common;
+const mod = moduleMap(locale).money;
+
+// 正文是本站原创中文；补上 titleEn / summaryEn / requirementsEn / stepsEn / tipsEn 后自动切换
+const displayTitle = pickText(locale, item.title, item.titleEn);
+const displaySummary = pickText(locale, item.summary, item.summaryEn);
+const requirements = locale === 'zh' ? (item.requirements || []) : (item.requirementsEn || []);
+const steps = locale === 'zh' ? (item.steps || []) : (item.stepsEn || []);
+const tips = locale === 'zh' ? (item.tips || []) : (item.tipsEn || []);
+const untranslated = locale !== 'zh' && !steps.length;
+
+const difficultyText = localizeValue(locale, item.difficulty);
+const incomeText = localizeValue(locale, item.incomePerHour);
+const timeText = localizeValue(locale, item.timeRequired);
+
+const related = moneyList
+  .filter(function (other) { return other.slug !== item.slug && other.difficulty === item.difficulty; })
+  .slice(0, 4);
+
+const itemPath = '/money/' + item.slug + '/';
+const breadcrumbs = [
+  { name: common.home, path: '/' },
+  { name: mod.name, path: mod.path },
+  { name: displayTitle, path: itemPath }
+];
+
+const rows = [
+  { label: copy.rowIncome, value: incomeText, price: true },
+  { label: copy.rowDifficulty, value: difficultyText },
+  { label: copy.rowTime, value: timeText },
+  { label: copy.rowSteps, value: (locale === 'zh' ? (item.steps || []) : steps).length }
+];
+
+const site = Astro.site ? Astro.site.href : '';
+const canonical = new URL(href(locale, itemPath), site).href;
+const title = t(locale, 'money.detailTitle', { name: displayTitle });
+const description = moneyGuideDescription(locale, item);
+
+const ld = [{
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: displayTitle,
+  description: description,
+  totalTime: timeText,
+  inLanguage: HTML_LANG[locale],
+  mainEntityOfPage: webPageRef(canonical),
+  isPartOf: websiteRef(site),
+  publisher: organizationRef(site),
+  supply: requirements.map(function (req) { return { '@type': 'HowToSupply', name: req }; }),
+  step: (locale === 'zh' ? (item.steps || []) : steps).map(function (step, index) {
+    return { '@type': 'HowToStep', position: index + 1, text: step };
+  })
+}];
+---
+
+<BaseLayout locale={locale} title={title} description={description} breadcrumbs={breadcrumbs} webPageType="ItemPage" jsonLd={ld}>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
+
+  <div class="detail-layout">
+    <div>
+      <div class="page-head">
+        <h1>💰 {displayTitle}</h1>
+        <p class="lede">{displaySummary}</p>
+      </div>
+
+      {requirements.length > 0 && (
+        <div class="panel">
+          <h2>{copy.requirements}</h2>
+          <div class="pill-list">
+            {requirements.map(function (req) { return <span class="pill">✓ {req}</span>; })}
+          </div>
+        </div>
+      )}
+
+      {steps.length > 0 && (
+        <div class="panel">
+          <h2>{copy.steps}</h2>
+          <ol class="steps">
+            {steps.map(function (step) { return <li>{step}</li>; })}
+          </ol>
+        </div>
+      )}
+
+      {untranslated && (
+        <div class="notice">
+          <span aria-hidden="true">🌐</span>
+          <span>
+            <strong>{common.pendingTitle}.</strong> {common.pendingBody}{' '}
+            <a href={href('zh', itemPath)}>{common.pendingLink}</a>
+          </span>
+        </div>
+      )}
+
+      {tips.length > 0 && (
+        <div class="panel">
+          <h2>{copy.tipsTitle}</h2>
+          <ul class="tip-list">
+            {tips.map(function (tip) { return <li>{tip}</li>; })}
+          </ul>
+        </div>
+      )}
+
+      {related.length > 0 && (
+        <div class="panel">
+          <h2>{copy.sameDifficulty}</h2>
+          <div class="grid">
+            {related.map(function (other) {
+              const otherTitle = pickText(locale, other.title, other.titleEn);
+              const otherText = pickText(locale, other.summary, other.summaryEn);
+              return (
+                <a class="card" href={href(locale, '/money/' + other.slug + '/')}>
+                  <span class="card-title">💰 {otherTitle}</span>
+                  <span class="card-text">{otherText}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h2 class="map-panel-title">{copy.summaryTitle}</h2>
+        <ul class="stat-list">
+          {rows.map(function (row) {
+            return (
+              <li>
+                <span class="k">{row.label}</span>
+                <span class={'v' + (row.price ? ' price' : '')}>{row.value}</span>
+              </li>
+            );
+          })}
+        </ul>
+        <p style="margin: 12px 0 0;">
+          <a class="btn btn-primary" href={href(locale, '/money/')} style="width: 100%;">{copy.backToList}</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>

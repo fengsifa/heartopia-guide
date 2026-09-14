@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import {
+  farmingList,
+  formatNumber,
+  href,
+  moduleMap,
+  profitPerDay,
+  regrowLabelFor
+} from '../../../lib/content.js';
+import { cropDescription, contentPageLd } from '../../../lib/seo.mjs';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict, t } from '../../../i18n/ui.mjs';
+import { englishProse, localizeFacts, localizeValue } from '../../../i18n/data.mjs';
+
+export function getStaticPaths() {
+  const paths = [];
+  LOCALES.forEach(function (locale) {
+    farmingList.forEach(function (item) {
+      paths.push({ params: { locale: locale, slug: item.slug }, props: { item: item } });
+    });
+  });
+  return paths;
+}
+
+const { item } = Astro.props;
+const locale = Astro.params.locale;
+const copy = dict(locale).farming;
+const common = dict(locale).common;
+const mod = moduleMap(locale).farming;
+
+const perDay = profitPerDay(item);
+const margin = item.sellPrice ? Math.round(((item.profit || 0) / item.sellPrice) * 100) : 0;
+const facts = localizeFacts(locale, item.facts);
+const growthText = localizeValue(locale, item.growthTime);
+const seasonText = localizeValue(locale, item.season);
+const regrowText = regrowLabelFor(locale, item.regrow);
+// 英文页不机翻中文提示
+const tips = locale === 'zh' ? (item.tips || []) : (englishProse(item.tips) ? item.tips : []);
+
+const sameSeason = farmingList
+  .filter(function (other) {
+    if (other.slug === item.slug) return false;
+    if (!other.season || !item.season) return false;
+    return other.season === item.season;
+  })
+  .slice(0, 6);
+
+const itemPath = '/farming/' + item.slug + '/';
+const breadcrumbs = [
+  { name: common.home, path: '/' },
+  { name: mod.name, path: mod.path },
+  { name: item.name, path: itemPath }
+];
+
+const golden = formatNumber(item.profit) + ' ' + common.gold;
+const rows = [
+  { label: copy.rowSeason, value: seasonText },
+  { label: copy.rowGrowth, value: growthText },
+  { label: copy.rowSeedCost, value: formatNumber(item.seedCost) + ' ' + common.gold },
+  { label: copy.rowPrice, value: formatNumber(item.sellPrice) + ' ' + common.gold },
+  { label: copy.rowProfit, value: golden, price: true },
+  { label: copy.rowPerDay, value: formatNumber(perDay) + ' ' + common.gold },
+  { label: copy.rowMargin, value: margin + '%' },
+  { label: copy.rowRegrow, value: regrowText },
+  { label: copy.rowUnlock, value: item.unlockLevel ? 'Lv.' + item.unlockLevel : copy.noLimit }
+];
+
+const site = Astro.site ? Astro.site.href : '';
+const canonical = new URL(href(locale, itemPath), site).href;
+const title = t(locale, 'farming.detailTitle', { name: item.name });
+const description = cropDescription(locale, item);
+
+const ld = [contentPageLd({
+  locale: locale,
+  site: site,
+  canonical: canonical,
+  headline: t(locale, 'farming.headline', { name: item.name }),
+  description: description,
+  section: copy.section,
+  aboutName: item.name,
+  item: item,
+  extraProperties: [
+    { label: copy.rowProfit, value: golden },
+    { label: copy.rowPerDay, value: formatNumber(perDay) + ' ' + common.gold },
+    { label: copy.rowRegrow, value: regrowText },
+    { label: copy.rowUnlock, value: String(item.unlockLevel || '') }
+  ]
+})];
+---
+
+<BaseLayout locale={locale} title={title} description={description} breadcrumbs={breadcrumbs} webPageType="ItemPage" jsonLd={ld}>
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
+
+  <div class="detail-layout">
+    <div>
+      <div class="page-head">
+        <h1>🌱 {item.name}</h1>
+        <p class="lede">{description}</p>
+      </div>
+
+      <div class="panel">
+        <h2>{copy.dataTitle}</h2>
+        <ul class="stat-list">
+          {rows.map(function (row) {
+            return (
+              <li>
+                <span class="k">{row.label}</span>
+                <span class={'v' + (row.price ? ' price' : '')}>{row.value}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {facts.length > 0 && (
+        <div class="panel">
+          <h2>{copy.notesTitle}</h2>
+          <ul class="stat-list">
+            {facts.map(function (fact) {
+              return <li><span class="k">{fact.label}</span><span class="v">{fact.value}</span></li>;
+            })}
+          </ul>
+          <p class="tiny muted" style="margin: 10px 0 0;">{copy.notesBody}</p>
+        </div>
+      )}
+
+      {tips.length > 0 && (
+        <div class="panel">
+          <h2>{copy.tipsTitle}</h2>
+          <ul class="tip-list">
+            {tips.map(function (tip) { return <li>{tip}</li>; })}
+          </ul>
+        </div>
+      )}
+
+      {locale !== 'zh' && tips.length === 0 && (item.tips || []).length > 0 && (
+        <div class="notice">
+          <span aria-hidden="true">🌐</span>
+          <span>
+            <strong>{common.pendingTitle}.</strong> {common.pendingBody}{' '}
+            <a href={href('zh', itemPath)}>{common.pendingLink}</a>
+          </span>
+        </div>
+      )}
+
+      {sameSeason.length > 0 && (
+        <div class="panel">
+          <h2>{copy.sameSeason}</h2>
+          <div class="grid">
+            {sameSeason.map(function (other) {
+              return (
+                <a class="card" href={href(locale, '/farming/' + other.slug + '/')}>
+                  <span class="card-title">🌱 {other.name}</span>
+                  <span class="card-text">
+                    {t(locale, 'farming.cardMeta', {
+                      time: localizeValue(locale, other.growthTime),
+                      cost: formatNumber(other.seedCost) + ' ' + common.gold
+                    })}
+                  </span>
+                  <span class="card-foot"><span class="badge">{localizeValue(locale, other.season)}</span></span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h2 class="map-panel-title">{copy.quickInfo}</h2>
+        <ul class="stat-list">
+          <li><span class="k">{copy.rowProfitShort}</span><span class="v price">{formatNumber(item.profit)}</span></li>
+          <li><span class="k">{copy.rowPerDay}</span><span class="v">{formatNumber(perDay)}</span></li>
+          <li><span class="k">{copy.rowMargin}</span><span class="v">{margin}%</span></li>
+        </ul>
+        <p style="margin: 12px 0 0;">
+          <a class="btn btn-primary" href={href(locale, '/farming/')} style="width: 100%;">{copy.backToList}</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>

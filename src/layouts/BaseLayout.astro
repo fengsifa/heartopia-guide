@@ -1,95 +1,194 @@
 ---
-import { siteInfo } from '../lib/content.js';
+import { siteFor } from '../lib/content.js';
+import {
+  DEFAULT_LOCALE,
+  HTML_LANG,
+  LOCALES,
+  OG_LOCALE,
+  alternates,
+  localePath,
+  stripLocale
+} from '../i18n/config.mjs';
+import { dict } from '../i18n/ui.mjs';
+import { clampText } from '../lib/seo.mjs';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const {
+  locale,
   title,
-  description = siteInfo.description,
+  description,
   breadcrumbs = [],
   jsonLd = [],
   noindex = false,
-  type = 'website'
+  type = 'website',
+  webPageType = 'WebPage',
+  // 根路径 / 是英文首页，canonical 需要指向 /en/
+  canonicalPath = ''
 } = Astro.props;
 
-const site = Astro.site ? Astro.site.href : siteInfo.url + '/';
-const canonical = new URL(Astro.url.pathname.replace(/\/+$/, '/') || '/', site).href;
-const fullTitle = title ? title + ' | ' + siteInfo.name : siteInfo.name + ' — ' + siteInfo.tagline;
-const ogImage = new URL('/og-default.svg', site).href;
+const copy = dict(locale);
+const siteInfo = siteFor(locale);
 
-const baseLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: siteInfo.name,
-    alternateName: siteInfo.tagline,
-    url: site,
-    inLanguage: 'zh-CN',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: site + 'search/?q={search_term_string}',
-      'query-input': 'required name=search_term_string'
-    }
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: siteInfo.name,
-    url: site
+const site = Astro.site ? Astro.site.href : siteInfo.url + '/';
+const canonical = new URL(
+  canonicalPath || Astro.url.pathname.replace(/\/+$/, '/') || '/',
+  site
+).href;
+
+const fullTitle = title ? title + ' | ' + siteInfo.name : siteInfo.name + ' — ' + siteInfo.tagline;
+const metaDescription = clampText(description || siteInfo.description);
+const ogImage = new URL('/og-default.svg', site).href;
+const ogImageAlt = siteInfo.name + ' — ' + siteInfo.tagline;
+
+// 当前页面去掉语言前缀后的路径，用来生成 hreflang 姊妹链接
+// canonicalPath 一般只有根路径 / 会用到（它等价于 /en/），这里一并把它算进来
+const currentPath = stripLocale(canonicalPath || Astro.url.pathname);
+// noindex 页面（404 / 站内搜索）互相之间不是真实的语言版本，不发 hreflang
+const hreflangs = (noindex ? [] : alternates(currentPath)).map(function (entry) {
+  return {
+    locale: entry.locale,
+    htmlLang: entry.htmlLang,
+    href: new URL(entry.href, site).href,
+    active: entry.locale === locale
+  };
+});
+
+const robotsContent = noindex
+  ? 'noindex, follow'
+  : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+
+const websiteId = site + '#website';
+const organizationId = site + '#organization';
+const webPageId = canonical + '#webpage';
+const breadcrumbId = canonical + '#breadcrumb';
+
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': websiteId,
+  name: siteInfo.name,
+  alternateName: siteInfo.tagline,
+  description: siteInfo.description,
+  url: site,
+  inLanguage: HTML_LANG[locale],
+  publisher: { '@id': organizationId },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: new URL('/' + locale + '/search/?q={search_term_string}', site).href,
+    'query-input': 'required name=search_term_string'
   }
-];
+};
+
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': organizationId,
+  name: siteInfo.name,
+  url: site,
+  description: siteInfo.description,
+  logo: new URL('/favicon.svg', site).href
+};
+
+const webPageLd = {
+  '@context': 'https://schema.org',
+  '@type': webPageType,
+  '@id': webPageId,
+  url: canonical,
+  name: fullTitle,
+  description: metaDescription,
+  inLanguage: HTML_LANG[locale],
+  isPartOf: { '@id': websiteId },
+  primaryImageOfPage: ogImage
+};
 
 const breadcrumbLd = breadcrumbs.length
   ? [{
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
+      '@id': breadcrumbId,
       itemListElement: breadcrumbs.map(function (item, index) {
         const entry = { '@type': 'ListItem', position: index + 1, name: item.name };
-        if (item.path) entry.item = new URL(item.path, site).href;
+        // 面包屑统一按当前语言生成绝对地址
+        if (item.path) entry.item = new URL(localePath(locale, item.path), site).href;
         return entry;
       })
     }]
   : [];
 
-const blocks = baseLd.concat(breadcrumbLd).concat(Array.isArray(jsonLd) ? jsonLd : [jsonLd]);
+if (breadcrumbLd.length) {
+  webPageLd.breadcrumb = { '@id': breadcrumbId };
+}
+
+const blocks = [websiteLd, organizationLd, webPageLd]
+  .concat(breadcrumbLd)
+  .concat(Array.isArray(jsonLd) ? jsonLd : [jsonLd]);
 ---
 
 <!doctype html>
-<html lang="zh-CN">
+<html lang={HTML_LANG[locale]}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonical} />
+    <meta name="robots" content={robotsContent} />
     <meta name="theme-color" content="#0d1220" />
-    {noindex && <meta name="robots" content="noindex, follow" />}
+    {hreflangs.map(function (entry) {
+      return <link rel="alternate" hreflang={entry.htmlLang} href={entry.href} />;
+    })}
+    {hreflangs.length > 0 && (
+      <link rel="alternate" hreflang="x-default" href={hreflangs.filter(function (e) { return e.locale === DEFAULT_LOCALE; })[0].href} />
+    )}
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content={siteInfo.name} />
-    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale" content={OG_LOCALE[locale]} />
+    {LOCALES.filter(function (value) { return value !== locale; }).map(function (value) {
+      return <meta property="og:locale:alternate" content={OG_LOCALE[value]} />;
+    })}
     <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" hreflang="zh-CN" href={canonical} />
     {blocks.map(function (block) {
       return <script type="application/ld+json" set:html={JSON.stringify(block)} />;
     })}
   </head>
   <body>
-    <a class="skip-link" href="#main">跳到主要内容</a>
-    <Header />
+    <a class="skip-link" href="#main">{copy.site.skipToContent}</a>
+    <Header locale={locale} currentPath={currentPath} />
     <main class="main" id="main">
       <div class="container">
         <slot />
       </div>
     </main>
-    <Footer />
+    <Footer locale={locale} />
+    <script>
+      // 手动切换语言后记住选择，下次由根路径 / 负责按偏好分流
+      const STORAGE_KEY = 'heartopiahub:locale';
+      function wireLanguageSwitch() {
+        document.querySelectorAll('[data-lang-switch]').forEach(function (node) {
+          if (node.dataset.localeReady === 'true') return;
+          node.dataset.localeReady = 'true';
+          node.addEventListener('click', function () {
+            try { localStorage.setItem(STORAGE_KEY, node.getAttribute('data-lang-switch')); } catch (error) {}
+          });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wireLanguageSwitch);
+      else wireLanguageSwitch();
+      document.addEventListener('astro:page-load', wireLanguageSwitch);
+    </script>
   </body>
 </html>

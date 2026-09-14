@@ -1,19 +1,43 @@
 ---
 import Breadcrumbs from './Breadcrumbs.astro';
-import { formatNumber, toText } from '../lib/content.js';
+import { formatNumber, href } from '../lib/content.js';
+import { englishProse, localizeFacts, localizeList, localizeValue } from '../i18n/data.mjs';
+import { dict } from '../i18n/ui.mjs';
 
-const { collection, item } = Astro.props;
+// description 由页面传入（与 meta description 同源），保证正文摘要与搜索结果摘要一致
+const { collection, item, description, locale } = Astro.props;
+const copy = dict(locale);
+const collectionCopy = copy.collection;
+
+// 英文页只在数据本身带英文原文时才展示长文，不把中文提示机翻过去
+const tips = locale === 'zh'
+  ? (item.tips || [])
+  : (englishProse(item.tips) ? item.tips : []);
+const facts = localizeFacts(locale, item.facts);
 
 const rows = [];
-if (toText(item.category)) rows.push({ label: '分类', value: toText(item.category), price: false });
-if (toText(item.location)) rows.push({ label: '出没地点', value: toText(item.location), price: false });
-if (toText(item.time)) rows.push({ label: '出现时间', value: toText(item.time), price: false });
-if (toText(item.weather)) rows.push({ label: '天气条件', value: toText(item.weather), price: false });
-if (item.level) rows.push({ label: '等级要求', value: item.level, price: false });
-if (item.price > 0) rows.push({ label: '售价', value: formatNumber(item.price) + ' 金币', price: true });
-
-const facts = item.facts || [];
-const tips = item.tips || [];
+if (localizeValue(locale, item.category)) {
+  rows.push({ label: collectionCopy.rowCategory, value: localizeValue(locale, item.category), price: false });
+}
+if (localizeList(locale, item.location)) {
+  rows.push({ label: collectionCopy.rowLocation, value: localizeList(locale, item.location), price: false });
+}
+if (localizeList(locale, item.time)) {
+  rows.push({ label: collectionCopy.rowTime, value: localizeList(locale, item.time), price: false });
+}
+if (localizeList(locale, item.weather)) {
+  rows.push({ label: collectionCopy.rowWeather, value: localizeList(locale, item.weather), price: false });
+}
+if (item.level) {
+  rows.push({ label: collectionCopy.rowLevel, value: item.level, price: false });
+}
+if (item.price > 0) {
+  rows.push({
+    label: collectionCopy.rowPrice,
+    value: formatNumber(item.price) + ' ' + copy.common.gold,
+    price: true
+  });
+}
 
 const related = (collection.items || []).filter(function (other) {
   if (other.slug === item.slug) return false;
@@ -24,24 +48,26 @@ const related = (collection.items || []).filter(function (other) {
 }).slice(0, 6);
 
 const breadcrumbs = [
-  { name: '首页', path: '/' },
+  { name: copy.common.home, path: '/' },
   { name: collection.name, path: collection.path },
   { name: item.name, path: collection.path + item.slug + '/' }
 ];
+
+const lede = description || item.description;
 ---
 
-<Breadcrumbs items={breadcrumbs} />
+<Breadcrumbs items={breadcrumbs} locale={locale} />
 
 <div class="detail-layout">
   <div>
     <div class="page-head">
       <h1>{collection.icon} {item.name}</h1>
-      <p class="lede">{item.description}</p>
+      <p class="lede">{lede}</p>
     </div>
 
     {rows.length > 0 && (
       <div class="panel">
-        <h2>基础信息</h2>
+        <h2>{collectionCopy.detailInfo}</h2>
         <ul class="stat-list">
           {rows.map(function (row) {
             return (
@@ -57,7 +83,7 @@ const breadcrumbs = [
 
     {facts.length > 0 && (
       <div class="panel">
-        <h2>补充信息</h2>
+        <h2>{collectionCopy.extraInfo}</h2>
         <ul class="stat-list">
           {facts.map(function (fact) {
             return (
@@ -73,7 +99,7 @@ const breadcrumbs = [
 
     {tips.length > 0 && (
       <div class="panel">
-        <h2>攻略提示</h2>
+        <h2>{collectionCopy.tips}</h2>
         <ul class="tip-list">
           {tips.map(function (tip) { return <li>{tip}</li>; })}
         </ul>
@@ -82,13 +108,16 @@ const breadcrumbs = [
 
     {related.length > 0 && (
       <div class="panel">
-        <h2>相关条目</h2>
+        <h2>{collectionCopy.related}</h2>
         <div class="grid">
           {related.map(function (other) {
+            const meta = other.price > 0
+              ? formatNumber(other.price) + ' ' + copy.common.gold
+              : (localizeValue(locale, other.category) || copy.common.viewDetails);
             return (
-              <a class="card" href={collection.path + other.slug + '/'}>
+              <a class="card" href={href(locale, collection.path + other.slug + '/')}>
                 <span class="card-title">{collection.icon} {other.name}</span>
-                <span class="card-text">{other.price > 0 ? formatNumber(other.price) + ' 金币' : toText(other.category) || '查看详情'}</span>
+                <span class="card-text">{meta}</span>
               </a>
             );
           })}
@@ -99,7 +128,7 @@ const breadcrumbs = [
 
   <aside class="side">
     <div class="panel">
-      <h2 class="map-panel-title">快速信息</h2>
+      <h2 class="map-panel-title">{collectionCopy.quickFacts}</h2>
       <ul class="stat-list">
         {rows.slice(0, 4).map(function (row) {
           return (
@@ -111,7 +140,7 @@ const breadcrumbs = [
         })}
       </ul>
       <p style="margin: 12px 0 0;">
-        <a class="btn btn-primary" href={collection.path} style="width: 100%;">← 返回{collection.name}</a>
+        <a class="btn btn-primary" href={href(locale, collection.path)} style="width: 100%;">{collectionCopy.backTo.replace('{name}', collection.name)}</a>
       </p>
     </div>
   </aside>

@@ -1,0 +1,3472 @@
+{
+  "generatedAt": "2026-09-14T14:41:23.838Z",
+  "locale": "en",
+  "count": 385,
+  "items": [
+    {
+      "id": "code-HEARTOPIA",
+      "title": "HEARTOPIA",
+      "subtitle": "500 Gold + Basic Seed Pack",
+      "description": "Community-circulated code — verify it in game",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "HEARTOPIA 500 金币 + 基础种子礼包 500 Gold + Basic Seed Pack active"
+    },
+    {
+      "id": "code-WELCOME",
+      "title": "WELCOME",
+      "subtitle": "300 Gold + Bread x3",
+      "description": "Starter welcome code",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "WELCOME 300 金币 + 面包 x3 300 Gold + Bread x3 active"
+    },
+    {
+      "id": "code-FISHON",
+      "title": "FISHON",
+      "subtitle": "Bait x10 + 200 Gold",
+      "description": "Fishing event code",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "FISHON 鱼饵 x10 + 200 金币 Bait x10 + 200 Gold active"
+    },
+    {
+      "id": "code-FARM2026",
+      "title": "FARM2026",
+      "subtitle": "Random Seeds x5",
+      "description": "Farm event code",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "FARM2026 随机种子 x5 Random Seeds x5 active"
+    },
+    {
+      "id": "code-COOK2026",
+      "title": "COOK2026",
+      "subtitle": "Kitchen Material Pack + 250 Gold",
+      "description": "Cooking event code",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "COOK2026 厨房材料包 + 250 金币 Kitchen Material Pack + 250 Gold active"
+    },
+    {
+      "id": "code-GOLD2026",
+      "title": "GOLD2026",
+      "subtitle": "888 Gold",
+      "description": "Limited-time Gold code",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "GOLD2026 888 金币 888 Gold limited"
+    },
+    {
+      "id": "code-SEA2026",
+      "title": "SEA2026",
+      "subtitle": "Advanced Bait x5",
+      "description": "Beach event code",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "SEA2026 高级鱼饵 x5 Advanced Bait x5 limited"
+    },
+    {
+      "id": "code-MAPLOVE",
+      "title": "MAPLOVE",
+      "subtitle": "Map Marker Unlock Ticket x1",
+      "description": "Community exploration event",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "MAPLOVE 地图标记解锁券 x1 Map Marker Unlock Ticket x1 active"
+    },
+    {
+      "id": "code-NEWDAY",
+      "title": "NEWDAY",
+      "subtitle": "Stamina Potion x2",
+      "description": "Expired — kept for reference",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "NEWDAY 体力药水 x2 Stamina Potion x2 expired"
+    },
+    {
+      "id": "code-OLDMOON",
+      "title": "OLDMOON",
+      "subtitle": "Mid-Autumn limited decoration x1",
+      "description": "Expired — kept for reference",
+      "url": "/en/codes/",
+      "category": "Codes",
+      "keywords": "OLDMOON 中秋限定装饰 x1 Mid-Autumn limited decoration x1 expired"
+    },
+    {
+      "id": "recipe-picnic-set",
+      "title": "Picnic Set",
+      "subtitle": "Other Dishes · 2260 Gold",
+      "description": "Restores 100 Stamina, ingredients: ",
+      "url": "/en/cooking/picnic-set/",
+      "category": "Cooking Recipes",
+      "keywords": "Picnic Set 其他料理 Other Dishes 恢复 100 体力 Restores 100 Stamina"
+    },
+    {
+      "id": "recipe-grape-jam",
+      "title": "Grape Jam",
+      "subtitle": "Stove Dishes · 2020 Gold",
+      "description": ", ingredients: Grape x4",
+      "url": "/en/cooking/grape-jam/",
+      "category": "Cooking Recipes",
+      "keywords": "Grape Jam 灶台料理 Stove Dishes Grape x4"
+    },
+    {
+      "id": "recipe-strawberry-jam",
+      "title": "Strawberry Jam",
+      "subtitle": "Stove Dishes · 1580 Gold",
+      "description": ", ingredients: Strawberry x4",
+      "url": "/en/cooking/strawberry-jam/",
+      "category": "Cooking Recipes",
+      "keywords": "Strawberry Jam 灶台料理 Stove Dishes Strawberry x4"
+    },
+    {
+      "id": "recipe-corn-soup",
+      "title": "Corn Soup",
+      "subtitle": "Other Dishes · 1340 Gold",
+      "description": "Restores 80 Stamina, ingredients: Milk x1、Butter x1、Corn x2",
+      "url": "/en/cooking/corn-soup/",
+      "category": "Cooking Recipes",
+      "keywords": "Corn Soup 其他料理 Other Dishes 恢复 80 体力 Restores 80 Stamina Milk x1、Butter x1、Corn x2"
+    },
+    {
+      "id": "recipe-black-truffle-cream-pasta",
+      "title": "Black Truffle Cream Pasta",
+      "subtitle": "Other Dishes · 900 Gold",
+      "description": "Restores 90 Stamina, ingredients: Black Truffle x1、Wheat x2、Milk x1",
+      "url": "/en/cooking/black-truffle-cream-pasta/",
+      "category": "Cooking Recipes",
+      "keywords": "Black Truffle Cream Pasta 其他料理 Other Dishes 恢复 90 体力 Restores 90 Stamina Black Truffle x1、Wheat x2、Milk x1"
+    },
+    {
+      "id": "recipe-carrot-cake",
+      "title": "Carrot Cake",
+      "subtitle": "Other Dishes · 840 Gold",
+      "description": "Restores 55 Stamina, ingredients: Carrot x2、Wheat x1、Milk x1",
+      "url": "/en/cooking/carrot-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Carrot Cake 其他料理 Other Dishes 恢复 55 体力 Restores 55 Stamina Carrot x2、Wheat x1、Milk x1"
+    },
+    {
+      "id": "recipe-black-truffle-pie",
+      "title": "Black Truffle Pie",
+      "subtitle": "Stove Dishes · 830 Gold",
+      "description": "Restores 80 Stamina, ingredients: Black Truffle x2、Wheat x1、Egg x1",
+      "url": "/en/cooking/black-truffle-pie/",
+      "category": "Cooking Recipes",
+      "keywords": "Black Truffle Pie 灶台料理 Stove Dishes 恢复 80 体力 Restores 80 Stamina Black Truffle x2、Wheat x1、Egg x1"
+    },
+    {
+      "id": "recipe-seafood-pizza",
+      "title": "Seafood Pizza",
+      "subtitle": "Other Dishes · 780 Gold",
+      "description": "Restores 70 Stamina, ingredients: Cheese x1、Tomato Sauce x1、Wheat x1、Fish x1",
+      "url": "/en/cooking/seafood-pizza/",
+      "category": "Cooking Recipes",
+      "keywords": "Seafood Pizza 其他料理 Other Dishes 恢复 70 体力 Restores 70 Stamina Cheese x1、Tomato Sauce x1、Wheat x1、Fish x1"
+    },
+    {
+      "id": "recipe-apple-pie",
+      "title": "Apple Pie",
+      "subtitle": "Stove Dishes · 730 Gold",
+      "description": "Restores 70 Stamina, ingredients: Apple x1、Wheat x1、Egg x1、Butter x1",
+      "url": "/en/cooking/apple-pie/",
+      "category": "Cooking Recipes",
+      "keywords": "Apple Pie 灶台料理 Stove Dishes 恢复 70 体力 Restores 70 Stamina Apple x1、Wheat x1、Egg x1、Butter x1"
+    },
+    {
+      "id": "recipe-afternoon-tea",
+      "title": "Afternoon Tea",
+      "subtitle": "Other Dishes · 710 Gold",
+      "description": "Restores 25 Stamina, bonus: Fully Pumped, ingredients: ",
+      "url": "/en/cooking/afternoon-tea/",
+      "category": "Cooking Recipes",
+      "keywords": "Afternoon Tea 其他料理 Other Dishes 恢复 25 体力，加成 Fully Pumped Restores 25 Stamina, bonus: Fully Pumped"
+    },
+    {
+      "id": "recipe-meat-sauce-pasta",
+      "title": "Meat Sauce Pasta",
+      "subtitle": "Other Dishes · 670 Gold",
+      "description": "Restores 80 Stamina, ingredients: Meat x1、Wheat x1、Tomato Sauce x1、Cheese x1",
+      "url": "/en/cooking/meat-sauce-pasta/",
+      "category": "Cooking Recipes",
+      "keywords": "Meat Sauce Pasta 其他料理 Other Dishes 恢复 80 体力 Restores 80 Stamina Meat x1、Wheat x1、Tomato Sauce x1、Cheese x1"
+    },
+    {
+      "id": "recipe-red-roll-cake",
+      "title": "Red Roll Cake",
+      "subtitle": "Stove Dishes · 670 Gold",
+      "description": ", ingredients: Egg x1、Milk x1、Red Sugar x2",
+      "url": "/en/cooking/red-roll-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Red Roll Cake 灶台料理 Stove Dishes Egg x1、Milk x1、Red Sugar x2"
+    },
+    {
+      "id": "recipe-yellow-roll-cake",
+      "title": "Yellow Roll Cake",
+      "subtitle": "Stove Dishes · 670 Gold",
+      "description": ", ingredients: Egg x1、Milk x1、Yellow Sugar x2",
+      "url": "/en/cooking/yellow-roll-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Yellow Roll Cake 灶台料理 Stove Dishes Egg x1、Milk x1、Yellow Sugar x2"
+    },
+    {
+      "id": "recipe-rustic-ratatouille",
+      "title": "Rustic Ratatouille",
+      "subtitle": "Stove Dishes · 640 Gold",
+      "description": "Restores 60 Stamina, ingredients: Tomato x1、Potato x1、Lettuce x1",
+      "url": "/en/cooking/rustic-ratatouille/",
+      "category": "Cooking Recipes",
+      "keywords": "Rustic Ratatouille 灶台料理 Stove Dishes 恢复 60 体力 Restores 60 Stamina Tomato x1、Potato x1、Lettuce x1"
+    },
+    {
+      "id": "recipe-blue-roll-cake",
+      "title": "Blue Roll Cake",
+      "subtitle": "Stove Dishes · 570 Gold",
+      "description": ", ingredients: Egg x1、Milk x1、Blue Sugar x2",
+      "url": "/en/cooking/blue-roll-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Blue Roll Cake 灶台料理 Stove Dishes Egg x1、Milk x1、Blue Sugar x2"
+    },
+    {
+      "id": "recipe-green-roll-cake",
+      "title": "Green Roll Cake",
+      "subtitle": "Stove Dishes · 570 Gold",
+      "description": ", ingredients: Egg x1、Milk x1、Green Sugar x2",
+      "url": "/en/cooking/green-roll-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Green Roll Cake 灶台料理 Stove Dishes Egg x1、Milk x1、Green Sugar x2"
+    },
+    {
+      "id": "recipe-indigo-roll-cake",
+      "title": "Indigo Roll Cake",
+      "subtitle": "Stove Dishes · 570 Gold",
+      "description": ", ingredients: Egg x1、Milk x1、Indigo Sugar x2",
+      "url": "/en/cooking/indigo-roll-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Indigo Roll Cake 灶台料理 Stove Dishes Egg x1、Milk x1、Indigo Sugar x2"
+    },
+    {
+      "id": "recipe-orange-roll-cake",
+      "title": "Orange Roll Cake",
+      "subtitle": "Stove Dishes · 570 Gold",
+      "description": ", ingredients: Egg x1、Milk x1、Orange Sugar x2",
+      "url": "/en/cooking/orange-roll-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Orange Roll Cake 灶台料理 Stove Dishes Egg x1、Milk x1、Orange Sugar x2"
+    },
+    {
+      "id": "recipe-violet-roll-cake",
+      "title": "Violet Roll Cake",
+      "subtitle": "Stove Dishes · 570 Gold",
+      "description": ", ingredients: Egg x1、Milk x1、Violet Sugar x2",
+      "url": "/en/cooking/violet-roll-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Violet Roll Cake 灶台料理 Stove Dishes Egg x1、Milk x1、Violet Sugar x2"
+    },
+    {
+      "id": "recipe-original-roll-cake",
+      "title": "Original Roll Cake",
+      "subtitle": "Stove Dishes · 550 Gold",
+      "description": "Restores 35 Stamina, ingredients: Egg x1、Milk x1、Sugar x2",
+      "url": "/en/cooking/original-roll-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Original Roll Cake 灶台料理 Stove Dishes 恢复 35 体力 Restores 35 Stamina Egg x1、Milk x1、Sugar x2"
+    },
+    {
+      "id": "recipe-tiramisu",
+      "title": "Tiramisu",
+      "subtitle": "Other Dishes · 530 Gold",
+      "description": ", ingredients: Coffee Bean x1、Egg x1、Milk x1、Cheese x1",
+      "url": "/en/cooking/tiramisu/",
+      "category": "Cooking Recipes",
+      "keywords": "Tiramisu 其他料理 Other Dishes Coffee Bean x1、Egg x1、Milk x1、Cheese x1"
+    },
+    {
+      "id": "recipe-smoked-fish-bagel",
+      "title": "Smoked Fish Bagel",
+      "subtitle": "Other Dishes · 520 Gold",
+      "description": ", ingredients: Fish x1、Cheese x1、Vegetable x1、Wheat x1",
+      "url": "/en/cooking/smoked-fish-bagel/",
+      "category": "Cooking Recipes",
+      "keywords": "Smoked Fish Bagel 其他料理 Other Dishes Fish x1、Cheese x1、Vegetable x1、Wheat x1"
+    },
+    {
+      "id": "recipe-button-mushroom-pie",
+      "title": "Button Mushroom Pie",
+      "subtitle": "Stove Dishes · 500 Gold",
+      "description": "Restores 35 Stamina, ingredients: Button Mushroom x2、Wheat x1、Egg x1",
+      "url": "/en/cooking/button-mushroom-pie/",
+      "category": "Cooking Recipes",
+      "keywords": "Button Mushroom Pie 灶台料理 Stove Dishes 恢复 35 体力 Restores 35 Stamina Button Mushroom x2、Wheat x1、Egg x1"
+    },
+    {
+      "id": "recipe-shiitake-pie",
+      "title": "Shiitake Pie",
+      "subtitle": "Stove Dishes · 500 Gold",
+      "description": "Restores 35 Stamina, ingredients: Shiitake x2、Wheat x1、Egg x1",
+      "url": "/en/cooking/shiitake-pie/",
+      "category": "Cooking Recipes",
+      "keywords": "Shiitake Pie 灶台料理 Stove Dishes 恢复 35 体力 Restores 35 Stamina Shiitake x2、Wheat x1、Egg x1"
+    },
+    {
+      "id": "recipe-seafood-risotto",
+      "title": "Seafood Risotto",
+      "subtitle": "Other Dishes · 490 Gold",
+      "description": "Restores 40 Stamina, ingredients: Shellfish x2、Wheat x1、Tomato x1",
+      "url": "/en/cooking/seafood-risotto/",
+      "category": "Cooking Recipes",
+      "keywords": "Seafood Risotto 其他料理 Other Dishes 恢复 40 体力 Restores 40 Stamina Shellfish x2、Wheat x1、Tomato x1"
+    },
+    {
+      "id": "recipe-cheese-cake",
+      "title": "Cheese Cake",
+      "subtitle": "Stove Dishes · 480 Gold",
+      "description": "Restores 50 Stamina, ingredients: Cheese x1、Milk x1、Wheat x1",
+      "url": "/en/cooking/cheese-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "Cheese Cake 灶台料理 Stove Dishes 恢复 50 体力 Restores 50 Stamina Cheese x1、Milk x1、Wheat x1"
+    },
+    {
+      "id": "recipe-deluxe-seafood-platter",
+      "title": "Deluxe Seafood Platter",
+      "subtitle": "Other Dishes · 410 Gold",
+      "description": "Restores 65 Stamina, ingredients: Shellfish x2、Fish x2",
+      "url": "/en/cooking/deluxe-seafood-platter/",
+      "category": "Cooking Recipes",
+      "keywords": "Deluxe Seafood Platter 其他料理 Other Dishes 恢复 65 体力 Restores 65 Stamina Shellfish x2、Fish x2"
+    },
+    {
+      "id": "recipe-summer-pizza",
+      "title": "夏日披萨",
+      "subtitle": "Main Dishes · 360 Gold",
+      "description": "Restores 85 Stamina, ingredients: 面粉 x3、番茄 x2、奶酪 x1",
+      "url": "/en/cooking/summer-pizza/",
+      "category": "Cooking Recipes",
+      "keywords": "夏日披萨 主食 Main Dishes 恢复 85 体力 Restores 85 Stamina 面粉 x3、番茄 x2、奶酪 x1"
+    },
+    {
+      "id": "recipe-sushi",
+      "title": "寿司",
+      "subtitle": "Seafood · 340 Gold",
+      "description": "Restores 80 Stamina, ingredients: 优质鱼 x1、米饭 x2、海苔 x1",
+      "url": "/en/cooking/sushi/",
+      "category": "Cooking Recipes",
+      "keywords": "寿司 海鲜 Seafood 恢复 80 体力 Restores 80 Stamina 优质鱼 x1、米饭 x2、海苔 x1"
+    },
+    {
+      "id": "recipe-shrimp-fried-rice",
+      "title": "虾仁炒饭",
+      "subtitle": "Seafood · 320 Gold",
+      "description": "Restores 75 Stamina, ingredients: 虾 x2、米饭 x2、鸡蛋 x1",
+      "url": "/en/cooking/shrimp-fried-rice/",
+      "category": "Cooking Recipes",
+      "keywords": "虾仁炒饭 海鲜 Seafood 恢复 75 体力 Restores 75 Stamina 虾 x2、米饭 x2、鸡蛋 x1"
+    },
+    {
+      "id": "recipe-fish-n-chips",
+      "title": "Fish N Chips",
+      "subtitle": "Stove Dishes · 310 Gold",
+      "description": "Restores 40 Stamina, ingredients: Fish x2、Potato x1",
+      "url": "/en/cooking/fish-n-chips/",
+      "category": "Cooking Recipes",
+      "keywords": "Fish N Chips 灶台料理 Stove Dishes 恢复 40 体力 Restores 40 Stamina Fish x2、Potato x1"
+    },
+    {
+      "id": "recipe-fish-taco",
+      "title": "鱼肉卷饼",
+      "subtitle": "Main Dishes · 300 Gold",
+      "description": "Restores 70 Stamina, ingredients: 任意鱼 x1、面粉 x2、蔬菜 x1",
+      "url": "/en/cooking/fish-taco/",
+      "category": "Cooking Recipes",
+      "keywords": "鱼肉卷饼 主食 Main Dishes 恢复 70 体力 Restores 70 Stamina 任意鱼 x1、面粉 x2、蔬菜 x1"
+    },
+    {
+      "id": "recipe-apple-cake",
+      "title": "苹果蛋糕",
+      "subtitle": "Desserts · 300 Gold",
+      "description": "Restores 60 Stamina, ingredients: 苹果 x2、面粉 x2、鸡蛋 x2",
+      "url": "/en/cooking/apple-cake/",
+      "category": "Cooking Recipes",
+      "keywords": "苹果蛋糕 甜点 Desserts 恢复 60 体力 Restores 60 Stamina 苹果 x2、面粉 x2、鸡蛋 x2"
+    },
+    {
+      "id": "recipe-coffee-latte",
+      "title": "Coffee Latte",
+      "subtitle": "Stove Dishes · 300 Gold",
+      "description": "Restores 40 Stamina, ingredients: Coffee Bean x2、Milk x2",
+      "url": "/en/cooking/coffee-latte/",
+      "category": "Cooking Recipes",
+      "keywords": "Coffee Latte 灶台料理 Stove Dishes 恢复 40 体力 Restores 40 Stamina Coffee Bean x2、Milk x2"
+    },
+    {
+      "id": "recipe-coffee-2",
+      "title": "Coffee",
+      "subtitle": "Stove Dishes · 290 Gold",
+      "description": "Restores 40 Stamina, ingredients: Coffee Bean x4",
+      "url": "/en/cooking/coffee-2/",
+      "category": "Cooking Recipes",
+      "keywords": "Coffee 灶台料理 Stove Dishes 恢复 40 体力 Restores 40 Stamina Coffee Bean x4"
+    },
+    {
+      "id": "recipe-fish-and-chips",
+      "title": "炸鱼薯条",
+      "subtitle": "Seafood · 280 Gold",
+      "description": "Restores 70 Stamina, ingredients: 任意鱼 x1、土豆 x2、油 x1",
+      "url": "/en/cooking/fish-and-chips/",
+      "category": "Cooking Recipes",
+      "keywords": "炸鱼薯条 海鲜 Seafood 恢复 70 体力 Restores 70 Stamina 任意鱼 x1、土豆 x2、油 x1"
+    },
+    {
+      "id": "recipe-pineapple-jam",
+      "title": "Pineapple Jam",
+      "subtitle": "Stove Dishes · 280 Gold",
+      "description": "Restores 40 Stamina, ingredients: Pineapple x4",
+      "url": "/en/cooking/pineapple-jam/",
+      "category": "Cooking Recipes",
+      "keywords": "Pineapple Jam 灶台料理 Stove Dishes 恢复 40 体力 Restores 40 Stamina Pineapple x4"
+    },
+    {
+      "id": "recipe-apple-jam",
+      "title": "Apple Jam",
+      "subtitle": "Stove Dishes · 270 Gold",
+      "description": "Restores 35 Stamina, ingredients: Apple x4",
+      "url": "/en/cooking/apple-jam/",
+      "category": "Cooking Recipes",
+      "keywords": "Apple Jam 灶台料理 Stove Dishes 恢复 35 体力 Restores 35 Stamina Apple x4"
+    },
+    {
+      "id": "recipe-mandarin-jam",
+      "title": "Mandarin Jam",
+      "subtitle": "Stove Dishes · 270 Gold",
+      "description": "Restores 35 Stamina, ingredients: Mandarin x4",
+      "url": "/en/cooking/mandarin-jam/",
+      "category": "Cooking Recipes",
+      "keywords": "Mandarin Jam 灶台料理 Stove Dishes 恢复 35 体力 Restores 35 Stamina Mandarin x4"
+    },
+    {
+      "id": "recipe-berry-pie",
+      "title": "浆果派",
+      "subtitle": "Desserts · 260 Gold",
+      "description": "Restores 50 Stamina, ingredients: 浆果 x3、面粉 x2、糖 x1",
+      "url": "/en/cooking/berry-pie/",
+      "category": "Cooking Recipes",
+      "keywords": "浆果派 甜点 Desserts 恢复 50 体力 Restores 50 Stamina 浆果 x3、面粉 x2、糖 x1"
+    },
+    {
+      "id": "recipe-raspberry-jam",
+      "title": "Raspberry Jam",
+      "subtitle": "Stove Dishes · 250 Gold",
+      "description": "Restores 30 Stamina, ingredients: Raspberry x4",
+      "url": "/en/cooking/raspberry-jam/",
+      "category": "Cooking Recipes",
+      "keywords": "Raspberry Jam 灶台料理 Stove Dishes 恢复 30 体力 Restores 30 Stamina Raspberry x4"
+    },
+    {
+      "id": "recipe-pumpkin-soup",
+      "title": "南瓜汤",
+      "subtitle": "Soups · 230 Gold",
+      "description": "Restores 65 Stamina, ingredients: 南瓜 x2、牛奶 x1、盐 x1",
+      "url": "/en/cooking/pumpkin-soup/",
+      "category": "Cooking Recipes",
+      "keywords": "南瓜汤 汤 Soups 恢复 65 体力 Restores 65 Stamina 南瓜 x2、牛奶 x1、盐 x1"
+    },
+    {
+      "id": "recipe-fish-soup",
+      "title": "鲜鱼汤",
+      "subtitle": "Soups · 220 Gold",
+      "description": "Restores 60 Stamina + 钓鱼bonus: 5 min, ingredients: 任意鱼 x2、胡萝卜 x1、水 x1",
+      "url": "/en/cooking/fish-soup/",
+      "category": "Cooking Recipes",
+      "keywords": "鲜鱼汤 汤 Soups 恢复 60 体力 + 钓鱼加成 5 分钟 Restores 60 Stamina + 钓鱼bonus: 5 min 任意鱼 x2、胡萝卜 x1、水 x1"
+    },
+    {
+      "id": "recipe-honey-toast",
+      "title": "蜂蜜吐司",
+      "subtitle": "Desserts · 210 Gold",
+      "description": "Restores 45 Stamina + Movement speed for 3 min, ingredients: 面包 x1、蜂蜜 x1",
+      "url": "/en/cooking/honey-toast/",
+      "category": "Cooking Recipes",
+      "keywords": "蜂蜜吐司 甜点 Desserts 恢复 45 体力 + 移速 3 分钟 Restores 45 Stamina + Movement speed for 3 min 面包 x1、蜂蜜 x1"
+    },
+    {
+      "id": "recipe-corn-chowder",
+      "title": "玉米浓汤",
+      "subtitle": "Soups · 200 Gold",
+      "description": "Restores 55 Stamina, ingredients: 玉米 x2、牛奶 x1、土豆 x1",
+      "url": "/en/cooking/corn-chowder/",
+      "category": "Cooking Recipes",
+      "keywords": "玉米浓汤 汤 Soups 恢复 55 体力 Restores 55 Stamina 玉米 x2、牛奶 x1、土豆 x1"
+    },
+    {
+      "id": "recipe-grilled-mushroom",
+      "title": "Grilled Mushroom",
+      "subtitle": "Stove Dishes · 200 Gold",
+      "description": ", ingredients: Mushroom x4",
+      "url": "/en/cooking/grilled-mushroom/",
+      "category": "Cooking Recipes",
+      "keywords": "Grilled Mushroom 灶台料理 Stove Dishes Mushroom x4"
+    },
+    {
+      "id": "recipe-fruit-salad",
+      "title": "水果沙拉",
+      "subtitle": "Desserts · 190 Gold",
+      "description": "Restores 40 Stamina, ingredients: 苹果 x1、浆果 x2、蜂蜜 x1",
+      "url": "/en/cooking/fruit-salad/",
+      "category": "Cooking Recipes",
+      "keywords": "水果沙拉 甜点 Desserts 恢复 40 体力 Restores 40 Stamina 苹果 x1、浆果 x2、蜂蜜 x1"
+    },
+    {
+      "id": "recipe-mushroom-soup",
+      "title": "蘑菇浓汤",
+      "subtitle": "Soups · 180 Gold",
+      "description": "Restores 55 Stamina, ingredients: 蘑菇 x3、牛奶 x1、盐 x1",
+      "url": "/en/cooking/mushroom-soup/",
+      "category": "Cooking Recipes",
+      "keywords": "蘑菇浓汤 汤 Soups 恢复 55 体力 Restores 55 Stamina 蘑菇 x3、牛奶 x1、盐 x1"
+    },
+    {
+      "id": "recipe-grilled-button-mushroom",
+      "title": "Grilled Button Mushroom",
+      "subtitle": "Stove Dishes · 180 Gold",
+      "description": "Restores 15 Stamina, ingredients: Button Mushroom x4",
+      "url": "/en/cooking/grilled-button-mushroom/",
+      "category": "Cooking Recipes",
+      "keywords": "Grilled Button Mushroom 灶台料理 Stove Dishes 恢复 15 体力 Restores 15 Stamina Button Mushroom x4"
+    },
+    {
+      "id": "recipe-grilled-oyster-mushroom",
+      "title": "Grilled Oyster Mushroom",
+      "subtitle": "Stove Dishes · 180 Gold",
+      "description": "Restores 15 Stamina, ingredients: Oyster Mushroom x4",
+      "url": "/en/cooking/grilled-oyster-mushroom/",
+      "category": "Cooking Recipes",
+      "keywords": "Grilled Oyster Mushroom 灶台料理 Stove Dishes 恢复 15 体力 Restores 15 Stamina Oyster Mushroom x4"
+    },
+    {
+      "id": "recipe-grilled-penny-bun",
+      "title": "Grilled Penny Bun",
+      "subtitle": "Stove Dishes · 180 Gold",
+      "description": "Restores 15 Stamina, ingredients: Penny Bun x4",
+      "url": "/en/cooking/grilled-penny-bun/",
+      "category": "Cooking Recipes",
+      "keywords": "Grilled Penny Bun 灶台料理 Stove Dishes 恢复 15 体力 Restores 15 Stamina Penny Bun x4"
+    },
+    {
+      "id": "recipe-grilled-shiitake",
+      "title": "Grilled Shiitake",
+      "subtitle": "Stove Dishes · 180 Gold",
+      "description": "Restores 15 Stamina, ingredients: Shiitake x4",
+      "url": "/en/cooking/grilled-shiitake/",
+      "category": "Cooking Recipes",
+      "keywords": "Grilled Shiitake 灶台料理 Stove Dishes 恢复 15 体力 Restores 15 Stamina Shiitake x4"
+    },
+    {
+      "id": "recipe-tomato-sauce",
+      "title": "Tomato Sauce",
+      "subtitle": "Stove Dishes · 180 Gold",
+      "description": "Restores 35 Stamina, ingredients: Tomato x4",
+      "url": "/en/cooking/tomato-sauce/",
+      "category": "Cooking Recipes",
+      "keywords": "Tomato Sauce 灶台料理 Stove Dishes 恢复 35 体力 Restores 35 Stamina Tomato x4"
+    },
+    {
+      "id": "recipe-omelette",
+      "title": "蔬菜蛋卷",
+      "subtitle": "Main Dishes · 170 Gold",
+      "description": "Restores 50 Stamina, ingredients: 鸡蛋 x2、胡萝卜 x1、盐 x1",
+      "url": "/en/cooking/omelette/",
+      "category": "Cooking Recipes",
+      "keywords": "蔬菜蛋卷 主食 Main Dishes 恢复 50 体力 Restores 50 Stamina 鸡蛋 x2、胡萝卜 x1、盐 x1"
+    },
+    {
+      "id": "recipe-milk-tea",
+      "title": "奶茶",
+      "subtitle": "Drinks · 170 Gold",
+      "description": "Restores 40 Stamina, ingredients: 茶叶 x1、牛奶 x1、糖 x1",
+      "url": "/en/cooking/milk-tea/",
+      "category": "Cooking Recipes",
+      "keywords": "奶茶 饮品 Drinks 恢复 40 体力 Restores 40 Stamina 茶叶 x1、牛奶 x1、糖 x1"
+    },
+    {
+      "id": "recipe-blueberry-jam",
+      "title": "Blueberry Jam",
+      "subtitle": "Stove Dishes · 170 Gold",
+      "description": "Restores 22 Stamina, ingredients: Blueberry x4",
+      "url": "/en/cooking/blueberry-jam/",
+      "category": "Cooking Recipes",
+      "keywords": "Blueberry Jam 灶台料理 Stove Dishes 恢复 22 体力 Restores 22 Stamina Blueberry x4"
+    },
+    {
+      "id": "recipe-mixed-jam",
+      "title": "Mixed Jam",
+      "subtitle": "Other Dishes · 160 Gold",
+      "description": "Restores 22 Stamina, ingredients: Fruit x4",
+      "url": "/en/cooking/mixed-jam/",
+      "category": "Cooking Recipes",
+      "keywords": "Mixed Jam 其他料理 Other Dishes 恢复 22 体力 Restores 22 Stamina Fruit x4"
+    },
+    {
+      "id": "recipe-berry-smoothie",
+      "title": "浆果冰沙",
+      "subtitle": "Drinks · 150 Gold",
+      "description": "Restores 35 Stamina + 采集bonus: 3 min, ingredients: 浆果 x2、冰 x1、牛奶 x1",
+      "url": "/en/cooking/berry-smoothie/",
+      "category": "Cooking Recipes",
+      "keywords": "浆果冰沙 饮品 Drinks 恢复 35 体力 + 采集加成 3 分钟 Restores 35 Stamina + 采集bonus: 3 min 浆果 x2、冰 x1、牛奶 x1"
+    },
+    {
+      "id": "recipe-pancake",
+      "title": "煎饼",
+      "subtitle": "Main Dishes · 140 Gold",
+      "description": "Restores 45 Stamina, ingredients: 面粉 x2、鸡蛋 x1、牛奶 x1",
+      "url": "/en/cooking/pancake/",
+      "category": "Cooking Recipes",
+      "keywords": "煎饼 主食 Main Dishes 恢复 45 体力 Restores 45 Stamina 面粉 x2、鸡蛋 x1、牛奶 x1"
+    },
+    {
+      "id": "recipe-coffee",
+      "title": "咖啡",
+      "subtitle": "Drinks · 130 Gold",
+      "description": "Restores 20 Stamina + Movement speed for 5 min, ingredients: 咖啡豆 x2、水 x1",
+      "url": "/en/cooking/coffee/",
+      "category": "Cooking Recipes",
+      "keywords": "咖啡 饮品 Drinks 恢复 20 体力 + 移速 5 分钟 Restores 20 Stamina + Movement speed for 5 min 咖啡豆 x2、水 x1"
+    },
+    {
+      "id": "recipe-grilled-fish",
+      "title": "烤鱼",
+      "subtitle": "Seafood · 120 Gold",
+      "description": "Restores 40 Stamina, ingredients: 任意鱼 x1、盐 x1",
+      "url": "/en/cooking/grilled-fish/",
+      "category": "Cooking Recipes",
+      "keywords": "烤鱼 海鲜 Seafood 恢复 40 体力 Restores 40 Stamina 任意鱼 x1、盐 x1"
+    },
+    {
+      "id": "recipe-bread",
+      "title": "面包",
+      "subtitle": "Main Dishes · 90 Gold",
+      "description": "Restores 30 Stamina, ingredients: 面粉 x2、水 x1",
+      "url": "/en/cooking/bread/",
+      "category": "Cooking Recipes",
+      "keywords": "面包 主食 Main Dishes 恢复 30 体力 Restores 30 Stamina 面粉 x2、水 x1"
+    },
+    {
+      "id": "recipe-house-salad",
+      "title": "House Salad",
+      "subtitle": "Stove Dishes · 90 Gold",
+      "description": "Restores 15 Stamina, ingredients: Vegetable x2",
+      "url": "/en/cooking/house-salad/",
+      "category": "Cooking Recipes",
+      "keywords": "House Salad 灶台料理 Stove Dishes 恢复 15 体力 Restores 15 Stamina Vegetable x2"
+    },
+    {
+      "id": "recipe-bizarre-drink",
+      "title": "Bizarre Drink",
+      "subtitle": "Other Dishes · 30 Gold",
+      "description": "Restores 10 Stamina, ingredients: Any x1",
+      "url": "/en/cooking/bizarre-drink/",
+      "category": "Cooking Recipes",
+      "keywords": "Bizarre Drink 其他料理 Other Dishes 恢复 10 体力 Restores 10 Stamina Any x1"
+    },
+    {
+      "id": "recipe-bizarre-food",
+      "title": "Bizarre Food",
+      "subtitle": "Other Dishes · 30 Gold",
+      "description": "Restores 10 Stamina, ingredients: ",
+      "url": "/en/cooking/bizarre-food/",
+      "category": "Cooking Recipes",
+      "keywords": "Bizarre Food 其他料理 Other Dishes 恢复 10 体力 Restores 10 Stamina"
+    },
+    {
+      "id": "recipe-aurora-banquet",
+      "title": "Aurora Banquet",
+      "subtitle": "Penguin Stove Dishes · 0 Gold",
+      "description": ", ingredients: Steak with Mashed Radish x1、Creamy White Radish Soup x1、Iced Drink x1、Pancake x1",
+      "url": "/en/cooking/aurora-banquet/",
+      "category": "Cooking Recipes",
+      "keywords": "Aurora Banquet 企鹅灶台料理 Penguin Stove Dishes Steak with Mashed Radish x1、Creamy White Radish Soup x1、Iced Drink x1、Pancake x1"
+    },
+    {
+      "id": "recipe-baked-eggplant-with-meat",
+      "title": "Baked Eggplant with Meat",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/baked-eggplant-with-meat/",
+      "category": "Cooking Recipes",
+      "keywords": "Baked Eggplant with Meat 其他料理 Other Dishes"
+    },
+    {
+      "id": "recipe-candlelight-dinner",
+      "title": "Candlelight Dinner",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/candlelight-dinner/",
+      "category": "Cooking Recipes",
+      "keywords": "Candlelight Dinner 其他料理 Other Dishes"
+    },
+    {
+      "id": "recipe-cheese-shrimp-stuffed-crab",
+      "title": "Cheese Shrimp Stuffed Crab",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/cheese-shrimp-stuffed-crab/",
+      "category": "Cooking Recipes",
+      "keywords": "Cheese Shrimp Stuffed Crab 其他料理 Other Dishes"
+    },
+    {
+      "id": "recipe-chocolate-sauce",
+      "title": "Chocolate Sauce",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/chocolate-sauce/",
+      "category": "Cooking Recipes",
+      "keywords": "Chocolate Sauce 其他料理 Other Dishes"
+    },
+    {
+      "id": "recipe-crayfish-sashimi",
+      "title": "Crayfish Sashimi",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": "Restores 30 Stamina, ingredients: ",
+      "url": "/en/cooking/crayfish-sashimi/",
+      "category": "Cooking Recipes",
+      "keywords": "Crayfish Sashimi 其他料理 Other Dishes 恢复 30 体力 Restores 30 Stamina"
+    },
+    {
+      "id": "recipe-creamy-white-radish-soup",
+      "title": "Creamy White Radish Soup",
+      "subtitle": "Penguin Stove Dishes · 0 Gold",
+      "description": ", ingredients: Milk x1、Butter x1、White Radish x2",
+      "url": "/en/cooking/creamy-white-radish-soup/",
+      "category": "Cooking Recipes",
+      "keywords": "Creamy White Radish Soup 企鹅灶台料理 Penguin Stove Dishes Milk x1、Butter x1、White Radish x2"
+    },
+    {
+      "id": "recipe-exquisite-afternoon-tea",
+      "title": "Exquisite Afternoon Tea",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/exquisite-afternoon-tea/",
+      "category": "Cooking Recipes",
+      "keywords": "Exquisite Afternoon Tea 其他料理 Other Dishes"
+    },
+    {
+      "id": "recipe-iced-coffee",
+      "title": "Iced Coffee",
+      "subtitle": "Penguin Stove Dishes · 0 Gold",
+      "description": ", ingredients: Frosting x1、Coffee Bean x3",
+      "url": "/en/cooking/iced-coffee/",
+      "category": "Cooking Recipes",
+      "keywords": "Iced Coffee 企鹅灶台料理 Penguin Stove Dishes Frosting x1、Coffee Bean x3"
+    },
+    {
+      "id": "recipe-iced-latte",
+      "title": "Iced Latte",
+      "subtitle": "Penguin Stove Dishes · 0 Gold",
+      "description": ", ingredients: Frosting x1、Coffee Bean x1、Milk x2",
+      "url": "/en/cooking/iced-latte/",
+      "category": "Cooking Recipes",
+      "keywords": "Iced Latte 企鹅灶台料理 Penguin Stove Dishes Frosting x1、Coffee Bean x1、Milk x2"
+    },
+    {
+      "id": "recipe-meat-burger",
+      "title": "Meat Burger",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": "Restores 75 Stamina, ingredients: ",
+      "url": "/en/cooking/meat-burger/",
+      "category": "Cooking Recipes",
+      "keywords": "Meat Burger 其他料理 Other Dishes 恢复 75 体力 Restores 75 Stamina"
+    },
+    {
+      "id": "recipe-mellow-black-tea",
+      "title": "Mellow Black Tea",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/mellow-black-tea/",
+      "category": "Cooking Recipes",
+      "keywords": "Mellow Black Tea 其他料理 Other Dishes"
+    },
+    {
+      "id": "recipe-milkshake",
+      "title": "Milkshake",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/milkshake/",
+      "category": "Cooking Recipes",
+      "keywords": "Milkshake 其他料理 Other Dishes"
+    },
+    {
+      "id": "recipe-mushroom-pie",
+      "title": "Mushroom Pie",
+      "subtitle": "Stove Dishes · 0 Gold",
+      "description": "Restores 35 Stamina, ingredients: Mushroom x2、Wheat x1、Egg x1",
+      "url": "/en/cooking/mushroom-pie/",
+      "category": "Cooking Recipes",
+      "keywords": "Mushroom Pie 灶台料理 Stove Dishes 恢复 35 体力 Restores 35 Stamina Mushroom x2、Wheat x1、Egg x1"
+    },
+    {
+      "id": "recipe-original-frosted-pancake",
+      "title": "Original Frosted Pancake",
+      "subtitle": "Penguin Stove Dishes · 0 Gold",
+      "description": ", ingredients: Egg x1、Milk x1、Frosting x1、Blueberry x1",
+      "url": "/en/cooking/original-frosted-pancake/",
+      "category": "Cooking Recipes",
+      "keywords": "Original Frosted Pancake 企鹅灶台料理 Penguin Stove Dishes Egg x1、Milk x1、Frosting x1、Blueberry x1"
+    },
+    {
+      "id": "recipe-oyster-mushroom-pie",
+      "title": "Oyster Mushroom Pie",
+      "subtitle": "Stove Dishes · 0 Gold",
+      "description": "Restores 35 Stamina, ingredients: Oyster Mushroom x2、Wheat x1、Egg x1",
+      "url": "/en/cooking/oyster-mushroom-pie/",
+      "category": "Cooking Recipes",
+      "keywords": "Oyster Mushroom Pie 灶台料理 Stove Dishes 恢复 35 体力 Restores 35 Stamina Oyster Mushroom x2、Wheat x1、Egg x1"
+    },
+    {
+      "id": "recipe-penny-bun-pie",
+      "title": "Penny Bun Pie",
+      "subtitle": "Stove Dishes · 0 Gold",
+      "description": "Restores 35 Stamina, ingredients: Penny Bun x2、Wheat x1、Egg x1",
+      "url": "/en/cooking/penny-bun-pie/",
+      "category": "Cooking Recipes",
+      "keywords": "Penny Bun Pie 灶台料理 Stove Dishes 恢复 35 体力 Restores 35 Stamina Penny Bun x2、Wheat x1、Egg x1"
+    },
+    {
+      "id": "recipe-refreshing-green-tea",
+      "title": "Refreshing Green Tea",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/refreshing-green-tea/",
+      "category": "Cooking Recipes",
+      "keywords": "Refreshing Green Tea 其他料理 Other Dishes"
+    },
+    {
+      "id": "recipe-shrimp-avocado-cup",
+      "title": "Shrimp Avocado Cup",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/shrimp-avocado-cup/",
+      "category": "Cooking Recipes",
+      "keywords": "Shrimp Avocado Cup 其他料理 Other Dishes"
+    },
+    {
+      "id": "recipe-steak-with-mashed-radish",
+      "title": "Steak with Mashed Radish",
+      "subtitle": "Penguin Stove Dishes · 0 Gold",
+      "description": ", ingredients: Meat x2、Butter x1、White Radish x1",
+      "url": "/en/cooking/steak-with-mashed-radish/",
+      "category": "Cooking Recipes",
+      "keywords": "Steak with Mashed Radish 企鹅灶台料理 Penguin Stove Dishes Meat x2、Butter x1、White Radish x1"
+    },
+    {
+      "id": "recipe-steamed-king-crab",
+      "title": "Steamed King Crab",
+      "subtitle": "Other Dishes · 0 Gold",
+      "description": ", ingredients: ",
+      "url": "/en/cooking/steamed-king-crab/",
+      "category": "Cooking Recipes",
+      "keywords": "Steamed King Crab 其他料理 Other Dishes"
+    },
+    {
+      "id": "fish-golden-king-crab",
+      "title": "Golden King Crab",
+      "subtitle": "Sea Fishing · 850 Gold",
+      "description": "Golden King Crab 是 Heartopia 中的一种鱼类，出没于Sea Fishing，售价约 850 金币。",
+      "url": "/en/fish/golden-king-crab/",
+      "category": "Fish Database",
+      "keywords": "Golden King Crab Sea Fishing Day, Night Rainbow Golden Normal"
+    },
+    {
+      "id": "fish-moonfish",
+      "title": "Moonfish",
+      "subtitle": "Sea Fishing · 850 Gold",
+      "description": "Moonfish 是 Heartopia 中的一种鱼类，出没于Sea Fishing，售价约 850 金币。",
+      "url": "/en/fish/moonfish/",
+      "category": "Fish Database",
+      "keywords": "Moonfish Sea Fishing Evening, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-ocean-sunfish",
+      "title": "Ocean Sunfish",
+      "subtitle": "East Sea · 850 Gold",
+      "description": "Ocean Sunfish 是 Heartopia 中的一种鱼类，出没于East Sea，售价约 850 金币。",
+      "url": "/en/fish/ocean-sunfish/",
+      "category": "Fish Database",
+      "keywords": "Ocean Sunfish East Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-giant-oarfish",
+      "title": "Giant Oarfish",
+      "subtitle": "Sea Fishing · 535 Gold",
+      "description": "Giant Oarfish 是 Heartopia 中的一种鱼类，出没于Sea Fishing，售价约 535 金币。",
+      "url": "/en/fish/giant-oarfish/",
+      "category": "Fish Database",
+      "keywords": "Giant Oarfish Sea Fishing Day, Morning Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-king-crab",
+      "title": "King Crab",
+      "subtitle": "Whale Sea · 535 Gold",
+      "description": "King Crab 是 Heartopia 中的一种鱼类，出没于Whale Sea，售价约 535 金币。",
+      "url": "/en/fish/king-crab/",
+      "category": "Fish Database",
+      "keywords": "King Crab Whale Sea Day, Evening, Morning Rainbow Normal"
+    },
+    {
+      "id": "fish-nursehound",
+      "title": "Nursehound",
+      "subtitle": "Sea Fishing · 535 Gold",
+      "description": "Nursehound 是 Heartopia 中的一种鱼类，出没于Sea Fishing，售价约 535 金币。",
+      "url": "/en/fish/nursehound/",
+      "category": "Fish Database",
+      "keywords": "Nursehound Sea Fishing Day, Evening, Morning, Night Rainbow, Rainy, Sunny Golden, L Normal"
+    },
+    {
+      "id": "fish-beltfish",
+      "title": "Beltfish",
+      "subtitle": "Starry Lake, Zephyr Sea · 500 Gold",
+      "description": "Beltfish 是 Heartopia 中的一种鱼类，出没于Starry Lake、Zephyr Sea，售价约 500 金币。",
+      "url": "/en/fish/beltfish/",
+      "category": "Fish Database",
+      "keywords": "Beltfish Starry Lake, Zephyr Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny 30-50 cm, L Normal"
+    },
+    {
+      "id": "fish-european-eel",
+      "title": "European Eel",
+      "subtitle": "Old Sea · 380 Gold",
+      "description": "European Eel 是 Heartopia 中的一种鱼类，出没于Old Sea，售价约 380 金币。",
+      "url": "/en/fish/european-eel/",
+      "category": "Fish Database",
+      "keywords": "European Eel Old Sea Day, Evening, Morning Rainbow Normal"
+    },
+    {
+      "id": "fish-huchen",
+      "title": "Huchen",
+      "subtitle": "Giantwood River · 380 Gold",
+      "description": "Huchen 是 Heartopia 中的一种鱼类，出没于Giantwood River，售价约 380 金币。",
+      "url": "/en/fish/huchen/",
+      "category": "Fish Database",
+      "keywords": "Huchen Giantwood River Day, Evening, Morning, Night Rainbow Normal"
+    },
+    {
+      "id": "fish-large-pearl-mussel",
+      "title": "Large Pearl Mussel",
+      "subtitle": "Forest Lake · 380 Gold",
+      "description": "Large Pearl Mussel 是 Heartopia 中的一种鱼类，出没于Forest Lake，售价约 380 金币。",
+      "url": "/en/fish/large-pearl-mussel/",
+      "category": "Fish Database",
+      "keywords": "Large Pearl Mussel Forest Lake Rainbow Normal"
+    },
+    {
+      "id": "fish-tub-gurnard",
+      "title": "Tub Gurnard",
+      "subtitle": "East Sea · 380 Gold",
+      "description": "Tub Gurnard 是 Heartopia 中的一种鱼类，出没于East Sea，售价约 380 金币。",
+      "url": "/en/fish/tub-gurnard/",
+      "category": "Fish Database",
+      "keywords": "Tub Gurnard East Sea Day, Evening, Morning, Night Rainbow Normal"
+    },
+    {
+      "id": "fish-anglerfish",
+      "title": "Anglerfish",
+      "subtitle": "Sea · 320 Gold",
+      "description": "Anglerfish 是 Heartopia 中的一种鱼类，出没于Sea，售价约 320 金币。",
+      "url": "/en/fish/anglerfish/",
+      "category": "Fish Database",
+      "keywords": "Anglerfish Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny Golden Normal"
+    },
+    {
+      "id": "fish-butterfly-koi",
+      "title": "Butterfly Koi",
+      "subtitle": "Meadow Lake · 320 Gold",
+      "description": "Butterfly Koi 是 Heartopia 中的一种鱼类，出没于Meadow Lake，售价约 320 金币。",
+      "url": "/en/fish/butterfly-koi/",
+      "category": "Fish Database",
+      "keywords": "Butterfly Koi Meadow Lake Day, Evening, Morning, Night Rainbow, Rainy L Normal"
+    },
+    {
+      "id": "fish-common-octopus",
+      "title": "Common Octopus",
+      "subtitle": "Sea Fishing · 320 Gold",
+      "description": "Common Octopus 是 Heartopia 中的一种鱼类，出没于Sea Fishing，售价约 320 金币。",
+      "url": "/en/fish/common-octopus/",
+      "category": "Fish Database",
+      "keywords": "Common Octopus Sea Fishing Day, Evening, Morning, Night Rainbow, Rainy, Sunny Golden, M Normal"
+    },
+    {
+      "id": "fish-edible-frog",
+      "title": "Edible Frog",
+      "subtitle": "Lake · 320 Gold",
+      "description": "Edible Frog 是 Heartopia 中的一种鱼类，出没于Lake，售价约 320 金币。",
+      "url": "/en/fish/edible-frog/",
+      "category": "Fish Database",
+      "keywords": "Edible Frog Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny Blue Normal"
+    },
+    {
+      "id": "fish-european-flying-squid",
+      "title": "European Flying Squid",
+      "subtitle": "Sea Fishing · 320 Gold",
+      "description": "European Flying Squid 是 Heartopia 中的一种鱼类，出没于Sea Fishing，售价约 320 金币。",
+      "url": "/en/fish/european-flying-squid/",
+      "category": "Fish Database",
+      "keywords": "European Flying Squid Sea Fishing Day, Evening, Morning, Night Rainbow, Rainy, Sunny Golden Normal"
+    },
+    {
+      "id": "fish-rabbit-fish",
+      "title": "Rabbit Fish",
+      "subtitle": "Ocean · 320 Gold",
+      "description": "Rabbit Fish 是 Heartopia 中的一种鱼类，出没于Ocean，售价约 320 金币。",
+      "url": "/en/fish/rabbit-fish/",
+      "category": "Fish Database",
+      "keywords": "Rabbit Fish Ocean Day, Evening, Morning, Night Rainbow, Rainy, Sunny M Normal"
+    },
+    {
+      "id": "fish-striped-red-mullet",
+      "title": "Striped Red Mullet",
+      "subtitle": "Sea Fishing · 320 Gold",
+      "description": "Striped Red Mullet 是 Heartopia 中的一种鱼类，出没于Sea Fishing，售价约 320 金币。",
+      "url": "/en/fish/striped-red-mullet/",
+      "category": "Fish Database",
+      "keywords": "Striped Red Mullet Sea Fishing Day, Evening, Morning, Night Rainbow, Rainy, Sunny Golden Normal"
+    },
+    {
+      "id": "fish-tilapia",
+      "title": "Tilapia",
+      "subtitle": "River · 320 Gold",
+      "description": "Tilapia 是 Heartopia 中的一种鱼类，出没于River，售价约 320 金币。",
+      "url": "/en/fish/tilapia/",
+      "category": "Fish Database",
+      "keywords": "Tilapia River Day, Evening, Morning, Night Rainbow, Rainy, Sunny M Normal"
+    },
+    {
+      "id": "fish-turbot",
+      "title": "Turbot",
+      "subtitle": "Sea Fishing · 320 Gold",
+      "description": "Turbot 是 Heartopia 中的一种鱼类，出没于Sea Fishing，售价约 320 金币。",
+      "url": "/en/fish/turbot/",
+      "category": "Fish Database",
+      "keywords": "Turbot Sea Fishing Day, Evening, Morning, Night Rainbow, Rainy, Sunny M Normal"
+    },
+    {
+      "id": "fish-blue-ero-crayfish",
+      "title": "Blue Ero Crayfish",
+      "subtitle": "Forest Lake · 250 Gold",
+      "description": "Blue Ero Crayfish 是 Heartopia 中的一种鱼类，出没于Forest Lake，售价约 250 金币。",
+      "url": "/en/fish/blue-ero-crayfish/",
+      "category": "Fish Database",
+      "keywords": "Blue Ero Crayfish Forest Lake Evening, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-european-mudminnow",
+      "title": "European Mudminnow",
+      "subtitle": "Suburban Lake · 250 Gold",
+      "description": "European Mudminnow 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 250 金币。",
+      "url": "/en/fish/european-mudminnow/",
+      "category": "Fish Database",
+      "keywords": "European Mudminnow Suburban Lake Morning, Night Rainbow, Sunny Normal"
+    },
+    {
+      "id": "fish-goldfish",
+      "title": "Goldfish",
+      "subtitle": "Meadow Lake · 250 Gold",
+      "description": "Goldfish 是 Heartopia 中的一种鱼类，出没于Meadow Lake，售价约 250 金币。",
+      "url": "/en/fish/goldfish/",
+      "category": "Fish Database",
+      "keywords": "Goldfish Meadow Lake Day, Evening, Morning Rainbow, Rainy S Normal"
+    },
+    {
+      "id": "fish-pumpkinseed",
+      "title": "Pumpkinseed",
+      "subtitle": "Onsen Mountain · 250 Gold",
+      "description": "Pumpkinseed 是 Heartopia 中的一种鱼类，出没于Onsen Mountain，售价约 250 金币。",
+      "url": "/en/fish/pumpkinseed/",
+      "category": "Fish Database",
+      "keywords": "Pumpkinseed Onsen Mountain Day, Evening, Morning, Night Rainbow, Sunny Normal"
+    },
+    {
+      "id": "fish-blackspot-seabream",
+      "title": "Blackspot Seabream",
+      "subtitle": "Zephyr Sea · 230 Gold",
+      "description": "Blackspot Seabream 是 Heartopia 中的一种鱼类，出没于Zephyr Sea，售价约 230 金币。",
+      "url": "/en/fish/blackspot-seabream/",
+      "category": "Fish Database",
+      "keywords": "Blackspot Seabream Zephyr Sea Evening, Night Rainbow, Rainy Normal"
+    },
+    {
+      "id": "fish-burbot",
+      "title": "Burbot",
+      "subtitle": "Tranquil River · 230 Gold",
+      "description": "Burbot 是 Heartopia 中的一种鱼类，出没于Tranquil River，售价约 230 金币。",
+      "url": "/en/fish/burbot/",
+      "category": "Fish Database",
+      "keywords": "Burbot Tranquil River Day, Evening Rainbow, Rainy, Sunny L Normal"
+    },
+    {
+      "id": "fish-common-carp",
+      "title": "Common Carp",
+      "subtitle": "Rosy River · 230 Gold",
+      "description": "Common Carp 是 Heartopia 中的一种鱼类，出没于Rosy River，售价约 230 金币。",
+      "url": "/en/fish/common-carp/",
+      "category": "Fish Database",
+      "keywords": "Common Carp Rosy River Day, Evening Rainbow, Sunny Normal"
+    },
+    {
+      "id": "fish-european-lobster",
+      "title": "European Lobster",
+      "subtitle": "Zephyr Sea · 230 Gold",
+      "description": "European Lobster 是 Heartopia 中的一种鱼类，出没于Zephyr Sea，售价约 230 金币。",
+      "url": "/en/fish/european-lobster/",
+      "category": "Fish Database",
+      "keywords": "European Lobster Zephyr Sea Evening, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-european-plaice",
+      "title": "European Plaice",
+      "subtitle": "Old Sea · 230 Gold",
+      "description": "European Plaice 是 Heartopia 中的一种鱼类，出没于Old Sea，售价约 230 金币。",
+      "url": "/en/fish/european-plaice/",
+      "category": "Fish Database",
+      "keywords": "European Plaice Old Sea Evening, Morning, Night Rainbow, Rainy, Sunny M Normal"
+    },
+    {
+      "id": "fish-grayling",
+      "title": "Grayling",
+      "subtitle": "Suburban Lake · 230 Gold",
+      "description": "Grayling 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 230 金币。",
+      "url": "/en/fish/grayling/",
+      "category": "Fish Database",
+      "keywords": "Grayling Suburban Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-haddock",
+      "title": "Haddock",
+      "subtitle": "East Sea · 230 Gold",
+      "description": "Haddock 是 Heartopia 中的一种鱼类，出没于East Sea，售价约 230 金币。",
+      "url": "/en/fish/haddock/",
+      "category": "Fish Database",
+      "keywords": "Haddock East Sea Day, Evening, Night Rainbow, Sunny Normal"
+    },
+    {
+      "id": "fish-largemouth-bass",
+      "title": "Largemouth Bass",
+      "subtitle": "Forest Lake · 230 Gold",
+      "description": "Largemouth Bass 是 Heartopia 中的一种鱼类，出没于Forest Lake，售价约 230 金币。",
+      "url": "/en/fish/largemouth-bass/",
+      "category": "Fish Database",
+      "keywords": "Largemouth Bass Forest Lake Day, Evening, Morning, Night Rainbow, Sunny M Normal"
+    },
+    {
+      "id": "fish-puffer-fish",
+      "title": "Puffer Fish",
+      "subtitle": "Old Sea · 230 Gold",
+      "description": "Puffer Fish 是 Heartopia 中的一种鱼类，出没于Old Sea，售价约 230 金币。",
+      "url": "/en/fish/puffer-fish/",
+      "category": "Fish Database",
+      "keywords": "Puffer Fish Old Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-red-bellied-piranha",
+      "title": "Red-Bellied Piranha",
+      "subtitle": "Giantwood River · 230 Gold",
+      "description": "Red-Bellied Piranha 是 Heartopia 中的一种鱼类，出没于Giantwood River，售价约 230 金币。",
+      "url": "/en/fish/red-bellied-piranha/",
+      "category": "Fish Database",
+      "keywords": "Red-Bellied Piranha Giantwood River Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-trout",
+      "title": "Trout",
+      "subtitle": "Meadow Lake · 230 Gold",
+      "description": "Trout 是 Heartopia 中的一种鱼类，出没于Meadow Lake，售价约 230 金币。",
+      "url": "/en/fish/trout/",
+      "category": "Fish Database",
+      "keywords": "Trout Meadow Lake Evening, Morning, Night Rainbow, Sunny M Normal"
+    },
+    {
+      "id": "fish-zander",
+      "title": "Zander",
+      "subtitle": "Giantwood River · 230 Gold",
+      "description": "Zander 是 Heartopia 中的一种鱼类，出没于Giantwood River，售价约 230 金币。",
+      "url": "/en/fish/zander/",
+      "category": "Fish Database",
+      "keywords": "Zander Giantwood River Day, Evening, Morning, Night Rainbow, Sunny M Normal"
+    },
+    {
+      "id": "fish-skipjack-tuna",
+      "title": "Skipjack Tuna",
+      "subtitle": "Ocean · 210 Gold",
+      "description": "Skipjack Tuna 是 Heartopia 中的一种鱼类，出没于Ocean，售价约 210 金币。",
+      "url": "/en/fish/skipjack-tuna/",
+      "category": "Fish Database",
+      "keywords": "Skipjack Tuna Ocean Day, Evening, Morning, Night Rainbow, Rainy, Sunny L Normal"
+    },
+    {
+      "id": "fish-atlantic-salmon",
+      "title": "Atlantic Salmon",
+      "subtitle": "Whale Sea · 155 Gold",
+      "description": "Atlantic Salmon 是 Heartopia 中的一种鱼类，出没于Whale Sea，售价约 155 金币。",
+      "url": "/en/fish/atlantic-salmon/",
+      "category": "Fish Database",
+      "keywords": "Atlantic Salmon Whale Sea Day, Evening, Night Rainbow, Rainy, Sunny M Normal"
+    },
+    {
+      "id": "fish-false-scad",
+      "title": "False Scad",
+      "subtitle": "Zephyr Sea · 155 Gold",
+      "description": "False Scad 是 Heartopia 中的一种鱼类，出没于Zephyr Sea，售价约 155 金币。",
+      "url": "/en/fish/false-scad/",
+      "category": "Fish Database",
+      "keywords": "False Scad Zephyr Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-atlantic-mackerel",
+      "title": "Atlantic Mackerel",
+      "subtitle": "Whale Sea · 150 Gold",
+      "description": "Atlantic Mackerel 是 Heartopia 中的一种鱼类，出没于Whale Sea，售价约 150 金币。",
+      "url": "/en/fish/atlantic-mackerel/",
+      "category": "Fish Database",
+      "keywords": "Atlantic Mackerel Whale Sea Day, Evening Rainbow, Sunny S Normal"
+    },
+    {
+      "id": "fish-atlantic-pygmy-octopus",
+      "title": "Atlantic Pygmy Octopus",
+      "subtitle": "Zephyr Sea · 150 Gold",
+      "description": "Atlantic Pygmy Octopus 是 Heartopia 中的一种鱼类，出没于Zephyr Sea，售价约 150 金币。",
+      "url": "/en/fish/atlantic-pygmy-octopus/",
+      "category": "Fish Database",
+      "keywords": "Atlantic Pygmy Octopus Zephyr Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-chum-salmon",
+      "title": "Chum Salmon",
+      "subtitle": "Tranquil River · 150 Gold",
+      "description": "Chum Salmon 是 Heartopia 中的一种鱼类，出没于Tranquil River，售价约 150 金币。",
+      "url": "/en/fish/chum-salmon/",
+      "category": "Fish Database",
+      "keywords": "Chum Salmon Tranquil River Rainbow Normal"
+    },
+    {
+      "id": "fish-common-rudd",
+      "title": "Common Rudd",
+      "subtitle": "Suburban Lake · 150 Gold",
+      "description": "Common Rudd 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 150 金币。",
+      "url": "/en/fish/common-rudd/",
+      "category": "Fish Database",
+      "keywords": "Common Rudd Suburban Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-freshwater-blenny",
+      "title": "Freshwater Blenny",
+      "subtitle": "Rosy River · 150 Gold",
+      "description": "Freshwater Blenny 是 Heartopia 中的一种鱼类，出没于Rosy River，售价约 150 金币。",
+      "url": "/en/fish/freshwater-blenny/",
+      "category": "Fish Database",
+      "keywords": "Freshwater Blenny Rosy River Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-goby",
+      "title": "Goby",
+      "subtitle": "East Sea · 150 Gold",
+      "description": "Goby 是 Heartopia 中的一种鱼类，出没于East Sea，售价约 150 金币。",
+      "url": "/en/fish/goby/",
+      "category": "Fish Database",
+      "keywords": "Goby East Sea Day, Evening, Morning Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-mediterranean-killifish",
+      "title": "Mediterranean Killifish",
+      "subtitle": "Suburban Lake · 150 Gold",
+      "description": "Mediterranean Killifish 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 150 金币。",
+      "url": "/en/fish/mediterranean-killifish/",
+      "category": "Fish Database",
+      "keywords": "Mediterranean Killifish Suburban Lake Day, Evening, Night Rainbow, Sunny S Normal"
+    },
+    {
+      "id": "fish-mottled-sculpin",
+      "title": "Mottled Sculpin",
+      "subtitle": "Onsen Mountain · 150 Gold",
+      "description": "Mottled Sculpin 是 Heartopia 中的一种鱼类，出没于Onsen Mountain，售价约 150 金币。",
+      "url": "/en/fish/mottled-sculpin/",
+      "category": "Fish Database",
+      "keywords": "Mottled Sculpin Onsen Mountain Day, Evening, Morning Rainbow, Rainy S Normal"
+    },
+    {
+      "id": "fish-three-spined-stickleback",
+      "title": "Three-Spined Stickleback",
+      "subtitle": "Shallow River · 150 Gold",
+      "description": "Three-Spined Stickleback 是 Heartopia 中的一种鱼类，出没于Shallow River，售价约 150 金币。",
+      "url": "/en/fish/three-spined-stickleback/",
+      "category": "Fish Database",
+      "keywords": "Three-Spined Stickleback Shallow River Day, Evening, Morning, Night Rainbow, Rainy Normal"
+    },
+    {
+      "id": "fish-common-whitefish",
+      "title": "Common Whitefish",
+      "subtitle": "Onsen Mountain · 105 Gold",
+      "description": "Common Whitefish 是 Heartopia 中的一种鱼类，出没于Onsen Mountain，售价约 105 金币。",
+      "url": "/en/fish/common-whitefish/",
+      "category": "Fish Database",
+      "keywords": "Common Whitefish Onsen Mountain Day, Evening, Morning, Night Rainbow, Rainy, Sunny M Normal"
+    },
+    {
+      "id": "fish-clownfish",
+      "title": "Clownfish",
+      "subtitle": "Old Sea · 100 Gold",
+      "description": "Clownfish 是 Heartopia 中的一种鱼类，出没于Old Sea，售价约 100 金币。",
+      "url": "/en/fish/clownfish/",
+      "category": "Fish Database",
+      "keywords": "Clownfish Old Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-european-crayfish",
+      "title": "European Crayfish",
+      "subtitle": "Forest Lake · 100 Gold",
+      "description": "European Crayfish 是 Heartopia 中的一种鱼类，出没于Forest Lake，售价约 100 金币。",
+      "url": "/en/fish/european-crayfish/",
+      "category": "Fish Database",
+      "keywords": "European Crayfish Forest Lake Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-european-smelt",
+      "title": "European Smelt",
+      "subtitle": "Meadow Lake · 100 Gold",
+      "description": "European Smelt 是 Heartopia 中的一种鱼类，出没于Meadow Lake，售价约 100 金币。",
+      "url": "/en/fish/european-smelt/",
+      "category": "Fish Database",
+      "keywords": "European Smelt Meadow Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-hermit-crab",
+      "title": "Hermit Crab",
+      "subtitle": "East Sea · 100 Gold",
+      "description": "Hermit Crab 是 Heartopia 中的一种鱼类，出没于East Sea，售价约 100 金币。",
+      "url": "/en/fish/hermit-crab/",
+      "category": "Fish Database",
+      "keywords": "Hermit Crab East Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-mud-sunfish",
+      "title": "Mud Sunfish",
+      "subtitle": "Forest Lake · 100 Gold",
+      "description": "Mud Sunfish 是 Heartopia 中的一种鱼类，出没于Forest Lake，售价约 100 金币。",
+      "url": "/en/fish/mud-sunfish/",
+      "category": "Fish Database",
+      "keywords": "Mud Sunfish Forest Lake Day, Evening, Morning Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-mussel",
+      "title": "Mussel",
+      "subtitle": "Suburban Lake · 100 Gold",
+      "description": "Mussel 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 100 金币。",
+      "url": "/en/fish/mussel/",
+      "category": "Fish Database",
+      "keywords": "Mussel Suburban Lake Day, Evening, Morning, Night Rainbow, Rainy S Normal"
+    },
+    {
+      "id": "fish-river-crab",
+      "title": "River Crab",
+      "subtitle": "Suburban Lake · 100 Gold",
+      "description": "River Crab 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 100 金币。",
+      "url": "/en/fish/river-crab/",
+      "category": "Fish Database",
+      "keywords": "River Crab Suburban Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-ruffe",
+      "title": "Ruffe",
+      "subtitle": "Onsen Mountain · 100 Gold",
+      "description": "Ruffe 是 Heartopia 中的一种鱼类，出没于Onsen Mountain，售价约 100 金币。",
+      "url": "/en/fish/ruffe/",
+      "category": "Fish Database",
+      "keywords": "Ruffe Onsen Mountain Day, Evening, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-seahorse",
+      "title": "Seahorse",
+      "subtitle": "Whale Sea · 100 Gold",
+      "description": "Seahorse 是 Heartopia 中的一种鱼类，出没于Whale Sea，售价约 100 金币。",
+      "url": "/en/fish/seahorse/",
+      "category": "Fish Database",
+      "keywords": "Seahorse Whale Sea Day, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-stone-loach",
+      "title": "Stone Loach",
+      "subtitle": "Suburban Lake · 100 Gold",
+      "description": "Stone Loach 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 100 金币。",
+      "url": "/en/fish/stone-loach/",
+      "category": "Fish Database",
+      "keywords": "Stone Loach Suburban Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-tadpole",
+      "title": "Tadpole",
+      "subtitle": "Onsen Mountain · 100 Gold",
+      "description": "Tadpole 是 Heartopia 中的一种鱼类，出没于Onsen Mountain，售价约 100 金币。",
+      "url": "/en/fish/tadpole/",
+      "category": "Fish Database",
+      "keywords": "Tadpole Onsen Mountain Day, Evening, Morning, Night Rainbow, Rainy Normal"
+    },
+    {
+      "id": "fish-common-barbel",
+      "title": "Common Barbel",
+      "subtitle": "Shallow River · 75 Gold",
+      "description": "Common Barbel 是 Heartopia 中的一种鱼类，出没于Shallow River，售价约 75 金币。",
+      "url": "/en/fish/common-barbel/",
+      "category": "Fish Database",
+      "keywords": "Common Barbel Shallow River Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-common-chub",
+      "title": "Common Chub",
+      "subtitle": "Lake · 75 Gold",
+      "description": "Common Chub 是 Heartopia 中的一种鱼类，出没于Lake，售价约 75 金币。",
+      "url": "/en/fish/common-chub/",
+      "category": "Fish Database",
+      "keywords": "Common Chub Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-crucian-carp",
+      "title": "Crucian Carp",
+      "subtitle": "Suburban Lake · 75 Gold",
+      "description": "Crucian Carp 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 75 金币。",
+      "url": "/en/fish/crucian-carp/",
+      "category": "Fish Database",
+      "keywords": "Crucian Carp Suburban Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny M Normal"
+    },
+    {
+      "id": "fish-european-perch",
+      "title": "European Perch",
+      "subtitle": "River · 75 Gold",
+      "description": "European Perch 是 Heartopia 中的一种鱼类，出没于River，售价约 75 金币。",
+      "url": "/en/fish/european-perch/",
+      "category": "Fish Database",
+      "keywords": "European Perch River Day, Evening, Morning, Night Rainbow, Rainy, Sunny M Normal"
+    },
+    {
+      "id": "fish-sea-bass",
+      "title": "Sea Bass",
+      "subtitle": "Ocean · 75 Gold",
+      "description": "Sea Bass 是 Heartopia 中的一种鱼类，出没于Ocean，售价约 75 金币。",
+      "url": "/en/fish/sea-bass/",
+      "category": "Fish Database",
+      "keywords": "Sea Bass Ocean Day, Evening, Morning, Night Rainbow, Rainy, Sunny M Normal"
+    },
+    {
+      "id": "fish-common-bleak",
+      "title": "Common Bleak",
+      "subtitle": "Lake · 50 Gold",
+      "description": "Common Bleak 是 Heartopia 中的一种鱼类，出没于Lake，售价约 50 金币。",
+      "url": "/en/fish/common-bleak/",
+      "category": "Fish Database",
+      "keywords": "Common Bleak Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny Normal"
+    },
+    {
+      "id": "fish-common-shrimp",
+      "title": "Common Shrimp",
+      "subtitle": "East Sea · 50 Gold",
+      "description": "Common Shrimp 是 Heartopia 中的一种鱼类，出没于East Sea，售价约 50 金币。",
+      "url": "/en/fish/common-shrimp/",
+      "category": "Fish Database",
+      "keywords": "Common Shrimp East Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-minnow",
+      "title": "Minnow",
+      "subtitle": "Tranquil River · 50 Gold",
+      "description": "Minnow 是 Heartopia 中的一种鱼类，出没于Tranquil River，售价约 50 金币。",
+      "url": "/en/fish/minnow/",
+      "category": "Fish Database",
+      "keywords": "Minnow Tranquil River Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-oriental-shrimp",
+      "title": "Oriental Shrimp",
+      "subtitle": "River · 50 Gold",
+      "description": "Oriental Shrimp 是 Heartopia 中的一种鱼类，出没于River，售价约 50 金币。",
+      "url": "/en/fish/oriental-shrimp/",
+      "category": "Fish Database",
+      "keywords": "Oriental Shrimp River Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-sardine",
+      "title": "Sardine",
+      "subtitle": "Ocean · 50 Gold",
+      "description": "Sardine 是 Heartopia 中的一种鱼类，出没于Ocean，售价约 50 金币。",
+      "url": "/en/fish/sardine/",
+      "category": "Fish Database",
+      "keywords": "Sardine Ocean Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-scad",
+      "title": "Scad",
+      "subtitle": "Whale Sea · 50 Gold",
+      "description": "Scad 是 Heartopia 中的一种鱼类，出没于Whale Sea，售价约 50 金币。",
+      "url": "/en/fish/scad/",
+      "category": "Fish Database",
+      "keywords": "Scad Whale Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-schneider",
+      "title": "Schneider",
+      "subtitle": "Suburban Lake · 50 Gold",
+      "description": "Schneider 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 50 金币。",
+      "url": "/en/fish/schneider/",
+      "category": "Fish Database",
+      "keywords": "Schneider Suburban Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-sea-stickleback",
+      "title": "Sea Stickleback",
+      "subtitle": "Old Sea · 50 Gold",
+      "description": "Sea Stickleback 是 Heartopia 中的一种鱼类，出没于Old Sea，售价约 50 金币。",
+      "url": "/en/fish/sea-stickleback/",
+      "category": "Fish Database",
+      "keywords": "Sea Stickleback Old Sea Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-spined-loach",
+      "title": "Spined Loach",
+      "subtitle": "Giantwood River · 50 Gold",
+      "description": "Spined Loach 是 Heartopia 中的一种鱼类，出没于Giantwood River，售价约 50 金币。",
+      "url": "/en/fish/spined-loach/",
+      "category": "Fish Database",
+      "keywords": "Spined Loach Giantwood River Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-streber",
+      "title": "Streber",
+      "subtitle": "Rosy River · 50 Gold",
+      "description": "Streber 是 Heartopia 中的一种鱼类，出没于Rosy River，售价约 50 金币。",
+      "url": "/en/fish/streber/",
+      "category": "Fish Database",
+      "keywords": "Streber Rosy River Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-tench",
+      "title": "Tench",
+      "subtitle": "Forest Lake · 50 Gold",
+      "description": "Tench 是 Heartopia 中的一种鱼类，出没于Forest Lake，售价约 50 金币。",
+      "url": "/en/fish/tench/",
+      "category": "Fish Database",
+      "keywords": "Tench Forest Lake Day, Evening, Morning, Night Rainbow, Rainy, Sunny S Normal"
+    },
+    {
+      "id": "fish-arctic-char",
+      "title": "Arctic Char",
+      "subtitle": "Forest Lake · 0 Gold",
+      "description": "Arctic Char 是 Heartopia 中的一种鱼类，出没于Forest Lake，售价约 0 金币。",
+      "url": "/en/fish/arctic-char/",
+      "category": "Fish Database",
+      "keywords": "Arctic Char Forest Lake Day, Evening Rainbow, Rainy Normal"
+    },
+    {
+      "id": "fish-bluefin-tuna",
+      "title": "Bluefin Tuna",
+      "subtitle": " · 0 Gold",
+      "description": "Bluefin Tuna 是 Heartopia 中的一种鱼类，出没于未知水域，售价约 0 金币。",
+      "url": "/en/fish/bluefin-tuna/",
+      "category": "Fish Database",
+      "keywords": "Bluefin Tuna Normal"
+    },
+    {
+      "id": "fish-bluegill",
+      "title": "Bluegill",
+      "subtitle": "Onsen Mountain · 0 Gold",
+      "description": "Bluegill 是 Heartopia 中的一种鱼类，出没于Onsen Mountain，售价约 0 金币。",
+      "url": "/en/fish/bluegill/",
+      "category": "Fish Database",
+      "keywords": "Bluegill Onsen Mountain Evening, Night Rainbow, Sunny Normal"
+    },
+    {
+      "id": "fish-northern-pike",
+      "title": "Northern Pike",
+      "subtitle": "Suburban Lake · 0 Gold",
+      "description": "Northern Pike 是 Heartopia 中的一种鱼类，出没于Suburban Lake，售价约 0 金币。",
+      "url": "/en/fish/northern-pike/",
+      "category": "Fish Database",
+      "keywords": "Northern Pike Suburban Lake Day, Evening, Morning, Night Rainbow, Rainy Normal"
+    },
+    {
+      "id": "fish-seabream",
+      "title": "Seabream",
+      "subtitle": "Zephyr Sea · 0 Gold",
+      "description": "Seabream 是 Heartopia 中的一种鱼类，出没于Zephyr Sea，售价约 0 金币。",
+      "url": "/en/fish/seabream/",
+      "category": "Fish Database",
+      "keywords": "Seabream Zephyr Sea Evening, Night Rainbow, Rainy Normal"
+    },
+    {
+      "id": "fish-shortfin-mako-shark",
+      "title": "Shortfin Mako Shark",
+      "subtitle": " · 0 Gold",
+      "description": "Shortfin Mako Shark 是 Heartopia 中的一种鱼类，出没于未知水域，售价约 0 金币。",
+      "url": "/en/fish/shortfin-mako-shark/",
+      "category": "Fish Database",
+      "keywords": "Shortfin Mako Shark Normal"
+    },
+    {
+      "id": "fish-smooth-hammerhead",
+      "title": "Smooth Hammerhead",
+      "subtitle": " · 0 Gold",
+      "description": "Smooth Hammerhead 是 Heartopia 中的一种鱼类，出没于未知水域，售价约 0 金币。",
+      "url": "/en/fish/smooth-hammerhead/",
+      "category": "Fish Database",
+      "keywords": "Smooth Hammerhead Normal"
+    },
+    {
+      "id": "fish-swordfish",
+      "title": "Swordfish",
+      "subtitle": " · 0 Gold",
+      "description": "Swordfish 是 Heartopia 中的一种鱼类，出没于未知水域，售价约 0 金币。",
+      "url": "/en/fish/swordfish/",
+      "category": "Fish Database",
+      "keywords": "Swordfish Normal"
+    },
+    {
+      "id": "fish-wels-catfish",
+      "title": "Wels Catfish",
+      "subtitle": "Meadow Lake · 0 Gold",
+      "description": "Wels Catfish 是 Heartopia 中的一种鱼类，出没于Meadow Lake，售价约 0 金币。",
+      "url": "/en/fish/wels-catfish/",
+      "category": "Fish Database",
+      "keywords": "Wels Catfish Meadow Lake Evening, Night Rainbow, Sunny Normal"
+    },
+    {
+      "id": "money-early-fishing-loop",
+      "title": "开局钓鱼循环",
+      "subtitle": "1500-2500 Gold · Easy",
+      "description": "用最便宜的鱼饵在码头反复钓鱼，做出烤鱼再卖，前期升级最快。",
+      "url": "/en/money/early-fishing-loop/",
+      "category": "Money-Making Guide",
+      "keywords": "开局钓鱼循环 用最便宜的鱼饵在码头反复钓鱼，做出烤鱼再卖，前期升级最快。 简单 1500-2500 金币"
+    },
+    {
+      "id": "money-berry-jam-mass",
+      "title": "浆果酱量产",
+      "subtitle": "2000-3000 Gold · Easy",
+      "description": "浆果成熟后集中做浆果派，单位时间收益高于直接卖浆果。",
+      "url": "/en/money/berry-jam-mass/",
+      "category": "Money-Making Guide",
+      "keywords": "浆果酱量产 浆果成熟后集中做浆果派，单位时间收益高于直接卖浆果。 简单 2000-3000 金币"
+    },
+    {
+      "id": "money-wheat-flour-chain",
+      "title": "小麦-面粉产业链",
+      "subtitle": "2500-3500 Gold · Medium",
+      "description": "种小麦、磨面粉、做面包，形成稳定现金流。",
+      "url": "/en/money/wheat-flour-chain/",
+      "category": "Money-Making Guide",
+      "keywords": "小麦-面粉产业链 种小麦、磨面粉、做面包，形成稳定现金流。 中等 2500-3500 金币"
+    },
+    {
+      "id": "money-rare-fish-hours",
+      "title": "稀有鱼时段冲刺",
+      "subtitle": "4000-7000 Gold · Hard",
+      "description": "只在清晨和夜晚钓高价鱼，鱼饵成本高但回报最大。",
+      "url": "/en/money/rare-fish-hours/",
+      "category": "Money-Making Guide",
+      "keywords": "稀有鱼时段冲刺 只在清晨和夜晚钓高价鱼，鱼饵成本高但回报最大。 困难 4000-7000 金币"
+    },
+    {
+      "id": "money-seasonal-crop-flip",
+      "title": "季节作物倒卖",
+      "subtitle": "3000-5000 Gold · Medium",
+      "description": "每个季节第一天抢先种高价作物，在需求高峰期出售。",
+      "url": "/en/money/seasonal-crop-flip/",
+      "category": "Money-Making Guide",
+      "keywords": "季节作物倒卖 每个季节第一天抢先种高价作物，在需求高峰期出售。 中等 3000-5000 金币"
+    },
+    {
+      "id": "money-cooking-orders",
+      "title": "村民订单交付",
+      "subtitle": "1200-2000 Gold · Easy",
+      "description": "每天完成村民料理订单，稳定获得金币和好感度。",
+      "url": "/en/money/cooking-orders/",
+      "category": "Money-Making Guide",
+      "keywords": "村民订单交付 每天完成村民料理订单，稳定获得金币和好感度。 简单 1200-2000 金币"
+    },
+    {
+      "id": "money-mining-and-selling",
+      "title": "矿洞采集出售",
+      "subtitle": "2200-4000 Gold · Medium",
+      "description": "下矿采集矿石和宝石，直接卖给商人，适合体力富余时。",
+      "url": "/en/money/mining-and-selling/",
+      "category": "Money-Making Guide",
+      "keywords": "矿洞采集出售 下矿采集矿石和宝石，直接卖给商人，适合体力富余时。 中等 2200-4000 金币"
+    },
+    {
+      "id": "money-afk-kitchen",
+      "title": "厨房挂机流",
+      "subtitle": "800-1500 Gold（离线） · Easy",
+      "description": "睡前批量做长耗时料理，第二天直接收钱。",
+      "url": "/en/money/afk-kitchen/",
+      "category": "Money-Making Guide",
+      "keywords": "厨房挂机流 睡前批量做长耗时料理，第二天直接收钱。 简单 800-1500 金币（离线）"
+    },
+    {
+      "id": "money-honey-forage-run",
+      "title": "蜂蜜采集路线",
+      "subtitle": "1800-2800 Gold · Easy",
+      "description": "沿固定路线刷蜂巢，蜂蜜既可以交付订单也可以直接高价出售。",
+      "url": "/en/money/honey-forage-run/",
+      "category": "Money-Making Guide",
+      "keywords": "蜂蜜采集路线 沿固定路线刷蜂巢，蜂蜜既可以交付订单也可以直接高价出售。 简单 1800-2800 金币"
+    },
+    {
+      "id": "money-rainy-mushroom-run",
+      "title": "雨天蘑菇专场",
+      "subtitle": "2000-3200 Gold · Easy",
+      "description": "雨天森林会刷新大量蘑菇，出货量远高于晴天，适合集中跑一趟。",
+      "url": "/en/money/rainy-mushroom-run/",
+      "category": "Money-Making Guide",
+      "keywords": "雨天蘑菇专场 雨天森林会刷新大量蘑菇，出货量远高于晴天，适合集中跑一趟。 简单 2000-3200 金币"
+    },
+    {
+      "id": "money-rare-bug-premium",
+      "title": "稀有昆虫高价出货",
+      "subtitle": "2500-4500 Gold · Medium",
+      "description": "瞄准 Rainbow 与特定时段的高价昆虫，单只收益能顶一整筐普通鱼。",
+      "url": "/en/money/rare-bug-premium/",
+      "category": "Money-Making Guide",
+      "keywords": "稀有昆虫高价出货 瞄准 Rainbow 与特定时段的高价昆虫，单只收益能顶一整筐普通鱼。 中等 2500-4500 金币"
+    },
+    {
+      "id": "money-tea-juice-chain",
+      "title": "茶饮与果汁加工链",
+      "subtitle": "1600-2600 Gold · Easy",
+      "description": "把廉价水果和草药加工成饮品，售价通常能翻两到三倍。",
+      "url": "/en/money/tea-juice-chain/",
+      "category": "Money-Making Guide",
+      "keywords": "茶饮与果汁加工链 把廉价水果和草药加工成饮品，售价通常能翻两到三倍。 简单 1600-2600 金币"
+    },
+    {
+      "id": "money-gift-discount-flip",
+      "title": "送礼换折扣再倒卖",
+      "subtitle": "1500-2600 Gold · Easy",
+      "description": "先把商店店主的好感度刷起来吃折扣，再批量买材料加工卖出。",
+      "url": "/en/money/gift-discount-flip/",
+      "category": "Money-Making Guide",
+      "keywords": "送礼换折扣再倒卖 先把商店店主的好感度刷起来吃折扣，再批量买材料加工卖出。 简单 1500-2600 金币"
+    },
+    {
+      "id": "money-festival-stall-profit",
+      "title": "活动期间摆摊冲收益",
+      "subtitle": "5000-9000 Gold · Hard",
+      "description": "活动限定期间的高价物品需求暴涨，是单日收益最高的窗口。",
+      "url": "/en/money/festival-stall-profit/",
+      "category": "Money-Making Guide",
+      "keywords": "活动期间摆摊冲收益 活动限定期间的高价物品需求暴涨，是单日收益最高的窗口。 困难 5000-9000 金币"
+    },
+    {
+      "id": "money-tool-efficiency-upkeep",
+      "title": "工具升级换时间收益",
+      "subtitle": "1500-2500 Gold（间接） · Medium",
+      "description": "把金币投在工具升级上，减少每个动作的耗时，长期收益远高于囤钱。",
+      "url": "/en/money/tool-efficiency-upkeep/",
+      "category": "Money-Making Guide",
+      "keywords": "工具升级换时间收益 把金币投在工具升级上，减少每个动作的耗时，长期收益远高于囤钱。 中等 1500-2500 金币（间接）"
+    },
+    {
+      "id": "money-multi-crop-rotation",
+      "title": "多作物轮种排期",
+      "subtitle": "2800-4200 Gold · Medium",
+      "description": "按生长时间把农田分块轮种，保证每天都有收成可以卖。",
+      "url": "/en/money/multi-crop-rotation/",
+      "category": "Money-Making Guide",
+      "keywords": "多作物轮种排期 按生长时间把农田分块轮种，保证每天都有收成可以卖。 中等 2800-4200 金币"
+    },
+    {
+      "id": "beginner-first-hour",
+      "title": "开局第一小时怎么玩",
+      "subtitle": "Opening · 5 min",
+      "description": "从创建角色到解锁钓鱼、种植、厨房的完整开局顺序。",
+      "url": "/en/beginner/first-hour/",
+      "category": "Beginner Guide",
+      "keywords": "开局第一小时怎么玩 开局 从创建角色到解锁钓鱼、种植、厨房的完整开局顺序。"
+    },
+    {
+      "id": "beginner-energy-guide",
+      "title": "体力管理指南",
+      "subtitle": "Systems · 4 min",
+      "description": "体力怎么分配最划算，什么时候该吃料理。",
+      "url": "/en/beginner/energy-guide/",
+      "category": "Beginner Guide",
+      "keywords": "体力管理指南 系统 体力怎么分配最划算，什么时候该吃料理。"
+    },
+    {
+      "id": "beginner-tools-upgrade",
+      "title": "工具升级顺序",
+      "subtitle": "Progression · 4 min",
+      "description": "钓竿、锄头、矿镐先升哪个？",
+      "url": "/en/beginner/tools-upgrade/",
+      "category": "Beginner Guide",
+      "keywords": "工具升级顺序 养成 钓竿、锄头、矿镐先升哪个？"
+    },
+    {
+      "id": "beginner-map-unlock",
+      "title": "地图与传送点解锁",
+      "subtitle": "Exploration · 5 min",
+      "description": "快速解锁主要区域和传送点，少走冤枉路。",
+      "url": "/en/beginner/map-unlock/",
+      "category": "Beginner Guide",
+      "keywords": "地图与传送点解锁 探索 快速解锁主要区域和传送点，少走冤枉路。"
+    },
+    {
+      "id": "beginner-daily-routine",
+      "title": "每日必做清单",
+      "subtitle": "Daily Routine · 3 min",
+      "description": "每天上线 15 分钟就能完成的日常流程。",
+      "url": "/en/beginner/daily-routine/",
+      "category": "Beginner Guide",
+      "keywords": "每日必做清单 日常 每天上线 15 分钟就能完成的日常流程。"
+    },
+    {
+      "id": "beginner-cooking-basics",
+      "title": "烹饪系统入门",
+      "subtitle": "Systems · 5 min",
+      "description": "食材怎么搭配，哪些食谱最值得做。",
+      "url": "/en/beginner/cooking-basics/",
+      "category": "Beginner Guide",
+      "keywords": "烹饪系统入门 系统 食材怎么搭配，哪些食谱最值得做。"
+    },
+    {
+      "id": "beginner-fishing-basics",
+      "title": "钓鱼入门",
+      "subtitle": "Gameplay · 5 min",
+      "description": "钓点、鱼饵、时段与天气的基础知识。",
+      "url": "/en/beginner/fishing-basics/",
+      "category": "Beginner Guide",
+      "keywords": "钓鱼入门 玩法 钓点、鱼饵、时段与天气的基础知识。"
+    },
+    {
+      "id": "beginner-faq",
+      "title": "常见问题 FAQ",
+      "subtitle": "Help · 6 min",
+      "description": "卡关、找不到 NPC、材料缺失等常见问题汇总。",
+      "url": "/en/beginner/faq/",
+      "category": "Beginner Guide",
+      "keywords": "常见问题 FAQ 帮助 卡关、找不到 NPC、材料缺失等常见问题汇总。"
+    },
+    {
+      "id": "beginner-weather-effects",
+      "title": "天气到底影响什么",
+      "subtitle": "Systems · 5 min",
+      "description": "搞清晴天、雨天和 Rainbow 各刷新哪些内容，出门前先看天气再定路线。",
+      "url": "/en/beginner/weather-effects/",
+      "category": "Beginner Guide",
+      "keywords": "天气到底影响什么 系统 搞清晴天、雨天和 Rainbow 各刷新哪些内容，出门前先看天气再定路线。"
+    },
+    {
+      "id": "beginner-inventory-storage",
+      "title": "背包与仓库怎么管理",
+      "subtitle": "Systems · 4 min",
+      "description": "背包爆满是新手最常见的卡点，学会分类存放能省下大量来回跑的时间。",
+      "url": "/en/beginner/inventory-storage/",
+      "category": "Beginner Guide",
+      "keywords": "背包与仓库怎么管理 系统 背包爆满是新手最常见的卡点，学会分类存放能省下大量来回跑的时间。"
+    },
+    {
+      "id": "beginner-npc-friendship",
+      "title": "NPC 好感度怎么刷",
+      "subtitle": "Progression · 6 min",
+      "description": "好感度直接解锁配方、商店折扣和剧情，是最值得长期投入的系统。",
+      "url": "/en/beginner/npc-friendship/",
+      "category": "Beginner Guide",
+      "keywords": "NPC 好感度怎么刷 养成 好感度直接解锁配方、商店折扣和剧情，是最值得长期投入的系统。"
+    },
+    {
+      "id": "beginner-crafting-station",
+      "title": "制作台怎么用",
+      "subtitle": "Systems · 5 min",
+      "description": "制作台负责把原材料变成工具和家具，很多升级都必须经过它。",
+      "url": "/en/beginner/crafting-station/",
+      "category": "Beginner Guide",
+      "keywords": "制作台怎么用 系统 制作台负责把原材料变成工具和家具，很多升级都必须经过它。"
+    },
+    {
+      "id": "beginner-bug-catching-basics",
+      "title": "捕虫入门",
+      "subtitle": "Gameplay · 5 min",
+      "description": "从拿到捕虫网到稳定抓到高价值昆虫的完整流程。",
+      "url": "/en/beginner/bug-catching-basics/",
+      "category": "Beginner Guide",
+      "keywords": "捕虫入门 玩法 从拿到捕虫网到稳定抓到高价值昆虫的完整流程。"
+    },
+    {
+      "id": "beginner-mining-basics",
+      "title": "矿洞采集入门",
+      "subtitle": "Gameplay · 5 min",
+      "description": "矿洞是矿石和稀有材料的主要来源，也是中期最稳定的收入之一。",
+      "url": "/en/beginner/mining-basics/",
+      "category": "Beginner Guide",
+      "keywords": "矿洞采集入门 玩法 矿洞是矿石和稀有材料的主要来源，也是中期最稳定的收入之一。"
+    },
+    {
+      "id": "beginner-season-day-cycle",
+      "title": "季节与每日流程",
+      "subtitle": "Daily Routine · 6 min",
+      "description": "一天和一年的节奏是这款游戏的骨架，安排好顺序就不会手忙脚乱。",
+      "url": "/en/beginner/season-day-cycle/",
+      "category": "Beginner Guide",
+      "keywords": "季节与每日流程 日常 一天和一年的节奏是这款游戏的骨架，安排好顺序就不会手忙脚乱。"
+    },
+    {
+      "id": "beginner-common-mistakes",
+      "title": "新手最常犯的 8 个错",
+      "subtitle": "Help · 5 min",
+      "description": "提前避开这些坑，能省下几天的试错时间。",
+      "url": "/en/beginner/common-mistakes/",
+      "category": "Beginner Guide",
+      "keywords": "新手最常犯的 8 个错 帮助 提前避开这些坑，能省下几天的试错时间。"
+    },
+    {
+      "id": "crop-corn",
+      "title": "Corn",
+      "subtitle": "Daily · 345 Gold",
+      "description": "种子 170 金币，直接出售 515 金币，每格净赚 345 金币。 利润率约 67%，值得量产。 生长 12 小时，理论上一天可以收 2 轮（含立刻补种）。",
+      "url": "/en/farming/corn/",
+      "category": "Farming Guide",
+      "keywords": "Corn 每日 Daily 12 hours 种子 170 金币，直接出售 515 金币，每格净赚 345 金币。 利润率约 67%，值得量产。 生长 12 小时，理论上一天可以收 2 轮（含立刻补种）。"
+    },
+    {
+      "id": "crop-grape",
+      "title": "Grape",
+      "subtitle": "Daily · 320 Gold",
+      "description": "种子 160 金币，直接出售 480 金币，每格净赚 320 金币。 利润率约 67%，值得量产。 生长 10 小时，理论上一天可以收 2 轮（含立刻补种）。",
+      "url": "/en/farming/grape/",
+      "category": "Farming Guide",
+      "keywords": "Grape 每日 Daily 10 hours 种子 160 金币，直接出售 480 金币，每格净赚 320 金币。 利润率约 67%，值得量产。 生长 10 小时，理论上一天可以收 2 轮（含立刻补种）。"
+    },
+    {
+      "id": "crop-lettuce",
+      "title": "Lettuce",
+      "subtitle": "Daily · 290 Gold",
+      "description": "种子 145 金币，直接出售 435 金币，每格净赚 290 金币。 利润率约 67%，值得量产。 生长 8 小时，理论上一天可以收 3 轮（含立刻补种）。",
+      "url": "/en/farming/lettuce/",
+      "category": "Farming Guide",
+      "keywords": "Lettuce 每日 Daily 8 hours 种子 145 金币，直接出售 435 金币，每格净赚 290 金币。 利润率约 67%，值得量产。 生长 8 小时，理论上一天可以收 3 轮（含立刻补种）。"
+    },
+    {
+      "id": "crop-strawberry",
+      "title": "Strawberry",
+      "subtitle": "Daily · 250 Gold",
+      "description": "种子 125 金币，直接出售 375 金币，每格净赚 250 金币。 利润率约 67%，值得量产。 生长 6 小时，理论上一天可以收 4 轮（含立刻补种）。",
+      "url": "/en/farming/strawberry/",
+      "category": "Farming Guide",
+      "keywords": "Strawberry 每日 Daily 6 hours 种子 125 金币，直接出售 375 金币，每格净赚 250 金币。 利润率约 67%，值得量产。 生长 6 小时，理论上一天可以收 4 轮（含立刻补种）。"
+    },
+    {
+      "id": "crop-wheat",
+      "title": "Wheat",
+      "subtitle": "Not specified · 190 Gold",
+      "description": "种子 95 金币，直接出售 285 金币，每格净赚 190 金币。 利润率约 67%，值得量产。 生长 4 小时，理论上一天可以收 6 轮（含立刻补种）。",
+      "url": "/en/farming/wheat/",
+      "category": "Farming Guide",
+      "keywords": "Wheat 未标注 Not specified 4 hours 种子 95 金币，直接出售 285 金币，每格净赚 190 金币。 利润率约 67%，值得量产。 生长 4 小时，理论上一天可以收 6 轮（含立刻补种）。"
+    },
+    {
+      "id": "crop-carrot",
+      "title": "Carrot",
+      "subtitle": "Daily · 105 Gold",
+      "description": "种子 50 金币，直接出售 155 金币，每格净赚 105 金币。 利润率约 68%，值得量产。 生长 2 小时，理论上一天可以收 12 轮（含立刻补种）。",
+      "url": "/en/farming/carrot/",
+      "category": "Farming Guide",
+      "keywords": "Carrot 每日 Daily 2 hours 种子 50 金币，直接出售 155 金币，每格净赚 105 金币。 利润率约 68%，值得量产。 生长 2 小时，理论上一天可以收 12 轮（含立刻补种）。"
+    },
+    {
+      "id": "crop-daisy",
+      "title": "Daisy",
+      "subtitle": "Daily · 70 Gold",
+      "description": "种子 30 金币，直接出售 100 金币，每格净赚 70 金币。 利润率约 70%，值得量产。 生长 18 小时，理论上一天可以收 1 轮（含立刻补种）。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。",
+      "url": "/en/farming/daisy/",
+      "category": "Farming Guide",
+      "keywords": "Daisy 每日 Daily 18 hours 种子 30 金币，直接出售 100 金币，每格净赚 70 金币。 利润率约 70%，值得量产。 生长 18 小时，理论上一天可以收 1 轮（含立刻补种）。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    },
+    {
+      "id": "crop-pansy",
+      "title": "Pansy",
+      "subtitle": "Daily · 70 Gold",
+      "description": "种子 30 金币，直接出售 100 金币，每格净赚 70 金币。 利润率约 70%，值得量产。 生长时间：1-2 天（需浇水），具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。",
+      "url": "/en/farming/pansy/",
+      "category": "Farming Guide",
+      "keywords": "Pansy 每日 Daily 1-2 days (needs watering) 种子 30 金币，直接出售 100 金币，每格净赚 70 金币。 利润率约 70%，值得量产。 生长时间：1-2 天（需浇水），具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    },
+    {
+      "id": "crop-potato",
+      "title": "Potato",
+      "subtitle": "Daily · 60 Gold",
+      "description": "种子 30 金币，直接出售 90 金币，每格净赚 60 金币。 利润率约 67%，值得量产。 生长 1 小时，理论上一天可以收 24 轮（含立刻补种）。",
+      "url": "/en/farming/potato/",
+      "category": "Farming Guide",
+      "keywords": "Potato 每日 Daily 1 hours 种子 30 金币，直接出售 90 金币，每格净赚 60 金币。 利润率约 67%，值得量产。 生长 1 小时，理论上一天可以收 24 轮（含立刻补种）。"
+    },
+    {
+      "id": "crop-pineapple",
+      "title": "Pineapple",
+      "subtitle": "Daily · 37 Gold",
+      "description": "种子 15 金币，直接出售 52 金币，每格净赚 37 金币。 利润率约 71%，值得量产。 生长 30 分钟，理论上一天可以收 48 轮（含立刻补种）。",
+      "url": "/en/farming/pineapple/",
+      "category": "Farming Guide",
+      "keywords": "Pineapple 每日 Daily 30 min 种子 15 金币，直接出售 52 金币，每格净赚 37 金币。 利润率约 71%，值得量产。 生长 30 分钟，理论上一天可以收 48 轮（含立刻补种）。"
+    },
+    {
+      "id": "crop-tomato",
+      "title": "Tomato",
+      "subtitle": "Not specified · 20 Gold",
+      "description": "种子 10 金币，直接出售 30 金币，每格净赚 20 金币。 利润率约 67%，值得量产。 生长 15 分钟，理论上一天可以收 96 轮（含立刻补种）。",
+      "url": "/en/farming/tomato/",
+      "category": "Farming Guide",
+      "keywords": "Tomato 未标注 Not specified 15 min 种子 10 金币，直接出售 30 金币，每格净赚 20 金币。 利润率约 67%，值得量产。 生长 15 分钟，理论上一天可以收 96 轮（含立刻补种）。"
+    },
+    {
+      "id": "crop-carnation",
+      "title": "Carnation",
+      "subtitle": "Not specified · 0 Gold",
+      "description": "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。",
+      "url": "/en/farming/carnation/",
+      "category": "Farming Guide",
+      "keywords": "Carnation 未标注 Not specified Not specified wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    },
+    {
+      "id": "crop-corn-poppy",
+      "title": "Corn Poppy",
+      "subtitle": "Not specified · 0 Gold",
+      "description": "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：约几天（需每天浇水，雨天免浇），具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。",
+      "url": "/en/farming/corn-poppy/",
+      "category": "Farming Guide",
+      "keywords": "Corn Poppy 未标注 Not specified A few days (water daily; no watering on rainy days) wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：约几天（需每天浇水，雨天免浇），具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    },
+    {
+      "id": "crop-lily",
+      "title": "Lily",
+      "subtitle": "Not specified · 0 Gold",
+      "description": "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：1 天以上（可多次生长），具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。",
+      "url": "/en/farming/lily/",
+      "category": "Farming Guide",
+      "keywords": "Lily 未标注 Not specified Over 1 day (regrows multiple times) wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：1 天以上（可多次生长），具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    },
+    {
+      "id": "crop-orchid",
+      "title": "Orchid",
+      "subtitle": "Not specified · 0 Gold",
+      "description": "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。",
+      "url": "/en/farming/orchid/",
+      "category": "Farming Guide",
+      "keywords": "Orchid 未标注 Not specified Not specified wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    },
+    {
+      "id": "crop-pumpkin",
+      "title": "Pumpkin",
+      "subtitle": "Autumn · 0 Gold",
+      "description": "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。",
+      "url": "/en/farming/pumpkin/",
+      "category": "Farming Guide",
+      "keywords": "Pumpkin 秋季 Autumn Not specified wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。"
+    },
+    {
+      "id": "crop-rose",
+      "title": "Rose",
+      "subtitle": "Not specified · 0 Gold",
+      "description": "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：每天播种浇水，次日起可收获，具体时长以游戏内为准。 wiki 未记录解锁等级，先确认园艺等级是否满足。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。",
+      "url": "/en/farming/rose/",
+      "category": "Farming Guide",
+      "keywords": "Rose 未标注 Not specified Sow and water daily; harvestable the next day wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：每天播种浇水，次日起可收获，具体时长以游戏内为准。 wiki 未记录解锁等级，先确认园艺等级是否满足。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    },
+    {
+      "id": "crop-sunflower",
+      "title": "Sunflower",
+      "subtitle": "Not specified · 0 Gold",
+      "description": "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。",
+      "url": "/en/farming/sunflower/",
+      "category": "Farming Guide",
+      "keywords": "Sunflower 未标注 Not specified Not specified wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    },
+    {
+      "id": "crop-tulip",
+      "title": "Tulip",
+      "subtitle": "Spring · 0 Gold",
+      "description": "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。",
+      "url": "/en/farming/tulip/",
+      "category": "Farming Guide",
+      "keywords": "Tulip 春季 Spring Not specified wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。 花卉主要用于装饰、赠礼与交付订单，直接出售收益一般。"
+    },
+    {
+      "id": "crop-watermelon",
+      "title": "Watermelon",
+      "subtitle": "All year · 0 Gold",
+      "description": "wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。",
+      "url": "/en/farming/watermelon/",
+      "category": "Farming Guide",
+      "keywords": "Watermelon 全年 All year Not specified wiki 暂未记录这种作物的种子价格与售价，收益数据待补。 生长时间：未标注，具体时长以游戏内为准。"
+    },
+    {
+      "id": "crop-eggplant",
+      "title": "Eggplant",
+      "subtitle": "Daily · -75 Gold",
+      "description": "种子 135 金币，直接出售 60 金币，每格净赚 -75 金币。 利润率约 -125%，收益偏低，建议只种任务需要的量。 生长时间：未标注，具体时长以游戏内为准。",
+      "url": "/en/farming/eggplant/",
+      "category": "Farming Guide",
+      "keywords": "Eggplant 每日 Daily Not specified 种子 135 金币，直接出售 60 金币，每格净赚 -75 金币。 利润率约 -125%，收益偏低，建议只种任务需要的量。 生长时间：未标注，具体时长以游戏内为准。"
+    },
+    {
+      "id": "map-fish-sea-fishing",
+      "title": "Sea Fishing",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 8 种鱼：Golden King Crab、Moonfish、Giant Oarfish、Nursehound、Common Octopus、European Flying Squid 等。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Sea Fishing fishing 钓鱼点，可钓到 8 种鱼：Golden King Crab、Moonfish、Giant Oarfish、Nursehound、Common Octopus、European Flying Squid 等。"
+    },
+    {
+      "id": "map-fish-east-sea",
+      "title": "East Sea",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 6 种鱼：Ocean Sunfish、Tub Gurnard、Haddock、Goby、Hermit Crab、Common Shrimp。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "East Sea fishing 钓鱼点，可钓到 6 种鱼：Ocean Sunfish、Tub Gurnard、Haddock、Goby、Hermit Crab、Common Shrimp。"
+    },
+    {
+      "id": "map-fish-whale-sea",
+      "title": "Whale Sea",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 5 种鱼：King Crab、Atlantic Salmon、Atlantic Mackerel、Seahorse、Scad。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Whale Sea fishing 钓鱼点，可钓到 5 种鱼：King Crab、Atlantic Salmon、Atlantic Mackerel、Seahorse、Scad。"
+    },
+    {
+      "id": "map-fish-starry-lake",
+      "title": "Starry Lake",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 1 种鱼：Beltfish。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Starry Lake fishing 钓鱼点，可钓到 1 种鱼：Beltfish。"
+    },
+    {
+      "id": "map-fish-zephyr-sea",
+      "title": "Zephyr Sea",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 6 种鱼：Beltfish、Blackspot Seabream、European Lobster、False Scad、Atlantic Pygmy Octopus、Seabream。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Zephyr Sea fishing 钓鱼点，可钓到 6 种鱼：Beltfish、Blackspot Seabream、European Lobster、False Scad、Atlantic Pygmy Octopus、Seabream。"
+    },
+    {
+      "id": "map-fish-old-sea",
+      "title": "Old Sea",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 5 种鱼：European Eel、European Plaice、Puffer Fish、Clownfish、Sea Stickleback。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Old Sea fishing 钓鱼点，可钓到 5 种鱼：European Eel、European Plaice、Puffer Fish、Clownfish、Sea Stickleback。"
+    },
+    {
+      "id": "map-fish-giantwood-river",
+      "title": "Giantwood River",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 4 种鱼：Huchen、Red-Bellied Piranha、Zander、Spined Loach。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Giantwood River fishing 钓鱼点，可钓到 4 种鱼：Huchen、Red-Bellied Piranha、Zander、Spined Loach。"
+    },
+    {
+      "id": "map-fish-forest-lake",
+      "title": "Forest Lake",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 7 种鱼：Large Pearl Mussel、Blue Ero Crayfish、Largemouth Bass、European Crayfish、Mud Sunfish、Tench 等。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Forest Lake fishing 钓鱼点，可钓到 7 种鱼：Large Pearl Mussel、Blue Ero Crayfish、Largemouth Bass、European Crayfish、Mud Sunfish、Tench 等。"
+    },
+    {
+      "id": "map-fish-sea",
+      "title": "Sea",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 1 种鱼：Anglerfish。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Sea fishing 钓鱼点，可钓到 1 种鱼：Anglerfish。"
+    },
+    {
+      "id": "map-fish-meadow-lake",
+      "title": "Meadow Lake",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 5 种鱼：Butterfly Koi、Goldfish、Trout、European Smelt、Wels Catfish。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Meadow Lake fishing 钓鱼点，可钓到 5 种鱼：Butterfly Koi、Goldfish、Trout、European Smelt、Wels Catfish。"
+    },
+    {
+      "id": "map-fish-lake",
+      "title": "Lake",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 3 种鱼：Edible Frog、Common Chub、Common Bleak。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Lake fishing 钓鱼点，可钓到 3 种鱼：Edible Frog、Common Chub、Common Bleak。"
+    },
+    {
+      "id": "map-fish-ocean",
+      "title": "Ocean",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 4 种鱼：Rabbit Fish、Skipjack Tuna、Sea Bass、Sardine。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Ocean fishing 钓鱼点，可钓到 4 种鱼：Rabbit Fish、Skipjack Tuna、Sea Bass、Sardine。"
+    },
+    {
+      "id": "map-fish-river",
+      "title": "River",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 3 种鱼：Tilapia、European Perch、Oriental Shrimp。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "River fishing 钓鱼点，可钓到 3 种鱼：Tilapia、European Perch、Oriental Shrimp。"
+    },
+    {
+      "id": "map-fish-suburban-lake",
+      "title": "Suburban Lake",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 10 种鱼：European Mudminnow、Grayling、Common Rudd、Mediterranean Killifish、Mussel、River Crab 等。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Suburban Lake fishing 钓鱼点，可钓到 10 种鱼：European Mudminnow、Grayling、Common Rudd、Mediterranean Killifish、Mussel、River Crab 等。"
+    },
+    {
+      "id": "map-fish-onsen-mountain",
+      "title": "Onsen Mountain",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 6 种鱼：Pumpkinseed、Mottled Sculpin、Common Whitefish、Ruffe、Tadpole、Bluegill。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Onsen Mountain fishing 钓鱼点，可钓到 6 种鱼：Pumpkinseed、Mottled Sculpin、Common Whitefish、Ruffe、Tadpole、Bluegill。"
+    },
+    {
+      "id": "map-fish-tranquil-river",
+      "title": "Tranquil River",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 3 种鱼：Burbot、Chum Salmon、Minnow。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Tranquil River fishing 钓鱼点，可钓到 3 种鱼：Burbot、Chum Salmon、Minnow。"
+    },
+    {
+      "id": "map-fish-rosy-river",
+      "title": "Rosy River",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 3 种鱼：Common Carp、Freshwater Blenny、Streber。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Rosy River fishing 钓鱼点，可钓到 3 种鱼：Common Carp、Freshwater Blenny、Streber。"
+    },
+    {
+      "id": "map-fish-shallow-river",
+      "title": "Shallow River",
+      "subtitle": "Interactive Map",
+      "description": "钓鱼点，可钓到 2 种鱼：Three-Spined Stickleback、Common Barbel。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Shallow River fishing 钓鱼点，可钓到 2 种鱼：Three-Spined Stickleback、Common Barbel。"
+    },
+    {
+      "id": "map-bug-onsen-mountain",
+      "title": "Onsen Mountain",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 12 种昆虫：Conehead Mantis、Giant Asian Mantis、Minotaur Beetle、Mediterranean Mantis、Crimson Marsh Glider、Four-Spotted Ladybug 等。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Onsen Mountain bug 可捕捉 12 种昆虫：Conehead Mantis、Giant Asian Mantis、Minotaur Beetle、Mediterranean Mantis、Crimson Marsh Glider、Four-Spotted Ladybug 等。"
+    },
+    {
+      "id": "map-bug-forest",
+      "title": "Forest",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 12 种昆虫：Bagworm Moth、Golden Stag Beetle、Golden Jewel Scarab、Stag Beetle、Cicada、Alpine Longhorn Beetle 等。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Forest bug 可捕捉 12 种昆虫：Bagworm Moth、Golden Stag Beetle、Golden Jewel Scarab、Stag Beetle、Cicada、Alpine Longhorn Beetle 等。"
+    },
+    {
+      "id": "map-bug-event-only",
+      "title": "Event only",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 6 种昆虫：Rainbow Stag Beetle、Pink Katydid、Sulkowskys Morpho、White Witch、Apollo、Postman Butterfly。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Event only bug 可捕捉 6 种昆虫：Rainbow Stag Beetle、Pink Katydid、Sulkowskys Morpho、White Witch、Apollo、Postman Butterfly。"
+    },
+    {
+      "id": "map-bug-flower-field",
+      "title": "Flower Field",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 9 种昆虫：Elegant Flower Beetle、Mother-Of-Pearl、Picasso Bug、Katydid、Splay-Footed Carpenter、Bumblebee 等。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Flower Field bug 可捕捉 9 种昆虫：Elegant Flower Beetle、Mother-Of-Pearl、Picasso Bug、Katydid、Splay-Footed Carpenter、Bumblebee 等。"
+    },
+    {
+      "id": "map-bug-fishing-village",
+      "title": "Fishing Village",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 6 种昆虫：Horned Beetle、Ant、Blue Shieldbug、Beautiful Leopard、Siberian Grasshopper、Cabbage White。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Fishing Village bug 可捕捉 6 种昆虫：Horned Beetle、Ant、Blue Shieldbug、Beautiful Leopard、Siberian Grasshopper、Cabbage White。"
+    },
+    {
+      "id": "map-bug-suburbs",
+      "title": "Suburbs",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 8 种昆虫：Comet Moth、Green Birdwing、Large Banded Grasshopper、Seven-Spotted Ladybug、Mini Moon Moth、Four-Spotted Skimmer 等。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Suburbs bug 可捕捉 8 种昆虫：Comet Moth、Green Birdwing、Large Banded Grasshopper、Seven-Spotted Ladybug、Mini Moon Moth、Four-Spotted Skimmer 等。"
+    },
+    {
+      "id": "map-bug-home",
+      "title": "Home",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 3 种昆虫：Amethyst Flower Beetle、Rajah Brookes Birdwing、European Firebug。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Home bug 可捕捉 3 种昆虫：Amethyst Flower Beetle、Rajah Brookes Birdwing、European Firebug。"
+    },
+    {
+      "id": "map-bug-waterside",
+      "title": "Waterside",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 2 种昆虫：Beautiful Demoiselle、Large Red Damselfly。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Waterside bug 可捕捉 2 种昆虫：Beautiful Demoiselle、Large Red Damselfly。"
+    },
+    {
+      "id": "map-bug-central-area",
+      "title": "Central Area",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 2 种昆虫：Common Blue Butterfly、Orange-Tip。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Central Area bug 可捕捉 2 种昆虫：Common Blue Butterfly、Orange-Tip。"
+    },
+    {
+      "id": "map-bug-river-bank",
+      "title": "River Bank",
+      "subtitle": "Interactive Map",
+      "description": "可捕捉 1 种昆虫：Common Whitetail。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "River Bank bug 可捕捉 1 种昆虫：Common Whitetail。"
+    },
+    {
+      "id": "map-npc-albert-jr",
+      "title": "Albert Jr.",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Golden Acorn Merchant Guild。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Albert Jr. npc Villager，常驻Golden Acorn Merchant Guild。"
+    },
+    {
+      "id": "map-npc-andrew",
+      "title": "Andrew",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻West Corner of Heartopia TOwn，喜好：Flowers。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Andrew npc Villager，常驻West Corner of Heartopia TOwn，喜好：Flowers。"
+    },
+    {
+      "id": "map-npc-annie",
+      "title": "Annie",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Central Area。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Annie npc Villager，常驻Central Area。"
+    },
+    {
+      "id": "map-npc-atara",
+      "title": "Atara",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Town Hall / Central Plaza，喜好：Coffee、Newspapers。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Atara npc Villager，常驻Town Hall / Central Plaza，喜好：Coffee、Newspapers。"
+    },
+    {
+      "id": "map-npc-bill",
+      "title": "Bill",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Fishing Village。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Bill npc Villager，常驻Fishing Village。"
+    },
+    {
+      "id": "map-npc-blanc",
+      "title": "Blanc",
+      "subtitle": "Interactive Map",
+      "description": "Mentor，常驻Garden Street，喜好：Watering Can。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Blanc npc Mentor，常驻Garden Street，喜好：Watering Can。"
+    },
+    {
+      "id": "map-npc-bo",
+      "title": "Bo",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Town Hall / Central Plaza，喜好：Coffee、Newspapers。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Bo npc Villager，常驻Town Hall / Central Plaza，喜好：Coffee、Newspapers。"
+    },
+    {
+      "id": "map-npc-bob",
+      "title": "Bob",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Construction Workshop，喜好：Tools。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Bob npc Villager，常驻Construction Workshop，喜好：Tools。"
+    },
+    {
+      "id": "map-npc-collector",
+      "title": "Collector",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Heartopia Town。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Collector npc Villager，常驻Heartopia Town。"
+    },
+    {
+      "id": "map-npc-dorothee",
+      "title": "Dorothee",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Clothing Store。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Dorothee npc Villager，常驻Clothing Store。"
+    },
+    {
+      "id": "map-npc-massimo",
+      "title": "Massimo",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Restaurant。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Massimo npc Villager，常驻Restaurant。"
+    },
+    {
+      "id": "map-npc-mrs-joan",
+      "title": "Mrs Joan",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Heartopia Town，喜好：Fish、Flowers、Seafood Bouquet。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Mrs Joan npc Villager，常驻Heartopia Town，喜好：Fish、Flowers、Seafood Bouquet。"
+    },
+    {
+      "id": "map-npc-naniwa",
+      "title": "Naniwa",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Forest / Nature Areas，喜好：Butterfly、Golden Stag。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Naniwa npc Villager，常驻Forest / Nature Areas，喜好：Butterfly、Golden Stag。"
+    },
+    {
+      "id": "map-npc-oak-oak",
+      "title": "Oak-Oak",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Spirit Oak Pine Forest。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Oak-Oak npc Villager，常驻Spirit Oak Pine Forest。"
+    },
+    {
+      "id": "map-npc-patti",
+      "title": "Patti",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Forest，喜好：Camping Gear、Forest Fruits、Mushroom。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Patti npc Villager，常驻Forest，喜好：Camping Gear、Forest Fruits、Mushroom。"
+    },
+    {
+      "id": "map-npc-vanya",
+      "title": "Vanya",
+      "subtitle": "Interactive Map",
+      "description": "Villager，常驻Town River Pier，喜好：Fish、Fishing Supplies、Seafood。",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Vanya npc Villager，常驻Town River Pier，喜好：Fish、Fishing Supplies、Seafood。"
+    },
+    {
+      "id": "map-shop-furniture-store",
+      "title": "Furniture Store",
+      "subtitle": "Interactive Map",
+      "description": "The primary shop for purchasing home decor and furniture in Heartopia, managed by the ever-cheerful Bob.",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Furniture Store shop The primary shop for purchasing home decor and furniture in Heartopia, managed by the ever-cheerful Bob."
+    },
+    {
+      "id": "map-shop-gardening-store",
+      "title": "Gardening Store",
+      "subtitle": "Interactive Map",
+      "description": "A specialized shop for purchasing seeds, flowers, and gardening supplies.",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Gardening Store shop A specialized shop for purchasing seeds, flowers, and gardening supplies."
+    },
+    {
+      "id": "map-shop-heartopia-town",
+      "title": "Heartopia Town",
+      "subtitle": "Interactive Map",
+      "description": "The bustling heart of the region and the player's new home.",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Heartopia Town shop The bustling heart of the region and the player's new home."
+    },
+    {
+      "id": "map-shop-pet-shop",
+      "title": "Pet Shop",
+      "subtitle": "Interactive Map",
+      "description": "A cozy shop filled with the sounds of happy animals, offering pets and supplies to aspiring owners.",
+      "url": "/en/map/",
+      "category": "Interactive Map",
+      "keywords": "Pet Shop shop A cozy shop filled with the sounds of happy animals, offering pets and supplies to aspiring owners."
+    },
+    {
+      "id": "bugs-conehead-mantis",
+      "title": "Conehead Mantis",
+      "subtitle": "Bug · Onsen Mountain · Day, Evening",
+      "description": "Conehead Mantis 是 Heartopia 中的一种昆虫，出没于Onsen Mountain，售价约 515 金币。",
+      "url": "/en/bugs/conehead-mantis/",
+      "category": "Bug Database",
+      "keywords": "Conehead Mantis 昆虫 Bug Onsen Mountain Day, Evening Rainbow, Rainy 9"
+    },
+    {
+      "id": "bugs-bagworm-moth",
+      "title": "Bagworm Moth",
+      "subtitle": "Bug · Forest · Evening, Night",
+      "description": "Bagworm Moth 是 Heartopia 中的一种昆虫，出没于Forest，售价约 440 金币。",
+      "url": "/en/bugs/bagworm-moth/",
+      "category": "Bug Database",
+      "keywords": "Bagworm Moth 昆虫 Bug Forest Evening, Night Rainbow, Sunny 10"
+    },
+    {
+      "id": "bugs-cerulean-carpenter",
+      "title": "Cerulean Carpenter",
+      "subtitle": "Bug",
+      "description": "Cerulean Carpenter 是 Heartopia 中的一种昆虫，出没于未知区域，售价约 440 金币。",
+      "url": "/en/bugs/cerulean-carpenter/",
+      "category": "Bug Database",
+      "keywords": "Cerulean Carpenter 昆虫 Bug 9"
+    },
+    {
+      "id": "bugs-golden-stag-beetle",
+      "title": "Golden Stag Beetle",
+      "subtitle": "Bug · Forest · Evening, Night",
+      "description": "Golden Stag Beetle 是 Heartopia 中的一种昆虫，出没于Forest，售价约 440 金币。",
+      "url": "/en/bugs/golden-stag-beetle/",
+      "category": "Bug Database",
+      "keywords": "Golden Stag Beetle 昆虫 Bug Forest Evening, Night Rainbow, Rainy 9"
+    },
+    {
+      "id": "bugs-rainbow-stag-beetle",
+      "title": "Rainbow Stag Beetle",
+      "subtitle": "Bug · Event only · Day, Evening, Morning, Night",
+      "description": "Rainbow Stag Beetle 是 Heartopia 中的一种昆虫，出没于Event only，售价约 440 金币。",
+      "url": "/en/bugs/rainbow-stag-beetle/",
+      "category": "Bug Database",
+      "keywords": "Rainbow Stag Beetle 昆虫 Bug Event only Day, Evening, Morning, Night Rainbow, Rainy, Sunny 9"
+    },
+    {
+      "id": "bugs-giant-asian-mantis",
+      "title": "Giant Asian Mantis",
+      "subtitle": "Bug · Onsen Mountain · Day, Evening, Morning, Night",
+      "description": "Giant Asian Mantis 是 Heartopia 中的一种昆虫，出没于Onsen Mountain，售价约 390 金币。",
+      "url": "/en/bugs/giant-asian-mantis/",
+      "category": "Bug Database",
+      "keywords": "Giant Asian Mantis 昆虫 Bug Onsen Mountain Day, Evening, Morning, Night Rainbow, Sunny 5"
+    },
+    {
+      "id": "bugs-elegant-flower-beetle",
+      "title": "Elegant Flower Beetle",
+      "subtitle": "Bug · Flower Field · Day, Morning",
+      "description": "Elegant Flower Beetle 是 Heartopia 中的一种昆虫，出没于Flower Field，售价约 275 金币。",
+      "url": "/en/bugs/elegant-flower-beetle/",
+      "category": "Bug Database",
+      "keywords": "Elegant Flower Beetle 昆虫 Bug Flower Field Day, Morning Rainbow, Rainy 7"
+    },
+    {
+      "id": "bugs-golden-jewel-scarab",
+      "title": "Golden Jewel Scarab",
+      "subtitle": "Bug · Forest · Day, Evening",
+      "description": "Golden Jewel Scarab 是 Heartopia 中的一种昆虫，出没于Forest，售价约 275 金币。",
+      "url": "/en/bugs/golden-jewel-scarab/",
+      "category": "Bug Database",
+      "keywords": "Golden Jewel Scarab 昆虫 Bug Forest Day, Evening Rainbow, Sunny 7"
+    },
+    {
+      "id": "bugs-horned-beetle",
+      "title": "Horned Beetle",
+      "subtitle": "Bug · Fishing Village · Evening, Night",
+      "description": "Horned Beetle 是 Heartopia 中的一种昆虫，出没于Fishing Village，售价约 275 金币。",
+      "url": "/en/bugs/horned-beetle/",
+      "category": "Bug Database",
+      "keywords": "Horned Beetle 昆虫 Bug Fishing Village Evening, Night Rainbow, Sunny 8"
+    },
+    {
+      "id": "bugs-minotaur-beetle",
+      "title": "Minotaur Beetle",
+      "subtitle": "Bug · Onsen Mountain · Day, Morning, Night",
+      "description": "Minotaur Beetle 是 Heartopia 中的一种昆虫，出没于Onsen Mountain，售价约 275 金币。",
+      "url": "/en/bugs/minotaur-beetle/",
+      "category": "Bug Database",
+      "keywords": "Minotaur Beetle 昆虫 Bug Onsen Mountain Day, Morning, Night Rainbow, Rainy, Sunny 7"
+    },
+    {
+      "id": "bugs-stag-beetle",
+      "title": "Stag Beetle",
+      "subtitle": "Bug · Forest · Day, Evening, Morning",
+      "description": "Stag Beetle 是 Heartopia 中的一种昆虫，出没于Forest，售价约 275 金币。",
+      "url": "/en/bugs/stag-beetle/",
+      "category": "Bug Database",
+      "keywords": "Stag Beetle 昆虫 Bug Forest Day, Evening, Morning Rainbow, Rainy 6"
+    },
+    {
+      "id": "bugs-comet-moth",
+      "title": "Comet Moth",
+      "subtitle": "Bug · Suburbs · Evening, Night",
+      "description": "Comet Moth 是 Heartopia 中的一种昆虫，出没于Suburbs，售价约 240 金币。",
+      "url": "/en/bugs/comet-moth/",
+      "category": "Bug Database",
+      "keywords": "Comet Moth 昆虫 Bug Suburbs Evening, Night Rainbow, Sunny 8"
+    },
+    {
+      "id": "bugs-mother-of-pearl",
+      "title": "Mother-Of-Pearl",
+      "subtitle": "Bug · Flower Field · Morning, Night",
+      "description": "Mother-Of-Pearl 是 Heartopia 中的一种昆虫，出没于Flower Field，售价约 240 金币。",
+      "url": "/en/bugs/mother-of-pearl/",
+      "category": "Bug Database",
+      "keywords": "Mother-Of-Pearl 昆虫 Bug Flower Field Morning, Night Rainbow, Rainy 9"
+    },
+    {
+      "id": "bugs-ant",
+      "title": "Ant",
+      "subtitle": "Bug · Fishing Village · Day, Evening, Morning, Night",
+      "description": "Ants are scaling high, clouds on the hill—heavy rain is coming soon.",
+      "url": "/en/bugs/ant/",
+      "category": "Bug Database",
+      "keywords": "Ant 昆虫 Bug Fishing Village Day, Evening, Morning, Night Rainbow, Rainy, Sunny 3"
+    },
+    {
+      "id": "bugs-cicada",
+      "title": "Cicada",
+      "subtitle": "Bug · Forest · Day, Evening, Night",
+      "description": "After waiting so long underground, it's now making itself heard—loud and clear!",
+      "url": "/en/bugs/cicada/",
+      "category": "Bug Database",
+      "keywords": "Cicada 昆虫 Bug Forest Day, Evening, Night Rainbow, Rainy, Sunny 4"
+    },
+    {
+      "id": "bugs-mediterranean-mantis",
+      "title": "Mediterranean Mantis",
+      "subtitle": "Bug · Onsen Mountain · Day, Evening, Night",
+      "description": "It may look normal, but it's got rainbow under its wings!",
+      "url": "/en/bugs/mediterranean-mantis/",
+      "category": "Bug Database",
+      "keywords": "Mediterranean Mantis 昆虫 Bug Onsen Mountain Day, Evening, Night Rainbow, Sunny 4"
+    },
+    {
+      "id": "bugs-crimson-marsh-glider",
+      "title": "Crimson Marsh Glider",
+      "subtitle": "Bug · Onsen Mountain · Day, Evening, Night",
+      "description": "Crimson Marsh Glider 是 Heartopia 中的一种昆虫，出没于Onsen Mountain，售价约 185 金币。",
+      "url": "/en/bugs/crimson-marsh-glider/",
+      "category": "Bug Database",
+      "keywords": "Crimson Marsh Glider 昆虫 Bug Onsen Mountain Day, Evening, Night Rainbow 7"
+    },
+    {
+      "id": "bugs-picasso-bug",
+      "title": "Picasso Bug",
+      "subtitle": "Bug · Flower Field · Evening, Night",
+      "description": "Picasso Bug 是 Heartopia 中的一种昆虫，出没于Flower Field，售价约 185 金币。",
+      "url": "/en/bugs/picasso-bug/",
+      "category": "Bug Database",
+      "keywords": "Picasso Bug 昆虫 Bug Flower Field Evening, Night Rainbow, Sunny 8"
+    },
+    {
+      "id": "bugs-katydid",
+      "title": "Katydid",
+      "subtitle": "Bug · Flower Field · Day, Evening, Morning, Night",
+      "description": "It loves to sing whenever it's happy.",
+      "url": "/en/bugs/katydid/",
+      "category": "Bug Database",
+      "keywords": "Katydid 昆虫 Bug Flower Field Day, Evening, Morning, Night Rainbow, Rainy, Sunny 3"
+    },
+    {
+      "id": "bugs-alpine-longhorn-beetle",
+      "title": "Alpine Longhorn Beetle",
+      "subtitle": "Bug · Forest · Day, Evening, Morning, Night",
+      "description": "Alpine Longhorn Beetle 是 Heartopia 中的一种昆虫，出没于Forest，售价约 165 金币。",
+      "url": "/en/bugs/alpine-longhorn-beetle/",
+      "category": "Bug Database",
+      "keywords": "Alpine Longhorn Beetle 昆虫 Bug Forest Day, Evening, Morning, Night Rainbow 5"
+    },
+    {
+      "id": "bugs-amethyst-flower-beetle",
+      "title": "Amethyst Flower Beetle",
+      "subtitle": "Bug · Home · Day, Evening, Morning, Night",
+      "description": "Its shell is a vibrant blue-purple, and it prefers humid weather.",
+      "url": "/en/bugs/amethyst-flower-beetle/",
+      "category": "Bug Database",
+      "keywords": "Amethyst Flower Beetle 昆虫 Bug Home Day, Evening, Morning, Night Rainbow, Rainy 2"
+    },
+    {
+      "id": "bugs-asian-lady-beetle",
+      "title": "Asian Lady Beetle",
+      "subtitle": "Bug · Forest · Day, Evening, Night",
+      "description": "The spots on its back forms a perfect smiley face. What a wonderful personality!",
+      "url": "/en/bugs/asian-lady-beetle/",
+      "category": "Bug Database",
+      "keywords": "Asian Lady Beetle 昆虫 Bug Forest Day, Evening, Night Rainbow, Rainy 5"
+    },
+    {
+      "id": "bugs-four-spotted-ladybug",
+      "title": "Four-Spotted Ladybug",
+      "subtitle": "Bug · Onsen Mountain · Day, Evening, Morning, Night",
+      "description": "It's a ladybug with three fewer spots than a seven-spotted one, and it lives by the warm lakeside.",
+      "url": "/en/bugs/four-spotted-ladybug/",
+      "category": "Bug Database",
+      "keywords": "Four-Spotted Ladybug 昆虫 Bug Onsen Mountain Day, Evening, Morning, Night Rainbow, Rainy 4"
+    },
+    {
+      "id": "bugs-silver-jewel-scarab",
+      "title": "Silver Jewel Scarab",
+      "subtitle": "Bug · Onsen Mountain · Day, Morning, Night",
+      "description": "It's dazzling with jewels, obviously from a rich family.",
+      "url": "/en/bugs/silver-jewel-scarab/",
+      "category": "Bug Database",
+      "keywords": "Silver Jewel Scarab 昆虫 Bug Onsen Mountain Day, Morning, Night Rainbow, Sunny 6"
+    },
+    {
+      "id": "bugs-splay-footed-carpenter",
+      "title": "Splay-Footed Carpenter",
+      "subtitle": "Bug · Flower Field · Day, Evening, Morning, Night",
+      "description": "Splay-Footed Carpenter 是 Heartopia 中的一种昆虫，出没于Flower Field，售价约 165 金币。",
+      "url": "/en/bugs/splay-footed-carpenter/",
+      "category": "Bug Database",
+      "keywords": "Splay-Footed Carpenter 昆虫 Bug Flower Field Day, Evening, Morning, Night Rainbow, Sunny 5"
+    },
+    {
+      "id": "bugs-waroona-cuckoo-bee",
+      "title": "Waroona Cuckoo Bee",
+      "subtitle": "Bug · Forest · Day, Evening, Morning, Night",
+      "description": "Gray-and-white stripes line up on its tail. Did it get inspiration from a zebra?",
+      "url": "/en/bugs/waroona-cuckoo-bee/",
+      "category": "Bug Database",
+      "keywords": "Waroona Cuckoo Bee 昆虫 Bug Forest Day, Evening, Morning, Night Rainbow, Rainy, Sunny 3"
+    },
+    {
+      "id": "bugs-blue-morpho",
+      "title": "Blue Morpho",
+      "subtitle": "Bug · Forest · Day, Evening, Morning",
+      "description": "Blue Morpho 是 Heartopia 中的一种昆虫，出没于Forest，售价约 150 金币。",
+      "url": "/en/bugs/blue-morpho/",
+      "category": "Bug Database",
+      "keywords": "Blue Morpho 昆虫 Bug Forest Day, Evening, Morning Rainbow, Sunny 7"
+    },
+    {
+      "id": "bugs-chestnut-tiger",
+      "title": "Chestnut Tiger",
+      "subtitle": "Bug · Day, Evening, Morning, Night",
+      "description": "Chestnut Tiger 是 Heartopia 中的一种昆虫，出没于未知区域，售价约 150 金币。",
+      "url": "/en/bugs/chestnut-tiger/",
+      "category": "Bug Database",
+      "keywords": "Chestnut Tiger 昆虫 Bug Day, Evening, Morning, Night Rainbow, Rainy, Sunny 7"
+    },
+    {
+      "id": "bugs-green-birdwing",
+      "title": "Green Birdwing",
+      "subtitle": "Bug · Suburbs · Day, Evening, Morning",
+      "description": "Green Birdwing 是 Heartopia 中的一种昆虫，出没于Suburbs，售价约 150 金币。",
+      "url": "/en/bugs/green-birdwing/",
+      "category": "Bug Database",
+      "keywords": "Green Birdwing 昆虫 Bug Suburbs Day, Evening, Morning Rainbow, Rainy, Sunny 6"
+    },
+    {
+      "id": "bugs-spanish-moon-moth",
+      "title": "Spanish Moon Moth",
+      "subtitle": "Bug · Forest · Day, Evening",
+      "description": "It's beautiful yet short-lived, making every sighting a moment to cherish.",
+      "url": "/en/bugs/spanish-moon-moth/",
+      "category": "Bug Database",
+      "keywords": "Spanish Moon Moth 昆虫 Bug Forest Day, Evening Rainbow, Sunny 8"
+    },
+    {
+      "id": "bugs-large-banded-grasshopper",
+      "title": "Large Banded Grasshopper",
+      "subtitle": "Bug · Suburbs · Day, Evening, Night",
+      "description": "With vivid red hind legs, it prefers bright and sunny weather.",
+      "url": "/en/bugs/large-banded-grasshopper/",
+      "category": "Bug Database",
+      "keywords": "Large Banded Grasshopper 昆虫 Bug Suburbs Day, Evening, Night Rainbow, Sunny 4"
+    },
+    {
+      "id": "bugs-beautiful-demoiselle",
+      "title": "Beautiful Demoiselle",
+      "subtitle": "Bug · Waterside · Day, Evening, Morning, Night",
+      "description": "Beautiful Demoiselle 是 Heartopia 中的一种昆虫，出没于Waterside，售价约 110 金币。",
+      "url": "/en/bugs/beautiful-demoiselle/",
+      "category": "Bug Database",
+      "keywords": "Beautiful Demoiselle 昆虫 Bug Waterside Day, Evening, Morning, Night Rainbow, Rainy 6"
+    },
+    {
+      "id": "bugs-blue-shieldbug",
+      "title": "Blue Shieldbug",
+      "subtitle": "Bug · Fishing Village · Day, Morning",
+      "description": "Blue Shieldbug 是 Heartopia 中的一种昆虫，出没于Fishing Village，售价约 110 金币。",
+      "url": "/en/bugs/blue-shieldbug/",
+      "category": "Bug Database",
+      "keywords": "Blue Shieldbug 昆虫 Bug Fishing Village Day, Morning Rainbow, Rainy, Sunny 6"
+    },
+    {
+      "id": "bugs-bumblebee",
+      "title": "Bumblebee",
+      "subtitle": "Bug · Flower Field · Day, Evening, Morning, Night",
+      "description": "Its body is chunky, like a little bear who just filled its belly.",
+      "url": "/en/bugs/bumblebee/",
+      "category": "Bug Database",
+      "keywords": "Bumblebee 昆虫 Bug Flower Field Day, Evening, Morning, Night Rainbow, Rainy, Sunny 2"
+    },
+    {
+      "id": "bugs-fire-colored-beetle",
+      "title": "Fire-Colored Beetle",
+      "subtitle": "Bug · Onsen Mountain · Day, Evening, Morning, Night",
+      "description": "Its whole body is fuming red! Guess it's an onsen lover.",
+      "url": "/en/bugs/fire-colored-beetle/",
+      "category": "Bug Database",
+      "keywords": "Fire-Colored Beetle 昆虫 Bug Onsen Mountain Day, Evening, Morning, Night Rainbow, Rainy, Sunny 3"
+    },
+    {
+      "id": "bugs-green-tiger-beetle",
+      "title": "Green Tiger Beetle",
+      "subtitle": "Bug · Onsen Mountain · Day, Evening, Morning, Night",
+      "description": "Its back armor shimmers with a metallic sheen, like jade armor.",
+      "url": "/en/bugs/green-tiger-beetle/",
+      "category": "Bug Database",
+      "keywords": "Green Tiger Beetle 昆虫 Bug Onsen Mountain Day, Evening, Morning, Night Rainbow, Rainy, Sunny 2"
+    },
+    {
+      "id": "bugs-seven-spotted-ladybug",
+      "title": "Seven-Spotted Ladybug",
+      "subtitle": "Bug · Suburbs · Day, Evening, Morning, Night",
+      "description": "It's a ladybug with three more spots than a four-spotted one. Seeing it is said to bring good luck.",
+      "url": "/en/bugs/seven-spotted-ladybug/",
+      "category": "Bug Database",
+      "keywords": "Seven-Spotted Ladybug 昆虫 Bug Suburbs Day, Evening, Morning, Night Rainbow, Rainy 2"
+    },
+    {
+      "id": "bugs-wasp-beetle",
+      "title": "Wasp Beetle",
+      "subtitle": "Bug · Forest · Day, Evening, Morning, Night",
+      "description": "It relies on masterful disguise skills to mimic a hornet and move freely though the forest.",
+      "url": "/en/bugs/wasp-beetle/",
+      "category": "Bug Database",
+      "keywords": "Wasp Beetle 昆虫 Bug Forest Day, Evening, Morning, Night Rainbow, Rainy, Sunny 2"
+    },
+    {
+      "id": "bugs-common-blue-butterfly",
+      "title": "Common Blue Butterfly",
+      "subtitle": "Bug · Central Area · Day, Evening, Morning, Night",
+      "description": "It often flutters its dazzling blue wings, dancing through the town.",
+      "url": "/en/bugs/common-blue-butterfly/",
+      "category": "Bug Database",
+      "keywords": "Common Blue Butterfly 昆虫 Bug Central Area Day, Evening, Morning, Night Rainbow, Rainy, Sunny 2"
+    },
+    {
+      "id": "bugs-mini-moon-moth",
+      "title": "Mini Moon Moth",
+      "subtitle": "Bug · Suburbs · Day, Evening, Morning",
+      "description": "Its Morandi hues give it an elegant and refined beauty.",
+      "url": "/en/bugs/mini-moon-moth/",
+      "category": "Bug Database",
+      "keywords": "Mini Moon Moth 昆虫 Bug Suburbs Day, Evening, Morning Rainbow, Sunny 3"
+    },
+    {
+      "id": "bugs-beautiful-leopard",
+      "title": "Beautiful Leopard",
+      "subtitle": "Bug · Fishing Village · Evening, Morning, Night",
+      "description": "It's a butterfly of fashion dressed in a natural leopard-print coat.",
+      "url": "/en/bugs/beautiful-leopard/",
+      "category": "Bug Database",
+      "keywords": "Beautiful Leopard 昆虫 Bug Fishing Village Evening, Morning, Night Rainbow, Rainy 4"
+    },
+    {
+      "id": "bugs-mourning-cloak",
+      "title": "Mourning Cloak",
+      "subtitle": "Bug · Onsen Mountain · Day, Morning, Night",
+      "description": "Mourning Cloak 是 Heartopia 中的一种昆虫，出没于Onsen Mountain，售价约 90 金币。",
+      "url": "/en/bugs/mourning-cloak/",
+      "category": "Bug Database",
+      "keywords": "Mourning Cloak 昆虫 Bug Onsen Mountain Day, Morning, Night Rainbow, Sunny 5"
+    },
+    {
+      "id": "bugs-peacock-butterfly",
+      "title": "Peacock Butterfly",
+      "subtitle": "Bug · Flower Field · Day, Evening, Morning, Night",
+      "description": "The eyespots on its wings shimmer with a mysterious glow, said to scare off predators.",
+      "url": "/en/bugs/peacock-butterfly/",
+      "category": "Bug Database",
+      "keywords": "Peacock Butterfly 昆虫 Bug Flower Field Day, Evening, Morning, Night Rainbow, Rainy, Sunny 5"
+    },
+    {
+      "id": "bugs-pink-katydid",
+      "title": "Pink Katydid",
+      "subtitle": "Bug · Event only · Day, Evening, Morning, Night",
+      "description": "Its gorgeous skin wasn't won by tumbling into a jar of honey.",
+      "url": "/en/bugs/pink-katydid/",
+      "category": "Bug Database",
+      "keywords": "Pink Katydid 昆虫 Bug Event only Day, Evening, Morning, Night Rainbow, Rainy, Sunny 3"
+    },
+    {
+      "id": "bugs-purple-emperor",
+      "title": "Purple Emperor",
+      "subtitle": "Bug · Flower Field · Day, Evening, Night",
+      "description": "Out of a love for purple, it taught itself light-and-shadow magic to change the color of its wings.",
+      "url": "/en/bugs/purple-emperor/",
+      "category": "Bug Database",
+      "keywords": "Purple Emperor 昆虫 Bug Flower Field Day, Evening, Night Rainbow, Sunny 3"
+    },
+    {
+      "id": "bugs-rajah-brookes-birdwing",
+      "title": "Rajah Brookes Birdwing",
+      "subtitle": "Bug · Home · Evening, Morning, Night",
+      "description": "The red spots on its body are its most distinctive feature, and it's occasionally seen near homes.",
+      "url": "/en/bugs/rajah-brookes-birdwing/",
+      "category": "Bug Database",
+      "keywords": "Rajah Brookes Birdwing 昆虫 Bug Home Evening, Morning, Night Rainbow, Rainy, Sunny 3"
+    },
+    {
+      "id": "bugs-siberian-grasshopper",
+      "title": "Siberian Grasshopper",
+      "subtitle": "Bug · Fishing Village · Day, Evening, Morning, Night",
+      "description": "It's found in Fishing Village, and its hockey-stick-shaped antennae and giant forelegs are truly a marvel.",
+      "url": "/en/bugs/siberian-grasshopper/",
+      "category": "Bug Database",
+      "keywords": "Siberian Grasshopper 昆虫 Bug Fishing Village Day, Evening, Morning, Night Rainbow, Rainy, Sunny 2"
+    },
+    {
+      "id": "bugs-sulkowskys-morpho",
+      "title": "Sulkowskys Morpho",
+      "subtitle": "Bug · Event only · Day, Evening, Morning, Night",
+      "description": "Sulkowskys Morpho 是 Heartopia 中的一种昆虫，出没于Event only，售价约 90 金币。",
+      "url": "/en/bugs/sulkowskys-morpho/",
+      "category": "Bug Database",
+      "keywords": "Sulkowskys Morpho 昆虫 Bug Event only Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-white-witch",
+      "title": "White Witch",
+      "subtitle": "Bug · Event only · Day, Evening, Morning, Night",
+      "description": "It's beautiful from every angle.",
+      "url": "/en/bugs/white-witch/",
+      "category": "Bug Database",
+      "keywords": "White Witch 昆虫 Bug Event only Day, Evening, Morning, Night Rainbow, Sunny 5"
+    },
+    {
+      "id": "bugs-common-whitetail",
+      "title": "Common Whitetail",
+      "subtitle": "Bug · River Bank · Day, Evening, Morning, Night",
+      "description": "It prefers humid weather, commonly found near rivers.",
+      "url": "/en/bugs/common-whitetail/",
+      "category": "Bug Database",
+      "keywords": "Common Whitetail 昆虫 Bug River Bank Day, Evening, Morning, Night Rainbow, Rainy 4"
+    },
+    {
+      "id": "bugs-four-spotted-skimmer",
+      "title": "Four-Spotted Skimmer",
+      "subtitle": "Bug · Suburbs · Day, Evening, Morning, Night",
+      "description": "Perching high like a fighter, its four black wing spots are the mark of its renown.",
+      "url": "/en/bugs/four-spotted-skimmer/",
+      "category": "Bug Database",
+      "keywords": "Four-Spotted Skimmer 昆虫 Bug Suburbs Day, Evening, Morning, Night Rainbow, Rainy 2"
+    },
+    {
+      "id": "bugs-asparagus-beetle",
+      "title": "Asparagus Beetle",
+      "subtitle": "Bug · Flower Field · Day, Evening, Morning, Night",
+      "description": "It's a dull-colored little bug, commonly found in flower fields.",
+      "url": "/en/bugs/asparagus-beetle/",
+      "category": "Bug Database",
+      "keywords": "Asparagus Beetle 昆虫 Bug Flower Field Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-gold-grasshopper",
+      "title": "Gold Grasshopper",
+      "subtitle": "Bug · Onsen Mountain · Day, Evening, Morning, Night",
+      "description": "With long, sturdy antennae, it can sense changes in its surroundings with ease.",
+      "url": "/en/bugs/gold-grasshopper/",
+      "category": "Bug Database",
+      "keywords": "Gold Grasshopper 昆虫 Bug Onsen Mountain Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-european-firebug",
+      "title": "European Firebug",
+      "subtitle": "Bug · Home · Day, Evening, Morning, Night",
+      "description": "Its unique red-and-black coloring earned it a spot on the cover of an entomology journal!",
+      "url": "/en/bugs/european-firebug/",
+      "category": "Bug Database",
+      "keywords": "European Firebug 昆虫 Bug Home Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-large-red-damselfly",
+      "title": "Large Red Damselfly",
+      "subtitle": "Bug · Waterside · Day, Evening, Morning, Night",
+      "description": "It's a vibrant damselfly that loves to dance by the water.",
+      "url": "/en/bugs/large-red-damselfly/",
+      "category": "Bug Database",
+      "keywords": "Large Red Damselfly 昆虫 Bug Waterside Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-apollo",
+      "title": "Apollo",
+      "subtitle": "Bug · Event only · Day, Evening, Morning, Night",
+      "description": "With its furry coat, it seems unafraid of the cold.",
+      "url": "/en/bugs/apollo/",
+      "category": "Bug Database",
+      "keywords": "Apollo 昆虫 Bug Event only Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-cabbage-white",
+      "title": "Cabbage White",
+      "subtitle": "Bug · Fishing Village · Day, Evening, Morning, Night",
+      "description": "Its gray-white wings make it low-key in daily life.",
+      "url": "/en/bugs/cabbage-white/",
+      "category": "Bug Database",
+      "keywords": "Cabbage White 昆虫 Bug Fishing Village Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-common-brimestone",
+      "title": "Common Brimestone",
+      "subtitle": "Bug · Suburbs · Day, Evening, Morning, Night",
+      "description": "With its unique colors and patterns, it flutters around the Suburbs no matter the weather.",
+      "url": "/en/bugs/common-brimestone/",
+      "category": "Bug Database",
+      "keywords": "Common Brimestone 昆虫 Bug Suburbs Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-common-brimstone",
+      "title": "Common Brimstone",
+      "subtitle": "Bug · Suburbs · Day, Evening, Morning, Night",
+      "description": "With its unique colors and patterns, it flutters around the Suburbs no matter the weather.",
+      "url": "/en/bugs/common-brimstone/",
+      "category": "Bug Database",
+      "keywords": "Common Brimstone 昆虫 Bug Suburbs Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-old-world-swallowtail",
+      "title": "Old World Swallowtail",
+      "subtitle": "Bug · Forest · Day, Evening, Morning, Night",
+      "description": "Because of its alluring beauty, it got nicknames like \"Flying Flower\" and \"Insect Artist.\"",
+      "url": "/en/bugs/old-world-swallowtail/",
+      "category": "Bug Database",
+      "keywords": "Old World Swallowtail 昆虫 Bug Forest Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-orange-tip",
+      "title": "Orange-Tip",
+      "subtitle": "Bug · Central Area · Day, Evening, Morning, Night",
+      "description": "With bright markings on its wings, it's a frequent visitor to the town.",
+      "url": "/en/bugs/orange-tip/",
+      "category": "Bug Database",
+      "keywords": "Orange-Tip 昆虫 Bug Central Area Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-postman-butterfly",
+      "title": "Postman Butterfly",
+      "subtitle": "Bug · Event only · Day, Evening, Morning, Night",
+      "description": "Don't be too focused on the two red spots. This butterfly as a whole is a piece of art.",
+      "url": "/en/bugs/postman-butterfly/",
+      "category": "Bug Database",
+      "keywords": "Postman Butterfly 昆虫 Bug Event only Day, Evening, Morning, Night Rainbow, Rainy, Sunny 1"
+    },
+    {
+      "id": "bugs-hercules-beetle",
+      "title": "Hercules Beetle",
+      "subtitle": "Bug · Onsen Mountain · Day, Evening",
+      "description": "It's small in size but mighty in strength, said to be able to lift objects many times its own weight.",
+      "url": "/en/bugs/hercules-beetle/",
+      "category": "Bug Database",
+      "keywords": "Hercules Beetle 昆虫 Bug Onsen Mountain Day, Evening Rainbow, Sunny 10"
+    },
+    {
+      "id": "bugs-morpho-helena",
+      "title": "Morpho Helena",
+      "subtitle": "Bug · Day, Evening, Morning, Night",
+      "description": "Morpho Helena 是 Heartopia 中的一种昆虫，出没于未知区域，售价约 0 金币。",
+      "url": "/en/bugs/morpho-helena/",
+      "category": "Bug Database",
+      "keywords": "Morpho Helena 昆虫 Bug Day, Evening, Morning, Night Rainbow, Rainy, Sunny 10"
+    },
+    {
+      "id": "bugs-sunset-morpho",
+      "title": "Sunset Morpho",
+      "subtitle": "Bug",
+      "description": "Sunset Morpho 是 Heartopia 中的一种昆虫，出没于未知区域，售价约 0 金币。",
+      "url": "/en/bugs/sunset-morpho/",
+      "category": "Bug Database",
+      "keywords": "Sunset Morpho 昆虫 Bug 10"
+    },
+    {
+      "id": "materials-black-walnut",
+      "title": "Black Walnut",
+      "subtitle": "Black Walnut trees",
+      "description": "A rare material obtained by chopping Black Walnut trees.",
+      "url": "/en/materials/black-walnut/",
+      "category": "Material Database",
+      "keywords": "Black Walnut Black Walnut trees Black Walnut trees"
+    },
+    {
+      "id": "materials-blueberry",
+      "title": "Blueberry",
+      "subtitle": "Foraging",
+      "description": "A small, round blue fruit harvested from wild bushes.",
+      "url": "/en/materials/blueberry/",
+      "category": "Material Database",
+      "keywords": "Blueberry Foraging Foraging"
+    },
+    {
+      "id": "materials-branch",
+      "title": "Branch",
+      "subtitle": "Harvesting bushes",
+      "description": "A branch harvested from bushes in the game world.",
+      "url": "/en/materials/branch/",
+      "category": "Material Database",
+      "keywords": "Branch Harvesting bushes Harvesting bushes"
+    },
+    {
+      "id": "materials-butter",
+      "title": "Butter",
+      "subtitle": "Cooking Store",
+      "description": "A brick of fat made from milk, rich in nutrients but fat is fat after all. Don’t eat too much!",
+      "url": "/en/materials/butter/",
+      "category": "Material Database",
+      "keywords": "Butter Cooking Store Cooking Store"
+    },
+    {
+      "id": "materials-cheese",
+      "title": "Cheese",
+      "subtitle": "Cooking Store",
+      "description": "A solid dairy product fermented from milk, rich in nutritional value.",
+      "url": "/en/materials/cheese/",
+      "category": "Material Database",
+      "keywords": "Cheese Cooking Store Cooking Store"
+    },
+    {
+      "id": "materials-coal",
+      "title": "Coal",
+      "subtitle": "Material",
+      "description": "Coal 是 Heartopia 中的一种材料。",
+      "url": "/en/materials/coal/",
+      "category": "Material Database",
+      "keywords": "Coal 材料 Material"
+    },
+    {
+      "id": "materials-coffee-bean",
+      "title": "Coffee Bean",
+      "subtitle": "Cooking Store",
+      "description": "A plant’s fruit used in coffee, with flavors that change by variety and roast.",
+      "url": "/en/materials/coffee-bean/",
+      "category": "Material Database",
+      "keywords": "Coffee Bean Cooking Store Cooking Store"
+    },
+    {
+      "id": "materials-frosting",
+      "title": "Frosting",
+      "subtitle": "Winter Frost Season",
+      "description": "Icing sugar, sparkling like frost, was gently sprinkled for a touch of sweetness.",
+      "url": "/en/materials/frosting/",
+      "category": "Material Database",
+      "keywords": "Frosting Winter Frost Season Winter Frost Season"
+    },
+    {
+      "id": "materials-iron-ore",
+      "title": "Iron Ore",
+      "subtitle": "Mining ore nodes",
+      "description": "The most common ore in Heartopia, appearing as dark gray rocks with a metallic luster. It has moderate hardness and low mining difficulty, making it ideal for new players.",
+      "url": "/en/materials/iron-ore/",
+      "category": "Material Database",
+      "keywords": "Iron Ore Mining ore nodes Mining ore nodes"
+    },
+    {
+      "id": "materials-matcha-powder",
+      "title": "Matcha Powder",
+      "subtitle": "Cooking Store",
+      "description": "Ground by Fresh tea leaves, rich in various trace elements and possessing antioxidant benefits.",
+      "url": "/en/materials/matcha-powder/",
+      "category": "Material Database",
+      "keywords": "Matcha Powder Cooking Store Cooking Store"
+    },
+    {
+      "id": "materials-meat",
+      "title": "Meat",
+      "subtitle": "Cooking Store",
+      "description": "Source of minerals, proteins, and vitamins.",
+      "url": "/en/materials/meat/",
+      "category": "Material Database",
+      "keywords": "Meat Cooking Store Cooking Store"
+    },
+    {
+      "id": "materials-milk",
+      "title": "Milk",
+      "subtitle": "Cooking Store",
+      "description": "One of the earliest dairy products ever discovered. Contains many essential nutrients required by the human body.",
+      "url": "/en/materials/milk/",
+      "category": "Material Database",
+      "keywords": "Milk Cooking Store Cooking Store"
+    },
+    {
+      "id": "materials-rare-timber",
+      "title": "Rare Timber",
+      "subtitle": "Chopping Thick Trees; Acorn General Store",
+      "description": "A rare and valuable type of timber harvested from special thick trees around Heartopia.",
+      "url": "/en/materials/rare-timber/",
+      "category": "Material Database",
+      "keywords": "Rare Timber Chopping Thick Trees; Acorn General Store Chopping Thick Trees; Acorn General Store"
+    },
+    {
+      "id": "materials-red-pine",
+      "title": "Red Pine",
+      "subtitle": "Red Pine tree (located next to White Beech tree, beside Black Walnut tree)",
+      "description": "Rare wood obtained by collecting from the unique Red Pine tree.",
+      "url": "/en/materials/red-pine/",
+      "category": "Material Database",
+      "keywords": "Red Pine Red Pine tree (located next to White Beech tree, beside Black Walnut tree) Red Pine tree (located next to White Beech tree, beside Black Walnut tree)"
+    },
+    {
+      "id": "materials-roaming-oak-timber",
+      "title": "Roaming Oak Timber",
+      "subtitle": "Helping Oak-Oak after completing the quest Astralis in Forest",
+      "description": "A raw crafting material obtained from roaming oak trees in Heartopia Town.",
+      "url": "/en/materials/roaming-oak-timber/",
+      "category": "Material Database",
+      "keywords": "Roaming Oak Timber Helping Oak-Oak after completing the quest Astralis in Forest Helping Oak-Oak after completing the quest Astralis in Forest"
+    },
+    {
+      "id": "materials-stone",
+      "title": "Stone",
+      "subtitle": "Stone nodes and rocks on roadsides, near houses, forests, cliffs, fruit areas",
+      "description": "A basic gathering resource found scattered around Heartopia. No tools required to collect.",
+      "url": "/en/materials/stone/",
+      "category": "Material Database",
+      "keywords": "Stone Stone nodes and rocks on roadsides, near houses, forests, cliffs, fruit areas Stone nodes and rocks on roadsides, near houses, forests, cliffs, fruit areas"
+    },
+    {
+      "id": "materials-timber",
+      "title": "Timber",
+      "subtitle": "Chopping trees in the Forest Area",
+      "description": "The most basic Timber resource in Heartopia.",
+      "url": "/en/materials/timber/",
+      "category": "Material Database",
+      "keywords": "Timber Chopping trees in the Forest Area Chopping trees in the Forest Area"
+    },
+    {
+      "id": "materials-white-beech",
+      "title": "White Beech",
+      "subtitle": "Chopping the single White Beech tree near Black Walnut trees in the northeast plains.",
+      "description": "Rare wood material obtained from the unique White Beech tree.",
+      "url": "/en/materials/white-beech/",
+      "category": "Material Database",
+      "keywords": "White Beech Chopping the single White Beech tree near Black Walnut trees in the northeast plains. Chopping the single White Beech tree near Black Walnut trees in the northeast plains."
+    },
+    {
+      "id": "npcs-albert-jr",
+      "title": "Albert Jr.",
+      "subtitle": "Villager · Golden Acorn Merchant Guild",
+      "description": "Albert Jr. 是 Heartopia 中的Villager，常见于Golden Acorn Merchant Guild。",
+      "url": "/en/npcs/albert-jr/",
+      "category": "NPC Database",
+      "keywords": "Albert Jr. Villager Villager Golden Acorn Merchant Guild"
+    },
+    {
+      "id": "npcs-andrew",
+      "title": "Andrew",
+      "subtitle": "Villager · West Corner of Heartopia TOwn",
+      "description": "Andrew 是 Heartopia 中的Villager，常见于West Corner of Heartopia TOwn。",
+      "url": "/en/npcs/andrew/",
+      "category": "NPC Database",
+      "keywords": "Andrew Villager Villager West Corner of Heartopia TOwn"
+    },
+    {
+      "id": "npcs-annie",
+      "title": "Annie",
+      "subtitle": "Villager · Central Area",
+      "description": "Annie 是 Heartopia 中的Villager，常见于Central Area。",
+      "url": "/en/npcs/annie/",
+      "category": "NPC Database",
+      "keywords": "Annie Villager Villager Central Area"
+    },
+    {
+      "id": "npcs-atara",
+      "title": "Atara",
+      "subtitle": "Villager · Town Hall / Central Plaza",
+      "description": "Atara 是 Heartopia 中的Villager，常见于Town Hall / Central Plaza。",
+      "url": "/en/npcs/atara/",
+      "category": "NPC Database",
+      "keywords": "Atara Villager Villager Town Hall / Central Plaza"
+    },
+    {
+      "id": "npcs-bill",
+      "title": "Bill",
+      "subtitle": "Villager · Fishing Village",
+      "description": "Bill 是 Heartopia 中的Villager，常见于Fishing Village。",
+      "url": "/en/npcs/bill/",
+      "category": "NPC Database",
+      "keywords": "Bill Villager Villager Fishing Village"
+    },
+    {
+      "id": "npcs-blanc",
+      "title": "Blanc",
+      "subtitle": "Mentor · Garden Street",
+      "description": "Blanc 是 Heartopia 中的Mentor，常见于Garden Street。",
+      "url": "/en/npcs/blanc/",
+      "category": "NPC Database",
+      "keywords": "Blanc Mentor Mentor Garden Street"
+    },
+    {
+      "id": "npcs-bo",
+      "title": "Bo",
+      "subtitle": "Villager · Town Hall / Central Plaza",
+      "description": "Bo 是 Heartopia 中的Villager，常见于Town Hall / Central Plaza。",
+      "url": "/en/npcs/bo/",
+      "category": "NPC Database",
+      "keywords": "Bo Villager Villager Town Hall / Central Plaza"
+    },
+    {
+      "id": "npcs-bob",
+      "title": "Bob",
+      "subtitle": "Villager · Construction Workshop",
+      "description": "Bob 是 Heartopia 中的Villager，常见于Construction Workshop。",
+      "url": "/en/npcs/bob/",
+      "category": "NPC Database",
+      "keywords": "Bob Villager Villager Construction Workshop"
+    },
+    {
+      "id": "npcs-collector",
+      "title": "Collector",
+      "subtitle": "Villager · Heartopia Town",
+      "description": "Collector 是 Heartopia 中的Villager，常见于Heartopia Town。",
+      "url": "/en/npcs/collector/",
+      "category": "NPC Database",
+      "keywords": "Collector Villager Villager Heartopia Town"
+    },
+    {
+      "id": "npcs-dorothee",
+      "title": "Dorothee",
+      "subtitle": "Villager · Clothing Store",
+      "description": "Dorothee 是 Heartopia 中的Villager，常见于Clothing Store。",
+      "url": "/en/npcs/dorothee/",
+      "category": "NPC Database",
+      "keywords": "Dorothee Villager Villager Clothing Store"
+    },
+    {
+      "id": "npcs-massimo",
+      "title": "Massimo",
+      "subtitle": "Villager · Restaurant",
+      "description": "Massimo 是 Heartopia 中的Villager，常见于Restaurant。",
+      "url": "/en/npcs/massimo/",
+      "category": "NPC Database",
+      "keywords": "Massimo Villager Villager Restaurant"
+    },
+    {
+      "id": "npcs-mrs-joan",
+      "title": "Mrs Joan",
+      "subtitle": "Villager · Heartopia Town",
+      "description": "Mrs Joan 是 Heartopia 中的Villager，常见于Heartopia Town。",
+      "url": "/en/npcs/mrs-joan/",
+      "category": "NPC Database",
+      "keywords": "Mrs Joan Villager Villager Heartopia Town"
+    },
+    {
+      "id": "npcs-naniwa",
+      "title": "Naniwa",
+      "subtitle": "Villager · Forest / Nature Areas",
+      "description": "Naniwa 是 Heartopia 中的Villager，常见于Forest / Nature Areas。",
+      "url": "/en/npcs/naniwa/",
+      "category": "NPC Database",
+      "keywords": "Naniwa Villager Villager Forest / Nature Areas"
+    },
+    {
+      "id": "npcs-oak-oak",
+      "title": "Oak-Oak",
+      "subtitle": "Villager · Spirit Oak Pine Forest",
+      "description": "Oak-Oak 是 Heartopia 中的Villager，常见于Spirit Oak Pine Forest。",
+      "url": "/en/npcs/oak-oak/",
+      "category": "NPC Database",
+      "keywords": "Oak-Oak Villager Villager Spirit Oak Pine Forest"
+    },
+    {
+      "id": "npcs-patti",
+      "title": "Patti",
+      "subtitle": "Villager · Forest",
+      "description": "Patti 是 Heartopia 中的Villager，常见于Forest。",
+      "url": "/en/npcs/patti/",
+      "category": "NPC Database",
+      "keywords": "Patti Villager Villager Forest"
+    },
+    {
+      "id": "npcs-vanya",
+      "title": "Vanya",
+      "subtitle": "Villager · Town River Pier",
+      "description": "Vanya 是 Heartopia 中的Villager，常见于Town River Pier。",
+      "url": "/en/npcs/vanya/",
+      "category": "NPC Database",
+      "keywords": "Vanya Villager Villager Town River Pier"
+    },
+    {
+      "id": "locations-furniture-store",
+      "title": "Furniture Store",
+      "subtitle": "Location · Central Plaza",
+      "description": "The primary shop for purchasing home decor and furniture in Heartopia, managed by the ever-cheerful Bob.",
+      "url": "/en/locations/furniture-store/",
+      "category": "Location Database",
+      "keywords": "Furniture Store 地点 Location Central Plaza"
+    },
+    {
+      "id": "locations-gardening-store",
+      "title": "Gardening Store",
+      "subtitle": "Location · Garden Street",
+      "description": "A specialized shop for purchasing seeds, flowers, and gardening supplies.",
+      "url": "/en/locations/gardening-store/",
+      "category": "Location Database",
+      "keywords": "Gardening Store 地点 Location Garden Street"
+    },
+    {
+      "id": "locations-heartopia-town",
+      "title": "Heartopia Town",
+      "subtitle": "Town",
+      "description": "The bustling heart of the region and the player's new home.",
+      "url": "/en/locations/heartopia-town/",
+      "category": "Location Database",
+      "keywords": "Heartopia Town Town Town"
+    },
+    {
+      "id": "locations-pet-shop",
+      "title": "Pet Shop",
+      "subtitle": "Shop · Heartopia Town",
+      "description": "A cozy shop filled with the sounds of happy animals, offering pets and supplies to aspiring owners.",
+      "url": "/en/locations/pet-shop/",
+      "category": "Location Database",
+      "keywords": "Pet Shop Shop Shop Heartopia Town"
+    }
+  ]
+}

@@ -1,62 +1,76 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { codesList, recipesList, fishList, moneyList, beginnerList, farmingList, mapInfo } from '../../lib/content.js';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { href, listModules, moduleCounts, moduleUnitsFor } from '../../../lib/content.js';
+import { LOCALES } from '../../../i18n/config.mjs';
+import { dict } from '../../../i18n/ui.mjs';
 
-const breadcrumbs = [{ name: '首页', path: '/' }, { name: '站内搜索', path: '/search/' }];
+export function getStaticPaths() {
+  return LOCALES.map(function (locale) {
+    return { params: { locale: locale } };
+  });
+}
 
-const sections = [
-  { name: '兑换码', path: '/codes/', count: codesList.length },
-  { name: '烹饪食谱', path: '/cooking/', count: recipesList.length },
-  { name: '鱼图鉴', path: '/fish/', count: fishList.length },
-  { name: '赚钱攻略', path: '/money/', count: moneyList.length },
-  { name: '新手指南', path: '/beginner/', count: beginnerList.length },
-  { name: '互动地图', path: '/map/', count: mapInfo.markers.length },
-  { name: '种植攻略', path: '/farming/', count: farmingList.length }
+const locale = Astro.params.locale;
+const copy = dict(locale).search;
+const common = dict(locale).common;
+const units = moduleUnitsFor(locale);
+
+const breadcrumbs = [
+  { name: common.home, path: '/' },
+  { name: copy.title, path: '/search/' }
 ];
+
+const sections = listModules(locale).map(function (mod) {
+  return { name: mod.name, path: mod.path, count: moduleCounts[mod.id] || 0, unit: units[mod.id] || '' };
+});
+
+const countLine = copy.resultsCount.replace('{count}', '<span id="search-page-count"><strong>0</strong></span>');
 ---
 
 <BaseLayout
-  title="站内搜索"
-  description="搜索 Heartopia 兑换码、烹饪食谱、鱼图鉴、赚钱攻略、新手指南、互动地图与种植攻略。"
+  locale={locale}
+  title={copy.title}
+  description={copy.description}
   breadcrumbs={breadcrumbs}
+  noindex={true}
 >
-  <Breadcrumbs items={breadcrumbs} />
+  <Breadcrumbs items={breadcrumbs} locale={locale} />
 
   <div class="page-head">
-    <h1>🔍 站内搜索</h1>
-    <p class="lede">输入关键词即可搜索全站内容，例如鱼名、料理、兑换码或赚钱方法。</p>
+    <h1>{copy.h1}</h1>
+    <p class="lede">{copy.lede}</p>
   </div>
 
-  <div class="filter-bar">
+  <div class="filter-bar" data-search-page data-index-url={'/search-index.' + locale + '.json'}>
     <div class="filter-row">
       <input
         class="filter-input"
         type="search"
         id="search-page-input"
-        placeholder="输入关键词，例如 Salmon、烤鱼、体力…"
-        aria-label="站内搜索关键词"
+        placeholder={copy.placeholder}
+        aria-label={copy.keywordAria}
         autocomplete="off"
       />
     </div>
     <div class="filter-status">
-      <span class="filter-count">找到 <span id="search-page-count"><strong>0</strong></span> 条结果</span>
+      <span class="filter-count" set:html={countLine} />
     </div>
   </div>
 
   <div id="search-page-results" class="grid"></div>
   <div id="search-page-empty" class="empty-state" hidden>
-    <p>没有找到匹配内容，试试更短的关键词。</p>
+    <p>{copy.empty}</p>
   </div>
 
   <section class="section">
-    <div class="section-head"><h2>按模块浏览</h2></div>
+    <div class="section-head"><h2>{copy.browseTitle}</h2></div>
     <div class="grid">
       {sections.map(function (section) {
         return (
-          <a class="card" href={section.path}>
+          <a class="card" href={href(locale, section.path)}>
             <span class="card-title">{section.name}</span>
-            <span class="card-text">共 {section.count} 条内容</span>
+            <span class="card-text">{section.count} {section.unit}</span>
           </a>
         );
       })}
@@ -64,8 +78,6 @@ const sections = [
   </section>
 
   <script>
-    const INDEX_URL = '/search-index.json';
-
     function escapeHtml(value) {
       return String(value == null ? '' : value)
         .replace(/&/g, '&amp;')
@@ -75,12 +87,20 @@ const sections = [
     }
 
     function boot() {
+      const root = document.querySelector('[data-search-page]');
+      if (!root || root.dataset.ready === 'true') return;
+      root.dataset.ready = 'true';
+
       const input = document.getElementById('search-page-input');
       const results = document.getElementById('search-page-results');
       const empty = document.getElementById('search-page-empty');
       const countEl = document.getElementById('search-page-count');
-      if (!input || !results || input.dataset.ready === 'true') return;
-      input.dataset.ready = 'true';
+      if (!input || !results) return;
+
+      const INDEX_URL = root.getAttribute('data-index-url') || '/search-index.en.json';
+      function fillCount(count) {
+        if (countEl) countEl.innerHTML = '<strong>' + count + '</strong>';
+      }
 
       let indexPromise = null;
       function loadIndex() {
@@ -97,8 +117,8 @@ const sections = [
         const term = query.trim().toLowerCase();
         if (!term) {
           results.innerHTML = '';
-          empty.hidden = true;
-          countEl.innerHTML = '<strong>0</strong>';
+          if (empty) empty.hidden = true;
+          fillCount(0);
           return;
         }
         const items = await loadIndex();
@@ -108,8 +128,8 @@ const sections = [
           return haystack.indexOf(term) !== -1;
         }).slice(0, 60);
 
-        countEl.innerHTML = '<strong>' + matched.length + '</strong>';
-        empty.hidden = matched.length !== 0;
+        fillCount(matched.length);
+        if (empty) empty.hidden = matched.length !== 0;
         results.innerHTML = matched.map(function (item) {
           return '<a class="card" href="' + escapeHtml(item.url) + '">'
             + '<span class="card-title">' + escapeHtml(item.title) + '</span>'
