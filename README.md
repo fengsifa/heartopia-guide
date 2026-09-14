@@ -60,6 +60,7 @@ HeartopiaHub/
 ├─ public/
 │  ├─ favicon.svg, og-default.svg
 │  ├─ list-filter.js             # 通用列表筛选（搜索 + 标签筛选）
+│  ├─ sitemap.xsl                # sitemap.xml 的浏览器样式表（只影响人肉查看）
 │  └─ search-index.en.json, search-index.zh.json   # 每种语言一份，构建时自动生成
 ├─ scripts/
 │  ├─ check-data.mjs             # 数据校验，构建前自动执行
@@ -339,6 +340,25 @@ beginnerGuideDescription(locale, item)        // 新手指南
 - sitemap 里不含 404 页面（`@astrojs/sitemap` 会跳过状态码页，自检也会复查一遍）
 - `robots.txt` 由 `src/pages/robots.txt.ts` 生成：`Allow: /` 放行全站、`Disallow: /*?q=` 挡住搜索参数页、声明 `Sitemap: <site>/sitemap.xml`
 
+#### sitemap.xml 长什么样
+
+`dist/sitemap.xml` 是标准 XML，不是纯文本 URL 列表：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://heartopia-guide-cwx.pages.dev/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" …>
+<url><loc>https://heartopia-guide-cwx.pages.dev/en/</loc><changefreq>daily</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="en" href="…"/><xhtml:link rel="alternate" hreflang="zh-CN" href="…"/></url>
+…
+</urlset>
+```
+
+- Cloudflare Pages 按扩展名返回 `Content-Type: application/xml`
+- `<?xml-stylesheet?>` 让浏览器把 sitemap 渲染成可读表格。**没有它的时候**，部分浏览器/内嵌预览会把 `<url>`、`<loc>` 当未知 HTML 标签吞掉，页面看起来就是一堆粘在一起的裸 URL（例如 `…/en/daily1.0`），很容易被误判成「sitemap 格式不对」。爬虫会忽略这条指令，它只影响人肉查看
+- 样式表在 `public/sitemap.xsl`，模板覆盖 `urlset` 和 `sitemapindex` 两种根元素
+- 合并脚本会去重：如果插件产物里出现重复 `<loc>`，重复项会被丢弃并打印警告
+- `scripts/build-sitemap-alias.mjs` 在写文件后做一次结构自检（XML 声明、`urlset` 命名空间、`<url>`/`<loc>` 数量、`</urlset>` 收尾），不通过就直接让构建失败
+
 ### 域名只有一个来源
 
 `astro.config.mjs` 的 `site` 优先取环境变量 `SITE_URL`，否则取 `src/data/site.json` 的 `url`（当前是 `https://heartopia-guide-cwx.pages.dev`）。
@@ -358,9 +378,10 @@ npm run build && npm run seo:check
 - hreflang 是否 `en` + `zh-CN` + `x-default` 三件套齐全、指向正确、且对应的姊妹页面真的构建出来了
 - JSON-LD 能否解析、noindex 页面有没有混进 sitemap、sitemap 是否覆盖所有可收录页面并带语言互链
 - 两种语言生成的页面数量是否一致，robots 是否声明 sitemap
-
-- 是否有 404 / 测试页 / 重复页混进 sitemap，sitemap 是否覆盖全部可收录页面
-- `dist/sitemap.xml` 是否生成、URL 数量是否和分片一致、是否带 `xhtml` 命名空间与语言互链
+- 是否有 404 / 测试页 / 重复页混进 sitemap
+- `dist/sitemap.xml` 是否是标准 XML：XML 声明、`<urlset>` 根元素、sitemaps.org 命名空间、`</urlset>` 收尾
+- `<url>` 与 `<loc>` 数量是否一致、有没有重复 `<loc>`、URL 域名是否和 canonical 一致
+- `xml-stylesheet` 指令是否存在、它引用的 `sitemap.xsl` 是否真的构建出来了
 - `robots.txt` 声明的 sitemap 是否本站地址、对应文件是否真的存在、有没有整站屏蔽规则
 
 有问题会以非 0 退出。`npm run build` 已经包含这一步（末尾会跑 `sitemap.xml` 合并），

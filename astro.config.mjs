@@ -29,6 +29,9 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      // 浏览器打开 sitemap.xml 时套用的样式表，让它显示成可读表格而不是一堆裸 URL。
+      // 爬虫会忽略 xml-stylesheet，只影响人肉查看；文件本身在 public/sitemap.xsl。
+      xslURL: '/sitemap.xsl',
       // 让 sitemap 里的每个 URL 都带上 xhtml:link 语言互链
       // 注意 @astrojs/sitemap 的 locales 是「locale → hreflang」的记录，不是数组
       i18n: { defaultLocale: DEFAULT_LOCALE, locales: { en: 'en', zh: 'zh-CN' } },

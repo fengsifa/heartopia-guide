@@ -259,7 +259,43 @@ if (!existsSync(aliasPath)) {
   fail('缺少 dist/sitemap.xml（npm run build 里的 scripts/build-sitemap-alias.mjs 负责生成）');
 } else {
   const aliasXml = readFileSync(aliasPath, 'utf8');
+
+  // 1) 必须是标准 XML Sitemap，而不是被浏览器当 HTML 渲染的裸 URL 列表
+  if (!/^<\?xml version="1\.0" encoding="UTF-8"\?>/.test(aliasXml)) {
+    fail('sitemap.xml 缺少标准 XML 声明（<?xml version="1.0" encoding="UTF-8"?>）');
+  }
+  if (aliasXml.indexOf('<urlset') === -1) {
+    fail('sitemap.xml 没有 <urlset> 根元素');
+  }
+  if (aliasXml.indexOf('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"') === -1) {
+    fail('sitemap.xml 缺少 sitemaps.org 的 urlset 命名空间');
+  }
+  if (!/<\/urlset>\s*$/.test(aliasXml)) {
+    fail('sitemap.xml 没有以 </urlset> 收尾');
+  }
+  // 没有样式表时，部分浏览器会把 <url>/<loc> 当未知 HTML 标签吞掉，显示成裸 URL
+  if (aliasXml.indexOf('<?xml-stylesheet') === -1) {
+    fail('sitemap.xml 缺少 xml-stylesheet 指令，浏览器会把它显示成裸 URL 列表');
+  }
+  const xslHref = aliasXml.match(/<\?xml-stylesheet[^>]*href="([^"]+)"/);
+  if (xslHref) {
+    const xslRel = xslHref[1].replace(/^https?:\/\/[^/]+/, '').replace(/^\//, '');
+    if (xslRel && !existsSync(join(dist, xslRel))) {
+      fail('sitemap.xml 引用的样式表不存在：' + xslHref[1]);
+    }
+  }
+
+  const aliasUrlTags = (aliasXml.match(/<url>/g) || []).length;
+  const aliasLocTags = (aliasXml.match(/<loc>/g) || []).length;
+  if (aliasUrlTags !== aliasLocTags) {
+    fail('sitemap.xml 的 <url> 与 <loc> 数量不一致：' + aliasUrlTags + ' vs ' + aliasLocTags);
+  }
+
   const aliasUrls = Array.from(aliasXml.matchAll(/<loc>([^<]+)<\/loc>/g)).map(function (m) { return m[1]; });
+  const aliasDupes = aliasUrls.filter(function (url, index) { return aliasUrls.indexOf(url) !== index; });
+  if (aliasDupes.length) {
+    fail('sitemap.xml 存在重复 URL（' + aliasDupes.length + ' 条）：' + aliasDupes.slice(0, 3).join(', '));
+  }
   if (aliasUrls.length !== sitemapUrls.length) {
     fail('sitemap.xml 与分片的 URL 数量不一致：' + aliasUrls.length + ' vs ' + sitemapUrls.length);
   }
